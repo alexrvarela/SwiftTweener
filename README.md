@@ -327,8 +327,10 @@ Animate text transitions
 let myStringAim = StringAim(target:myUILabel, keyPath:\UILabel.text)
 myStringAim.from = @"hello";
 myStringAim.to = @"hola";
+
 //Set initial interpolation
 myStringAim.interpolation = 0.0
+
 //Animate interpolation
 Tween(target: aim, duration: 0.5, keys: [\StringAim.interpolation : 1.0]).play()
 ```

@@ -44,11 +44,11 @@ To install dependencies run this command
 ```
 $ carthage update
 ```
-Finally, drag & drop CocoaTweener.framework to your Xcode Project
+Finally, drag & drop Tweener.framework to your Xcode Project
 
 ### Install manually
 
-Download, build and copy CocoaTweener.framework to your Xcode project.
+Download, build and copy Tweener.framework to your Xcode project.
 
 ## Usage
 
@@ -211,9 +211,11 @@ Perform parallax scrolling effects controlling your timeline with UIScrollView:
 You can use the Timeline inspector to debug  and edit Tweens
 
 Visualize Tweens in real time:
+
 ![Visualize Tweens in real time!](https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/tmeline-inspector.gif)
 
 Edit Tweens:
+
 ![Edit Tweens](https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/timeline-editor.gif)
 
 ![Scale timeline editor](https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/timeline-zoom.gif)

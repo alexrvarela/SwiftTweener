@@ -332,7 +332,7 @@ myStringAim.to = @"hola";
 myStringAim.interpolation = 0.0
 
 //Animate interpolation
-Tween(target: aim, duration: 0.5, keys: [\StringAim.interpolation : 1.0]).play()
+Tween(target: myStringAim, duration: 0.5, keys: [\StringAim.interpolation : 1.0]).play()
 ```
 
 Play with everything, combine different types of Aim:

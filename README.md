@@ -135,12 +135,15 @@ Tweener.removeTweens(target:myView, keys:[\UIView.backgroundColor, \UIView.alpha
 Unleash your creativity!
 
 Touch point sample:
+
 ![Touch](https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/touch.gif)
 
 Drag views sample:
+
 ![Drag ](https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/drag.gif)
 
 Pause tweens sample:
+
 ![Background animations](https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/clouds.gif)
 
 

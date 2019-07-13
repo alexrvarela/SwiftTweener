@@ -74,7 +74,7 @@ Create and add simple Tween:
 
 ```swift
 
-let myTween = Tween(target:square,
+let myTween = Tween(target:myView,
     duration:1.0,
     ease:Ease.outQuad
     keys:[\UIView.alpha:1.0,
@@ -168,7 +168,7 @@ extension Ease{
 
 And use it:
 ```swift
-Tween(target:square,
+Tween(target:myView,
     duration:1.0,
     ease:Ease.custom
     keys:[\UIView.frame:CGRect(x:20.0, y:20.0, width:280.0, height:280.0)]

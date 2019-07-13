@@ -17,7 +17,7 @@ To integrate install [Cocoa Pods](http://cocoapods.org/) using this gem:
 $ gem install cocoapods
 ```
 
-Now, add CocoaTweener to your Podfile
+Now, add Tweener to your Podfile
 ```
 pod 'Tweener', '~> 1.0.1'
 ```
@@ -52,7 +52,7 @@ Download, build and copy Tweener.framework to your Xcode project.
 
 ## Usage
 
-Import CocoaTweener engine to your project:
+Import Tweener engine to your project:
 
 ```swift
 import Tweener
@@ -63,9 +63,9 @@ Int, Float, Double, CGFloat, CGPoint, CGRect, UIColor, CGAffineTransform, CATran
 
 First set initial state:
 ```swift
-    myView.alpha = 0.25
-    myView.frame = CGRect(x:20.0, y:20.0, width:100.0, height:100.0)
-    myView.backgroundColor = UIColor.red
+myView.alpha = 0.25
+myView.frame = CGRect(x:20.0, y:20.0, width:100.0, height:100.0)
+myView.backgroundColor = UIColor.red
 ```
 
 Create and add simple Tween:
@@ -225,8 +225,7 @@ Edit Tweens:
 
 To create Timeline inspector:
 ```swift
-let myInspector = TimelineInspector()
-myInspector.timeline = myTimeline
+let myInspector = TimelineInspector(timeline:myTimeline)
 addSubview(myInspector)
 ```
 
@@ -259,7 +258,7 @@ Control motion with paths:
 ![Path aim](https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/path.gif)
 
 ```swift
-let myPathAim = PathAim(target:self.myAsset)
+let myPathAim = PathAim(target:myAsset)
 myPathAim.path = myBezierPath
 ```
 
@@ -293,6 +292,7 @@ Animate rotation of any view
 
 ```swift
 let myRotationAim = RotationAim(target:myView)
+
 myRotationAim.angle = 90.0
 
 Tween(target: myRotationAim,
@@ -328,8 +328,8 @@ Animate text transitions
 ```swift
 //Create string aim
 let myStringAim = StringAim(target:myUILabel, keyPath:\UILabel.text)
-myStringAim.from = @"hello";
-myStringAim.to = @"hola";
+myStringAim.from = "hello"
+myStringAim.to = "hola"
 
 //Set initial interpolation
 myStringAim.interpolation = 0.0

@@ -173,7 +173,7 @@ Tween(target:square,
     ).play()
 ```
 
-For further information about custom equations:
+For further information about custom equations see:
 [Easig function generator](http://www.timotheegroleau.com/Flash/experiments/easing_function_generator.htm)
 
 ### Timeline

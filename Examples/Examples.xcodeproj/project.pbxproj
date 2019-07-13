@@ -1,0 +1,610 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0514812422A803E100D927DD /* EaseCurves.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0514812322A803E100D927DD /* EaseCurves.swift */; };
+		0514812822A804E100D927DD /* CurveInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0514812722A804E100D927DD /* CurveInspector.swift */; };
+		0521167522D6493500806A5B /* CustomEasing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0521167422D6493500806A5B /* CustomEasing.swift */; };
+		0521167722D64A0C00806A5B /* LaunchScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 0521167622D64A0C00806A5B /* LaunchScreen.png */; };
+		0524F08522AEAA1100BC28AA /* ScrollTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0524F08422AEAA1100BC28AA /* ScrollTimeline.swift */; };
+		05295F5E22C1247300E02FFD /* TimelineBasic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05295F5D22C1247300E02FFD /* TimelineBasic.swift */; };
+		0532C7C122A875E1005265E9 /* TouchPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0532C7C022A875E1005265E9 /* TouchPoint.swift */; };
+		0548DB1822C7D66300B6F3F4 /* AnimateArcRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0548DB1722C7D66300B6F3F4 /* AnimateArcRadius.swift */; };
+		0572C21F22A2D30100F96A19 /* TweenHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0572C21E22A2D30100F96A19 /* TweenHandlers.swift */; };
+		0572C22122A2D31500F96A19 /* SimpleTween.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0572C22022A2D31500F96A19 /* SimpleTween.swift */; };
+		0589AED222AF070E0093774D /* Transform3d.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0589AED122AF070E0093774D /* Transform3d.swift */; };
+		0592B8BA22CABFA900F0842B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0592B8B922CABFA900F0842B /* ViewController.swift */; };
+		05A620CA22A9445A005F7D3F /* DragView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A620C922A9445A005F7D3F /* DragView.swift */; };
+		05A7353622B45AC700F34F32 /* PauseTweens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A7353522B45AC700F34F32 /* PauseTweens.swift */; };
+		05A7353822B45ADD00F34F32 /* SimpleTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A7353722B45ADD00F34F32 /* SimpleTimeline.swift */; };
+		05B877F222C70AC700F2521F /* PathLoop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B877F122C70AC700F2521F /* PathLoop.swift */; };
+		05B877F422C7B6EF00F2521F /* WindBlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B877F322C7B6EF00F2521F /* WindBlow.swift */; };
+		05B877F622C7B70300F2521F /* ArcOrbits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B877F522C7B70200F2521F /* ArcOrbits.swift */; };
+		05B877F822C7B71B00F2521F /* AnimateText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B877F722C7B71B00F2521F /* AnimateText.swift */; };
+		05B877FA22C7B73200F2521F /* ScrollAims.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B877F922C7B73200F2521F /* ScrollAims.swift */; };
+		4C78F33B2142CDC2005E964B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C78F33A2142CDC2005E964B /* AppDelegate.swift */; };
+		4C78F3422142CDC2005E964B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C78F3412142CDC2005E964B /* Assets.xcassets */; };
+		4C78F3452142CDC2005E964B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C78F3432142CDC2005E964B /* LaunchScreen.storyboard */; };
+		4C78F36E2142CF4E005E964B /* Tweener.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C78F36D2142CF4E005E964B /* Tweener.framework */; };
+		4C78F36F2142CF4E005E964B /* Tweener.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4C78F36D2142CF4E005E964B /* Tweener.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4CF9835C214318AC00F1C23E /* bb8-head.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF9833E214318AC00F1C23E /* bb8-head.pdf */; };
+		4CF9835D214318AC00F1C23E /* card.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF9833F214318AC00F1C23E /* card.pdf */; };
+		4CF9835E214318AC00F1C23E /* fire.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF98340214318AC00F1C23E /* fire.pdf */; };
+		4CF9835F214318AC00F1C23E /* mars.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF98341214318AC00F1C23E /* mars.pdf */; };
+		4CF98360214318AC00F1C23E /* little-jupyter.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF98342214318AC00F1C23E /* little-jupyter.pdf */; };
+		4CF98361214318AC00F1C23E /* jupyter.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF98343214318AC00F1C23E /* jupyter.pdf */; };
+		4CF98362214318AC00F1C23E /* bee.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF98344214318AC00F1C23E /* bee.pdf */; };
+		4CF98363214318AC00F1C23E /* earth.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF98345214318AC00F1C23E /* earth.pdf */; };
+		4CF98364214318AC00F1C23E /* clouds1.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF98346214318AC00F1C23E /* clouds1.pdf */; };
+		4CF98365214318AC00F1C23E /* rocket.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF98347214318AC00F1C23E /* rocket.pdf */; };
+		4CF98366214318AC00F1C23E /* sunny.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF98348214318AC00F1C23E /* sunny.pdf */; };
+		4CF98367214318AC00F1C23E /* comet.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF98349214318AC00F1C23E /* comet.pdf */; };
+		4CF98368214318AC00F1C23E /* eyepupil.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF9834A214318AC00F1C23E /* eyepupil.pdf */; };
+		4CF98369214318AC00F1C23E /* clouds2.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF9834B214318AC00F1C23E /* clouds2.pdf */; };
+		4CF9836A214318AC00F1C23E /* little-saturn.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF9834C214318AC00F1C23E /* little-saturn.pdf */; };
+		4CF9836B214318AC00F1C23E /* little-sun-fire.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF9834D214318AC00F1C23E /* little-sun-fire.pdf */; };
+		4CF9836C214318AC00F1C23E /* moon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF9834E214318AC00F1C23E /* moon.pdf */; };
+		4CF9836D214318AC00F1C23E /* clouds3.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF9834F214318AC00F1C23E /* clouds3.pdf */; };
+		4CF9836E214318AC00F1C23E /* little-sun.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF98350214318AC00F1C23E /* little-sun.pdf */; };
+		4CF9836F214318AC00F1C23E /* flower.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF98351214318AC00F1C23E /* flower.pdf */; };
+		4CF98370214318AC00F1C23E /* ufo.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF98352214318AC00F1C23E /* ufo.pdf */; };
+		4CF98371214318AC00F1C23E /* spaceman.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF98353214318AC00F1C23E /* spaceman.pdf */; };
+		4CF98372214318AC00F1C23E /* stars.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF98354214318AC00F1C23E /* stars.pdf */; };
+		4CF98373214318AC00F1C23E /* sand.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF98355214318AC00F1C23E /* sand.pdf */; };
+		4CF98374214318AC00F1C23E /* sun.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF98356214318AC00F1C23E /* sun.pdf */; };
+		4CF98375214318AC00F1C23E /* little-earth.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF98357214318AC00F1C23E /* little-earth.pdf */; };
+		4CF98376214318AC00F1C23E /* orbits-background.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF98358214318AC00F1C23E /* orbits-background.pdf */; };
+		4CF98377214318AC00F1C23E /* dart.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF98359214318AC00F1C23E /* dart.pdf */; };
+		4CF98378214318AC00F1C23E /* bb8-body.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF9835A214318AC00F1C23E /* bb8-body.pdf */; };
+		4CF98379214318AC00F1C23E /* saturn.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF9835B214318AC00F1C23E /* saturn.pdf */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4C78F36C2142CF4E005E964B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C78F3532142CE31005E964B /* SwiftTweener.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4C78F3632142CF0F005E964B;
+			remoteInfo = Tweener;
+		};
+		4C78F3702142CF4E005E964B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C78F3532142CE31005E964B /* SwiftTweener.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 4C78F3622142CF0F005E964B;
+			remoteInfo = Tweener;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4C78F35D2142CE3A005E964B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4C78F36F2142CF4E005E964B /* Tweener.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0514812322A803E100D927DD /* EaseCurves.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EaseCurves.swift; sourceTree = "<group>"; };
+		0514812722A804E100D927DD /* CurveInspector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurveInspector.swift; sourceTree = "<group>"; };
+		0521167422D6493500806A5B /* CustomEasing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomEasing.swift; sourceTree = "<group>"; };
+		0521167622D64A0C00806A5B /* LaunchScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchScreen.png; sourceTree = "<group>"; };
+		0524F08422AEAA1100BC28AA /* ScrollTimeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollTimeline.swift; sourceTree = "<group>"; };
+		05295F5D22C1247300E02FFD /* TimelineBasic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineBasic.swift; sourceTree = "<group>"; };
+		0532C7C022A875E1005265E9 /* TouchPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchPoint.swift; sourceTree = "<group>"; };
+		0548DB1722C7D66300B6F3F4 /* AnimateArcRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateArcRadius.swift; sourceTree = "<group>"; };
+		0572C21E22A2D30100F96A19 /* TweenHandlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweenHandlers.swift; sourceTree = "<group>"; };
+		0572C22022A2D31500F96A19 /* SimpleTween.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTween.swift; sourceTree = "<group>"; };
+		0589AED122AF070E0093774D /* Transform3d.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transform3d.swift; sourceTree = "<group>"; };
+		0592B8B922CABFA900F0842B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		05A620C922A9445A005F7D3F /* DragView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragView.swift; sourceTree = "<group>"; };
+		05A7353522B45AC700F34F32 /* PauseTweens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseTweens.swift; sourceTree = "<group>"; };
+		05A7353722B45ADD00F34F32 /* SimpleTimeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTimeline.swift; sourceTree = "<group>"; };
+		05B877F122C70AC700F2521F /* PathLoop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathLoop.swift; sourceTree = "<group>"; };
+		05B877F322C7B6EF00F2521F /* WindBlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindBlow.swift; sourceTree = "<group>"; };
+		05B877F522C7B70200F2521F /* ArcOrbits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcOrbits.swift; sourceTree = "<group>"; };
+		05B877F722C7B71B00F2521F /* AnimateText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateText.swift; sourceTree = "<group>"; };
+		05B877F922C7B73200F2521F /* ScrollAims.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollAims.swift; sourceTree = "<group>"; };
+		4C78F3372142CDC2005E964B /* Examples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Examples.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C78F33A2142CDC2005E964B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4C78F3412142CDC2005E964B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4C78F3442142CDC2005E964B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4C78F3462142CDC2005E964B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C78F3532142CE31005E964B /* SwiftTweener.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftTweener.xcodeproj; path = ../SwiftTweener.xcodeproj; sourceTree = "<group>"; };
+		4CF9833E214318AC00F1C23E /* bb8-head.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "bb8-head.pdf"; sourceTree = "<group>"; };
+		4CF9833F214318AC00F1C23E /* card.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = card.pdf; sourceTree = "<group>"; };
+		4CF98340214318AC00F1C23E /* fire.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = fire.pdf; sourceTree = "<group>"; };
+		4CF98341214318AC00F1C23E /* mars.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = mars.pdf; sourceTree = "<group>"; };
+		4CF98342214318AC00F1C23E /* little-jupyter.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "little-jupyter.pdf"; sourceTree = "<group>"; };
+		4CF98343214318AC00F1C23E /* jupyter.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = jupyter.pdf; sourceTree = "<group>"; };
+		4CF98344214318AC00F1C23E /* bee.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = bee.pdf; sourceTree = "<group>"; };
+		4CF98345214318AC00F1C23E /* earth.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = earth.pdf; sourceTree = "<group>"; };
+		4CF98346214318AC00F1C23E /* clouds1.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = clouds1.pdf; sourceTree = "<group>"; };
+		4CF98347214318AC00F1C23E /* rocket.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = rocket.pdf; sourceTree = "<group>"; };
+		4CF98348214318AC00F1C23E /* sunny.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = sunny.pdf; sourceTree = "<group>"; };
+		4CF98349214318AC00F1C23E /* comet.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = comet.pdf; sourceTree = "<group>"; };
+		4CF9834A214318AC00F1C23E /* eyepupil.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = eyepupil.pdf; sourceTree = "<group>"; };
+		4CF9834B214318AC00F1C23E /* clouds2.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = clouds2.pdf; sourceTree = "<group>"; };
+		4CF9834C214318AC00F1C23E /* little-saturn.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "little-saturn.pdf"; sourceTree = "<group>"; };
+		4CF9834D214318AC00F1C23E /* little-sun-fire.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "little-sun-fire.pdf"; sourceTree = "<group>"; };
+		4CF9834E214318AC00F1C23E /* moon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = moon.pdf; sourceTree = "<group>"; };
+		4CF9834F214318AC00F1C23E /* clouds3.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = clouds3.pdf; sourceTree = "<group>"; };
+		4CF98350214318AC00F1C23E /* little-sun.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "little-sun.pdf"; sourceTree = "<group>"; };
+		4CF98351214318AC00F1C23E /* flower.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = flower.pdf; sourceTree = "<group>"; };
+		4CF98352214318AC00F1C23E /* ufo.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ufo.pdf; sourceTree = "<group>"; };
+		4CF98353214318AC00F1C23E /* spaceman.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = spaceman.pdf; sourceTree = "<group>"; };
+		4CF98354214318AC00F1C23E /* stars.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = stars.pdf; sourceTree = "<group>"; };
+		4CF98355214318AC00F1C23E /* sand.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = sand.pdf; sourceTree = "<group>"; };
+		4CF98356214318AC00F1C23E /* sun.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = sun.pdf; sourceTree = "<group>"; };
+		4CF98357214318AC00F1C23E /* little-earth.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "little-earth.pdf"; sourceTree = "<group>"; };
+		4CF98358214318AC00F1C23E /* orbits-background.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "orbits-background.pdf"; sourceTree = "<group>"; };
+		4CF98359214318AC00F1C23E /* dart.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = dart.pdf; sourceTree = "<group>"; };
+		4CF9835A214318AC00F1C23E /* bb8-body.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "bb8-body.pdf"; sourceTree = "<group>"; };
+		4CF9835B214318AC00F1C23E /* saturn.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = saturn.pdf; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4C78F3342142CDC2005E964B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C78F36E2142CF4E005E964B /* Tweener.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4C78F32E2142CDC1005E964B = {
+			isa = PBXGroup;
+			children = (
+				4C78F3392142CDC2005E964B /* Examples */,
+				4CF9833D214318AC00F1C23E /* Resources */,
+				4C78F3382142CDC2005E964B /* Products */,
+				4C78F3532142CE31005E964B /* SwiftTweener.xcodeproj */,
+			);
+			sourceTree = "<group>";
+		};
+		4C78F3382142CDC2005E964B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4C78F3372142CDC2005E964B /* Examples.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4C78F3392142CDC2005E964B /* Examples */ = {
+			isa = PBXGroup;
+			children = (
+				0521167622D64A0C00806A5B /* LaunchScreen.png */,
+				4C78F33A2142CDC2005E964B /* AppDelegate.swift */,
+				0592B8B922CABFA900F0842B /* ViewController.swift */,
+				4C78F3432142CDC2005E964B /* LaunchScreen.storyboard */,
+				4C78F3412142CDC2005E964B /* Assets.xcassets */,
+				4C78F3462142CDC2005E964B /* Info.plist */,
+				0572C22022A2D31500F96A19 /* SimpleTween.swift */,
+				0572C21E22A2D30100F96A19 /* TweenHandlers.swift */,
+				0514812322A803E100D927DD /* EaseCurves.swift */,
+				0521167422D6493500806A5B /* CustomEasing.swift */,
+				0514812722A804E100D927DD /* CurveInspector.swift */,
+				0532C7C022A875E1005265E9 /* TouchPoint.swift */,
+				05A620C922A9445A005F7D3F /* DragView.swift */,
+				0589AED122AF070E0093774D /* Transform3d.swift */,
+				05A7353522B45AC700F34F32 /* PauseTweens.swift */,
+				05A7353722B45ADD00F34F32 /* SimpleTimeline.swift */,
+				0524F08422AEAA1100BC28AA /* ScrollTimeline.swift */,
+				05295F5D22C1247300E02FFD /* TimelineBasic.swift */,
+				0548DB1722C7D66300B6F3F4 /* AnimateArcRadius.swift */,
+				05B877F122C70AC700F2521F /* PathLoop.swift */,
+				05B877F322C7B6EF00F2521F /* WindBlow.swift */,
+				05B877F522C7B70200F2521F /* ArcOrbits.swift */,
+				05B877F722C7B71B00F2521F /* AnimateText.swift */,
+				05B877F922C7B73200F2521F /* ScrollAims.swift */,
+			);
+			path = Examples;
+			sourceTree = "<group>";
+		};
+		4C78F3542142CE31005E964B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4C78F36D2142CF4E005E964B /* Tweener.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4CF9833D214318AC00F1C23E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4CF9833E214318AC00F1C23E /* bb8-head.pdf */,
+				4CF9833F214318AC00F1C23E /* card.pdf */,
+				4CF98340214318AC00F1C23E /* fire.pdf */,
+				4CF98341214318AC00F1C23E /* mars.pdf */,
+				4CF98342214318AC00F1C23E /* little-jupyter.pdf */,
+				4CF98343214318AC00F1C23E /* jupyter.pdf */,
+				4CF98344214318AC00F1C23E /* bee.pdf */,
+				4CF98345214318AC00F1C23E /* earth.pdf */,
+				4CF98346214318AC00F1C23E /* clouds1.pdf */,
+				4CF98347214318AC00F1C23E /* rocket.pdf */,
+				4CF98348214318AC00F1C23E /* sunny.pdf */,
+				4CF98349214318AC00F1C23E /* comet.pdf */,
+				4CF9834A214318AC00F1C23E /* eyepupil.pdf */,
+				4CF9834B214318AC00F1C23E /* clouds2.pdf */,
+				4CF9834C214318AC00F1C23E /* little-saturn.pdf */,
+				4CF9834D214318AC00F1C23E /* little-sun-fire.pdf */,
+				4CF9834E214318AC00F1C23E /* moon.pdf */,
+				4CF9834F214318AC00F1C23E /* clouds3.pdf */,
+				4CF98350214318AC00F1C23E /* little-sun.pdf */,
+				4CF98351214318AC00F1C23E /* flower.pdf */,
+				4CF98352214318AC00F1C23E /* ufo.pdf */,
+				4CF98353214318AC00F1C23E /* spaceman.pdf */,
+				4CF98354214318AC00F1C23E /* stars.pdf */,
+				4CF98355214318AC00F1C23E /* sand.pdf */,
+				4CF98356214318AC00F1C23E /* sun.pdf */,
+				4CF98357214318AC00F1C23E /* little-earth.pdf */,
+				4CF98358214318AC00F1C23E /* orbits-background.pdf */,
+				4CF98359214318AC00F1C23E /* dart.pdf */,
+				4CF9835A214318AC00F1C23E /* bb8-body.pdf */,
+				4CF9835B214318AC00F1C23E /* saturn.pdf */,
+			);
+			path = Resources;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4C78F3362142CDC2005E964B /* Examples */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C78F3492142CDC2005E964B /* Build configuration list for PBXNativeTarget "Examples" */;
+			buildPhases = (
+				4C78F3332142CDC2005E964B /* Sources */,
+				4C78F3342142CDC2005E964B /* Frameworks */,
+				4C78F3352142CDC2005E964B /* Resources */,
+				4C78F35D2142CE3A005E964B /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4C78F3712142CF4E005E964B /* PBXTargetDependency */,
+			);
+			name = Examples;
+			productName = Examples;
+			productReference = 4C78F3372142CDC2005E964B /* Examples.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4C78F32F2142CDC1005E964B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "Alejandro Ramirez Varela";
+				TargetAttributes = {
+					4C78F3362142CDC2005E964B = {
+						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1010;
+					};
+				};
+			};
+			buildConfigurationList = 4C78F3322142CDC1005E964B /* Build configuration list for PBXProject "Examples" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4C78F32E2142CDC1005E964B;
+			productRefGroup = 4C78F3382142CDC2005E964B /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 4C78F3542142CE31005E964B /* Products */;
+					ProjectRef = 4C78F3532142CE31005E964B /* SwiftTweener.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				4C78F3362142CDC2005E964B /* Examples */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		4C78F36D2142CF4E005E964B /* Tweener.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Tweener.framework;
+			remoteRef = 4C78F36C2142CF4E005E964B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4C78F3352142CDC2005E964B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CF9836D214318AC00F1C23E /* clouds3.pdf in Resources */,
+				4C78F3452142CDC2005E964B /* LaunchScreen.storyboard in Resources */,
+				4CF9835C214318AC00F1C23E /* bb8-head.pdf in Resources */,
+				4CF9835D214318AC00F1C23E /* card.pdf in Resources */,
+				4CF98376214318AC00F1C23E /* orbits-background.pdf in Resources */,
+				4CF98368214318AC00F1C23E /* eyepupil.pdf in Resources */,
+				4CF98363214318AC00F1C23E /* earth.pdf in Resources */,
+				4CF98372214318AC00F1C23E /* stars.pdf in Resources */,
+				4CF98375214318AC00F1C23E /* little-earth.pdf in Resources */,
+				4CF98370214318AC00F1C23E /* ufo.pdf in Resources */,
+				4CF98362214318AC00F1C23E /* bee.pdf in Resources */,
+				4C78F3422142CDC2005E964B /* Assets.xcassets in Resources */,
+				4CF9836B214318AC00F1C23E /* little-sun-fire.pdf in Resources */,
+				4CF98378214318AC00F1C23E /* bb8-body.pdf in Resources */,
+				4CF98365214318AC00F1C23E /* rocket.pdf in Resources */,
+				4CF98379214318AC00F1C23E /* saturn.pdf in Resources */,
+				4CF9836C214318AC00F1C23E /* moon.pdf in Resources */,
+				4CF98371214318AC00F1C23E /* spaceman.pdf in Resources */,
+				4CF98360214318AC00F1C23E /* little-jupyter.pdf in Resources */,
+				4CF9835E214318AC00F1C23E /* fire.pdf in Resources */,
+				4CF9836E214318AC00F1C23E /* little-sun.pdf in Resources */,
+				4CF98361214318AC00F1C23E /* jupyter.pdf in Resources */,
+				4CF9836A214318AC00F1C23E /* little-saturn.pdf in Resources */,
+				4CF98366214318AC00F1C23E /* sunny.pdf in Resources */,
+				0521167722D64A0C00806A5B /* LaunchScreen.png in Resources */,
+				4CF98364214318AC00F1C23E /* clouds1.pdf in Resources */,
+				4CF9835F214318AC00F1C23E /* mars.pdf in Resources */,
+				4CF98367214318AC00F1C23E /* comet.pdf in Resources */,
+				4CF98369214318AC00F1C23E /* clouds2.pdf in Resources */,
+				4CF98374214318AC00F1C23E /* sun.pdf in Resources */,
+				4CF98373214318AC00F1C23E /* sand.pdf in Resources */,
+				4CF9836F214318AC00F1C23E /* flower.pdf in Resources */,
+				4CF98377214318AC00F1C23E /* dart.pdf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4C78F3332142CDC2005E964B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05B877F822C7B71B00F2521F /* AnimateText.swift in Sources */,
+				0592B8BA22CABFA900F0842B /* ViewController.swift in Sources */,
+				05B877F622C7B70300F2521F /* ArcOrbits.swift in Sources */,
+				0521167522D6493500806A5B /* CustomEasing.swift in Sources */,
+				0572C21F22A2D30100F96A19 /* TweenHandlers.swift in Sources */,
+				05A7353822B45ADD00F34F32 /* SimpleTimeline.swift in Sources */,
+				0514812822A804E100D927DD /* CurveInspector.swift in Sources */,
+				05A7353622B45AC700F34F32 /* PauseTweens.swift in Sources */,
+				05B877F222C70AC700F2521F /* PathLoop.swift in Sources */,
+				0514812422A803E100D927DD /* EaseCurves.swift in Sources */,
+				0572C22122A2D31500F96A19 /* SimpleTween.swift in Sources */,
+				05B877F422C7B6EF00F2521F /* WindBlow.swift in Sources */,
+				0532C7C122A875E1005265E9 /* TouchPoint.swift in Sources */,
+				05295F5E22C1247300E02FFD /* TimelineBasic.swift in Sources */,
+				0548DB1822C7D66300B6F3F4 /* AnimateArcRadius.swift in Sources */,
+				0524F08522AEAA1100BC28AA /* ScrollTimeline.swift in Sources */,
+				0589AED222AF070E0093774D /* Transform3d.swift in Sources */,
+				4C78F33B2142CDC2005E964B /* AppDelegate.swift in Sources */,
+				05A620CA22A9445A005F7D3F /* DragView.swift in Sources */,
+				05B877FA22C7B73200F2521F /* ScrollAims.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4C78F3712142CF4E005E964B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Tweener;
+			targetProxy = 4C78F3702142CF4E005E964B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4C78F3432142CDC2005E964B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C78F3442142CDC2005E964B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4C78F3472142CDC2005E964B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4C78F3482142CDC2005E964B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4C78F34A2142CDC2005E964B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9WB3M6M662;
+				INFOPLIST_FILE = Examples/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Examples;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4C78F34B2142CDC2005E964B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9WB3M6M662;
+				INFOPLIST_FILE = Examples/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Examples;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4C78F3322142CDC1005E964B /* Build configuration list for PBXProject "Examples" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C78F3472142CDC2005E964B /* Debug */,
+				4C78F3482142CDC2005E964B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C78F3492142CDC2005E964B /* Build configuration list for PBXNativeTarget "Examples" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C78F34A2142CDC2005E964B /* Debug */,
+				4C78F34B2142CDC2005E964B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4C78F32F2142CDC1005E964B /* Project object */;
+}

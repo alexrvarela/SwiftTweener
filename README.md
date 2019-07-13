@@ -348,7 +348,7 @@ This library was created to give dynamism to UI elements, if you are looking to 
 
 ## Contributions
 
-This project has being migrated to Swift 5 with SwiftUI scope
+This project has being migrated to Swift 5 with Code documentation, Unit tests and SwiftUI in the scope.
 
 ## Authors
 

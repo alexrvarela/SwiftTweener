@@ -4,6 +4,8 @@ Easy to use animation engine for iOs, make more powerful and creative Apps.
 
 ![Logo](https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/tweener.gif)
 
+This project has rewritten in pure Swift from [CocoaTweener](https://github.com/alexrvarela/cocoatweener)
+
 ### Prerequisites
 
 * Xcode with IOs 10.0+ and swift 4.2
@@ -76,8 +78,8 @@ let myTween = Tween(target:square,
     duration:1.0,
     ease:Ease.outQuad
     keys:[\UIView.alpha:1.0,
-        \UIView.frame:CGRect(x:20.0, y:20.0, width:280.0, height:280.0),
-        \UIView.backgroundColor!:UIColor.blue
+          \UIView.frame:CGRect(x:20.0, y:20.0, width:280.0, height:280.0),
+          \UIView.backgroundColor!:UIColor.blue
 ])
 
 myTween.play()
@@ -346,7 +348,7 @@ This library was created to give dynamism to UI elements, if you are looking to 
 
 ## Contributions
 
-This project has being migrated to Swift 5
+This project has being migrated to Swift 5 with SwiftUI scope
 
 ## Authors
 
@@ -360,4 +362,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 * Based on [Robert Penner](http://robertpenner.com)  [Easing functions](http://robertpenner.com/easing/)
 * Based on [Tweener](https://github.com/zeh/tweener), AS3 Library by [Zeh Fernando](https://github.com/zeh), Nate Chatellier, Arthur Debert and Francis Turmel
-Ported by Alejandro Ramirez Varela on 2012 and released as open source in 2018
+* Ported by [Alejandro Ramirez Varela](https://github.com/alexrvarela) and released as open source in 2019

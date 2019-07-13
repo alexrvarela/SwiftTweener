@@ -440,6 +440,13 @@ public class TimelineInspector:UIView, TimelineObserver
         super.init(coder: aDecoder)
     }
     
+    //init with timeline
+    public convenience init(timeline:Timeline)
+    {
+        self.init()
+        self.timeline = timeline
+    }
+    
     override public func didMoveToSuperview() {
 
         if(superview != nil)

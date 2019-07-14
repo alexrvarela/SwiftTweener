@@ -70,7 +70,7 @@ myView.frame = CGRect(x:20.0, y:20.0, width:100.0, height:100.0)
 myView.backgroundColor = UIColor.red
 ```
 
-Create and add simple Tween:
+Create and add a simple Tween:
 
 ```swift
 

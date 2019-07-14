@@ -40,7 +40,8 @@ class AnimateText:UIView
         
         aim.from = randomText
         aim.to = changeText(oldText:randomText)
-        aim.target = label
+        aim.bind(target: label, keyPath: \UILabel.text!)
+//        aim.target = label
         
         //Create buttons
         let buttonLabels = ["lenght", "linear", "random"]

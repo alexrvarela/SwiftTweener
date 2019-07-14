@@ -15,11 +15,27 @@ public enum TransitionType
     case random
 }
 
+class AnyKeyPathWrapper{ public func update(string:String){} }
+
+class keyPathWrapper<T>:AnyKeyPathWrapper
+{
+    var target:T?
+    var keyPath:ReferenceWritableKeyPath<T,String>?
+    
+    convenience init(target:T, keyPath:ReferenceWritableKeyPath<T, String>)
+    {
+        self.init()
+        self.target = target
+        self.keyPath = keyPath
+    }
+    
+    override func update(string: String) { target![keyPath:keyPath!] = string }
+}
+
 public class StringAim
 {
-    //TODO:Add support for: UILabel, UITextField, UITextView, UIButton (Target & KeyPath) \UILabel.text
-    public var target:UILabel?//Optional
-//    public var keyPath:AnyKeyPath?//Optional
+    var wrapper:AnyKeyPathWrapper?
+    
     public var from:String = ""
     public var to:String = ""
     private var _interpolation:Double = 0.0
@@ -44,6 +60,21 @@ public class StringAim
     
     //Declare as public
     public init(){}
+    
+    public convenience init<T>(target:T, keyPath:ReferenceWritableKeyPath<T, String>){
+        self.init()
+        bind(target:target, keyPath:keyPath)
+    }
+    
+    /**
+     Binds target with keypath
+     - Parameter target:         Any object with a writable key path type String
+     - Parameter keyPath:        A writable key path type String to update.
+     */
+    public func bind<T>(target:T, keyPath:ReferenceWritableKeyPath<T, String>)
+    {
+        self.wrapper = keyPathWrapper(target:target, keyPath:keyPath)
+    }
     
     /// Linear, animates char code value.
     public func linear(interpolation:Double, from:String, to:String) -> String
@@ -153,16 +184,20 @@ public class StringAim
         if from == "" || to == "" {return}
 
         //Prevent target nil
-        if self.target == nil{return}
+        if self.wrapper == nil {return}
+        
+        var output = ""
         
         switch transitionType
         {
             case .lenght:
-                self.target!.text = length(interpolation:_interpolation, from:self.from, to:self.to)
+                output = length(interpolation:_interpolation, from:self.from, to:self.to)
             case .linear:
-                self.target!.text = linear(interpolation:_interpolation, from:self.from, to:self.to)
+                output = linear(interpolation:_interpolation, from:self.from, to:self.to)
             case .random:
-                self.target!.text = random(interpolation:_interpolation, from:self.from, to:self.to)   
+                output = random(interpolation:_interpolation, from:self.from, to:self.to)
         }
+        
+        self.wrapper?.update(string: output)
     }
 }

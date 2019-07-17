@@ -209,8 +209,10 @@ public class TweenVisualizer:UIView
         {
             //Draw Tween bars
             context.setFillColor(uiColor.cgColor)
-
-            let path:CGPath =  CGPathUtils.makeRoundRect(rect:CGRect(x:CGFloat(control.timeStart - Engine.currentTime) * scale,
+            
+            let x = CGFloat(control.state == .paused ? -control.timePaused : control.timeStart - Engine.currentTime) * scale
+            
+            let path:CGPath =  CGPathUtils.makeRoundRect(rect:CGRect(x:x,
                                                                      y:base_y,
                                                                      width:CGFloat(control.getTween().duration) * scale,
                                                                      height:barHeight),
@@ -227,7 +229,9 @@ public class TweenVisualizer:UIView
             //Draw Tween bars
             context.setFillColor(timelineColor.cgColor)
             
-            let path:CGPath =  CGPathUtils.makeRoundRect(rect:CGRect(x:CGFloat(timeline.timeStart - Engine.currentTime) * scale,
+            let x = CGFloat(timeline.state == .paused ? -timeline.timePaused : timeline.timeStart - Engine.currentTime) * scale
+
+            let path:CGPath =  CGPathUtils.makeRoundRect(rect:CGRect(x:x,
                                                                      y:base_y,
                                                                      width:CGFloat(timeline.duration) * scale,
                                                                      height:barHeight),

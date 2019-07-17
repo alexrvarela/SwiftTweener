@@ -53,7 +53,6 @@ public class PDFImageView : UIImageView
         }
     }
 
-    
     public convenience init()
     {
         self.init(frame: CGRect.zero)
@@ -104,5 +103,4 @@ public class PDFImageView : UIImageView
                                 height: self.image!.size.height)
         }
     }
-
 }

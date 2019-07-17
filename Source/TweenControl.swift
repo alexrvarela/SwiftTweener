@@ -143,7 +143,6 @@ class Control<T>: TweenControl
     //Remove specific keys only.
     override func remove<U>(_ keys:[PartialKeyPath<U>]) -> Int
     {
-//        print("Tween Remove keys")
         //Verify if is same object type.
         if U.self == T.self {
 

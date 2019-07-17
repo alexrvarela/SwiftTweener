@@ -26,6 +26,7 @@
 		054CAE8B229D816700057C58 /* RotationAim.swift in Headers */ = {isa = PBXBuildFile; fileRef = 054CAE7D229D6A4C00057C58 /* RotationAim.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		054CAE8C229D816700057C58 /* StringAim.swift in Headers */ = {isa = PBXBuildFile; fileRef = 054CAE7F229D6A6000057C58 /* StringAim.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		054CAE8D229D816700057C58 /* TimelineInspector.swift in Headers */ = {isa = PBXBuildFile; fileRef = 054CAE81229D6BE000057C58 /* TimelineInspector.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		05616DC422DE1EAC00C509FB /* CGPathUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05616DC322DE1EAB00C509FB /* CGPathUtils.swift */; };
 		0588F38F221DBA58002758CC /* TweenValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0588F38E221DBA58002758CC /* TweenValues.swift */; };
 		0588F391221DBE71002758CC /* Tween.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0588F390221DBE71002758CC /* Tween.swift */; };
 		4C78F3672142CF0F005E964B /* Tweener.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C78F3652142CF0F005E964B /* Tweener.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -48,6 +49,7 @@
 		054CAE7D229D6A4C00057C58 /* RotationAim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationAim.swift; sourceTree = "<group>"; };
 		054CAE7F229D6A6000057C58 /* StringAim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringAim.swift; sourceTree = "<group>"; };
 		054CAE81229D6BE000057C58 /* TimelineInspector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineInspector.swift; sourceTree = "<group>"; };
+		05616DC322DE1EAB00C509FB /* CGPathUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPathUtils.swift; sourceTree = "<group>"; };
 		0588F38E221DBA58002758CC /* TweenValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweenValues.swift; sourceTree = "<group>"; };
 		0588F390221DBE71002758CC /* Tween.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tween.swift; sourceTree = "<group>"; };
 		4C78F3132142CBB8005E964B /* PDFImageRender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFImageRender.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				054CAE7F229D6A6000057C58 /* StringAim.swift */,
 				054CAE81229D6BE000057C58 /* TimelineInspector.swift */,
 				0538D2E722C9AA0500C92316 /* TweenVisualizer.swift */,
+				05616DC322DE1EAB00C509FB /* CGPathUtils.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 				054CAE82229D6BE000057C58 /* TimelineInspector.swift in Sources */,
 				054CAE7C229D6A3B00057C58 /* PathAim.swift in Sources */,
 				4C78F3792142DB4E005E964B /* Tweener.swift in Sources */,
+				05616DC422DE1EAC00C509FB /* CGPathUtils.swift in Sources */,
 				4C78F37A2142DB4E005E964B /* PDFImageRender.swift in Sources */,
 				054CAE80229D6A6000057C58 /* StringAim.swift in Sources */,
 				4C78F37B2142DB4E005E964B /* PDFImageView.swift in Sources */,

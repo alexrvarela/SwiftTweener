@@ -92,6 +92,7 @@ struct Engine
 import Foundation
 
 //TODO: Documentation
+
 //MARK: Add Tweens to engine
 public func add<T>(_ tween:Tween<T>)
 {
@@ -132,13 +133,13 @@ public func add(_ timeline:Timeline, delay:Double)
     }
 }
 
-public func addVisualizer(_ visualizer: inout TweenVisualizer)
+public func addVisualizer(_ visualizer: TweenVisualizer)
 {
     //Add to update list
     TweenList.visualizers.append(visualizer)
 }
 
-public func removeVisualizer(_ visualizer: inout TweenVisualizer)
+public func removeVisualizer(_ visualizer: TweenVisualizer)
 {
     //Remove from update list
     TweenList.remove(visualizer)

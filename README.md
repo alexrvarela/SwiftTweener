@@ -100,7 +100,7 @@ myTween.onUpdate = {
 }
 
 myTween.onComplete = {
-    myView.backgroundColor = UIColor.red
+    self.backgroundColor = UIColor.red
 }
 
 myTween.onOverwrite = {

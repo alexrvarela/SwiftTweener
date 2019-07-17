@@ -83,15 +83,6 @@ public class Tween<T>: AnyTween
     
     public override func play(){Tweener.add(self)}
     
-    //TODO:deprecate?
-    public override func addTo(timeline:Timeline)//tween:Tween<T>
-    {
-        //TODO:move to Timeline add
-//        let control = Control(self, time:self.delay / Engine.timeScale)
-//        timeline.controls.append(control)
-        timeline.add(self)
-    }
-    
     func setKeys(_ keys:[PartialKeyPath<T> : Any])
     {
         var validKeys : [PartialKeyPath<T> : TweenValues] = [:]

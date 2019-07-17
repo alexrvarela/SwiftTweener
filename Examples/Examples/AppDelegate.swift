@@ -27,6 +27,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window.rootViewController = viewController
         window.makeKeyAndVisible()
         
+        //Create tween vizualizer
+        let visualizer = TweenVisualizer()
+        Tweener.addVisualizer(visualizer)
+        viewController.view.addSubview(visualizer)
+        
         let buttonWidth = UIScreen.main.bounds.size.width / 2.0 - 1.0
         //Create next button
         let prevButton:UIButton = UIButton(frame:CGRect(x:0.0,

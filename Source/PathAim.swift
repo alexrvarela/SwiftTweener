@@ -59,12 +59,17 @@ public class PathAim : RotationAim{
     private var _orientToPath:Bool = false
     //TODO:onUpdate handler
 
-    //TODO:
-//    public convenience init(cgPath:CGPath)
-//    {
-//        self.init()
-//        self.cgPath = cgPath
-//    }
+    public convenience init(cgPath:CGPath)
+    {
+        self.init()
+        self.cgPath = cgPath
+    }
+    
+    public convenience init(path:UIBezierPath)
+    {
+        self.init()
+        self.path = path
+    }
     
     //TODO:
     func append(points:Array<CGPoint>)
@@ -77,7 +82,7 @@ public class PathAim : RotationAim{
     {
         set {
             _cgPath = newValue
-            //TODO: Keep _points array, add adit path functionality, generate CGPath from pont array and return.
+            //TODO: Keep _points array, add edit path functionality, generate CGPath from pont array and return.
             _points = _cgPath!.getPoints()//replace
             update()
         }

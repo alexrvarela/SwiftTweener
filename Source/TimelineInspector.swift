@@ -46,7 +46,6 @@ public class TimelineInspector:UIView, TimelineObserver
     
     var contentOffset:CGPoint = CGPoint.zero
     
-    
     func makePlayIcon(origin:CGPoint) -> UIBezierPath
     {
         let path = UIBezierPath()

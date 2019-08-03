@@ -23,21 +23,30 @@ public class Timeline
 {
     //public vars
     public var playMode : TimelinePlayMode  = .once{
-        didSet{observer?.valueChanged(\Timeline.playMode)}}
+        didSet{
+            //Update?
+            observer?.valueChanged(\Timeline.playMode)
+        }}
     
     public var reverse:Bool = false{
+        
         didSet
         {
-            //TODO:Replicate in CocoaTweener
-            //TODO:Bugfix, reset tween states on reverse.
-            
-            //Calculate timestart difference
-            let diff = (self.timeCurrent - self.timeComplete) + (self.timeCurrent - self.timeStart)
-            self.timeStart = self.timeStart + (self.reverse ? diff : -diff)
-            //Update time complete
-            self.timeComplete = self.timeStart + self.duration
-            //Call to observer
-            observer?.valueChanged(\Timeline.reverse)
+            //Make sure if value has changed
+            if self.reverse != oldValue
+            {
+                //TODO:Replicate in CocoaTweener
+                if TweenList.isAdded(self) && self.timeCurrent > self.timeStart && self.timeCurrent < self.timeComplete
+                {
+                    //Calculate timestart difference
+                    let diff = (self.timeCurrent - self.timeComplete) + (self.timeCurrent - self.timeStart)
+                    self.timeStart = self.timeStart + (self.reverse ? diff : -diff)
+                    //Update time complete
+                    self.timeComplete = self.timeStart + self.duration
+                }
+                //Call to observer
+                observer?.valueChanged(\Timeline.reverse)
+            }
         }
     }
     
@@ -78,7 +87,7 @@ public class Timeline
             Tweener.add(self, delay:delay)
         }else
         {
-            if self.state == .paused {resume()}
+            if self.state == .paused { resume() }
         }
     }
     
@@ -92,7 +101,7 @@ public class Timeline
     {
         if TweenList.isAdded(self) || self.state == .paused
         {
-            //Timeline is n't added or paused, set curret time statically.
+            //Timeline isn't added or paused, set curret time statically.
             setTime(0.0)
         }
         else
@@ -102,7 +111,8 @@ public class Timeline
             play()
         }
     }
-    //TODO:
+
+    //Set timeline time
     public func setTime(_ currentTime:Double)
     {
         var time = currentTime
@@ -114,7 +124,7 @@ public class Timeline
         if self.timeStart > 0.0 {self.timeStart = 0.0}
         
         //Update all tweens
-        for control in controls{control.update(time)}
+        for control in controls {control.update(time)}
         
         //Pause timeline
         if self.state != .paused {self.state = .paused}
@@ -142,17 +152,13 @@ public class Timeline
     {
         //Set state over to update and remove from engine.
         self.state = .over
-        //TODO:Remove from list directly instead
-        //TweenList.timelines
     }
     
     func update()
     {
         //Caculate timeline time
         let time:Double = Engine.currentTime - self.timeStart
-    
-        //print("timeline time:\(time)")
-        
+
         //Update all timeline Tweens
         for control in controls
         {
@@ -164,7 +170,7 @@ public class Timeline
             }else
             {
                 //Update values directly, ignore Tween handlers if timeline direction is reversed
-                //TODO:Enable hadlers by calculate reverse ranges
+                //TODO:Enable hadlers calculating reverse ranges
                 control.update(self.duration - time)
             }
         }

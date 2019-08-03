@@ -19,7 +19,7 @@ struct TweenList
     static var controls: Array<TweenControl> = []
     static var timelines: Array<Timeline> = []
     static var visualizers: Array<TweenVisualizer> = []
-    
+
     static func isAdded(_ timeline:Timeline) -> Bool
     {
         if timelines.contains(where:{ObjectIdentifier($0).hashValue == ObjectIdentifier(timeline).hashValue}) {return true}
@@ -59,7 +59,7 @@ struct Engine
     static var started : Bool = false
     static var isTweening : Bool = false
     
-    //TODO: move public seteable properties
+    //TODO: Move to public seteable properties
     static var timeScale: Double = 1.0
     
     static func start()
@@ -177,8 +177,6 @@ func removeTweens<T>(target:T, keys:[PartialKeyPath<T>], list: inout Array<Tween
         }
     }
 }
-
-//TODO:duplicated code, add remove by index?
 
 //Remove by time.
 //TODO:CocoaTweener replicate code.
@@ -310,7 +308,7 @@ func affectedTweens<T>(target:T, keys:[PartialKeyPath<T>],  list: inout Array<Tw
                 
             } else if control.contains(keys) > 0 //Search by keypaths
             {
-                //TODO:Don't remove create internal list with affected keys.
+                //TODO:Don't remove, create internal list with affected keys.
                 
                 //Split
                 let split = control.split(keys)
@@ -350,14 +348,9 @@ func update()
     
     //Update Timelines
     updateTimelines()
-    
+
+    //Update Visualizers
     updateVisualizers()
-    
-    //TODO:stop timer?
-//    if //
-//    {
-//        Engine.stop()
-//    }
 }
 
 func updateTweens(_ list: inout Array<TweenControl>, time:Double)
@@ -492,19 +485,18 @@ func updateTimelines()
                         {
                             if timeline.playMode == .loop
                             {
-                                //TODO: handle loop count
+                                //TODO: Handle loop count
                                 timeline.loopCount = timeline.loopCount + 1
                             }else
                             {
                                 timeline.reverse = !timeline.reverse
                             }
                             
-                            //Play mode isn't once, set state as intial.
+                            //Play mode isn't .once, set state as intial.
                             timeline.state = .initial
                             //Reset time to play again!.
                             timeline.reset(0.0)
                         }
-                        
                         
                     }else
                     {

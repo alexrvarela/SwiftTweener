@@ -192,7 +192,7 @@ func removeTweensByTime<T>(target:T, keys:[PartialKeyPath<T>:Any], timeStart:Dou
         if (control.isTarget(target))
         {
             // Check if affects time
-            if (timeComplete > control.timeStart || timeStart < control.timeComplete)//TODO:Bugfix CocoaTweener use ||
+            if (timeComplete > control.timeStart && timeStart < control.timeComplete)
             {
                 // Remove keys and remove Tween if all keys are removed.
                 if control.remove(Array(keys.keys)) == 0
@@ -405,7 +405,7 @@ func updateTween(_ control:TweenControl, time:Double) -> Bool
         {
             control.state = .started
             
-            //refresh properties!
+            //Refresh properties!
             if (!control.isTimelineTween && tween.delay > 0.0)
             {
                 //[tweenControl setupController]//TODO:???

@@ -18,6 +18,7 @@ class AnimateArcRadius:UIView
     let aim:ArcAim = ArcAim()
     
     var isClosed:Bool = false
+    var canSleep:Bool = false
     var opennedTop:CGRect = CGRect.zero
     var opennedBottom:CGRect = CGRect.zero
     var closedTop:CGRect = CGRect.zero
@@ -115,6 +116,9 @@ class AnimateArcRadius:UIView
     
     func animateLips(top:CGRect, bottom:CGRect, duration:Double)
     {
+        //Remove delayed
+        Tweener.removeTweens(target: eyeLipTop)
+        
         //Animate top
         Tween(target: eyeLipTop, duration: duration, ease:Ease.outQuad, keys: [\UIView.frame : top]).play()
         
@@ -124,6 +128,8 @@ class AnimateArcRadius:UIView
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
     {
+        canSleep = false
+        
         let touch:UITouch = event!.allTouches!.first!
 
         let distance = BasicMath.length(start: touch.location(in: self), end: CGPoint(x:frame.size.width / 2.0, y:frame.size.height / 2.0))
@@ -175,13 +181,18 @@ class AnimateArcRadius:UIView
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?)
     {
+        canSleep = true
         if isClosed {openEye()}
-        delaySleep()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
+            self.delaySleep()
+        })
         animateRadius(radius:0.0)
     }
     
     func delaySleep()
     {
-        Tween(target: eyeLipTop, duration: 0.25, ease:Ease.outQuad, delay:1.0, keys: [\UIView.frame : closedTop]).play()
+        if canSleep {
+            Tween(target: eyeLipTop, duration: 0.25, ease:Ease.outQuad, keys: [\UIView.frame : closedTop]).play()
+        }
     }
 }

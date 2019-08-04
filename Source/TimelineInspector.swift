@@ -967,9 +967,9 @@ public class TimelineInspector:UIView, TimelineObserver
     func updateTimeLabel()
     {
         let time = self.timeline.timeCurrent - self.timeline.timeStart
-        let seconds = time.truncatingRemainder(dividingBy: 60)
-        let milliseconds = Int((time * 100) - seconds * 100)
-        self.timeLabel.text = "\(Double(round(100*Double(seconds)))):\(Double(round(100*Double(milliseconds))))"
+        let seconds = Int(time.truncatingRemainder(dividingBy: 60))
+        let milliseconds = (time - Double(seconds))  * 100
+        self.timeLabel.text = String(format:"%02i:%02i", Int(seconds), Int(milliseconds))
     }
     
     func updateTimeLocation()

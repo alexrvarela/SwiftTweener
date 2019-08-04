@@ -403,7 +403,6 @@ func updateTween(_ control:TweenControl, time:Double) -> Bool
         
         if control.state != .started && control.state != .over
         {
-//            print("Tween started")
             control.state = .started
             
             //refresh properties!

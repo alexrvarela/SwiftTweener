@@ -44,7 +44,7 @@ class SimpleTimeline:UIView
         
         //Add a tween to timeline
         timeline.add( Tween(target:circle,
-                                duration:1.5 * 2,
+                                duration:1.5,
                                 ease:Ease.outBounce,
                                 keys:[\UIView.frame : newFrame]) )
         

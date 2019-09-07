@@ -10,28 +10,23 @@ import Foundation
 
 public class TweenVisualizer:UIView
 {
+    //Constants
     let TIME_BAR_HEIGHT:CGFloat = 14.0
-    let BLACK_ALPHA = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.5)
-    let LIGHT_ALPHA = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.5)
+    let uiColor:UIColor = UIColor(red: 0.0, green: 0.0, blue: 0.75, alpha: 1.0)
+    let DARK_ALPHA = UIColor(red: 0.0, green: 0.0, blue: 0.5, alpha: 0.5)
+    let LIGHT_ALPHA = UIColor(red: 0.5, green: 0.5, blue: 1.0, alpha: 0.5)
+    
+    //Variables
     var resize = false
-    
-    public var barHeight:CGFloat = 3.0 {didSet{setNeedsDisplay()}}
-    public var uiColor:UIColor = UIColor(red:116.0 / 255.0,
-                                         green:244.0 / 255.0,
-                                         blue:234.0 / 255.0,
-                                         alpha:1.0)
-    {didSet {setNeedsDisplay()}}
-    
-    public var timelineColor:UIColor = UIColor(red:255.0 / 255.0,
-                                               green:119.0 / 255.0,
-                                               blue:208.0 / 255.0,
-                                               alpha:1.0)
-    {didSet {setNeedsDisplay()}}
-    
     var scale:CGFloat = 10.0
     var backupScale:CGFloat = 1.0
     var backupFrame:CGRect = CGRect.zero
-
+    //Public
+    public var barHeight:CGFloat = 3.0 {didSet{setNeedsDisplay()}}
+    public var tweenColor:UIColor = UIColor.cyan {didSet {setNeedsDisplay()}}
+    public var timelineColor:UIColor = UIColor.magenta {didSet {setNeedsDisplay()}}
+    
+    
     public init() {
 
         let frame = CGRect(x:10.0,
@@ -132,7 +127,7 @@ public class TweenVisualizer:UIView
         
         //Draw Time Bar
         context.saveGState()
-        context.setFillColor(UIColor.black.cgColor)
+        context.setFillColor(uiColor.cgColor)
         context.fill(CGRect(x:0.0,
                             y:0.0,
                             width:self.frame.size.width,
@@ -151,7 +146,7 @@ public class TweenVisualizer:UIView
         
         context.saveGState()
         //Set fill color
-        context.setFillColor(BLACK_ALPHA.cgColor)
+        context.setFillColor(DARK_ALPHA.cgColor)
   
         //Draw right-half frame
         context.fill(CGRect(x:0.0,
@@ -163,11 +158,12 @@ public class TweenVisualizer:UIView
         
         context.saveGState()
 
-        context.setFillColor(BLACK_ALPHA.cgColor)
-        
+        //TODO:Make energy efficient
         //Draw lines
         for indexSecond in 0 ... steps + 1
         {
+            context.setFillColor(DARK_ALPHA.cgColor)
+            
             //Draw positive line
             context.fill(CGRect(x:scale * CGFloat(indexSecond),
                                 y:TIME_BAR_HEIGHT,
@@ -179,22 +175,24 @@ public class TweenVisualizer:UIView
                                 y:TIME_BAR_HEIGHT,
                                 width:1.0,
                                 height:frame.size.height - TIME_BAR_HEIGHT))
+            
+            //Fill
+            context.setFillColor(UIColor.white.cgColor)
+
+            //Get Text path
+            var textPath = CGPathUtils.getFontPath(string:"\(indexSecond)", fontName:"Menlo-Regular", fontSize:9.0)
+            
+            //Add
+            context.addPath(CGPathUtils.translatePath(path:CGPathUtils.flipPathVertically(path:textPath), x:scale * CGFloat(indexSecond), y:0.0))
+            context.fillPath()
+            
+            //Get Text path
+            textPath = CGPathUtils.getFontPath(string:"-\(indexSecond)", fontName:"Menlo-Regular", fontSize:9.0)
+            
+            //Add
+            context.addPath(CGPathUtils.translatePath(path:CGPathUtils.flipPathVertically(path:textPath), x:-(scale * CGFloat(indexSecond)), y:0.0))
+            context.fillPath()
         }
-        
-        /*/
-         
-         //TODO:Display seconds
-         
-         //Text paths
-         let textPath = CGPathUtils.getFontPath(string:"\(indexSecond)", fontSize:9.0)
-         //TODO: center path "x", Bugfix: remove undesired frame.
-         let transformTextPath = CGPathUtils.flipPathVertically(path:textPath)
-         //Add
-         context.addPath(transformTextPath)
-         //Fill
-         context.setFillColor(uiColor.cgColor)
-         context.fillPath()
-         */
         
         context.restoreGState()
         
@@ -208,7 +206,7 @@ public class TweenVisualizer:UIView
         for control in TweenList.controls
         {
             //Draw Tween bars
-            context.setFillColor(uiColor.cgColor)
+            context.setFillColor(tweenColor.cgColor)
             
             let x = CGFloat(control.state == .paused ? -control.timePaused : control.timeStart - Engine.currentTime) * scale
             
@@ -247,7 +245,7 @@ public class TweenVisualizer:UIView
 
         context.saveGState()
         //Set fill color
-        context.setFillColor(BLACK_ALPHA.cgColor)
+        context.setFillColor(DARK_ALPHA.cgColor)
         
         //Draw left-half frame
         context.fill(CGRect(x:-(frame.size.width / 2.0),

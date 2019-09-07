@@ -98,10 +98,14 @@ public func add<T>(_ tween:Tween<T>)
 {
     let control = Control(tween, time:Engine.currentTime + tween.delay)
     
-    //Remove other tweenings that occur at the same time
     if tween.replaceTweens
     {
-        Tweener.removeTweensByTime(target:tween.target,
+        //Remove twens by target and keyPaths
+        removeTweens(target: tween.target, keys:Array(tween.keys.keys))
+    }else
+    {
+        //Remove tweens that occur at the same time.
+        removeTweensByTime(target:tween.target,
                                    keys:tween.keys,
                                    timeStart:control.timeStart,
                                    timeComplete:control.timeComplete,

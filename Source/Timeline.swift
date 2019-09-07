@@ -191,8 +191,9 @@ public class Timeline
         //Reset each tween
         for control in self.controls
         {
-            //TODO:reset pass time arg 0.0
             control.reset()
+            //Set start value
+            control.update(reverse ? duration : 0.0)
         }
     }
     

@@ -8,56 +8,59 @@
 
 import Foundation
 public class CGPathUtils{
-    
-    //TODO:Bugfix, remove odd frame
-    public static func getFontPath(string:String, fontSize:CGFloat) -> CGPath
+
+    public static func getFontPath(string:String, fontName:String, fontSize:CGFloat) -> CGPath
     {
-        let font = UIFont.init(name:"Menlo-Regular",size:12.0)
-        let letters = CGMutablePath.init()
+        let letters = CGMutablePath()
+        let ctFont = CTFontCreateWithName(fontName as CFString, fontSize, nil)
+        let attrString = NSAttributedString(string: string, attributes: [kCTFontAttributeName as NSAttributedString.Key : ctFont])
+        let line = CTLineCreateWithAttributedString(attrString)
+        let runArray = CTLineGetGlyphRuns(line)
         
-        let ctFont:CTFont = CTFontCreateWithName(font!.fontName as CFString, font!.pointSize, nil)
-        
-        let attrs : [NSAttributedString.Key : Any] = [kCTFontAttributeName as NSAttributedString.Key:ctFont]
-        let attrString:NSAttributedString = NSAttributedString(string: string, attributes:attrs)
-        let line:CTLine =  CTLineCreateWithAttributedString(attrString)
-        let runArray:CFArray = CTLineGetGlyphRuns(line)
-        let arrayCount = CFArrayGetCount(runArray)
-        
-        for runIndex in 0 ... arrayCount - 1
+        for runIndex in 0 ..< CFArrayGetCount(runArray)
         {
-            let ctRun:CTRun = unsafeBitCast(CFArrayGetValueAtIndex(runArray, runIndex), to: CTRun.self)
-            let key = unsafeBitCast(kCTFontAttributeName, to: UnsafeRawPointer.self)
-            let ctFont:CTFont = unsafeBitCast(CFDictionaryGetValue(CTRunGetAttributes(ctRun),key), to: CTFont.self)
+            let ctRun = unsafeBitCast(CFArrayGetValueAtIndex(runArray, runIndex), to: CTRun.self)
+            let dictRef = CTRunGetAttributes(ctRun)
+            let dict = dictRef as NSDictionary
+            let runFont = dict[kCTFontAttributeName as String] as! CTFont
             
-            for runGlyphIndex in 0 ... CTRunGetGlyphCount(ctRun)
+            for runGlyphIndex in 0 ..< CTRunGetGlyphCount(ctRun)
             {
                 let thisGlyphRange = CFRangeMake(runGlyphIndex, 1)
-                var glyph:CGGlyph = CGGlyph()
-                var position:CGPoint = CGPoint()
+                var glyph = CGGlyph()
+                var position = CGPoint.zero
                 
                 CTRunGetGlyphs(ctRun, thisGlyphRange, &glyph)
                 CTRunGetPositions(ctRun, thisGlyphRange, &position)
                 
-                let letter:CGPath = CTFontCreatePathForGlyph(ctFont, glyph, nil)!
-                let transform:CGAffineTransform = CGAffineTransform(translationX: position.x, y: position.y)
-                letters.addPath(letter, transform:transform)
+                let letter = CTFontCreatePathForGlyph(runFont, glyph, nil)
+                let transform = CGAffineTransform(translationX: position.x, y: position.y)
+                if let letter = letter {letters.addPath(letter, transform: transform)}
             }
         }
         
         return letters
     }
     
-    
     public static func flipPathVertically(path:CGPath) -> CGPath
     {
         let boundingBox = path.boundingBox
         let transformPath = CGMutablePath()
-        let scale = CGAffineTransform(scaleX: 1.0, y: -1.0)//flip CGPath vertically
+        let scale = CGAffineTransform(scaleX: 1.0, y: -1.0)
         transformPath.addPath(path, transform: scale)
         
         let translatePath = CGMutablePath()
-        let translate = CGAffineTransform(translationX: 0.0, y: boundingBox.size.height)//translate to position
+        let translate = CGAffineTransform(translationX: 0.0, y: boundingBox.size.height)
         translatePath.addPath(transformPath, transform: translate)
+        
+        return translatePath
+    }
+    
+    public static func translatePath(path:CGPath, x:CGFloat, y:CGFloat) -> CGPath
+    {
+        let translatePath = CGMutablePath()
+        let translate = CGAffineTransform(translationX:x, y:y)
+        translatePath.addPath(path, transform: translate)
         
         return translatePath
     }

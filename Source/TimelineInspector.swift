@@ -525,7 +525,7 @@ public class TimelineInspector:UIView, TimelineObserver
         for indexSecond in 0 ... steps + 1
         {
             //Text paths
-            let textPath = CGPathUtils.getFontPath(string:"\(indexSecond)", fontSize:12.0)
+            let textPath = CGPathUtils.getFontPath(string:"\(indexSecond)", fontName:"Menlo-Regular", fontSize:12.0)
             let transformTextPath = CGPathUtils.flipPathVertically(path:textPath)
          
             //Translate

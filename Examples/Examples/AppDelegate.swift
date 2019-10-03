@@ -9,6 +9,13 @@
 import UIKit
 import Tweener
 
+//Declare FrozenProtocol to pause or remove tweens fro samples.
+
+protocol FreezeProtocol {
+    func freeze()
+    func warm()
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
@@ -104,13 +111,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             var nFrame = self.container.frame
             nFrame.origin.x = -(CGFloat(newValue) * w)
             
-            //TODO:Freeze pages
+            //Freeze page
+            if let pageCurrent = container.subviews[_pageIndex] as? FreezeProtocol{ pageCurrent.freeze() }
             
+            //Warm page
+            if let pageNext = container.subviews[newValue] as? FreezeProtocol{ pageNext.warm() }
+            
+            //Animate container x position
             Tween(target:self.container,
                   duration:0.5,
                   ease:Ease.outCubic,
                   keys:[\UIView.frame:nFrame]).play()
             
+            //Update page index
             _pageIndex = newValue
             
         }

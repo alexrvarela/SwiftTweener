@@ -180,17 +180,17 @@ public class TweenVisualizer:UIView
             context.setFillColor(UIColor.white.cgColor)
 
             //Get Text path
-            var textPath = CGPathUtils.getFontPath(string:"\(indexSecond)", fontName:"Menlo-Regular", fontSize:9.0)
+            var textPath = CGPathUtils.getFontPath(string:"\(indexSecond)", fontName:"Menlo-Regular", fontSize:5.0)
             
             //Add
-            context.addPath(CGPathUtils.translatePath(path:CGPathUtils.flipPathVertically(path:textPath), x:scale * CGFloat(indexSecond), y:0.0))
+            context.addPath(CGPathUtils.translatePath(path:CGPathUtils.flipPathVertically(path:textPath), x:scale * CGFloat(indexSecond), y:5.0))
             context.fillPath()
             
             //Get Text path
-            textPath = CGPathUtils.getFontPath(string:"-\(indexSecond)", fontName:"Menlo-Regular", fontSize:9.0)
+            textPath = CGPathUtils.getFontPath(string:"-\(indexSecond)", fontName:"Menlo-Regular", fontSize:5.0)
             
             //Add
-            context.addPath(CGPathUtils.translatePath(path:CGPathUtils.flipPathVertically(path:textPath), x:-(scale * CGFloat(indexSecond)), y:0.0))
+            context.addPath(CGPathUtils.translatePath(path:CGPathUtils.flipPathVertically(path:textPath), x:-(scale * CGFloat(indexSecond)), y:5.0))
             context.fillPath()
         }
         

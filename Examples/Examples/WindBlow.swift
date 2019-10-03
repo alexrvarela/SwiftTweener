@@ -9,7 +9,7 @@
 import UIKit
 import Tweener
 
-class WindBlow:UIView
+class WindBlow:UIView, FreezeProtocol
 {
     let dart:PDFImageView = PDFImageView(bundlename: "dart")
     let rotation:RotationAim = RotationAim()
@@ -55,7 +55,12 @@ class WindBlow:UIView
         addSubview(dart)
         
         rotation.target = dart
+        
+        //Start animation
         animate()
+        
+        //Freeze
+        freeze()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -76,4 +81,13 @@ class WindBlow:UIView
         }).play()
     }
     
+    func freeze()
+    {
+        Tweener.pauseTweens(target: rotation)
+    }
+    
+    func warm()
+    {
+        Tweener.resumeTweens(target: rotation)
+    }
 }

@@ -9,7 +9,7 @@
 import UIKit
 import Tweener
 
-class TouchPoint:UIView
+class TouchPoint:UIView, FreezeProtocol
 {
     override init(frame: CGRect)
     {
@@ -65,6 +65,22 @@ class TouchPoint:UIView
                   ease:Ease.outElastic,
                   delay:0.025 * Double(subviews.count - index),
                   keys:[\UIView.center:p]).play()
+        }
+    }
+    
+    func freeze()
+    {
+        for index in 0 ... subviews.count - 1
+        {
+            Tweener.pauseTweens(target: subviews[index])
+        }
+    }
+    
+    func warm()
+    {
+        for index in 0 ... subviews.count - 1
+        {
+            Tweener.resumeTweens(target: subviews[index])
         }
     }
 }

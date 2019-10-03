@@ -9,11 +9,12 @@
 import UIKit
 import Tweener
 
-class AnimateText:UIView
+class AnimateText:UIView, FreezeProtocol
 {
     let label:UILabel = UILabel()
     let words:Array<String> = ["Hello", "Hola", "Bonjour", "Ciao", "Olá", "Hallo", "Ohayo", "Konnichiwa", "Ni hau", "Hej", "Guten tag", "Namaste", "Salaam", "Merhaba", "Szia"]
     let aim:StringAim = StringAim()
+    var frozen = false
     
     override init(frame: CGRect)
     {
@@ -67,6 +68,9 @@ class AnimateText:UIView
         
         //Start animating
         swapText()
+        
+        //Freeze
+        freeze()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -75,6 +79,8 @@ class AnimateText:UIView
     
     func swapText()
     {
+        if frozen { return }
+        
         aim.from = aim.to
         aim.to = changeText(oldText:aim.to)
         aim.interpolation = 0.0
@@ -114,4 +120,16 @@ class AnimateText:UIView
     @objc func lenght(){aim.transitionType = .lenght}
     @objc func linear(){aim.transitionType = .linear}
     @objc func random(){aim.transitionType = .random}
+    
+    func freeze()
+    {
+        Tweener.removeTweens(target: aim)
+        frozen = true
+    }
+    
+    func warm()
+    {
+        frozen = false
+        swapText()
+    }
 }

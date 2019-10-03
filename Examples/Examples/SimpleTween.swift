@@ -9,7 +9,7 @@
 import UIKit
 import Tweener
 
-class SimpleTween:UIView
+class SimpleTween:UIView, FreezeProtocol
 {
     let square:UIView = UIView(frame:CGRect(x:20.0, y:20.0, width:100.0, height:100.0))
     let button:UIButton = UIButton()
@@ -60,5 +60,15 @@ class SimpleTween:UIView
         }
         
         tween.play()
+    }
+    
+    func freeze()
+    {
+        Tweener.pauseTweens(target: square)
+    }
+    
+    func warm()
+    {
+        Tweener.resumeTweens(target: square)
     }
 }

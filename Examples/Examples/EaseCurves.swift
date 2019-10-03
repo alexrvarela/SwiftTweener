@@ -9,8 +9,8 @@
 import UIKit
 import Tweener
 
-class EaseCurves: UIView{
-    
+class EaseCurves: UIView
+{    
     let scrollview:UIScrollView = UIScrollView()
     let easeSelector:UIScrollView = UIScrollView()
     let selectorContainer:UIView = UIView()

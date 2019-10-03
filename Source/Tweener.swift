@@ -354,7 +354,7 @@ func update()
     updateTimelines()
 
     //Update Visualizers
-    updateVisualizers()
+    if TweenList.controls.count > 0 || TweenList.timelines.count > 0 { updateVisualizers() }
 }
 
 func updateTweens(_ list: inout Array<TweenControl>, time:Double)

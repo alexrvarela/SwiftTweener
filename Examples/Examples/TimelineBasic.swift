@@ -12,7 +12,7 @@ import UIKit
 import Tweener
 
 
-class TimelineBasic:UIView
+class TimelineBasic:UIView, FreezeProtocol
 {
     let asset1 = UIView(frame: CGRect(x:0.0, y:20.0 + 75.0, width:50.0, height:50.0))
     let asset2 = UIView(frame: CGRect(x:0.0, y:20.0 + 75.0 * 2, width:50.0, height:50.0))
@@ -117,6 +117,8 @@ class TimelineBasic:UIView
         inspector.timeline = timeline
         addSubview(inspector)
         
+        //Freeze
+        freeze()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -143,4 +145,15 @@ class TimelineBasic:UIView
         
         return path
     }
+    
+    func freeze()
+    {
+        timeline.pause()
+    }
+    
+    func warm()
+    {
+        timeline.play()
+    }
+    
 }

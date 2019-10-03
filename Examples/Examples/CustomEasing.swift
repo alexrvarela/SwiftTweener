@@ -18,8 +18,8 @@ extension Ease{
     }
 }
 
-class CustomEasing: UIView {
-
+class CustomEasing: UIView
+{
     //Asset
     override init(frame: CGRect){
         super.init(frame: frame)
@@ -37,5 +37,5 @@ class CustomEasing: UIView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
 }

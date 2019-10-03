@@ -9,7 +9,8 @@
 import UIKit
 import Tweener
 
-class CurveInspector: UIControl{
+class CurveInspector: UIControl
+{
     
     public var _ease:Equation = Ease.none
     public let label:UILabel = UILabel()

@@ -9,7 +9,7 @@
 import UIKit
 import Tweener
 
-class ArcOrbits:UIView
+class ArcOrbits:UIView, FreezeProtocol
 {
     let background:PDFImageView = PDFImageView(bundlename: "orbits-background")
     let sunFire:PDFImageView = PDFImageView(bundlename: "little-sun-fire")
@@ -25,6 +25,7 @@ class ArcOrbits:UIView
     let jupyterAim:ArcAim = ArcAim()
     let saturn:PDFImageView = PDFImageView(bundlename: "little-saturn")
     let saturnAim:ArcAim = ArcAim()
+    var timelines:Array<Timeline> = []
     
     override init(frame: CGRect){
         super.init(frame: frame)
@@ -47,6 +48,7 @@ class ArcOrbits:UIView
         timeline.playMode = .loop
         timeline.add(Tween(target: fireAim, duration: 5.0, keys: [\RotationAim.angle : 360.0]))
         timeline.play()
+        timelines.append(timeline)
         
         //sun
         addSubview(sun)
@@ -102,6 +104,9 @@ class ArcOrbits:UIView
         saturnAim.center = center
         //saturn timeline
         addTimeline(target:saturnAim, duration:11.0)
+        
+        //Freeze
+        freeze()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -112,7 +117,18 @@ class ArcOrbits:UIView
     {
         let timeline = Timeline()
         timeline.playMode = .loop
-        timeline.add(Tween(target: target, duration: duration, keys: [\ArcAim.arcAngle : 360.0]))
         timeline.play()
+        timeline.add(Tween(target: target, duration: duration, keys: [\ArcAim.arcAngle : 360.0]))
+        timelines.append(timeline)
+    }
+    
+    func freeze()
+    {
+        for timeline in timelines { timeline.pause() }
+    }
+    
+    func warm()
+    {
+        for timeline in timelines { timeline.play() }
     }
 }

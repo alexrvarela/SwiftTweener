@@ -9,7 +9,7 @@
 import UIKit
 import Tweener
 
-class PathLoop:UIView
+class PathLoop:UIView, FreezeProtocol
 {
     let tweenPath:PathAim = PathAim()
     let pathView:UIView = UIView()
@@ -85,8 +85,11 @@ class PathLoop:UIView
         
         //TODO:enable handlers
         
-        //play
+        //Play
         play()
+        
+        //Freeze
+        freeze()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -147,4 +150,15 @@ class PathLoop:UIView
         
         return shapeLayer
     }
+    
+    func freeze()
+    {
+        Tweener.pauseTweens(target: tweenPath)
+    }
+    
+    func warm()
+    {
+        Tweener.resumeTweens(target: tweenPath)
+    }
+    
 }

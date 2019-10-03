@@ -10,7 +10,7 @@
 import UIKit
 import Tweener
 
-class SimpleTimeline:UIView
+class SimpleTimeline:UIView, FreezeProtocol
 {
     
     let circle:UIView = UIView()
@@ -52,6 +52,9 @@ class SimpleTimeline:UIView
         timeline.playMode = .loop
         timeline.play()
         
+        //Freeze
+        freeze()
+        
         //Add gesture recognizer
         addGestureRecognizer(UITapGestureRecognizer(target:self,
                                                     action:#selector(tap)))
@@ -87,5 +90,16 @@ class SimpleTimeline:UIView
             
         }
     }
+    
+    func freeze()
+    {
+        timeline.pause()
+    }
+    
+    func warm()
+    {
+        timeline.play()
+    }
+    
 }
 

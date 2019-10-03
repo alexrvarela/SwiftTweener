@@ -9,7 +9,7 @@
 import UIKit
 import Tweener
 
-class PauseTweens:UIView
+class PauseTweens:UIView, FreezeProtocol
 {
     let clouds1 = UIView()
     let clouds2 = UIView()
@@ -61,6 +61,9 @@ class PauseTweens:UIView
         cloud1Tween()
         cloud2Tween()
         cloud3Tween()
+        
+        //Freeze
+        freeze()
         
         pauseButton.frame = CGRect(x:20.0,
                                        y:frame.size.height -  70.0,
@@ -150,6 +153,16 @@ class PauseTweens:UIView
                 self.clouds3.frame = resetFrame
                 self.cloud3Tween()}
             ).play()
+    }
+    
+    func freeze()
+    {
+        if(!paused){playPause()}
+    }
+    
+    func warm()
+    {
+        if(paused){playPause()}
     }
     
 }

@@ -9,7 +9,7 @@
 import UIKit
 import Tweener
 
-class TweenHandlers:UIView
+class TweenHandlers:UIView, FreezeProtocol
 {
     let circle:UIView = UIView(frame:CGRect(x:20.0, y:20.0, width:50.0, height:50.0))
     let button:UIButton = UIButton()
@@ -43,7 +43,7 @@ class TweenHandlers:UIView
         self.circle.frame = CGRect(x:20.0, y:20.0, width:50.0, height:50.0)
         
         //Create tween
-        let tween:Tween = Tween(target:self.circle,//Target
+        let tween:Tween = Tween(target:circle,//Target
             duration:1.0,//One second
             ease:Ease.inOutCubic,//Transition
             delay:1.0,//One second delay
@@ -72,4 +72,15 @@ class TweenHandlers:UIView
         //Add tween
         tween.play()
     }
+    
+    func freeze()
+    {
+        Tweener.pauseTweens(target: circle)
+    }
+    
+    func warm()
+    {
+        Tweener.resumeTweens(target: circle)
+    }
+    
 }

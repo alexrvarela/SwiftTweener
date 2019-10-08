@@ -15,12 +15,15 @@ public class TweenVisualizer:UIView
     let uiColor:UIColor = UIColor(red: 0.0, green: 0.0, blue: 0.75, alpha: 1.0)
     let DARK_ALPHA = UIColor(red: 0.0, green: 0.0, blue: 0.5, alpha: 0.5)
     let LIGHT_ALPHA = UIColor(red: 0.5, green: 0.5, blue: 1.0, alpha: 0.5)
+    var steps:Int = 0
     
     //Variables
     var resize = false
     var scale:CGFloat = 10.0
     var backupScale:CGFloat = 1.0
     var backupFrame:CGRect = CGRect.zero
+    var imageView = UIImageView()
+    
     //Public
     public var barHeight:CGFloat = 3.0 {didSet{setNeedsDisplay()}}
     public var tweenColor:UIColor = UIColor.cyan {didSet {setNeedsDisplay()}}
@@ -45,6 +48,8 @@ public class TweenVisualizer:UIView
         let panRecognizer:UIPanGestureRecognizer = UIPanGestureRecognizer(target:self, action:#selector(pan))
         panRecognizer.maximumNumberOfTouches = 1
         addGestureRecognizer(panRecognizer)
+        
+        addSubview(imageView)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -64,6 +69,11 @@ public class TweenVisualizer:UIView
             if scale > 200.0 {scale = 200.0}
             if scale < 10.0 {scale = 10.0}
             
+            steps = Int(round( (self.frame.size.width / 2) / scale ))
+            
+            //Redraw
+            updateTimeBar()
+            updateGrid()
             setNeedsDisplay()
         }
     }
@@ -103,6 +113,8 @@ public class TweenVisualizer:UIView
             }
             
             //Redraw
+//            updateTimeBar()
+//            updateGrid()
             setNeedsDisplay()
         }else
         {
@@ -112,34 +124,144 @@ public class TweenVisualizer:UIView
     
     func update(){setNeedsDisplay()}
     
+    func updateTimeBar()
+    {
+        
+        //Define graphic context's rect
+        let rect = CGRect(x:0.0,
+                          y:0.0,
+                          width:frame.size.width * UIScreen.main.scale,
+                          height:TIME_BAR_HEIGHT * UIScreen.main.scale)
+        
+        //Get current context
+        UIGraphicsBeginImageContext(rect.size)
+        let context: CGContext = UIGraphicsGetCurrentContext()!
+        
+        //Clear context
+        context.clear(rect)
+        
+        //**** Draw begin
+        
+        //Draw background color
+        context.setFillColor(uiColor.cgColor)
+        context.fill(rect)
+        
+        //Translate to center
+        context.translateBy(x: (self.frame.size.width / 2.0) * UIScreen.main.scale,
+                            y: 0.0)
+        //Set device's screen scale
+        context.scaleBy(x: UIScreen.main.scale, y: UIScreen.main.scale)
+        
+        //Set text fill color
+        context.setFillColor(UIColor.white.cgColor)
+        
+        //Draw numbers
+        for indexSecond in 0 ... steps + 1
+        {
+            //Get Text path
+            var textPath = CGPathUtils.getFontPath(string:"\(indexSecond)", fontName:"Menlo-Regular", fontSize:6.0)
+            
+            //Add
+            context.addPath(CGPathUtils.translatePath(path:CGPathUtils.flipPathVertically(path:textPath), x:scale * CGFloat(indexSecond), y:5.0))
+            context.fillPath()
+            
+            //Ignore negative if second is zero.
+            if indexSecond != 0 {
+                //Get Text path
+                textPath = CGPathUtils.getFontPath(string:"-\(indexSecond)", fontName:"Menlo-Regular", fontSize:6.0)
+                
+                //Add
+                context.addPath(CGPathUtils.translatePath(path:CGPathUtils.flipPathVertically(path:textPath), x:-(scale * CGFloat(indexSecond)), y:5.0))
+                context.fillPath()
+            }
+        }
+        
+        //**** Draw end
+        
+        //Render to CGimage
+        if let cgImage = context.makeImage()
+        {
+            //Set image and fit size
+            imageView.image = UIImage(cgImage: cgImage, scale:UIScreen.main.scale / 1.0, orientation: .up)
+            imageView.frame = CGRect(x:0.0,
+                                     y:0.0,
+                                     width:frame.size.width,
+                                     height:TIME_BAR_HEIGHT)
+        }
+    }
+    
+    func updateGrid()
+    {
+        //Define graphic context's rect
+        let rect = CGRect(x:0.0,
+                          y:0.0,
+                          width:frame.size.width * UIScreen.main.scale,
+                          height:1.0 * UIScreen.main.scale)
+        
+        //Get current context
+        UIGraphicsBeginImageContext(rect.size)
+        let context: CGContext = UIGraphicsGetCurrentContext()!
+        
+        //Clear context
+        context.clear(rect)
+        
+        //**** Draw begin
+        
+//        //Draw background color
+//        context.setFillColor(LIGHT_ALPHA.cgColor)
+//        context.fill(rect)
+        
+        //Translate to center
+        context.translateBy(x: (self.frame.size.width / 2.0) * UIScreen.main.scale,
+                            y: 0.0)
+        //Set device's screen scale
+        context.scaleBy(x: UIScreen.main.scale, y: UIScreen.main.scale)
+        
+        //Set text fill color
+        context.setFillColor(UIColor.white.cgColor)
+
+        //Draw lines
+        for indexSecond in 0 ... steps + 1
+        {
+            context.setFillColor(DARK_ALPHA.cgColor)
+            
+            //Draw positive line
+            context.fill(CGRect(x:scale * CGFloat(indexSecond),
+                                y:0.0,
+                                width:1.0,
+                                height:frame.size.height - TIME_BAR_HEIGHT))
+            
+            //Draw negative line
+            context.fill(CGRect(x: -( scale * CGFloat(indexSecond) ),
+                                y:0.0,
+                                width:1.0,
+                                height:frame.size.height - TIME_BAR_HEIGHT))
+        }
+        
+        //**** Draw end
+        
+        //Render to background pattern
+        if let cgImage = context.makeImage()
+        {
+            //Set background pattern
+            backgroundColor = UIColor(patternImage: UIImage(cgImage: cgImage, scale:UIScreen.main.scale / 1.0, orientation: .up))
+        }
+    }
+    
+    override public func layoutSubviews() {
+        //frame has changed
+        steps = Int(round( (self.frame.size.width / 2) / scale ))
+        updateTimeBar()
+        updateGrid()
+    }
+    
     //Draw code
     override public func draw(_ rect: CGRect)
     {
         super.draw(rect)
         
         let context:CGContext = UIGraphicsGetCurrentContext()!
-        
-        //Draw background fill
-        context.saveGState()
-        context.setFillColor(LIGHT_ALPHA.cgColor)
-        context.fill(rect)
-        context.restoreGState()
-        
-        //Draw Time Bar
-        context.saveGState()
-        context.setFillColor(uiColor.cgColor)
-        context.fill(CGRect(x:0.0,
-                            y:0.0,
-                            width:self.frame.size.width,
-                            height:TIME_BAR_HEIGHT))
-        
-        context.restoreGState()
-        
-        //Draw time bar gird with numbers as seconds
-        let steps = Int(round( (self.frame.size.width / 2) / scale ))
-        //        print("draw steps : \(steps))")
-        
-        //TODO:catch content offset and set index to start
+
         //Set center
         context.translateBy(x: self.frame.size.width / 2.0,
                             y: 0.0)
@@ -153,46 +275,6 @@ public class TweenVisualizer:UIView
                             y:TIME_BAR_HEIGHT,
                             width:frame.size.width / 2.0,
                             height:frame.size.height - TIME_BAR_HEIGHT))
-        
-        context.restoreGState()
-        
-        context.saveGState()
-
-        //TODO:Make energy efficient
-        //Draw lines
-        for indexSecond in 0 ... steps + 1
-        {
-            context.setFillColor(DARK_ALPHA.cgColor)
-            
-            //Draw positive line
-            context.fill(CGRect(x:scale * CGFloat(indexSecond),
-                                y:TIME_BAR_HEIGHT,
-                                width:1.0,
-                                height:frame.size.height - TIME_BAR_HEIGHT))
-            
-            //Draw negative line
-            context.fill(CGRect(x:-(scale * CGFloat(indexSecond)),
-                                y:TIME_BAR_HEIGHT,
-                                width:1.0,
-                                height:frame.size.height - TIME_BAR_HEIGHT))
-            
-            //Fill
-            context.setFillColor(UIColor.white.cgColor)
-
-            //Get Text path
-            var textPath = CGPathUtils.getFontPath(string:"\(indexSecond)", fontName:"Menlo-Regular", fontSize:5.0)
-            
-            //Add
-            context.addPath(CGPathUtils.translatePath(path:CGPathUtils.flipPathVertically(path:textPath), x:scale * CGFloat(indexSecond), y:5.0))
-            context.fillPath()
-            
-            //Get Text path
-            textPath = CGPathUtils.getFontPath(string:"-\(indexSecond)", fontName:"Menlo-Regular", fontSize:5.0)
-            
-            //Add
-            context.addPath(CGPathUtils.translatePath(path:CGPathUtils.flipPathVertically(path:textPath), x:-(scale * CGFloat(indexSecond)), y:5.0))
-            context.fillPath()
-        }
         
         context.restoreGState()
         

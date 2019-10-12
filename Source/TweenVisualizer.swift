@@ -12,29 +12,28 @@ public class TweenVisualizer:UIView
 {
     //Constants
     let TIME_BAR_HEIGHT:CGFloat = 14.0
-    let uiColor:UIColor = UIColor(red: 0.0, green: 0.0, blue: 0.75, alpha: 1.0)
-    let DARK_ALPHA = UIColor(red: 0.0, green: 0.0, blue: 0.5, alpha: 0.5)
-    let LIGHT_ALPHA = UIColor(red: 0.5, green: 0.5, blue: 1.0, alpha: 0.5)
-    var steps:Int = 0
+    let uiColor:UIColor = UIColor(red: 66.0/255.0, green: 52.0/255.0, blue: 1.0, alpha: 1.0)
+    let DARK_ALPHA = UIColor(red: (66.0/255.0) / 2.0, green: (52.0/255.0) / 2, blue: 1.0, alpha: 0.5)
+    let LIGHT_ALPHA = UIColor(red: (66.0/255.0) * 1.5, green: (52.0/255.0) * 1.5, blue: 1.0, alpha: 0.5)
     
     //Variables
+    var steps:Int = 0
     var resize = false
-    var scale:CGFloat = 10.0
+    var scale:CGFloat = 25.0
     var backupScale:CGFloat = 1.0
     var backupFrame:CGRect = CGRect.zero
     var imageView = UIImageView()
     
     //Public
     public var barHeight:CGFloat = 3.0 {didSet{setNeedsDisplay()}}
-    public var tweenColor:UIColor = UIColor.cyan {didSet {setNeedsDisplay()}}
-    public var timelineColor:UIColor = UIColor.magenta {didSet {setNeedsDisplay()}}
-    
+    public var tweenColor:UIColor = .cyan {didSet {setNeedsDisplay()}}
+    public var timelineColor:UIColor = .magenta {didSet {setNeedsDisplay()}}
     
     public init() {
 
         let frame = CGRect(x:10.0,
                            y:10.0,
-                           width:200.0,
+                           width:150.0,
                            height:75.0)
 
         super.init(frame:frame)
@@ -111,11 +110,6 @@ public class TweenVisualizer:UIView
                                     width: newWidth > 40 ? newWidth : 40,
                                     height: newHeight > 40 ? newHeight : 40)
             }
-            
-            //Redraw
-//            updateTimeBar()
-//            updateGrid()
-            setNeedsDisplay()
         }else
         {
             resize = false

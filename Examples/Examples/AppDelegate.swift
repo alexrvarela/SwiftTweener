@@ -36,6 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //Create tween vizualizer
         let visualizer = TweenVisualizer()
+        visualizer.center = viewController.view.center
         Tweener.addVisualizer(visualizer)
         viewController.view.addSubview(visualizer)
         

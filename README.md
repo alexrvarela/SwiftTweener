@@ -344,6 +344,32 @@ Play with everything, combine different types of Aim:
 
 ![Mix different aims](https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/bb8.gif)
 
+
+### TweenVisualizer
+
+Visualize all tweens and timelines  in real time
+
+Create a TweenVisualizer and attach it to Tweener's loop :
+```swift
+let visualizer = TweenVisualizer()
+visualizer.center = viewController.view.center
+Tweener.addVisualizer(visualizer)
+
+//Add to UIView
+addSubview(visualizer)
+```
+
+To detach from loop just use this code:
+```swift
+Tweener.removeVisualizer(visualizer)
+```
+![Visualizer](https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/tweenvisualizer.gif)
+
+Also, you can drag, pinch and resize visualizer at your convenience, to resize just drag the bottom-right corner:
+![Drag](https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/tweenvisualizer-drag.gif)    
+![Pinch](https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/tweenvisualizer-pinch.gif)   
+![Resize](https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/tweenvisualizer-resize.gif)
+
 This library was created to give dynamism to UI elements, if you are looking to make more complex animations I recommend you implement them with [Lottie](https://airbnb.design/lottie/).
 
 ## Contributions

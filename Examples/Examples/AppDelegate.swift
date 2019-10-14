@@ -62,7 +62,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         nextButton.backgroundColor = UIColor.black
         viewController.view.addSubview(nextButton)
         
-        
         let contentFrame:CGRect = CGRect(x:0.0,
                                          y:0.0,
                                          width:UIScreen.main.bounds.size.width,

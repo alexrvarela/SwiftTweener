@@ -21,7 +21,7 @@ $ gem install cocoapods
 
 Now, add Tweener to your Podfile
 ```
-pod 'Tweener', '~> 1.0.0'
+pod 'SwiftTweener', '~> 1.0.0'
 ```
 
 To install dependencies run this command
@@ -39,7 +39,7 @@ $ brew install carthage
 
 Now, add Tweener to your Cartfile
 ```
-github "alexrvarela/Tweener" ~> 1.0.0
+github "alexrvarela/SwiftTweener" ~> 1.0.0
 ```
 
 To install dependencies run this command
@@ -67,7 +67,7 @@ First set initial state:
 ```swift
 myView.alpha = 0.25
 myView.frame = CGRect(x:20.0, y:20.0, width:100.0, height:100.0)
-myView.backgroundColor = UIColor.red
+myView.backgroundColor = .red
 ```
 
 Create and add a simple Tween:
@@ -92,7 +92,7 @@ Interact with your code using block handlers:
 
 ```swift
 myTween.onStart = {
-    self.backgroundColor = UIColor.green
+    self.backgroundColor = .green
 }
 
 myTween.onUpdate = {
@@ -100,11 +100,11 @@ myTween.onUpdate = {
 }
 
 myTween.onComplete = {
-    self.backgroundColor = UIColor.red
+    self.backgroundColor = .red
 }
 
 myTween.onOverwrite = {
-    self.backgroundColor = UIColor.blue
+    self.backgroundColor = .blue
 }
 ```
 

@@ -29,7 +29,7 @@ class Transform3d:UIView
         let label = UILabel()
         label.textColor = UIColor(red:116.0 / 255.0, green:244.0 / 255.0, blue:234.0 / 255.0, alpha:1.0)
         label.font = UIFont.systemFont(ofSize: 18, weight: .regular)
-        label.text = "DRAG"
+        label.text = "drag circle"
         label.sizeToFit()
         label.frame = CGRect(x: (circle.frame.size.width - label.frame.size.width) / 2.0,
                              y: (circle.frame.size.height - label.frame.size.height) / 2.0,

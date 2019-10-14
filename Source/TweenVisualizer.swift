@@ -201,10 +201,6 @@ public class TweenVisualizer:UIView
         
         //**** Draw begin
         
-//        //Draw background color
-//        context.setFillColor(LIGHT_ALPHA.cgColor)
-//        context.fill(rect)
-        
         //Translate to center
         context.translateBy(x: (self.frame.size.width / 2.0) * UIScreen.main.scale,
                             y: 0.0)

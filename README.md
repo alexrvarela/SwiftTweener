@@ -21,7 +21,7 @@ $ gem install cocoapods
 
 Now, add Tweener to your Podfile
 ```
-pod 'Tweener', '~> 1.0.1'
+pod 'Tweener', '~> 1.0.0'
 ```
 
 To install dependencies run this command

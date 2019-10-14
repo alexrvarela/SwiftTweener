@@ -175,9 +175,6 @@ Tween(target:myView,
     ).play()
 ```
 
-For further information about custom equations see:
-[Easig function generator](http://www.timotheegroleau.com/Flash/experiments/easing_function_generator.htm)
-
 ### Timeline
 
 Add a Tween or animate with Timeline?
@@ -349,7 +346,7 @@ Play with everything, combine different types of Aim:
 
 Visualize all tweens and timelines  in real time
 
-Create a TweenVisualizer and attach it to Tweener's loop :
+Create a TweenVisualizer and attach it to Tweener's update loop :
 ```swift
 let visualizer = TweenVisualizer()
 visualizer.center = viewController.view.center
@@ -359,7 +356,7 @@ Tweener.addVisualizer(visualizer)
 addSubview(visualizer)
 ```
 
-To detach from loop just use this code:
+To detach visualizer from update loop just use this code:
 ```swift
 Tweener.removeVisualizer(visualizer)
 ```
@@ -374,7 +371,8 @@ This library was created to give dynamism to UI elements, if you are looking to 
 
 ## Contributions
 
-This project has being migrated to Swift 5 with Code documentation, Unit tests and SwiftUI in the scope.
+Pull requests are welcome!
+This project has being migrated to Swift 5 with Code documentation, WatchOs support, TvOs support, Unit tests and SwiftUI in the scope.
 
 ## Authors
 

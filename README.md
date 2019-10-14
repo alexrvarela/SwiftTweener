@@ -1,4 +1,4 @@
-# SwiftTweener
+# Swift Tweener
 
 Easy to use animation engine for iOs, make more powerful and creative Apps.
 
@@ -21,7 +21,7 @@ $ gem install cocoapods
 
 Now, add Tweener to your Podfile
 ```
-pod 'SwiftTweener', '~> 1.0.0'
+pod 'Tweener', '~> 1.0.0'
 ```
 
 To install dependencies run this command

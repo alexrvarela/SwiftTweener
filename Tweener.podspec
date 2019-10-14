@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name             = 'SwiftTweener'
+  s.name             = 'Tweener'
   s.version          = '1.0.0'
   s.summary          = 'Animation engine for iOs, make more powerfull and creative Apps.'
   s.homepage         = 'https://github.com/alexrvarela/SwiftTweener'

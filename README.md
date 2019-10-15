@@ -8,7 +8,7 @@ This project has rewritten in pure Swift from [CocoaTweener](https://github.com/
 
 ### Prerequisites
 
-* Xcode with IOs 10.0+ and swift 4.2
+* Xcode with iOs 10.0+ and swift 4.2
 
 ## Installation
 
@@ -372,7 +372,7 @@ This library was created to give dynamism to UI elements, if you are looking to 
 ## Contributions
 
 Pull requests are welcome!
-This project has being migrated to Swift 5 with Code documentation, WatchOs support, TvOs support, Unit tests and SwiftUI in the scope.
+This project has being migrated to Swift 5 with code documentation, watchOs support, tvOs support, unit tests and SwiftUI in the scope.
 
 ## Authors
 

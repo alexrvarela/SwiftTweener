@@ -1,6 +1,6 @@
 # Swift Tweener
 
-Easy to use animation engine for iOs, make more powerful and creative Apps.
+Swift animation engine, make more powerful and creative Apps.
 
 ![Logo](https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/tweener.gif)
 
@@ -21,7 +21,7 @@ $ gem install cocoapods
 
 Now, add Tweener to your Podfile
 ```
-pod 'Tweener', '~> 1.0.0'
+pod 'Tweener', '~> 2.0'
 ```
 
 To install dependencies run this command
@@ -39,7 +39,7 @@ $ brew install carthage
 
 Now, add Tweener to your Cartfile
 ```
-github "alexrvarela/SwiftTweener" ~> 1.0.0
+github "alexrvarela/SwiftTweener" ~> 2.0
 ```
 
 To install dependencies run this command

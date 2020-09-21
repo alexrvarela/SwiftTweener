@@ -1,0 +1,516 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/BezierUtils.swift",
+      "line": 15,
+      "symbol": "BezierUtils",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/BezierUtils.swift",
+      "line": 18,
+      "symbol": "BezierUtils.linearInterpolation(time:start:end:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/BezierUtils.swift",
+      "line": 25,
+      "symbol": "BezierUtils.quadInterpolation(time:start:control:end:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/BezierUtils.swift",
+      "line": 33,
+      "symbol": "BezierUtils.bezierCubicInterpolation(time:start:controlStart:controlEnd:end:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/BezierUtils.swift",
+      "line": 40,
+      "symbol": "BezierUtils.quadAngle(time:start:control:end:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/BezierUtils.swift",
+      "line": 48,
+      "symbol": "BezierUtils.bezierCubicAngle(time:start:controlStart:controlEnd:end:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/BezierUtils.swift",
+      "line": 56,
+      "symbol": "BezierUtils.quadLength(start:control:end:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/BezierUtils.swift",
+      "line": 85,
+      "symbol": "BezierUtils.bezierCubicLength(start:controlStart:controlEnd:end:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/BezierUtils.swift",
+      "line": 114,
+      "symbol": "BezierUtils.bezierPathLength(path:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/Ease.swift",
+      "line": 293,
+      "symbol": "Ease.outInElastic",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/Ease.swift",
+      "line": 299,
+      "symbol": "Ease.inBack",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/Ease.swift",
+      "line": 305,
+      "symbol": "Ease.outBack",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/Ease.swift",
+      "line": 311,
+      "symbol": "Ease.inOutBack",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/Ease.swift",
+      "line": 319,
+      "symbol": "Ease.outInBack",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/Ease.swift",
+      "line": 325,
+      "symbol": "Ease.inBounce",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/Ease.swift",
+      "line": 329,
+      "symbol": "Ease.outBounce",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/Ease.swift",
+      "line": 345,
+      "symbol": "Ease.inOutBounce",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/Ease.swift",
+      "line": 350,
+      "symbol": "Ease.outInBounce",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/PDFImageRender.swift",
+      "line": 15,
+      "symbol": "PDFImageRender",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/PDFImageView.swift",
+      "line": 12,
+      "symbol": "PDFImageView",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/PDFImageView.swift",
+      "line": 18,
+      "symbol": "PDFImageView.scale",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/PDFImageView.swift",
+      "line": 57,
+      "symbol": "PDFImageView.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/PDFImageView.swift",
+      "line": 62,
+      "symbol": "PDFImageView.init(frame:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/PDFImageView.swift",
+      "line": 67,
+      "symbol": "PDFImageView.init(bundlename:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/PDFImageView.swift",
+      "line": 73,
+      "symbol": "PDFImageView.init(filepath:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/PDFImageView.swift",
+      "line": 79,
+      "symbol": "PDFImageView.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/PDFImageView.swift",
+      "line": 84,
+      "symbol": "PDFImageView.loadFromBundle(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/PDFImageView.swift",
+      "line": 90,
+      "symbol": "PDFImageView.loadFile(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/RotationAim.swift",
+      "line": 15,
+      "symbol": "AimRotationHandler",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/RotationAim.swift",
+      "line": 18,
+      "symbol": "RotationAim",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/RotationAim.swift",
+      "line": 20,
+      "symbol": "RotationAim.onUpdateRotation",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/RotationAim.swift",
+      "line": 24,
+      "symbol": "RotationAim.target",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/RotationAim.swift",
+      "line": 34,
+      "symbol": "RotationAim.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/StringAim.swift",
+      "line": 12,
+      "symbol": "TransitionType.lenght",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/StringAim.swift",
+      "line": 13,
+      "symbol": "TransitionType.linear",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/StringAim.swift",
+      "line": 14,
+      "symbol": "TransitionType.random",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/StringAim.swift",
+      "line": 42,
+      "symbol": "StringAim.from",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/StringAim.swift",
+      "line": 43,
+      "symbol": "StringAim.to",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/StringAim.swift",
+      "line": 45,
+      "symbol": "StringAim.transitionType",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/StringAim.swift",
+      "line": 46,
+      "symbol": "StringAim.randomSet",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/StringAim.swift",
+      "line": 65,
+      "symbol": "StringAim.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/SupportedTypes.swift",
+      "line": 20,
+      "symbol": "ToArrayBlock",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/Timeline.swift",
+      "line": 12,
+      "symbol": "TimelinePlayMode.once",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/Timeline.swift",
+      "line": 13,
+      "symbol": "TimelinePlayMode.loop",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/Timeline.swift",
+      "line": 14,
+      "symbol": "TimelinePlayMode.pingPong",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/Timeline.swift",
+      "line": 81,
+      "symbol": "Timeline.add(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/Timeline.swift",
+      "line": 86,
+      "symbol": "Timeline.mode(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/Timeline.swift",
+      "line": 92,
+      "symbol": "Timeline.play()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/Timeline.swift",
+      "line": 95,
+      "symbol": "Timeline.play(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/Timeline.swift",
+      "line": 108,
+      "symbol": "Timeline.pause()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/Timeline.swift",
+      "line": 114,
+      "symbol": "Timeline.rewind()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/Timeline.swift",
+      "line": 130,
+      "symbol": "Timeline.setTime(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/Timeline.swift",
+      "line": 232,
+      "symbol": "Timeline.getDuration()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/Timeline.swift",
+      "line": 233,
+      "symbol": "Timeline.isPlaying()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/TimelineInspector.swift",
+      "line": 12,
+      "symbol": "TimelineInspector",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/TimelineInspector.swift",
+      "line": 25,
+      "symbol": "TimelineInspector.uiColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/TimelineInspector.swift",
+      "line": 244,
+      "symbol": "TimelineInspector.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/TimelineInspector.swift",
+      "line": 391,
+      "symbol": "TimelineInspector.init(timeline:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/TimelineInspector.swift",
+      "line": 397,
+      "symbol": "TimelineInspector.didMoveToSuperview()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/TimelineInspector.swift",
+      "line": 410,
+      "symbol": "TimelineInspector.timeline",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/TimelineInspector.swift",
+      "line": 446,
+      "symbol": "TimelineInspector.draw(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/TimelineInspector.swift",
+      "line": 702,
+      "symbol": "TimelineInspector.touchesBegan(_:with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/TimelineInspector.swift",
+      "line": 782,
+      "symbol": "TimelineInspector.touchesEnded(_:with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/TweenVisualizer.swift",
+      "line": 15,
+      "symbol": "TweenVisualizer",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/TweenVisualizer.swift",
+      "line": 32,
+      "symbol": "TweenVisualizer.barHeight",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/TweenVisualizer.swift",
+      "line": 33,
+      "symbol": "TweenVisualizer.tweenColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/TweenVisualizer.swift",
+      "line": 34,
+      "symbol": "TweenVisualizer.timelineColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/TweenVisualizer.swift",
+      "line": 36,
+      "symbol": "TweenVisualizer.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/TweenVisualizer.swift",
+      "line": 245,
+      "symbol": "TweenVisualizer.layoutSubviews()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/TweenVisualizer.swift",
+      "line": 253,
+      "symbol": "TweenVisualizer.draw(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/Tweener.swift",
+      "line": 161,
+      "symbol": "TweenBlock.value",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/Tweener.swift",
+      "line": 162,
+      "symbol": "TweenBlock.block",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/Tweener.swift",
+      "line": 164,
+      "symbol": "TweenBlock.init(value:block:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/alex/Dropbox/SWIFT/SwiftTweener"
+}

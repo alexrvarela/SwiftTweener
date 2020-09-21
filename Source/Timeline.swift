@@ -6,33 +6,37 @@
 //  Copyright © 2018 Alejandro Ramirez Varela. All rights reserved.
 //
 
-public enum TimelinePlayMode:Int
-{
+/// A Timeline's set of play options.
+public enum TimelinePlayMode:Int{
+    
     case once
     case loop
     case pingPong
 }
 
+///Observe changes.
 protocol TimelineObserver: AnyObject {
     func valueChanged(
         _ keyPath: AnyKeyPath
     )
 }
-
+/// A class that contains and controls a collection of Tweens.
 public class Timeline
 {
-    //public vars
+    ///Value observer protocol.
+    weak var observer: TimelineObserver?
+    
+    /// TimelinePlayMode option, .once is setted by default.
     public var playMode : TimelinePlayMode  = .once{
         didSet{
-            //Update?
             observer?.valueChanged(\Timeline.playMode)
         }}
     
+    ///Changes animation direction.
     public var reverse:Bool = false{
-        
         didSet
         {
-            //Make sure if value has changed
+            //Ensures that value has changed.
             if self.reverse != oldValue
             {
                 //TODO:Replicate in CocoaTweener
@@ -50,8 +54,8 @@ public class Timeline
         }
     }
     
-    public var loops:Int = 0//TODO:Implement functionality
-    public var loopCount:Int = 0//TODO:Implement functionality, protected?
+    //public var loops:Int = 0//TODO:Implement functionality
+    //public var loopCount:Int = 0//TODO:Implement functionality, protected?
     
     //Internal vars
     var duration:Double = 0.0//didset?
@@ -63,24 +67,52 @@ public class Timeline
     var state:TweenState = .initial{didSet{observer?.valueChanged(\Timeline.state)}}
     var lastState:TweenState = .initial
     
-    weak var observer: TimelineObserver?
     
-    public init(){}
-
-    //MARK:Public functions
-    
-    public func add<T>(_ tween:Tween<T>)
-    {
-        let control = Control(tween, time:tween.delay / Engine.timeScale)
-        self.controls.append(control)
-        updateTimeComplete()
+    /**Internal function wich adds a Tween<T> to engine.
+     - Parameter tween: A Tween<T> instance to add.
+    */
+    func addTween<T>(_ tween:Tween<T>){
+           let control = Control(tween, time:tween.delay / timeScale)
+           self.controls.append(control)
+           updateTimeComplete()
     }
     
-    //Play with zero delay
-    public func play(){play(0.0)}
+    /**Initilalizer.
+     - Parameter tweens:    Optional, adds as many Tweens as there are.
+     */
+    public init(_ tweens:AnyTween... ){ for tween in tweens { tween.add(to: self) } }
     
-    //Play with delay
-    public func play(_ delay:Double)
+    //MARK:Public functions
+    
+    /**Add Tweens function.
+     - Parameter tweens:    Adds as many Tweens as there are using declarative syntax.
+     - Returns:             Current`Timeline` instance.
+     */
+    @discardableResult public func add(_ tweens:AnyTween... ) -> Timeline {
+        for tween in tweens { tween.add(to: self) }
+        return self
+    }
+    
+    /**Sets TimelinePlayMode option using declarative syntax.
+     - Parameter playMode:  TimelinePlayMode option.
+     - Returns:             Current`Timeline` instance.
+     */
+    @discardableResult public func mode(_ playMode: TimelinePlayMode) -> Timeline {
+        self.playMode = playMode
+        return self
+    }
+    
+    /**Plays with zero-time delay.
+     - Returns:             Current`Timeline` instance.
+     */
+    @discardableResult public func play() -> Timeline { return play(0.0) }
+    
+    
+    /**Plays with time delay.
+     - Returns:             Current`Timeline` instance.
+     - Parameter delay:     Time to delay after animation starts.
+     */
+    @discardableResult public func play(_ delay:Double) -> Timeline
     {
         if !TweenList.isAdded(self)
         {
@@ -89,15 +121,24 @@ public class Timeline
         {
             if self.state == .paused { resume() }
         }
+        
+        return self
     }
     
-    public func pause()
+    /**Pauses Timeline.
+     - Returns:             Current`Timeline` instance.
+     */
+    @discardableResult public func pause() -> Timeline
     {
         self.timePaused = self.timeCurrent - self.timeStart
         if self.state != .paused {self.state = .paused}
+        return self
     }
     
-    public func rewind()
+    /**Rewinds Timeline.
+     - Returns:             Current`Timeline` instance.
+    */
+    @discardableResult public func rewind() -> Timeline
     {
         if TweenList.isAdded(self) || self.state == .paused
         {
@@ -110,10 +151,15 @@ public class Timeline
             stop()
             play()
         }
+        
+        return self
     }
 
-    //Set timeline time
-    public func setTime(_ currentTime:Double)
+    /**Sets timeline time manually.
+     - Parameter currentTime:   Time in seconds.
+     - Returns:                 Current`Timeline` instance.
+    */
+    @discardableResult public func setTime(_ currentTime:Double) -> Timeline
     {
         var time = currentTime
         //Set boundaries
@@ -132,7 +178,15 @@ public class Timeline
         //Set time paused
         self.timePaused = time
         self.timeCurrent = time
+        
+        return self
     }
+    
+    /// Gets Timeline's time duration in seconds.
+    public func getDuration() -> Double {return duration}
+    
+    /// Checks if Timeline has added to Engine.
+    public func isPlaying() -> Bool { return TweenList.isAdded(self) && state != .paused }
     
     //MARK:Internal
     
@@ -163,7 +217,7 @@ public class Timeline
         for control in controls
         {
             // Looping throught each Tweening and updating the values accordingly
-            if (!self.reverse)
+            if !self.reverse
             {
                 //Use engine, enable Tween handlers
                 let _ : Bool = updateTween(control, time:time)
@@ -182,18 +236,15 @@ public class Timeline
     func reset(_ delay:Double)
     {
         //Reset time start
-        self.timeStart = Engine.currentTime + (delay / Engine.timeScale)
+        self.timeStart = Engine.currentTime + (delay / timeScale)
         //Reset time paused
         self.timePaused = 0.0
         //Reset time complete & timeline duration.
         updateTimeComplete()
         
         //Reset each tween
-        for control in self.controls
-        {
+        for control in self.controls{
             control.reset()
-            //Set start value
-            control.update(reverse ? duration : 0.0)
         }
     }
     
@@ -207,7 +258,7 @@ public class Timeline
         for control in self.controls
         {
             //Update time start and time complete for each control.
-            control.timeStart = control.getTween().delay / Engine.timeScale
+            control.timeStart = control.getTween().delay / timeScale
             //Get max time complete of all tweens.
             m = max(m, control.timeComplete)
         }
@@ -217,6 +268,4 @@ public class Timeline
         //Set timeline time complete.
         self.timeComplete = self.timeStart + self.duration
     }
-    
-    public func getDuration() -> Double {return duration}
 }

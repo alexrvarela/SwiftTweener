@@ -45,21 +45,22 @@ class SimpleTween:UIView, FreezeProtocol
         square.backgroundColor = UIColor.blue
         
         //Create tween
-        let tween:Tween = Tween(target:square,//Target
-            duration:1.0,//One second
-            ease:Ease.inOutCubic,
-            keys:[\UIView.alpha:1.0,
-                  \UIView.frame:CGRect(x:20.0, y:20.0, width:280.0, height:280.0),
-                  //This property is an optional.
-                  \UIView.backgroundColor!:UIColor.red
-            ])
-
-        //Add tween
-        tween.onComplete = {
-            print("Tween complete")
-        }
-        
-        tween.play()
+        Tween(target:square)//Target
+        .duration(1.0)//One second
+        .ease(Ease.inOutCubic)
+        .keys(to:
+            [\UIView.alpha:1.0,
+             \UIView.frame:CGRect(x:20.0, y:20.0, width:UIScreen.main.bounds.width - 40, height:UIScreen.main.bounds.width - 40),
+             //NOTE:This property is an optional, add ! to keypath.
+             \UIView.backgroundColor!:UIColor.red])
+        .onComplete { print("Tween complete") }
+        .after()//Creates a new tween after with same target and properties after.
+        .duration(1.0)
+        .ease(Ease.outBounce)
+        .keys(to: [\UIView.alpha:0.25,
+                   \UIView.frame:CGRect(x:20.0, y:20.0, width:100.0, height:100.0),
+                   \UIView.backgroundColor!:UIColor.blue])
+        .play()
     }
     
     func freeze()

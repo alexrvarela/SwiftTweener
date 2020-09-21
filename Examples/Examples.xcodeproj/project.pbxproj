@@ -18,7 +18,6 @@
 		0572C21F22A2D30100F96A19 /* TweenHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0572C21E22A2D30100F96A19 /* TweenHandlers.swift */; };
 		0572C22122A2D31500F96A19 /* SimpleTween.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0572C22022A2D31500F96A19 /* SimpleTween.swift */; };
 		0589AED222AF070E0093774D /* Transform3d.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0589AED122AF070E0093774D /* Transform3d.swift */; };
-		0592B8BA22CABFA900F0842B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0592B8B922CABFA900F0842B /* ViewController.swift */; };
 		05A620CA22A9445A005F7D3F /* DragView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A620C922A9445A005F7D3F /* DragView.swift */; };
 		05A7353622B45AC700F34F32 /* PauseTweens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A7353522B45AC700F34F32 /* PauseTweens.swift */; };
 		05A7353822B45ADD00F34F32 /* SimpleTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A7353722B45ADD00F34F32 /* SimpleTimeline.swift */; };
@@ -30,8 +29,6 @@
 		4C78F33B2142CDC2005E964B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C78F33A2142CDC2005E964B /* AppDelegate.swift */; };
 		4C78F3422142CDC2005E964B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C78F3412142CDC2005E964B /* Assets.xcassets */; };
 		4C78F3452142CDC2005E964B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C78F3432142CDC2005E964B /* LaunchScreen.storyboard */; };
-		4C78F36E2142CF4E005E964B /* Tweener.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C78F36D2142CF4E005E964B /* Tweener.framework */; };
-		4C78F36F2142CF4E005E964B /* Tweener.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4C78F36D2142CF4E005E964B /* Tweener.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4CF9835C214318AC00F1C23E /* bb8-head.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF9833E214318AC00F1C23E /* bb8-head.pdf */; };
 		4CF9835D214318AC00F1C23E /* card.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF9833F214318AC00F1C23E /* card.pdf */; };
 		4CF9835E214318AC00F1C23E /* fire.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF98340214318AC00F1C23E /* fire.pdf */; };
@@ -62,33 +59,49 @@
 		4CF98377214318AC00F1C23E /* dart.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF98359214318AC00F1C23E /* dart.pdf */; };
 		4CF98378214318AC00F1C23E /* bb8-body.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF9835A214318AC00F1C23E /* bb8-body.pdf */; };
 		4CF98379214318AC00F1C23E /* saturn.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF9835B214318AC00F1C23E /* saturn.pdf */; };
+		FA7170B224E492560001965F /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7170B124E492560001965F /* ViewExtensions.swift */; };
+		FA7170D924E4FD8A0001965F /* ChainableTweens.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7170D824E4FD8A0001965F /* ChainableTweens.swift */; };
+		FAE624A22503F9BF00E3644E /* CustomTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE624A12503F9BE00E3644E /* CustomTypes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		4C78F36C2142CF4E005E964B /* PBXContainerItemProxy */ = {
+		FA5FAA7024F184A2006091ED /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 4C78F3532142CE31005E964B /* SwiftTweener.xcodeproj */;
+			containerPortal = FA5FAA6924F184A2006091ED /* Tweener.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 4C78F3632142CF0F005E964B;
-			remoteInfo = Tweener;
+			remoteGlobalIDString = 05E1FA58235B73F100A948F1;
+			remoteInfo = "Tweener iOS";
 		};
-		4C78F3702142CF4E005E964B /* PBXContainerItemProxy */ = {
+		FA5FAA7224F184A2006091ED /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 4C78F3532142CE31005E964B /* SwiftTweener.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 4C78F3622142CF0F005E964B;
-			remoteInfo = Tweener;
+			containerPortal = FA5FAA6924F184A2006091ED /* Tweener.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 05A85D00235B6C5B00348DC9;
+			remoteInfo = "Tweener macOS";
+		};
+		FA5FAA7424F184A2006091ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA5FAA6924F184A2006091ED /* Tweener.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 05A85D0D235B6CF500348DC9;
+			remoteInfo = "Tweener watchOS";
+		};
+		FA5FAA7624F184A2006091ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA5FAA6924F184A2006091ED /* Tweener.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 05E1FA65235B742B00A948F1;
+			remoteInfo = "Tweener tvOS";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		4C78F35D2142CE3A005E964B /* Embed Frameworks */ = {
+		FA71A80D24F0A57200D3E361 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				4C78F36F2142CF4E005E964B /* Tweener.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -107,7 +120,6 @@
 		0572C21E22A2D30100F96A19 /* TweenHandlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweenHandlers.swift; sourceTree = "<group>"; };
 		0572C22022A2D31500F96A19 /* SimpleTween.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTween.swift; sourceTree = "<group>"; };
 		0589AED122AF070E0093774D /* Transform3d.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transform3d.swift; sourceTree = "<group>"; };
-		0592B8B922CABFA900F0842B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		05A620C922A9445A005F7D3F /* DragView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragView.swift; sourceTree = "<group>"; };
 		05A7353522B45AC700F34F32 /* PauseTweens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseTweens.swift; sourceTree = "<group>"; };
 		05A7353722B45ADD00F34F32 /* SimpleTimeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTimeline.swift; sourceTree = "<group>"; };
@@ -121,7 +133,6 @@
 		4C78F3412142CDC2005E964B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C78F3442142CDC2005E964B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4C78F3462142CDC2005E964B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4C78F3532142CE31005E964B /* SwiftTweener.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftTweener.xcodeproj; path = ../SwiftTweener.xcodeproj; sourceTree = "<group>"; };
 		4CF9833E214318AC00F1C23E /* bb8-head.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "bb8-head.pdf"; sourceTree = "<group>"; };
 		4CF9833F214318AC00F1C23E /* card.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = card.pdf; sourceTree = "<group>"; };
 		4CF98340214318AC00F1C23E /* fire.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = fire.pdf; sourceTree = "<group>"; };
@@ -152,6 +163,10 @@
 		4CF98359214318AC00F1C23E /* dart.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = dart.pdf; sourceTree = "<group>"; };
 		4CF9835A214318AC00F1C23E /* bb8-body.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "bb8-body.pdf"; sourceTree = "<group>"; };
 		4CF9835B214318AC00F1C23E /* saturn.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = saturn.pdf; sourceTree = "<group>"; };
+		FA5FAA6924F184A2006091ED /* Tweener.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Tweener.xcodeproj; path = ../Tweener.xcodeproj; sourceTree = "<group>"; };
+		FA7170B124E492560001965F /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
+		FA7170D824E4FD8A0001965F /* ChainableTweens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainableTweens.swift; sourceTree = "<group>"; };
+		FAE624A12503F9BE00E3644E /* CustomTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTypes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,7 +174,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C78F36E2142CF4E005E964B /* Tweener.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,7 +186,7 @@
 				4C78F3392142CDC2005E964B /* Examples */,
 				4CF9833D214318AC00F1C23E /* Resources */,
 				4C78F3382142CDC2005E964B /* Products */,
-				4C78F3532142CE31005E964B /* SwiftTweener.xcodeproj */,
+				FA5FAA6924F184A2006091ED /* Tweener.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -189,11 +203,13 @@
 			children = (
 				0521167622D64A0C00806A5B /* LaunchScreen.png */,
 				4C78F33A2142CDC2005E964B /* AppDelegate.swift */,
-				0592B8B922CABFA900F0842B /* ViewController.swift */,
 				4C78F3432142CDC2005E964B /* LaunchScreen.storyboard */,
 				4C78F3412142CDC2005E964B /* Assets.xcassets */,
 				4C78F3462142CDC2005E964B /* Info.plist */,
 				0572C22022A2D31500F96A19 /* SimpleTween.swift */,
+				FAE624A12503F9BE00E3644E /* CustomTypes.swift */,
+				FA7170B124E492560001965F /* ViewExtensions.swift */,
+				FA7170D824E4FD8A0001965F /* ChainableTweens.swift */,
 				0572C21E22A2D30100F96A19 /* TweenHandlers.swift */,
 				0514812322A803E100D927DD /* EaseCurves.swift */,
 				0521167422D6493500806A5B /* CustomEasing.swift */,
@@ -204,8 +220,8 @@
 				05A7353522B45AC700F34F32 /* PauseTweens.swift */,
 				05A7353722B45ADD00F34F32 /* SimpleTimeline.swift */,
 				0524F08422AEAA1100BC28AA /* ScrollTimeline.swift */,
-				05295F5D22C1247300E02FFD /* TimelineBasic.swift */,
 				0548DB1722C7D66300B6F3F4 /* AnimateArcRadius.swift */,
+				05295F5D22C1247300E02FFD /* TimelineBasic.swift */,
 				05B877F122C70AC700F2521F /* PathLoop.swift */,
 				05B877F322C7B6EF00F2521F /* WindBlow.swift */,
 				05B877F522C7B70200F2521F /* ArcOrbits.swift */,
@@ -213,14 +229,6 @@
 				05B877F922C7B73200F2521F /* ScrollAims.swift */,
 			);
 			path = Examples;
-			sourceTree = "<group>";
-		};
-		4C78F3542142CE31005E964B /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				4C78F36D2142CF4E005E964B /* Tweener.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		4CF9833D214318AC00F1C23E /* Resources */ = {
@@ -248,8 +256,8 @@
 				4CF98351214318AC00F1C23E /* flower.pdf */,
 				4CF98352214318AC00F1C23E /* ufo.pdf */,
 				4CF98353214318AC00F1C23E /* spaceman.pdf */,
-				4CF98354214318AC00F1C23E /* stars.pdf */,
 				4CF98355214318AC00F1C23E /* sand.pdf */,
+				4CF98354214318AC00F1C23E /* stars.pdf */,
 				4CF98356214318AC00F1C23E /* sun.pdf */,
 				4CF98357214318AC00F1C23E /* little-earth.pdf */,
 				4CF98358214318AC00F1C23E /* orbits-background.pdf */,
@@ -259,6 +267,17 @@
 			);
 			path = Resources;
 			sourceTree = SOURCE_ROOT;
+		};
+		FA5FAA6A24F184A2006091ED /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA5FAA7124F184A2006091ED /* Tweener.framework */,
+				FA5FAA7324F184A2006091ED /* Tweener.framework */,
+				FA5FAA7524F184A2006091ED /* Tweener.framework */,
+				FA5FAA7724F184A2006091ED /* Tweener.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -270,12 +289,11 @@
 				4C78F3332142CDC2005E964B /* Sources */,
 				4C78F3342142CDC2005E964B /* Frameworks */,
 				4C78F3352142CDC2005E964B /* Resources */,
-				4C78F35D2142CE3A005E964B /* Embed Frameworks */,
+				FA71A80D24F0A57200D3E361 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				4C78F3712142CF4E005E964B /* PBXTargetDependency */,
 			);
 			name = Examples;
 			productName = Examples;
@@ -311,8 +329,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 4C78F3542142CE31005E964B /* Products */;
-					ProjectRef = 4C78F3532142CE31005E964B /* SwiftTweener.xcodeproj */;
+					ProductGroup = FA5FAA6A24F184A2006091ED /* Products */;
+					ProjectRef = FA5FAA6924F184A2006091ED /* Tweener.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -323,11 +341,32 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		4C78F36D2142CF4E005E964B /* Tweener.framework */ = {
+		FA5FAA7124F184A2006091ED /* Tweener.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Tweener.framework;
-			remoteRef = 4C78F36C2142CF4E005E964B /* PBXContainerItemProxy */;
+			remoteRef = FA5FAA7024F184A2006091ED /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FA5FAA7324F184A2006091ED /* Tweener.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Tweener.framework;
+			remoteRef = FA5FAA7224F184A2006091ED /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FA5FAA7524F184A2006091ED /* Tweener.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Tweener.framework;
+			remoteRef = FA5FAA7424F184A2006091ED /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FA5FAA7724F184A2006091ED /* Tweener.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Tweener.framework;
+			remoteRef = FA5FAA7624F184A2006091ED /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -381,18 +420,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				05B877F822C7B71B00F2521F /* AnimateText.swift in Sources */,
-				0592B8BA22CABFA900F0842B /* ViewController.swift in Sources */,
 				05B877F622C7B70300F2521F /* ArcOrbits.swift in Sources */,
 				0521167522D6493500806A5B /* CustomEasing.swift in Sources */,
 				0572C21F22A2D30100F96A19 /* TweenHandlers.swift in Sources */,
 				05A7353822B45ADD00F34F32 /* SimpleTimeline.swift in Sources */,
 				0514812822A804E100D927DD /* CurveInspector.swift in Sources */,
+				FA7170D924E4FD8A0001965F /* ChainableTweens.swift in Sources */,
 				05A7353622B45AC700F34F32 /* PauseTweens.swift in Sources */,
 				05B877F222C70AC700F2521F /* PathLoop.swift in Sources */,
 				0514812422A803E100D927DD /* EaseCurves.swift in Sources */,
+				FAE624A22503F9BF00E3644E /* CustomTypes.swift in Sources */,
 				0572C22122A2D31500F96A19 /* SimpleTween.swift in Sources */,
 				05B877F422C7B6EF00F2521F /* WindBlow.swift in Sources */,
 				0532C7C122A875E1005265E9 /* TouchPoint.swift in Sources */,
+				FA7170B224E492560001965F /* ViewExtensions.swift in Sources */,
 				05295F5E22C1247300E02FFD /* TimelineBasic.swift in Sources */,
 				0548DB1822C7D66300B6F3F4 /* AnimateArcRadius.swift in Sources */,
 				0524F08522AEAA1100BC28AA /* ScrollTimeline.swift in Sources */,
@@ -404,14 +445,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		4C78F3712142CF4E005E964B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Tweener;
-			targetProxy = 4C78F3702142CF4E005E964B /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4C78F3432142CDC2005E964B /* LaunchScreen.storyboard */ = {
@@ -476,7 +509,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -530,7 +563,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -542,13 +575,16 @@
 		4C78F34A2142CDC2005E964B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9WB3M6M662;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Examples",
+				);
 				INFOPLIST_FILE = Examples/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -564,13 +600,16 @@
 		4C78F34B2142CDC2005E964B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9WB3M6M662;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Examples",
+				);
 				INFOPLIST_FILE = Examples/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -9,8 +9,7 @@
 import UIKit
 import Tweener
 
-//Declare FrozenProtocol to pause or remove tweens fro samples.
-
+//Declare FrozenProtocol to pause or remove tweens from samples.
 protocol FreezeProtocol {
     func freeze()
     func warm()
@@ -19,24 +18,23 @@ protocol FreezeProtocol {
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    let window: UIWindow = UIWindow(frame:UIScreen.main.bounds)
-    let container: UIView = UIView(frame:UIScreen.main.bounds)
-    let viewController: ViewController = ViewController()
+    let window = UIWindow(frame:UIScreen.main.bounds)
+    let viewController = UIViewController()
+    let view = UIView(frame:UIScreen.main.bounds)
     var timeline: Timeline = Timeline()
-    var _pageIndex:Int = 0
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
     {
-        viewController.view = UIView(frame: UIScreen.main.bounds)
+        viewController.view.frame = UIScreen.main.bounds
         viewController.view.backgroundColor = UIColor.white
-        viewController.view.addSubview(container)
-
+        viewController.view.addSubview(view)
         window.rootViewController = viewController
         window.makeKeyAndVisible()
         
         //Create tween vizualizer
         let visualizer = TweenVisualizer()
-        visualizer.center = viewController.view.center
+        visualizer.center = CGPoint(x:UIScreen.main.bounds.size.width / 2.0,
+                                    y:UIScreen.main.bounds.size.height - 170)
         Tweener.addVisualizer(visualizer)
         viewController.view.addSubview(visualizer)
         
@@ -66,80 +64,75 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                          y:0.0,
                                          width:UIScreen.main.bounds.size.width,
                                          height:UIScreen.main.bounds.size.height - 40.0)
+        
         //Add samples
-        self.container.addSubview(SimpleTween(frame:contentFrame))
-        self.container.addSubview(TweenHandlers(frame:contentFrame))
-        self.container.addSubview(EaseCurves(frame:contentFrame))
-        self.container.addSubview(CustomEasing(frame:contentFrame))
-        self.container.addSubview(TouchPoint(frame:contentFrame))
-        self.container.addSubview(DragView(frame:contentFrame))
-        self.container.addSubview(Transform3d(frame:contentFrame))
-        self.container.addSubview(PauseTweens(frame:contentFrame))
-        self.container.addSubview(SimpleTimeline(frame:contentFrame))
-        self.container.addSubview(ScrollTimeline(frame:contentFrame))
-        self.container.addSubview(TimelineBasic(frame:contentFrame))
-        self.container.addSubview(AnimateArcRadius(frame:contentFrame))
-        self.container.addSubview(PathLoop(frame:contentFrame))
-        self.container.addSubview(WindBlow(frame:contentFrame))
-        self.container.addSubview(ArcOrbits(frame:contentFrame))
-        self.container.addSubview(AnimateText(frame:contentFrame))
-        self.container.addSubview(ScrollAims(frame:contentFrame))
+        view.addSubview(ViewExtensions(frame:contentFrame))
+        view.addSubview(SimpleTween(frame:contentFrame))
+        view.addSubview(ChainableTweens(frame:contentFrame))
+        view.addSubview(EaseCurves(frame:contentFrame))
+        view.addSubview(CustomEasing(frame:contentFrame))
+        view.addSubview(CustomTypes(frame:contentFrame))
+        view.addSubview(TweenHandlers(frame:contentFrame))
+        view.addSubview(TouchPoint(frame:contentFrame))
+        view.addSubview(DragView(frame:contentFrame))
+        view.addSubview(Transform3d(frame:contentFrame))
+        view.addSubview(PauseTweens(frame:contentFrame))
+        view.addSubview(SimpleTimeline(frame:contentFrame))
+        view.addSubview(ScrollTimeline(frame:contentFrame))
+        view.addSubview(TimelineBasic(frame:contentFrame))
+        view.addSubview(AnimateArcRadius(frame:contentFrame))
+        view.addSubview(PathLoop(frame:contentFrame))
+        view.addSubview(WindBlow(frame:contentFrame))
+        view.addSubview(ArcOrbits(frame:contentFrame))
+        view.addSubview(AnimateText(frame:contentFrame))
+        view.addSubview(ScrollAims(frame:contentFrame))
         
+        //Align views
         var x:CGFloat = 0.0
-        
-        for view:UIView in self.container.subviews
-        {
-            view.frame = CGRect(x:x,
-                                y:view.frame.origin.y,
-                                width:view.frame.size.width,
-                                height:view.frame.size.height)
+        for view:UIView in self.view.subviews{
+            view.frame.origin.x = x
             x = x + UIScreen.main.bounds.size.width
         }
+        self.view.frame.size.width = x
         
-        self.container.frame = CGRect(x:self.container.frame.origin.x,
-                                      y:self.container.frame.origin.y,
-                                      width:x,
-                                      height:self.container.frame.size.height)
-
         return true
     }
     
-    var pageIndex:Int
+    var pageIndex:Int = 0
     {
-        set {
-            let w = UIScreen.main.bounds.size.width
-            var nFrame = self.container.frame
-            nFrame.origin.x = -(CGFloat(newValue) * w)
-            
+        willSet{
             //Freeze page
-            if let pageCurrent = container.subviews[_pageIndex] as? FreezeProtocol{ pageCurrent.freeze() }
+            if let pageCurrent = view.subviews[pageIndex] as? FreezeProtocol{ pageCurrent.freeze() }
+        }
+        
+        didSet {
+            
+            //Set new frame
+            var nFrame = self.view.frame
+            nFrame.origin.x = -(CGFloat(pageIndex) * UIScreen.main.bounds.size.width)
+            
+            //Animate
+            Tween(target:view)
+                .duration(0.5)
+                .ease(Ease.outCubic)
+                .keys(to:[\UIView.frame:nFrame])
+                .play()
             
             //Warm page
-            if let pageNext = container.subviews[newValue] as? FreezeProtocol{ pageNext.warm() }
-            
-            //Animate container x position
-            Tween(target:self.container,
-                  duration:0.5,
-                  ease:Ease.outCubic,
-                  keys:[\UIView.frame:nFrame]).play()
-            
-            //Update page index
-            _pageIndex = newValue
-            
+            if let pageNext = view.subviews[pageIndex] as? FreezeProtocol{ pageNext.warm() }
         }
-        get {return _pageIndex}
     }
     
     @objc func nextSample()
     {
-        if (self.pageIndex < self.container.subviews.count - 1){self.pageIndex += 1}
+        if (self.pageIndex < self.view.subviews.count - 1){self.pageIndex += 1}
         else {self.pageIndex = 0}
     }
     
     @objc func prevSample()
     {
         if (self.pageIndex > 0){self.pageIndex -= 1}
-        else {self.pageIndex = self.container.subviews.count - 1}
+        else {self.pageIndex = self.view.subviews.count - 1}
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

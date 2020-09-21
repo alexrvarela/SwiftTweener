@@ -111,7 +111,7 @@ class AnimateArcRadius:UIView
     func animateRadius(radius:Double)
     {
         Tweener.removeTweens(target: aim)
-        Tween(target: aim, duration: 0.1, ease:Ease.outQuad, keys: [\ArcAim.radius : radius]).play()
+        Tween(target: aim, duration: 0.1, ease:Ease.outQuad, to:[\ArcAim.radius : radius]).play()
     }
     
     func animateLips(top:CGRect, bottom:CGRect, duration:Double)
@@ -120,10 +120,10 @@ class AnimateArcRadius:UIView
         Tweener.removeTweens(target: eyeLipTop)
         
         //Animate top
-        Tween(target: eyeLipTop, duration: duration, ease:Ease.outQuad, keys: [\UIView.frame : top]).play()
+        Tween(target: eyeLipTop, duration: duration, ease:Ease.outQuad, to: [\UIView.frame : top]).play()
         
         //Animate bottom
-        Tween(target: eyeLipBottom, duration: duration, ease:Ease.outQuad, keys: [\UIView.frame : bottom]).play()
+        Tween(target: eyeLipBottom, duration: duration, ease:Ease.outQuad, to: [\UIView.frame : bottom]).play()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
@@ -192,7 +192,7 @@ class AnimateArcRadius:UIView
     func delaySleep()
     {
         if canSleep {
-            Tween(target: eyeLipTop, duration: 0.25, ease:Ease.outQuad, keys: [\UIView.frame : closedTop]).play()
+            Tween(target: eyeLipTop, duration: 0.25, ease:Ease.outQuad, to:[\UIView.frame : closedTop]).play()
         }
     }
 }

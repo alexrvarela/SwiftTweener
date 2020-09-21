@@ -91,7 +91,7 @@ class AnimateText:UIView, FreezeProtocol
               duration: 0.5,
               ease: Ease.none,
               delay: 0.0,
-              keys: [\StringAim.interpolation : 1.0],
+              to: [\StringAim.interpolation : 1.0],
               completion: {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
                 self.swapText()
@@ -113,7 +113,7 @@ class AnimateText:UIView, FreezeProtocol
 
     func getRandomText() -> String
     {
-        let rand = BasicMath.randomInt(max: words.count - 1)
+        let rand = Int.random(in:0...words.count - 1)
         return words[rand]
     }
     

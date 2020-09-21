@@ -6,8 +6,13 @@
 //  Copyright © 2019 Alejandro Ramirez Varela. All rights reserved.
 //
 
+#if os(iOS)
+
 import Foundation
 
+import UIKit
+
+/// Visualize all Tween activity.
 public class TweenVisualizer:UIView
 {
     //Constants
@@ -25,10 +30,13 @@ public class TweenVisualizer:UIView
     var imageView = UIImageView()
     
     //Public
+    ///Sets Tween's bar height.
     public var barHeight:CGFloat = 3.0 {didSet{setNeedsDisplay()}}
+    ///Changes Tween's UI color.
     public var tweenColor:UIColor = .cyan {didSet {setNeedsDisplay()}}
+    ///Changes Timeline's UI color.
     public var timelineColor:UIColor = .magenta {didSet {setNeedsDisplay()}}
-    
+    /// Intializer.
     public init() {
 
         let frame = CGRect(x:10.0,
@@ -238,14 +246,17 @@ public class TweenVisualizer:UIView
         }
     }
     
+    //MARK: - Overriding
+    
+    /// UIView's layoutSubviews() func overridng.
     override public func layoutSubviews() {
         //frame has changed
         steps = Int(round( (self.frame.size.width / 2) / scale ))
         updateTimeBar()
         updateGrid()
     }
-    
-    //Draw code
+
+    /// UIView's draw(rect:) func overridng.
     override public func draw(_ rect: CGRect)
     {
         super.draw(rect)
@@ -304,13 +315,32 @@ public class TweenVisualizer:UIView
             let path:CGPath =  CGPathUtils.makeRoundRect(rect:CGRect(x:x,
                                                                      y:base_y,
                                                                      width:CGFloat(timeline.duration) * scale,
-                                                                     height:barHeight),
+                                                                     height:barHeight * 0.25),
                                                          cornerRadius:barHeight / 2.0)
             
-            base_y = base_y + barHeight + 1.0
+            base_y = base_y + (barHeight * 0.25) + 1.0
             
             context.addPath(path)
             context.fillPath()
+            
+            for control in timeline.controls {
+                
+                //Draw Tween bars
+                context.setFillColor(tweenColor.cgColor)
+                
+                let x = CGFloat(timeline.state == .paused ? -timeline.timePaused + control.timeStart : (timeline.timeStart - Engine.currentTime) + control.timeStart ) * scale
+                
+                let path:CGPath =  CGPathUtils.makeRoundRect(rect:CGRect(x:x,
+                                                                         y:base_y,
+                                                                         width:CGFloat(control.getTween().duration) * scale,
+                                                                         height:barHeight),
+                                                             cornerRadius:barHeight/2.0)
+                base_y = base_y + barHeight + 1.0
+                
+                context.addPath(path)
+                context.fillPath()
+                
+            }
         }
         
         context.restoreGState()
@@ -335,3 +365,4 @@ public class TweenVisualizer:UIView
         context.restoreGState()
     }
 }
+#endif

@@ -154,7 +154,7 @@ class EaseCurves: UIView
         let tween:Tween = Tween(target:selectorContainer,
                                 duration:0.25,
                                 ease:Ease.outQuart,
-                                keys:[\UIView.frame : newFrame])
+                                to:[\UIView.frame : newFrame])
         tween.play()
     }
     

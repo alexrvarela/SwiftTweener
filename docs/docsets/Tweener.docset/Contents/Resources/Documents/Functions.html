@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Functions  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+    <script src="js/lunr.min.js" defer></script>
+    <script src="js/typeahead.jquery.js" defer></script>
+    <script src="js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Section/Functions" class="dashAnchor"></a>
+    <a title="Functions  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">Tweener 2.0 Docs</a> (85% documented)</p>
+        <p class="header-right">
+          <form role="search" action="search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">Tweener Reference</a>
+        <img id="carat" src="img/carat.png" />
+        Functions  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/AnyTween.html">AnyTween</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/ArcAim.html">ArcAim</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/BasicMath.html">BasicMath</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/BezierUtils.html">BezierUtils</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/CGPathUtils.html">CGPathUtils</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/Ease.html">Ease</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/PDFImageView.html">PDFImageView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/PathAim.html">PathAim</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/RotationAim.html">RotationAim</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/StringAim.html">StringAim</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/Timeline.html">Timeline</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/TimelineInspector.html">TimelineInspector</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/Tween.html">Tween</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/TweenBlock.html">TweenBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/TweenVisualizer.html">TweenVisualizer</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Global%20Variables.html">Global Variables</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Global%20Variables.html#/s:7Tweener9timeScaleSdvp">timeScale</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Enums/TimelinePlayMode.html">TimelinePlayMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/TransitionType.html">TransitionType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Extensions/NSBezierPath.html">NSBezierPath</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/NSColor.html">NSColor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/NSView.html">NSView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/UIView.html">UIView</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:7Tweener3addyyAA5TweenCyxGlF">add(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:7Tweener3add_5delayyAA8TimelineC_SdtF">add(_:delay:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:7Tweener7addType02toC00D5Array9isNumericyxSaySdGc_AFxcSbtlF">addType(toType:toArray:isNumeric:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:7Tweener13addVisualizeryyAA05TweenC0CF">addVisualizer(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:7Tweener8pauseAllyyF">pauseAll()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:7Tweener17pauseAllTimelinesyyF">pauseAllTimelines()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:7Tweener14pauseAllTweensyyF">pauseAllTweens()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:7Tweener11pauseTweens6targetyx_tlF">pauseTweens(target:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:7Tweener11pauseTweens6target4keysyx_Says14PartialKeyPathCyxGGtlF">pauseTweens(target:keys:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:7Tweener9removeAllyyF">removeAll()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:7Tweener18removeAllTimelinesyyF">removeAllTimelines()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:7Tweener15removeAllTweensyyF">removeAllTweens()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:7Tweener12removeTweens6targetyx_tlF">removeTweens(target:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:7Tweener12removeTweens6target4keysyx_Says14PartialKeyPathCyxGGtlF">removeTweens(target:keys:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:7Tweener16removeVisualizeryyAA05TweenC0CF">removeVisualizer(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:7Tweener9resumeAllyyF">resumeAll()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:7Tweener18resumeAllTimelinesyyF">resumeAllTimelines()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:7Tweener15resumeAllTweensyyF">resumeAllTweens()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:7Tweener12resumeTweens6targetyx_tlF">resumeTweens(target:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:7Tweener12resumeTweens6target4keysyx_Says14PartialKeyPathCyxGGtlF">resumeTweens(target:keys:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Typealiases.html#/s:7Tweener18AimRotationHandlera">AimRotationHandler</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Typealiases.html#/s:7Tweener8Equationa">Equation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Typealiases.html#/s:7Tweener12ToArrayBlocka">ToArrayBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Typealiases.html#/s:7Tweener11ToTypeBlocka">ToTypeBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Typealiases.html#/s:7Tweener12TweenHandlera">TweenHandler</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>Functions</h1>
+            <p>The following functions are available globally.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Supported%20Types"></a>
+                <a name="//apple_ref/swift/Section/Supported Types" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Supported%20Types"></a>
+                  <h3 class="section-name"><p>Supported Types</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener7addType02toC00D5Array9isNumericyxSaySdGc_AFxcSbtlF"></a>
+                    <a name="//apple_ref/swift/Function/addType(toType:toArray:isNumeric:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener7addType02toC00D5Array9isNumericyxSaySdGc_AFxcSbtlF">addType(toType:<wbr>toArray:<wbr>isNumeric:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Method to add support to custom Types.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">addType</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">toType</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="Typealiases.html#/s:7Tweener11ToTypeBlocka">ToTypeBlock</a></span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">toArray</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="Typealiases.html#/s:7Tweener12ToArrayBlocka">ToArrayBlock</a></span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">isNumeric</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>toType</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An instance of <code><a href="Typealiases.html#/s:7Tweener11ToTypeBlocka">ToTypeBlock</a></code> that converts values from Double&rsquo;s Array to declared Type.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>toArray</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An instance of <code><a href="Typealiases.html#/s:7Tweener12ToArrayBlocka">ToArrayBlock</a></code> that converts values from declared Type to Double&rsquo;s Array.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>isNumeric</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A Bool that declares if Type is a Numeric Type, Swift by default casts 1.0 as Double Type and 1 as Int Type, Tweener casts those Doubles and Ints to Type automatically.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Add%20Tweens%20to%20engine"></a>
+                <a name="//apple_ref/swift/Section/Add Tweens to engine" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Add%20Tweens%20to%20engine"></a>
+                  <h3 class="section-name"><p>Add Tweens to engine</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener3addyyAA5TweenCyxGlF"></a>
+                    <a name="//apple_ref/swift/Function/add(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener3addyyAA5TweenCyxGlF">add(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Adds <code><a href="Classes/Tween.html">Tween</a></code> to Engine</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">add</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">tween</span><span class="p">:</span> <span class="kt"><a href="Classes/Tween.html">Tween</a></span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>tween</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A <code><a href="Classes/Tween.html">Tween</a></code> Type istance to animate.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Add%20Timelines%20to%20engine"></a>
+                <a name="//apple_ref/swift/Section/Add Timelines to engine" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Add%20Timelines%20to%20engine"></a>
+                  <h3 class="section-name"><p>Add Timelines to engine</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener3add_5delayyAA8TimelineC_SdtF"></a>
+                    <a name="//apple_ref/swift/Function/add(_:delay:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener3add_5delayyAA8TimelineC_SdtF">add(_:<wbr>delay:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Adds <code><a href="Classes/Timeline.html">Timeline</a></code> to Engine</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">add</span><span class="p">(</span><span class="n">_</span> <span class="nv">timeline</span><span class="p">:</span> <span class="kt"><a href="Classes/Timeline.html">Timeline</a></span><span class="p">,</span> <span class="nv">delay</span><span class="p">:</span> <span class="kt">Double</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>timeline</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A <code><a href="Classes/Timeline.html">Timeline</a></code> Type istance to animate.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>delay</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Time in seconds to delay animation in Double.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener13addVisualizeryyAA05TweenC0CF"></a>
+                    <a name="//apple_ref/swift/Function/addVisualizer(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener13addVisualizeryyAA05TweenC0CF">addVisualizer(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Attaches a<code><a href="Classes/TweenVisualizer.html">TweenVisualizer</a></code> instance to Engine</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">addVisualizer</span><span class="p">(</span><span class="n">_</span> <span class="nv">visualizer</span><span class="p">:</span> <span class="kt"><a href="Classes/TweenVisualizer.html">TweenVisualizer</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>visualizer</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A <code><a href="Classes/TweenVisualizer.html">TweenVisualizer</a></code> Type istance to vizualize Engine&rsquo;s activity.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener16removeVisualizeryyAA05TweenC0CF"></a>
+                    <a name="//apple_ref/swift/Function/removeVisualizer(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener16removeVisualizeryyAA05TweenC0CF">removeVisualizer(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Detaches a<code><a href="Classes/TweenVisualizer.html">TweenVisualizer</a></code> instance from Engine</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">removeVisualizer</span><span class="p">(</span><span class="n">_</span> <span class="nv">visualizer</span><span class="p">:</span> <span class="kt"><a href="Classes/TweenVisualizer.html">TweenVisualizer</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>visualizer</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A <code><a href="Classes/TweenVisualizer.html">TweenVisualizer</a></code> Type istance to vizualize Engine&rsquo;s activity.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Pause%2C%20Resume%20and%20Removing%20functions"></a>
+                <a name="//apple_ref/swift/Section/Pause, Resume and Removing functions" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Pause%2C%20Resume%20and%20Removing%20functions"></a>
+                  <h3 class="section-name"><p>Pause, Resume and Removing functions</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener12removeTweens6targetyx_tlF"></a>
+                    <a name="//apple_ref/swift/Function/removeTweens(target:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener12removeTweens6targetyx_tlF">removeTweens(target:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Remove tweens by a specific target.
+    - Parameter target: A desired target to remove all existing Tweens.</p>
+<pre class="highlight swift"><code> <span class="kt">Tweener</span><span class="o">.</span><span class="nf">removeTweens</span><span class="p">(</span><span class="nv">target</span><span class="p">:</span><span class="n">myInstance</span><span class="p">)</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">removeTweens</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">target</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener12removeTweens6target4keysyx_Says14PartialKeyPathCyxGGtlF"></a>
+                    <a name="//apple_ref/swift/Function/removeTweens(target:keys:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener12removeTweens6target4keysyx_Says14PartialKeyPathCyxGGtlF">removeTweens(target:<wbr>keys:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Remove tweens by a specific target a specific KeyPaths, this method keeps existing tweens not declared in KeyPath list.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">removeTweens</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">target</span><span class="p">:</span> <span class="kt">T</span><span class="p">,</span> <span class="nv">keys</span><span class="p">:</span> <span class="p">[</span><span class="kt">PartialKeyPath</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">])</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>target</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A desired target to remove all existing Tweens.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>keys</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A  <code>PartialKeyPath</code> list to remove Tweens.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener11pauseTweens6targetyx_tlF"></a>
+                    <a name="//apple_ref/swift/Function/pauseTweens(target:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener11pauseTweens6targetyx_tlF">pauseTweens(target:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Pause tweens by a specific target.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">pauseTweens</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">target</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>target</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A desired target to pause all existing Tweens.
+<code>
+//Usage:
+Tweener.pauseTweens(target:myInstance)
+</code></p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener11pauseTweens6target4keysyx_Says14PartialKeyPathCyxGGtlF"></a>
+                    <a name="//apple_ref/swift/Function/pauseTweens(target:keys:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener11pauseTweens6target4keysyx_Says14PartialKeyPathCyxGGtlF">pauseTweens(target:<wbr>keys:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Pause tweens by a specific target a specific KeyPaths, this method ignores existing tweens not declared in KeyPath list.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">pauseTweens</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">target</span><span class="p">:</span> <span class="kt">T</span><span class="p">,</span> <span class="nv">keys</span><span class="p">:</span> <span class="p">[</span><span class="kt">PartialKeyPath</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">])</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>target</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A desired target to pause all existing Tweens.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>keys</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A  <code>PartialKeyPath</code> list to find same KeyPath Tweens and pause it.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener12resumeTweens6targetyx_tlF"></a>
+                    <a name="//apple_ref/swift/Function/resumeTweens(target:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener12resumeTweens6targetyx_tlF">resumeTweens(target:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Resume tweens by a specific target.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">resumeTweens</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">target</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>target</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A desired target to resume existing Tweens.
+<code>
+//Usage:
+Tweener.resumeTweens(target:myInstance)
+</code></p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener12resumeTweens6target4keysyx_Says14PartialKeyPathCyxGGtlF"></a>
+                    <a name="//apple_ref/swift/Function/resumeTweens(target:keys:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener12resumeTweens6target4keysyx_Says14PartialKeyPathCyxGGtlF">resumeTweens(target:<wbr>keys:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Resume tweens by a specific target a specific KeyPaths, this method ignores existing tweens not declared in KeyPath list.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">resumeTweens</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">target</span><span class="p">:</span> <span class="kt">T</span><span class="p">,</span> <span class="nv">keys</span><span class="p">:</span> <span class="p">[</span><span class="kt">PartialKeyPath</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">])</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>target</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A desired target to pause all existing Tweens.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>keys</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A  <code>PartialKeyPath</code> list to find same KeyPath Tweens and resume it.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener8pauseAllyyF"></a>
+                    <a name="//apple_ref/swift/Function/pauseAll()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener8pauseAllyyF">pauseAll()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Pause all existing Tweens and Timelines in Engine.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">pauseAll</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener9resumeAllyyF"></a>
+                    <a name="//apple_ref/swift/Function/resumeAll()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener9resumeAllyyF">resumeAll()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Resume all existing Tweens and Timelines in Engine.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">resumeAll</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener9removeAllyyF"></a>
+                    <a name="//apple_ref/swift/Function/removeAll()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener9removeAllyyF">removeAll()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Remove all existing Tweens and Timelines in Engine.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">removeAll</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener14pauseAllTweensyyF"></a>
+                    <a name="//apple_ref/swift/Function/pauseAllTweens()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener14pauseAllTweensyyF">pauseAllTweens()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Pause all existing Tweens in Engine.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">pauseAllTweens</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener15resumeAllTweensyyF"></a>
+                    <a name="//apple_ref/swift/Function/resumeAllTweens()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener15resumeAllTweensyyF">resumeAllTweens()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Resume all existing Tweens in Engine.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">resumeAllTweens</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener15removeAllTweensyyF"></a>
+                    <a name="//apple_ref/swift/Function/removeAllTweens()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener15removeAllTweensyyF">removeAllTweens()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Remove all existing Tweens in Engine.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">removeAllTweens</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener17pauseAllTimelinesyyF"></a>
+                    <a name="//apple_ref/swift/Function/pauseAllTimelines()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener17pauseAllTimelinesyyF">pauseAllTimelines()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Pause all existing Timelines in Engine.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">pauseAllTimelines</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener18resumeAllTimelinesyyF"></a>
+                    <a name="//apple_ref/swift/Function/resumeAllTimelines()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener18resumeAllTimelinesyyF">resumeAllTimelines()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Resume all existing Timelines in Engine.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">resumeAllTimelines</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener18removeAllTimelinesyyF"></a>
+                    <a name="//apple_ref/swift/Function/removeAllTimelines()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener18removeAllTimelinesyyF">removeAllTimelines()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Remove all existing Timelines in Engine.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">removeAllTimelines</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2020 <a class="link" href="https://github.com/alexrvarela/SwiftTweener" target="_blank" rel="external">alexrvarela</a>. All rights reserved. (Last updated: 2020-09-21)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

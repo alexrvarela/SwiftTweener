@@ -6,10 +6,14 @@
 //  Copyright © 2016 Alejandro Ramirez Varela. All rights reserved.
 //
 
-import Foundation
+#if os(iOS) || os(tvOS)
 import UIKit
+//TODO:Add macOS support.
+//#elseif os(macOS)
+#endif
 
-public class PDFImageRender
+/// Renders a PDF document in to a UIImage.
+class PDFImageRender
 {
     var data: Data?
     var document: CGPDFDocument?
@@ -46,13 +50,13 @@ public class PDFImageRender
         setPDFData(data: FileManager.default.contents(atPath: path))
     }
     
-    //Get current page size
+    /// Get current page size
     func getPageSize(page:Int) ->CGSize
     {
         if self.data == nil {return CGSize.zero}
         return self.document!.page(at: page)!.getBoxRect(.cropBox).size
     }
-    
+    /// Render page
     func renderPage(page: Int, scale:Double) -> UIImage?
     {
         if self.document == nil {return nil}

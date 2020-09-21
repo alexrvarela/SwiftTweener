@@ -6,61 +6,93 @@
 //  Copyright © 2019 Alejandro Ramirez Varela. All rights reserved.
 //
 
-import Foundation
+#if os(iOS) || os(tvOS)
+import UIKit
+#elseif os(macOS)
+import AppKit
+#endif
+
 
 public typealias AimRotationHandler = (CGFloat) -> Void
 
+/// Roatates view's CALayer over z-axis.
 public class RotationAim
 {
+    ///An optional block to handle updates.
     public var onUpdateRotation:AimRotationHandler?
-    public var target:UIView?//Optional
+    
+    #if os(iOS) || os(tvOS)
+    /// UIView target.
+    public var target:UIView?
+    #elseif os(macOS)
+    /// NSView target.
+    public var target:NSView?
+    #endif
+    
     private var _rotation:CGFloat = 0.0//in radians
     private var _rotationOffset:CGFloat = 0.0
     private var _distance:CGFloat = 0.0
     private var _orientation:CGPoint = CGPoint.zero
- 
+    
     public init(){}
     
-    //init with target
+#if os(iOS) || os(tvOS)
+    /**
+    Initializer.
+    - Parameter target: An UIView to handle rotation.
+    */
     public convenience init(target:UIView)
     {
         self.init()
         self.target = target
     }
+#elseif os(macOS)
+    /**
+    Initializer.
+    - Parameter target: An NSView to handle rotation.
+    */
+    public convenience init(target:NSView)
+    {
+        self.init()
+        if target.layer == nil {target.wantsLayer = true}
+        target.layer?.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        self.target = target
+    }
+#endif
     
-    //Set Rotation in degrees
+    ///Sets Rotation in degrees.
     public var angle:CGFloat
     {
         set { rotation = BasicMath.toRadians(degree:newValue)}
         get { return BasicMath.toDegrees(radian:_rotation)}
     }
     
+    /// Adds an offset to adjust current angle in degrees.
     public var angleOffset:CGFloat
-    {//TODO:Use templates <T>
+    {
         set { rotationOffset = BasicMath.toRadians(degree:newValue)}
         get { return BasicMath.toDegrees(radian:_rotationOffset)}
     }
 
-    //Set Rotation in radians
+    /// Sets Rotation in radians.
     public var rotation:CGFloat
     {
         set {
             _rotation = newValue
             
-            if (onUpdateRotation != nil)
-            {
-                onUpdateRotation!(_rotation + _rotationOffset)
-            }
+            if onUpdateRotation != nil { onUpdateRotation!(_rotation + _rotationOffset) }
             
-            if (self.target != nil)
-            {
-                //Apply transform
-                target!.transform = CGAffineTransform(rotationAngle: _rotation + _rotationOffset)
-            }
+            //Apply transform
+            #if os(iOS) || os(tvOS)
+            self.target?.layer.transform = CATransform3DMakeRotation(_rotation + _rotationOffset, 0.0, 0.0, 1.0)
+            #elseif os(macOS)
+            self.target?.layer?.transform = CATransform3DMakeRotation(_rotation + _rotationOffset, 0.0, 0.0, 1.0)
+            #endif
         }
         get {return _rotation}
     }
     
+    /// Adds an offset to adjust current angle in radians.
     public var rotationOffset:CGFloat
     {
         set {
@@ -71,7 +103,7 @@ public class RotationAim
         get {return _rotationOffset}
     }
 
-    //Convert distance to specific angle
+    ///Converts linear distance to rotation angle.
     public var distance:CGFloat
     {
         set {
@@ -83,13 +115,17 @@ public class RotationAim
         get {return _distance}
     }
 
-    //orient target to specific point
+    ///Orients target to specific point.
     public var orientation:CGPoint
     {
         set {
             _orientation = newValue
             //TODO:add offset?
+            #if os(iOS) || os(tvOS)
             rotation = CGFloat(BasicMath.angle(start:target!.center, end:newValue))
+            #elseif os(macOS)
+            rotation = CGFloat(BasicMath.angle(start:target!.center(), end:newValue))
+            #endif
         }
         get {return _orientation}
     }

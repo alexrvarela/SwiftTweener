@@ -71,7 +71,7 @@ class TimelineBasic:UIView, FreezeProtocol
         timeline.add(Tween(target:asset1,
                            duration:1.0,
                            ease:Ease.outQuad,
-                           keys:[\UIView.frame:newFrame,
+                           to:[\UIView.frame:newFrame,
                                  \UIView.alpha:0.25]
         ))
 
@@ -87,7 +87,7 @@ class TimelineBasic:UIView, FreezeProtocol
         timeline.add(Tween(target:asset2,
                            duration:1.0,
                            ease:Ease.inOutBounce,
-                           keys:[\UIView.frame:newFrame]
+                           to:[\UIView.frame:newFrame]
         ))
         
         //TWEEN
@@ -95,7 +95,7 @@ class TimelineBasic:UIView, FreezeProtocol
         timeline.add(Tween(target:self,
                            duration:1.0,
                            ease:Ease.outQuad,
-                           keys:[\TimelineBasic.rotationAngle:360]
+                           to:[\TimelineBasic.rotationAngle:360]
         ))
         
         //TWEEN 4
@@ -110,7 +110,7 @@ class TimelineBasic:UIView, FreezeProtocol
                            duration:1.0,
                            ease:Ease.outElastic,
                            delay:1.0,
-                           keys:[\UIView.frame:newFrame]
+                           to:[\UIView.frame:newFrame]
         ))
         
         //Link timeline to inspector

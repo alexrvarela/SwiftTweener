@@ -109,7 +109,7 @@ class PauseTweens:UIView, FreezeProtocol
         newFrame.origin.x = -clouds1.frame.size.width / 2.0
         
         Tween(target:clouds1, duration:6.0, ease:Ease.none, delay: 0.0,
-               keys:[\UIView.frame:newFrame],
+               to:[\UIView.frame:newFrame],
               completion: {
                 var resetFrame = self.clouds1.frame
                 resetFrame.origin.x = 0.0
@@ -128,7 +128,7 @@ class PauseTweens:UIView, FreezeProtocol
               duration:4.0,
               ease:Ease.none,
               delay:0.0,
-              keys:[\UIView.frame:newFrame],
+              to:[\UIView.frame:newFrame],
               completion:{
                 var resetFrame = self.clouds2.frame
                 resetFrame.origin.x = 0
@@ -146,7 +146,7 @@ class PauseTweens:UIView, FreezeProtocol
               duration:2.0,
               ease:Ease.none,
               delay:0.0,
-              keys:[\UIView.frame:newFrame],
+              to:[\UIView.frame:newFrame],
               completion:{
                 var resetFrame =  self.clouds3.frame
                 resetFrame.origin.x = 0

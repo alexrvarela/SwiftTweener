@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>BasicMath Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/BasicMath" class="dashAnchor"></a>
+    <a title="BasicMath Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">Tweener 2.0 Docs</a> (85% documented)</p>
+        <p class="header-right">
+          <form role="search" action="../search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">Tweener Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        BasicMath Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/AnyTween.html">AnyTween</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ArcAim.html">ArcAim</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BasicMath.html">BasicMath</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BezierUtils.html">BezierUtils</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CGPathUtils.html">CGPathUtils</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Ease.html">Ease</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PDFImageView.html">PDFImageView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PathAim.html">PathAim</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RotationAim.html">RotationAim</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/StringAim.html">StringAim</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Timeline.html">Timeline</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TimelineInspector.html">TimelineInspector</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Tween.html">Tween</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TweenBlock.html">TweenBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TweenVisualizer.html">TweenVisualizer</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Global%20Variables.html">Global Variables</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Global%20Variables.html#/s:7Tweener9timeScaleSdvp">timeScale</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/TimelinePlayMode.html">TimelinePlayMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/TransitionType.html">TransitionType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/NSBezierPath.html">NSBezierPath</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/NSColor.html">NSColor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/NSView.html">NSView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIView.html">UIView</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener3addyyAA5TweenCyxGlF">add(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener3add_5delayyAA8TimelineC_SdtF">add(_:delay:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener7addType02toC00D5Array9isNumericyxSaySdGc_AFxcSbtlF">addType(toType:toArray:isNumeric:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener13addVisualizeryyAA05TweenC0CF">addVisualizer(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener8pauseAllyyF">pauseAll()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener17pauseAllTimelinesyyF">pauseAllTimelines()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener14pauseAllTweensyyF">pauseAllTweens()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener11pauseTweens6targetyx_tlF">pauseTweens(target:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener11pauseTweens6target4keysyx_Says14PartialKeyPathCyxGGtlF">pauseTweens(target:keys:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener9removeAllyyF">removeAll()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener18removeAllTimelinesyyF">removeAllTimelines()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener15removeAllTweensyyF">removeAllTweens()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener12removeTweens6targetyx_tlF">removeTweens(target:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener12removeTweens6target4keysyx_Says14PartialKeyPathCyxGGtlF">removeTweens(target:keys:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener16removeVisualizeryyAA05TweenC0CF">removeVisualizer(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener9resumeAllyyF">resumeAll()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener18resumeAllTimelinesyyF">resumeAllTimelines()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener15resumeAllTweensyyF">resumeAllTweens()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener12resumeTweens6targetyx_tlF">resumeTweens(target:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener12resumeTweens6target4keysyx_Says14PartialKeyPathCyxGGtlF">resumeTweens(target:keys:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:7Tweener18AimRotationHandlera">AimRotationHandler</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:7Tweener8Equationa">Equation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:7Tweener12ToArrayBlocka">ToArrayBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:7Tweener11ToTypeBlocka">ToTypeBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:7Tweener12TweenHandlera">TweenHandler</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>BasicMath</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">BasicMath</span></code></pre>
+
+                </div>
+              </div>
+            <p>A set of basic math functions.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener9BasicMathC9toRadians6degreeS2d_tFZ"></a>
+                    <a name="//apple_ref/swift/Method/toRadians(degree:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener9BasicMathC9toRadians6degreeS2d_tFZ">toRadians(degree:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Convert degree to radian.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">toRadians</span><span class="p">(</span><span class="nv">degree</span><span class="p">:</span> <span class="kt">Double</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Double</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A calculated radian in <code>Double</code> value type.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener9BasicMathC9toRadians6degreeS2f_tFZ"></a>
+                    <a name="//apple_ref/swift/Method/toRadians(degree:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener9BasicMathC9toRadians6degreeS2f_tFZ">toRadians(degree:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Convert degree to radian.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">toRadians</span><span class="p">(</span><span class="nv">degree</span><span class="p">:</span> <span class="kt">Float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Float</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A calculated radian in <code>Float</code> value type.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener9BasicMathC9toRadians6degree12CoreGraphics7CGFloatVAH_tFZ"></a>
+                    <a name="//apple_ref/swift/Method/toRadians(degree:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener9BasicMathC9toRadians6degree12CoreGraphics7CGFloatVAH_tFZ">toRadians(degree:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Convert degree to radian.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">toRadians</span><span class="p">(</span><span class="nv">degree</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CGFloat</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A calculated radian in <code>CGFloat</code> value type.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener9BasicMathC9toDegrees6radianS2d_tFZ"></a>
+                    <a name="//apple_ref/swift/Method/toDegrees(radian:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener9BasicMathC9toDegrees6radianS2d_tFZ">toDegrees(radian:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Convert radian to degree.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">toDegrees</span><span class="p">(</span><span class="nv">radian</span><span class="p">:</span> <span class="kt">Double</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Double</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A calculated radian in <code>Double</code> value type.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener9BasicMathC9toDegrees6radianS2f_tFZ"></a>
+                    <a name="//apple_ref/swift/Method/toDegrees(radian:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener9BasicMathC9toDegrees6radianS2f_tFZ">toDegrees(radian:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Convert radian to degree.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">toDegrees</span><span class="p">(</span><span class="nv">radian</span><span class="p">:</span> <span class="kt">Float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Float</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener9BasicMathC9toDegrees6radian12CoreGraphics7CGFloatVAH_tFZ"></a>
+                    <a name="//apple_ref/swift/Method/toDegrees(radian:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener9BasicMathC9toDegrees6radian12CoreGraphics7CGFloatVAH_tFZ">toDegrees(radian:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Convert radian to degree.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">toDegrees</span><span class="p">(</span><span class="nv">radian</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CGFloat</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener9BasicMathC5angle5start3end12CoreGraphics7CGFloatVSo7CGPointV_AKtFZ"></a>
+                    <a name="//apple_ref/swift/Method/angle(start:end:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener9BasicMathC5angle5start3end12CoreGraphics7CGFloatVSo7CGPointV_AKtFZ">angle(start:<wbr>end:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Calculate angle rotation between 2 points.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">angle</span><span class="p">(</span><span class="nv">start</span><span class="p">:</span> <span class="kt">CGPoint</span><span class="p">,</span> <span class="nv">end</span><span class="p">:</span> <span class="kt">CGPoint</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CGFloat</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener9BasicMathC6length5start3end12CoreGraphics7CGFloatVSo7CGPointV_AKtFZ"></a>
+                    <a name="//apple_ref/swift/Method/length(start:end:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener9BasicMathC6length5start3end12CoreGraphics7CGFloatVSo7CGPointV_AKtFZ">length(start:<wbr>end:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Calculate length (distance) between 2 points.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">length</span><span class="p">(</span><span class="nv">start</span><span class="p">:</span> <span class="kt">CGPoint</span><span class="p">,</span> <span class="nv">end</span><span class="p">:</span> <span class="kt">CGPoint</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CGFloat</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener9BasicMathC16arcRotationPoint5angle6radiusSo7CGPointV12CoreGraphics7CGFloatV_AKtFZ"></a>
+                    <a name="//apple_ref/swift/Method/arcRotationPoint(angle:radius:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener9BasicMathC16arcRotationPoint5angle6radiusSo7CGPointV12CoreGraphics7CGFloatV_AKtFZ">arcRotationPoint(angle:<wbr>radius:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Calculate point location into circular angle rotation.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">arcRotationPoint</span><span class="p">(</span><span class="nv">angle</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">,</span> <span class="nv">radius</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CGPoint</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A calculated CGPoint postiton.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener9BasicMathC20ellipseRotationPoint5angle7xradius7yradiusSo7CGPointV12CoreGraphics7CGFloatV_A2LtFZ"></a>
+                    <a name="//apple_ref/swift/Method/ellipseRotationPoint(angle:xradius:yradius:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener9BasicMathC20ellipseRotationPoint5angle7xradius7yradiusSo7CGPointV12CoreGraphics7CGFloatV_A2LtFZ">ellipseRotationPoint(angle:<wbr>xradius:<wbr>yradius:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Calculate point location into elliptical angle rotation.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">ellipseRotationPoint</span><span class="p">(</span><span class="nv">angle</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">,</span> <span class="nv">xradius</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">,</span> <span class="nv">yradius</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CGPoint</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A calculated CGPoint postiton.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Bezier%20functions."></a>
+                <a name="//apple_ref/swift/Section/Bezier functions." class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Bezier%20functions."></a>
+                  <h3 class="section-name"><p>Bezier functions.</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener9BasicMathC11quadTangent1t1a1b1c12CoreGraphics7CGFloatVAK_A3KtFZ"></a>
+                    <a name="//apple_ref/swift/Method/quadTangent(t:a:b:c:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener9BasicMathC11quadTangent1t1a1b1c12CoreGraphics7CGFloatVAK_A3KtFZ">quadTangent(t:<wbr>a:<wbr>b:<wbr>c:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Calculates Quadratic tangent.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">quadTangent</span><span class="p">(</span><span class="nv">t</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">,</span> <span class="nv">a</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">,</span> <span class="nv">b</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">,</span> <span class="nv">c</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CGFloat</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener9BasicMathC12cubicTangent1t1a1b1c1d12CoreGraphics7CGFloatVAL_A4LtFZ"></a>
+                    <a name="//apple_ref/swift/Method/cubicTangent(t:a:b:c:d:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener9BasicMathC12cubicTangent1t1a1b1c1d12CoreGraphics7CGFloatVAL_A4LtFZ">cubicTangent(t:<wbr>a:<wbr>b:<wbr>c:<wbr>d:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Calculates Cubic tangent</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">cubicTangent</span><span class="p">(</span><span class="nv">t</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">,</span> <span class="nv">a</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">,</span> <span class="nv">b</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">,</span> <span class="nv">c</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">,</span> <span class="nv">d</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CGFloat</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener9BasicMathC6linear1t1a1b12CoreGraphics7CGFloatVAJ_A2JtFZ"></a>
+                    <a name="//apple_ref/swift/Method/linear(t:a:b:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener9BasicMathC6linear1t1a1b12CoreGraphics7CGFloatVAJ_A2JtFZ">linear(t:<wbr>a:<wbr>b:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Calculates Linear interpolation</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">linear</span><span class="p">(</span><span class="nv">t</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">,</span> <span class="nv">a</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">,</span> <span class="nv">b</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CGFloat</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener9BasicMathC4quad1t1a1b1c12CoreGraphics7CGFloatVAK_A3KtFZ"></a>
+                    <a name="//apple_ref/swift/Method/quad(t:a:b:c:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener9BasicMathC4quad1t1a1b1c12CoreGraphics7CGFloatVAK_A3KtFZ">quad(t:<wbr>a:<wbr>b:<wbr>c:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Calculates Quadratic interpolation</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">quad</span><span class="p">(</span><span class="nv">t</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">,</span> <span class="nv">a</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">,</span> <span class="nv">b</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">,</span> <span class="nv">c</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CGFloat</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener9BasicMathC5cubic1t1a1b1c1d12CoreGraphics7CGFloatVAL_A4LtFZ"></a>
+                    <a name="//apple_ref/swift/Method/cubic(t:a:b:c:d:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener9BasicMathC5cubic1t1a1b1c1d12CoreGraphics7CGFloatVAL_A4LtFZ">cubic(t:<wbr>a:<wbr>b:<wbr>c:<wbr>d:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Calculates Cubic interpolation</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">cubic</span><span class="p">(</span><span class="nv">t</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">,</span> <span class="nv">a</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">,</span> <span class="nv">b</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">,</span> <span class="nv">c</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">,</span> <span class="nv">d</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CGFloat</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2020 <a class="link" href="https://github.com/alexrvarela/SwiftTweener" target="_blank" rel="external">alexrvarela</a>. All rights reserved. (Last updated: 2020-09-21)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

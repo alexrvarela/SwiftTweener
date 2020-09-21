@@ -7,23 +7,24 @@
 //
 
 import Foundation
-
-public enum TransitionType
-{
+/// A set of StringAim transition types.
+public enum TransitionType{
     case lenght
     case linear
     case random
 }
 
+/// Class wrapper to make methods accessible.
 class AnyKeyPathWrapper{ public func update(string:String){} }
 
-class keyPathWrapper<T>:AnyKeyPathWrapper
-{
+/// Class wrapper to make keyPath accessible.
+class keyPathWrapper<T>:AnyKeyPathWrapper{
+    
     var target:T?
     var keyPath:ReferenceWritableKeyPath<T,String>?
     
-    convenience init(target:T, keyPath:ReferenceWritableKeyPath<T, String>)
-    {
+    convenience init(target:T, keyPath:ReferenceWritableKeyPath<T, String>){
+        
         self.init()
         self.target = target
         self.keyPath = keyPath
@@ -32,8 +33,10 @@ class keyPathWrapper<T>:AnyKeyPathWrapper
     override func update(string: String) { target![keyPath:keyPath!] = string }
 }
 
+/// A class which animates text.
 public class StringAim
 {
+    /// A wrapper instance.
     var wrapper:AnyKeyPathWrapper?
     
     public var from:String = ""
@@ -61,6 +64,11 @@ public class StringAim
     //Declare as public
     public init(){}
     
+    /**
+    Intialize with target and keypath
+     - Parameter target:         Any object with a writable key path type String
+     - Parameter keyPath:        A writable key path type String to update.
+     */
     public convenience init<T>(target:T, keyPath:ReferenceWritableKeyPath<T, String>){
         self.init()
         bind(target:target, keyPath:keyPath)
@@ -76,7 +84,11 @@ public class StringAim
         self.wrapper = keyPathWrapper(target:target, keyPath:keyPath)
     }
     
-    /// Linear, animates char code value.
+    /** Linear, animates char code value.
+    - Parameter interpolation:  A Double number between 0 and 1 to control text change.
+    - Parameter from:           Initial transition String value.
+    - Parameter to:             Destination transition String value.
+    */
     public func linear(interpolation:Double, from:String, to:String) -> String
     {
         //Enable mutable strings
@@ -115,7 +127,11 @@ public class StringAim
         return output
     }
     
-    /// Lenght, hides and shows char per char.
+    /** Lenght, hides and shows char per char.
+    - Parameter interpolation:  A Double number between 0 and 1 to control text change.
+    - Parameter from:           Initial transition String value.
+    - Parameter to:             Destination transition String value.
+    */
     public func length(interpolation:Double, from:String, to:String) -> String
     {
         let totalLength:Int = from.count + to.count
@@ -152,7 +168,11 @@ public class StringAim
         return string
     }
 
-    /// Random, fills with random characters.
+    /** Random, fills with random characters.
+    - Parameter interpolation:  A Double number between 0 and 1 to control text change.
+    - Parameter from:           Initial transition String value.
+    - Parameter to:             Destination transition String value.
+    */
     public func random(interpolation:Double, from:String, to:String) -> String
     {
         let start = Int(floor(Double(to.count) * interpolation))
@@ -160,7 +180,7 @@ public class StringAim
 
         while randomString.count < (to.count - start)
         {
-            let randomInt = BasicMath.randomIntRange(max: randomSet.count - 1, min:0)
+            let randomInt =  Int.random(in: 0...randomSet.count - 1)
             randomString = randomString + [randomSet[randomInt]]
         }
         
@@ -168,14 +188,14 @@ public class StringAim
         return string + randomString
     }
 
-    ///
+    /// Controls text transition change using a number between 0 and 1.
     public var interpolation:Double
     {
         set {setInterpolation(value:newValue)}
         get {return _interpolation}
     }
     
-    ///
+    /// Internal function which handles text outputs.
     private func setInterpolation(value:Double)
     {
         _interpolation = value
@@ -188,6 +208,7 @@ public class StringAim
         
         var output = ""
         
+        //TODO:Use code blocks.
         switch transitionType
         {
             case .lenght:

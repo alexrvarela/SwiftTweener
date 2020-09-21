@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Timeline Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/Timeline" class="dashAnchor"></a>
+    <a title="Timeline Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">Tweener 2.0 Docs</a> (85% documented)</p>
+        <p class="header-right">
+          <form role="search" action="../search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">Tweener Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        Timeline Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/AnyTween.html">AnyTween</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ArcAim.html">ArcAim</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BasicMath.html">BasicMath</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BezierUtils.html">BezierUtils</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CGPathUtils.html">CGPathUtils</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Ease.html">Ease</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PDFImageView.html">PDFImageView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PathAim.html">PathAim</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RotationAim.html">RotationAim</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/StringAim.html">StringAim</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Timeline.html">Timeline</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TimelineInspector.html">TimelineInspector</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Tween.html">Tween</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TweenBlock.html">TweenBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TweenVisualizer.html">TweenVisualizer</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Global%20Variables.html">Global Variables</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Global%20Variables.html#/s:7Tweener9timeScaleSdvp">timeScale</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/TimelinePlayMode.html">TimelinePlayMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/TransitionType.html">TransitionType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/NSBezierPath.html">NSBezierPath</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/NSColor.html">NSColor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/NSView.html">NSView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIView.html">UIView</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener3addyyAA5TweenCyxGlF">add(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener3add_5delayyAA8TimelineC_SdtF">add(_:delay:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener7addType02toC00D5Array9isNumericyxSaySdGc_AFxcSbtlF">addType(toType:toArray:isNumeric:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener13addVisualizeryyAA05TweenC0CF">addVisualizer(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener8pauseAllyyF">pauseAll()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener17pauseAllTimelinesyyF">pauseAllTimelines()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener14pauseAllTweensyyF">pauseAllTweens()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener11pauseTweens6targetyx_tlF">pauseTweens(target:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener11pauseTweens6target4keysyx_Says14PartialKeyPathCyxGGtlF">pauseTweens(target:keys:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener9removeAllyyF">removeAll()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener18removeAllTimelinesyyF">removeAllTimelines()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener15removeAllTweensyyF">removeAllTweens()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener12removeTweens6targetyx_tlF">removeTweens(target:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener12removeTweens6target4keysyx_Says14PartialKeyPathCyxGGtlF">removeTweens(target:keys:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener16removeVisualizeryyAA05TweenC0CF">removeVisualizer(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener9resumeAllyyF">resumeAll()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener18resumeAllTimelinesyyF">resumeAllTimelines()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener15resumeAllTweensyyF">resumeAllTweens()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener12resumeTweens6targetyx_tlF">resumeTweens(target:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener12resumeTweens6target4keysyx_Says14PartialKeyPathCyxGGtlF">resumeTweens(target:keys:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:7Tweener18AimRotationHandlera">AimRotationHandler</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:7Tweener8Equationa">Equation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:7Tweener12ToArrayBlocka">ToArrayBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:7Tweener11ToTypeBlocka">ToTypeBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:7Tweener12TweenHandlera">TweenHandler</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>Timeline</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Timeline</span></code></pre>
+
+                </div>
+              </div>
+            <p>A class that contains and controls a collection of Tweens.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener8TimelineC8playModeAA0b4PlayD0Ovp"></a>
+                    <a name="//apple_ref/swift/Property/playMode" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener8TimelineC8playModeAA0b4PlayD0Ovp">playMode</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>TimelinePlayMode option, .once is setted by default.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">playMode</span><span class="p">:</span> <span class="kt"><a href="../Enums/TimelinePlayMode.html">TimelinePlayMode</a></span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener8TimelineC7reverseSbvp"></a>
+                    <a name="//apple_ref/swift/Property/reverse" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener8TimelineC7reverseSbvp">reverse</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Changes animation direction.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">reverse</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener8TimelineCyAcA8AnyTweenCd_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener8TimelineCyAcA8AnyTweenCd_tcfc">init(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initilalizer.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">tweens</span><span class="p">:</span> <span class="kt"><a href="../Classes/AnyTween.html">AnyTween</a></span><span class="o">...</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener8TimelineC3addyAcA8AnyTweenCd_tF"></a>
+                    <a name="//apple_ref/swift/Method/add(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener8TimelineC3addyAcA8AnyTweenCd_tF">add(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Add Tweens function.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@discardableResult</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">add</span><span class="p">(</span><span class="n">_</span> <span class="nv">tweens</span><span class="p">:</span> <span class="kt"><a href="../Classes/AnyTween.html">AnyTween</a></span><span class="o">...</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Timeline</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Current<code>Timeline</code> instance.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener8TimelineC4modeyAcA0B8PlayModeOF"></a>
+                    <a name="//apple_ref/swift/Method/mode(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener8TimelineC4modeyAcA0B8PlayModeOF">mode(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets TimelinePlayMode option using declarative syntax.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@discardableResult</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">mode</span><span class="p">(</span><span class="n">_</span> <span class="nv">playMode</span><span class="p">:</span> <span class="kt"><a href="../Enums/TimelinePlayMode.html">TimelinePlayMode</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Timeline</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Current<code>Timeline</code> instance.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener8TimelineC4playACyF"></a>
+                    <a name="//apple_ref/swift/Method/play()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener8TimelineC4playACyF">play()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Plays with zero-time delay.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@discardableResult</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">play</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Timeline</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Current<code>Timeline</code> instance.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener8TimelineC4playyACSdF"></a>
+                    <a name="//apple_ref/swift/Method/play(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener8TimelineC4playyACSdF">play(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Plays with time delay.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@discardableResult</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">play</span><span class="p">(</span><span class="n">_</span> <span class="nv">delay</span><span class="p">:</span> <span class="kt">Double</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Timeline</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Current<code>Timeline</code> instance.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener8TimelineC5pauseACyF"></a>
+                    <a name="//apple_ref/swift/Method/pause()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener8TimelineC5pauseACyF">pause()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Pauses Timeline.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@discardableResult</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">pause</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Timeline</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Current<code>Timeline</code> instance.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener8TimelineC6rewindACyF"></a>
+                    <a name="//apple_ref/swift/Method/rewind()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener8TimelineC6rewindACyF">rewind()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Rewinds Timeline.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@discardableResult</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">rewind</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Timeline</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Current<code>Timeline</code> instance.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener8TimelineC7setTimeyACSdF"></a>
+                    <a name="//apple_ref/swift/Method/setTime(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener8TimelineC7setTimeyACSdF">setTime(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets timeline time manually.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@discardableResult</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">setTime</span><span class="p">(</span><span class="n">_</span> <span class="nv">currentTime</span><span class="p">:</span> <span class="kt">Double</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Timeline</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Current<code>Timeline</code> instance.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener8TimelineC11getDurationSdyF"></a>
+                    <a name="//apple_ref/swift/Method/getDuration()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener8TimelineC11getDurationSdyF">getDuration()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Gets Timeline&rsquo;s time duration in seconds.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getDuration</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Double</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener8TimelineC9isPlayingSbyF"></a>
+                    <a name="//apple_ref/swift/Method/isPlaying()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener8TimelineC9isPlayingSbyF">isPlaying()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Checks if Timeline has added to Engine.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">isPlaying</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2020 <a class="link" href="https://github.com/alexrvarela/SwiftTweener" target="_blank" rel="external">alexrvarela</a>. All rights reserved. (Last updated: 2020-09-21)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

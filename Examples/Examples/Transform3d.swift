@@ -82,7 +82,7 @@ class Transform3d:UIView
             Tween(target: circle.layer,
                   duration: 0.25,
                   ease:Ease.outQuad,
-                  keys: [\CALayer.transform : CATransform3DIdentity]).play()
+                  to: [\CALayer.transform : CATransform3DIdentity]).play()
         }
     }
 }

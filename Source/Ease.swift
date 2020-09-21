@@ -30,16 +30,16 @@
 import Foundation
 
 /**
- Data type for equations.
+ Block for equations.
  - Parameter t:         Current time (in frames or seconds).
  - Parameter b:         Starting value.
  - Parameter c:         Change needed in value.
  - Parameter d:         Expected easing duration (in frames or seconds).
  - returns:             A Double with the correct value.
  */
-
 public typealias Equation = (_ t:Double, _ b:Double, _ c:Double, _ d:Double) -> Double
 
+///Base class with Easing equations declared statically.
 public class Ease
 {
     //MARK: - None
@@ -52,21 +52,18 @@ public class Ease
     //MARK: - Quad
     
     /// Easing equation function for a quadratic (t^2) easing in: accelerating from zero velocity.
-    /// - let i: Time interpolation
     public static let inQuad : Equation = { (t, b, c, d) in
         let i = t / d
         return c * i * i + b
     }
     
     /// Easing equation function for a quadratic (t^2) easing out: decelerating to zero velocity.
-    /// - let i: Time interpolation
     public static let outQuad : Equation = { (t, b, c, d) in
         let i = t / d
         return (-c) * i * ( i - 2) + b
     }
     
     /// Easing equation function for a quadratic (t^2) easing in/out: acceleration until halfway, then deceleration.
-    /// - var i: Time interpolation
     public static let inOutQuad : Equation = { (t, b, c, d) in
         if t < d/2 { return Ease.inQuad(t*2, b, c/2, d)}
         return Ease.outQuad((t*2)-d, b+c/2, c/2, d)
@@ -165,7 +162,8 @@ public class Ease
     
     /// Easing equation function for a sinusoidal (sin(t)) easing in: accelerating from zero velocity.
     public static let inSine : Equation = { (t, b, c, d) in
-        return (-c)*cos(t/d*(Double.pi/2))+c+b
+        let i = (-c)*cos(t/d*(Double.pi/2.0))+c+b
+        return i
     }
     
     /// Easing equation function for a sinusoidal (sin(t)) easing out: decelerating from zero velocity.
@@ -175,7 +173,8 @@ public class Ease
     
     /// Easing equation function for a sinusoidal (sin(t)) easing in/out: acceleration until halfway, then deceleration.
     public static let inOutSine : Equation = { (t, b, c, d) in
-        return (-c)/2*(cos(Double.pi*t/d)-1)+b
+        let i = (-c)/2*(cos(Double.pi*t/d)-1)+b
+        return i
     }
     
     /// Easing equation function for a sinusoidal (sin(t)) easing out/in: deceleration until halfway, then acceleration.
@@ -188,12 +187,14 @@ public class Ease
     
     /// Easing equation function for an exponential (2^t) easing in: accelerating from zero velocity.
     public static let inExpo : Equation = { (t, b, c, d) in
-        return (t==0) ? b : c * pow(2, 10 * (t/d - 1)) + b - c * 0.001
+        let i = (t==0) ? b : c * pow(2, 10 * (t/d - 1)) + b - c * 0.001
+        return i
     }
     
     /// Easing equation function for an exponential (2^t) easing out: decelerating from zero velocity.
     public static let outExpo : Equation = { (t, b, c, d) in
-        return (t==d) ? b+c : c * 1.001 * (-pow(2, -10 * t/d) + 1) + b
+        let i = (t==d) ? b+c : c * 1.001 * (-pow(2, -10 * t/d) + 1) + b
+        return i
     }
     
     /// Easing equation function for an exponential (2^t) easing in/out: acceleration until halfway, then deceleration.
@@ -350,14 +351,6 @@ public class Ease
         if t < d/2 {return Ease.outBounce (t*2, b, c/2, d)}
         return Ease.inBounce((t*2)-d, b+c/2, c/2, d)
     }
-    
-    //MARK:Utils
-    
-    //TODO:
-//    public static func toString(equation: inout Equation) -> String
-//    {
-//
-//    }
 }
 
 

@@ -156,7 +156,7 @@ class CurveInspector: UIControl
         Tween(target:asset,
               duration: 1.0,
               ease:ease,
-              keys:[\UIView.frame:assetFrame]).play()
+              to:[\UIView.frame:assetFrame]).play()
     
         //Line x
     
@@ -171,7 +171,7 @@ class CurveInspector: UIControl
         Tween(target:linex,
               duration: 1.0,
               ease:Ease.none,
-              keys:[\UIView.frame:lineFrame]).play()
+              to:[\UIView.frame:lineFrame]).play()
         
         //Initial state
         lineFrame = liney.frame
@@ -183,6 +183,6 @@ class CurveInspector: UIControl
         Tween(target:liney,
               duration: 1.0,
               ease:ease,
-              keys:[\UIView.frame:lineFrame]).play()
+              to:[\UIView.frame:lineFrame]).play()
     }
 }

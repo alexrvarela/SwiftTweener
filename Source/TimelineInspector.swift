@@ -6,8 +6,10 @@
 //  Copyright © 2019 Alejandro Ramirez Varela. All rights reserved.
 //
 
-import Foundation
+#if os(iOS)
+import UIKit
 
+/// Inspect and edit Timeline's Tweens
 public class TimelineInspector:UIView, TimelineObserver
 {
     var _timeline:Timeline?
@@ -20,7 +22,7 @@ public class TimelineInspector:UIView, TimelineObserver
     let TRANSPARENT_SOLID_GRAY = UIColor(red:182.0 / 255.0, green:182.0 / 255.0, blue:182.0 / 255.0, alpha:0.5)
     let TRANSPARENT_LIGHT_GRAY = UIColor(red:182.0 / 255.0, green:182.0 / 255.0, blue:182.0 / 255.0, alpha:0.15)
     let SOLID_RED = UIColor(red:182.0 / 255.0, green:182.0 / 255.0, blue:182.0 / 255.0, alpha:1.0)
-    
+    ///Changes UI's main color.
     public var uiColor:UIColor = UIColor(red:116.0 / 255.0, green:244.0 / 255.0, blue:234.0 / 255.0, alpha:1.0)
     {didSet {setNeedsDisplay()}}
     var line:UIView = UIView()
@@ -31,7 +33,6 @@ public class TimelineInspector:UIView, TimelineObserver
     var playModeButton:UIControl = UIControl()
     var directionButton:UIControl = UIControl()
     var stopButton:UIControl = UIControl()
-    var logButton:UIControl = UIControl()
     var hideButton:UIControl = UIControl()
     
     var scale:CGFloat = 1.0
@@ -241,6 +242,7 @@ public class TimelineInspector:UIView, TimelineObserver
     
     //MARK:initializer
     
+    ///Initializer
     public init() {
 
         let h = CONTROL_BAR_HEIGHT + TIME_BAR_HEIGHT + TWEEN_BAR_HEIGHT * 4.0
@@ -302,7 +304,8 @@ public class TimelineInspector:UIView, TimelineObserver
         timeIndicator.layer.addSublayer(shape)
         addSubview(timeIndicator)
         
-        let buttonWidth:CGFloat = frame.size.width / 7.0
+        //TODO:Use constraints
+        let buttonWidth:CGFloat = frame.size.width / 6.0
         let centerShape = CGPoint(x:buttonWidth / 2.0, y:CONTROL_BAR_HEIGHT / 2.0)
         
         //PLAY/PAUSE CONTROL
@@ -370,17 +373,7 @@ public class TimelineInspector:UIView, TimelineObserver
         stopButton.layer.sublayers![0].isHidden = false//show first by default
         addSubview(stopButton)
         
-        logButton.frame = CGRect(x:(buttonWidth + 1.0) * 5.0,
-                                 y:0.0,
-                                 width:buttonWidth,
-                                 height:CONTROL_BAR_HEIGHT)
-        logButton.addTarget(self, action:#selector(logAction), for:.touchUpInside)
-        logButton.layer.addSublayer(makeShapeLayer(path:makeLogIcon(origin:centerShape)))
-        logButton.backgroundColor = TRANSPARENT_LIGHT_GRAY
-        logButton.layer.sublayers![0].isHidden = false//show first by default
-        addSubview(logButton)
-        
-        hideButton.frame = CGRect(x:(buttonWidth + 1.0) * 6.0,
+        hideButton.frame = CGRect(x:(buttonWidth + 1.0) * 5.0,
                                   y:0.0,
                                   width:buttonWidth,
                                   height:CONTROL_BAR_HEIGHT)
@@ -394,30 +387,20 @@ public class TimelineInspector:UIView, TimelineObserver
         contentOffset = CGPoint.zero
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
+    required init?(coder aDecoder: NSCoder) { super.init(coder: aDecoder) }
     
     //init with timeline
+    /**
+     Initializer with Timeline instance.
+    - Parameter timeline: A Timeline instance to inspect.
+    */
     public convenience init(timeline:Timeline)
     {
         self.init()
         self.timeline = timeline
     }
     
-    override public func didMoveToSuperview() {
-
-        if(superview != nil)
-        {
-            let h = CONTROL_BAR_HEIGHT + TIME_BAR_HEIGHT + TWEEN_BAR_HEIGHT * 4.0
-            
-            self.frame = CGRect(x:0.0,
-                                y:superview!.frame.size.height - h,
-                                width:superview!.frame.size.width,
-                                height:h)
-        }
-    }
-    
+    /// Sets a Timeline instance to inspect.
     public var timeline:Timeline
     {
         set{
@@ -452,8 +435,9 @@ public class TimelineInspector:UIView, TimelineObserver
     
     }
     
-    //MARK: - Draw
+    //MARK: - Overriding
     
+    /// UIView's draw(rect:) func overridng.
     override public func draw(_ rect: CGRect)
     {
         super.draw(rect)
@@ -693,7 +677,7 @@ public class TimelineInspector:UIView, TimelineObserver
                         control.getTween().delay = (newDelay < 0.0) ? 0.0 : newDelay
                     }
                     
-                    control.timeStart = control.getTween().delay / Engine.timeScale//refresh controller
+                    control.timeStart = control.getTween().delay / timeScale//refresh controller
                     timeline.setTime(timeline.timeCurrent)//update tween
                     setNeedsDisplay()//redraw
                 }else
@@ -708,8 +692,21 @@ public class TimelineInspector:UIView, TimelineObserver
         }
     }
     
-    //MARK: - Touches
+    /// UIView's didMoveToSuperview() func overridng.
+    override public func didMoveToSuperview() {
+
+        if(superview != nil)
+        {
+            let h = CONTROL_BAR_HEIGHT + TIME_BAR_HEIGHT + TWEEN_BAR_HEIGHT * 4.0
+            
+            self.frame = CGRect(x:0.0,
+                                y:superview!.frame.size.height - h,
+                                width:superview!.frame.size.width,
+                                height:h)
+        }
+    }
     
+    /// UIView's touchesBegan(touches:with:) func overridng.
     override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
     {
         if _timeline == nil {return}
@@ -790,6 +787,7 @@ public class TimelineInspector:UIView, TimelineObserver
         }
     }
     
+    /// UIView's touchesEnded(touches:with:) func overridng.
     override public func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?)
     {
         resetTouches()
@@ -868,70 +866,14 @@ public class TimelineInspector:UIView, TimelineObserver
         timeline.reverse = !timeline.reverse
     }
     
-    @objc func logAction()
-    {
-        print("Log timeline's tweens code:")
-        
-        var logString:String = String()
-        for (index, control) in timeline.controls.enumerated()
-        {
-            let tweenName = "tween\(index)"
-            
-            //initial values
-            var values = String()
-            
-            //    //keys
-            var keys = "[\n"
-            let keysCount = control.getKeys().count
-            
-            for (indexKey, key) in control.getKeys().enumerated()
-            {
-                let rootType = type(of: key.key).rootType
-                let valueType = type(of: key.key).valueType
-                
-                print("key \(key.key)")
-                print("root type \(rootType)")
-                print("value type \(valueType)")
-                
-                //TODO:Get keyName
-                let keyName = "keyname"
-                
-                let keyPath = "\\\(rootType).\(keyName)"
-
-                values += "[target].\(keyName) = \(key.value.start)\n"//todo format value
-                
-                keys += "   "
-                keys += "\(keyPath)\" : \(key.value.complete)"//todo format
-                //Avoid "," in last object
-                keys += (indexKey < keysCount - 1 ? ",\n" : "\n")
-                
-            }
-            
-            keys += "]\n"
-            
-            //tween  params
-            
-            logString += """
-            let \(tweenName) = Tween(target:[target]\n
-            duration:\(control.getTween().duration)\n\
-            ease:\(control.getTween().ease)\n\
-            keys:keys\n\
-            delay:\(control.getTween().delay)\n\
-            )\n
-            """
-            
-//            print("\(values)\n")
-//            print("\(keys)\n")
-        }
-        
-        print("\(logString)\n")
-    }
-    
     @objc func hideAction()
     {
-        if(superview != nil)
+        if superview != nil
         {
-            let y = frame.origin.y !=  superview!.frame.size.height - CONTROL_BAR_HEIGHT ?
+            let angle:CGFloat = frame.origin.y != (superview!.frame.size.height - CONTROL_BAR_HEIGHT) ? 180 : 0
+            hideButton.layer.transform = CATransform3DMakeRotation(BasicMath.toRadians(degree: angle), 0, 0, 1)
+            
+            let y = frame.origin.y != (superview!.frame.size.height - CONTROL_BAR_HEIGHT) ?
                 superview!.frame.size.height - CONTROL_BAR_HEIGHT :
                 superview!.frame.size.height - frame.size.height
             
@@ -994,3 +936,4 @@ public class TimelineInspector:UIView, TimelineObserver
     
     }
 }
+#endif

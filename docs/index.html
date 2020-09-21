@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Tweener  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+    <script src="js/lunr.min.js" defer></script>
+    <script src="js/typeahead.jquery.js" defer></script>
+    <script src="js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a title="Tweener  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">Tweener 2.0 Docs</a> (85% documented)</p>
+        <p class="header-right">
+          <form role="search" action="search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">Tweener Reference</a>
+        <img id="carat" src="img/carat.png" />
+        Tweener  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/AnyTween.html">AnyTween</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/ArcAim.html">ArcAim</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/BasicMath.html">BasicMath</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/BezierUtils.html">BezierUtils</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/CGPathUtils.html">CGPathUtils</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/Ease.html">Ease</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/PDFImageView.html">PDFImageView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/PathAim.html">PathAim</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/RotationAim.html">RotationAim</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/StringAim.html">StringAim</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/Timeline.html">Timeline</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/TimelineInspector.html">TimelineInspector</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/Tween.html">Tween</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/TweenBlock.html">TweenBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/TweenVisualizer.html">TweenVisualizer</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Global%20Variables.html">Global Variables</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Global%20Variables.html#/s:7Tweener9timeScaleSdvp">timeScale</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Enums/TimelinePlayMode.html">TimelinePlayMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/TransitionType.html">TransitionType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Extensions/NSBezierPath.html">NSBezierPath</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/NSColor.html">NSColor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/NSView.html">NSView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/UIView.html">UIView</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:7Tweener3addyyAA5TweenCyxGlF">add(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:7Tweener3add_5delayyAA8TimelineC_SdtF">add(_:delay:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:7Tweener7addType02toC00D5Array9isNumericyxSaySdGc_AFxcSbtlF">addType(toType:toArray:isNumeric:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:7Tweener13addVisualizeryyAA05TweenC0CF">addVisualizer(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:7Tweener8pauseAllyyF">pauseAll()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:7Tweener17pauseAllTimelinesyyF">pauseAllTimelines()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:7Tweener14pauseAllTweensyyF">pauseAllTweens()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:7Tweener11pauseTweens6targetyx_tlF">pauseTweens(target:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:7Tweener11pauseTweens6target4keysyx_Says14PartialKeyPathCyxGGtlF">pauseTweens(target:keys:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:7Tweener9removeAllyyF">removeAll()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:7Tweener18removeAllTimelinesyyF">removeAllTimelines()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:7Tweener15removeAllTweensyyF">removeAllTweens()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:7Tweener12removeTweens6targetyx_tlF">removeTweens(target:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:7Tweener12removeTweens6target4keysyx_Says14PartialKeyPathCyxGGtlF">removeTweens(target:keys:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:7Tweener16removeVisualizeryyAA05TweenC0CF">removeVisualizer(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:7Tweener9resumeAllyyF">resumeAll()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:7Tweener18resumeAllTimelinesyyF">resumeAllTimelines()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:7Tweener15resumeAllTweensyyF">resumeAllTweens()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:7Tweener12resumeTweens6targetyx_tlF">resumeTweens(target:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:7Tweener12resumeTweens6target4keysyx_Says14PartialKeyPathCyxGGtlF">resumeTweens(target:keys:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Typealiases.html#/s:7Tweener18AimRotationHandlera">AimRotationHandler</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Typealiases.html#/s:7Tweener8Equationa">Equation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Typealiases.html#/s:7Tweener12ToArrayBlocka">ToArrayBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Typealiases.html#/s:7Tweener11ToTypeBlocka">ToTypeBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Typealiases.html#/s:7Tweener12TweenHandlera">TweenHandler</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <h1 id='swift-tweener' class='heading'>Swift Tweener</h1>
+
+<p>Swift animation engine, make more powerful and creative Apps.</p>
+
+<p><img src="https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/tweener.gif" alt="Logo"></p>
+
+<p>This project has rewritten in pure Swift from <a href="https://github.com/alexrvarela/cocoatweener">CocoaTweener</a></p>
+<h3 id='prerequisites' class='heading'>Prerequisites</h3>
+
+<ul>
+<li>Xcode with iOs 10.0+ and swift 4.2</li>
+</ul>
+<h2 id='installation' class='heading'>Installation</h2>
+<h3 id='install-using-cocoapods' class='heading'>Install using Cocoapods</h3>
+
+<p>To integrate install <a href="http://cocoapods.org/">Cocoa Pods</a> using this gem:</p>
+<pre class="highlight plaintext"><code>$ gem install cocoapods
+</code></pre>
+
+<p>Now, add Tweener to your Podfile</p>
+<pre class="highlight plaintext"><code>pod 'Tweener', '~&gt; 2.0'
+</code></pre>
+
+<p>To install dependencies run this command</p>
+<pre class="highlight plaintext"><code>pod install
+</code></pre>
+<h3 id='install-using-carthage' class='heading'>Install using Carthage</h3>
+
+<p>To integrate install <a href="https://github.com/Carthage/Carthage">Carthage</a> with brew:</p>
+<pre class="highlight plaintext"><code>$ brew update
+$ brew install carthage
+</code></pre>
+
+<p>Now, add Tweener to your Cartfile</p>
+<pre class="highlight plaintext"><code>github "alexrvarela/SwiftTweener" ~&gt; 2.0
+</code></pre>
+
+<p>To install dependencies run this command</p>
+<pre class="highlight plaintext"><code>$ carthage update
+</code></pre>
+
+<p>Finally, drag &amp; drop Tweener.framework to your Xcode Project</p>
+<h3 id='install-manually' class='heading'>Install manually</h3>
+
+<p>Download, build and copy Tweener.framework to your Xcode project.</p>
+<h2 id='usage' class='heading'>Usage</h2>
+
+<p>Import Tweener engine to your project:</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">Tweener</span>
+</code></pre>
+
+<p>Animate any of these kinds of properties:
+Int, Float, Double, CGFloat, CGPoint, CGRect, UIColor, CGAffineTransform, CATransform3D</p>
+
+<p>First set initial state:</p>
+<pre class="highlight swift"><code><span class="n">myView</span><span class="o">.</span><span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.25</span>
+<span class="n">myView</span><span class="o">.</span><span class="n">frame</span> <span class="o">=</span> <span class="kt">CGRect</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span><span class="mf">20.0</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span><span class="mf">20.0</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span><span class="mf">100.0</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span><span class="mf">100.0</span><span class="p">)</span>
+<span class="n">myView</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">red</span>
+</code></pre>
+
+<p>Create and add a simple Tween:</p>
+<pre class="highlight swift"><code>
+<span class="k">let</span> <span class="nv">myTween</span> <span class="o">=</span> <span class="kt">Tween</span><span class="p">(</span><span class="nv">target</span><span class="p">:</span><span class="n">myView</span><span class="p">,</span>
+    <span class="nv">duration</span><span class="p">:</span><span class="mf">1.0</span><span class="p">,</span>
+    <span class="nv">ease</span><span class="p">:</span><span class="kt">Ease</span><span class="o">.</span><span class="n">outQuad</span>
+    <span class="nv">keys</span><span class="p">:[\</span><span class="kt">UIView</span><span class="o">.</span><span class="nv">alpha</span><span class="p">:</span><span class="mf">1.0</span><span class="p">,</span>
+          <span class="p">\</span><span class="kt">UIView</span><span class="o">.</span><span class="nv">frame</span><span class="p">:</span><span class="kt">CGRect</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span><span class="mf">20.0</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span><span class="mf">20.0</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span><span class="mf">280.0</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span><span class="mf">280.0</span><span class="p">),</span>
+          <span class="p">\</span><span class="kt">UIView</span><span class="o">.</span><span class="n">backgroundColor</span><span class="o">!</span><span class="p">:</span><span class="kt">UIColor</span><span class="o">.</span><span class="n">blue</span>
+<span class="p">])</span>
+
+<span class="n">myTween</span><span class="o">.</span><span class="nf">play</span><span class="p">()</span>
+</code></pre>
+
+<p><img src="https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/simple-tween.gif" alt="Simple tween"></p>
+
+<p>Interact with your code using block handlers:</p>
+<pre class="highlight swift"><code><span class="n">myTween</span><span class="o">.</span><span class="n">onStart</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="k">self</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">green</span>
+<span class="p">}</span>
+
+<span class="n">myTween</span><span class="o">.</span><span class="n">onUpdate</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nf">doAnything</span><span class="p">()</span>
+<span class="p">}</span>
+
+<span class="n">myTween</span><span class="o">.</span><span class="n">onComplete</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="k">self</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">red</span>
+<span class="p">}</span>
+
+<span class="n">myTween</span><span class="o">.</span><span class="n">onOverwrite</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="k">self</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">blue</span>
+<span class="p">}</span>
+</code></pre>
+
+<p><img src="https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/handlers.gif" alt="Handlers"></p>
+
+<p>You can pause, resume and remove tweens:</p>
+
+<p>For all existing tweens:</p>
+<pre class="highlight swift"><code><span class="kt">Tweener</span><span class="o">.</span><span class="nf">pauseAllTweens</span><span class="p">()</span>
+<span class="kt">Tweener</span><span class="o">.</span><span class="nf">resumeAllTweens</span><span class="p">()</span>
+<span class="kt">Tweener</span><span class="o">.</span><span class="nf">removeAllTweens</span><span class="p">()</span>
+</code></pre>
+
+<p>By target:</p>
+<pre class="highlight swift"><code><span class="kt">Tweener</span><span class="o">.</span><span class="nf">pauseTweens</span><span class="p">(</span><span class="nv">target</span><span class="p">:</span><span class="n">myView</span><span class="p">)</span>
+<span class="kt">Tweener</span><span class="o">.</span><span class="nf">resumeTweens</span><span class="p">(</span><span class="nv">target</span><span class="p">:</span><span class="n">myView</span><span class="p">)</span>
+<span class="kt">Tweener</span><span class="o">.</span><span class="nf">removeTweens</span><span class="p">(</span><span class="nv">target</span><span class="p">:</span><span class="n">myView</span><span class="p">)</span>
+</code></pre>
+
+<p>By specific properties of a target:</p>
+<pre class="highlight swift"><code><span class="kt">Tweener</span><span class="o">.</span><span class="nf">pauseTweens</span><span class="p">(</span><span class="nv">target</span><span class="p">:</span><span class="n">myView</span><span class="p">,</span> <span class="nv">keys</span><span class="p">:[\</span><span class="kt">UIView</span><span class="o">.</span><span class="n">backgroundColor</span><span class="p">,</span> <span class="p">\</span><span class="kt">UIView</span><span class="o">.</span><span class="n">alpha</span><span class="p">])</span>
+<span class="kt">Tweener</span><span class="o">.</span><span class="nf">resumeTweens</span><span class="p">(</span><span class="nv">target</span><span class="p">:</span><span class="n">myView</span><span class="p">,</span> <span class="nv">keys</span><span class="p">:[\</span><span class="kt">UIView</span><span class="o">.</span><span class="n">backgroundColor</span><span class="p">,</span> <span class="p">\</span><span class="kt">UIView</span><span class="o">.</span><span class="n">alpha</span><span class="p">])</span>
+<span class="kt">Tweener</span><span class="o">.</span><span class="nf">removeTweens</span><span class="p">(</span><span class="nv">target</span><span class="p">:</span><span class="n">myView</span><span class="p">,</span> <span class="nv">keys</span><span class="p">:[\</span><span class="kt">UIView</span><span class="o">.</span><span class="n">backgroundColor</span><span class="p">,</span> <span class="p">\</span><span class="kt">UIView</span><span class="o">.</span><span class="n">alpha</span><span class="p">])</span>
+</code></pre>
+
+<p>Unleash your creativity!</p>
+
+<p>Touch point sample:</p>
+
+<p><img src="https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/touch.gif" alt="Touch"></p>
+
+<p>Drag views sample:</p>
+
+<p><img src="https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/drag.gif" alt="Drag "></p>
+
+<p>Pause tweens sample:</p>
+
+<p><img src="https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/clouds.gif" alt="Background animations"></p>
+<h3 id='easing' class='heading'>Easing</h3>
+
+<p>This engine is based on Robert Penner&rsquo;s <a href="http://robertpenner.com/easing/">Easing equations</a></p>
+
+<p><img src="https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/ease-curves.gif" alt="Easing curves"></p>
+
+<p>To create a custom easing equation:</p>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">Ease</span><span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">custom</span> <span class="p">:</span> <span class="kt">Equation</span> <span class="o">=</span> <span class="p">{</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span> <span class="k">in</span>
+        <span class="c1">//Play with code here!</span>
+        <span class="k">if</span> <span class="n">t</span> <span class="o">&lt;</span> <span class="n">d</span><span class="o">/</span><span class="mi">2</span> <span class="p">{</span><span class="k">return</span> <span class="kt">Ease</span><span class="o">.</span><span class="nf">inBack</span><span class="p">(</span><span class="n">t</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">d</span><span class="p">)}</span>
+        <span class="k">return</span> <span class="kt">Ease</span><span class="o">.</span><span class="nf">outElastic</span><span class="p">((</span><span class="n">t</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="n">d</span><span class="p">,</span> <span class="n">b</span><span class="o">+</span><span class="n">c</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">c</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>And use it:</p>
+<pre class="highlight swift"><code><span class="kt">Tween</span><span class="p">(</span><span class="nv">target</span><span class="p">:</span><span class="n">myView</span><span class="p">,</span>
+    <span class="nv">duration</span><span class="p">:</span><span class="mf">1.0</span><span class="p">,</span>
+    <span class="nv">ease</span><span class="p">:</span><span class="kt">Ease</span><span class="o">.</span><span class="n">custom</span>
+    <span class="nv">keys</span><span class="p">:[\</span><span class="kt">UIView</span><span class="o">.</span><span class="nv">frame</span><span class="p">:</span><span class="kt">CGRect</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span><span class="mf">20.0</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span><span class="mf">20.0</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span><span class="mf">280.0</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span><span class="mf">280.0</span><span class="p">)]</span>
+    <span class="p">)</span><span class="o">.</span><span class="nf">play</span><span class="p">()</span>
+</code></pre>
+<h3 id='timeline' class='heading'>Timeline</h3>
+
+<p>Add a Tween or animate with Timeline?</p>
+
+<p>It depends on what do you want, a Tween only animates “to” desired value taking the current value of the property as origin, that allows your App to be more dynamic, each Tween is destroyed immediately after completing the animation.</p>
+
+<p>Timeline stores “from” and “to” values of each Tween, contains a collection of reusable Tweens, to create Timeline and add Tweens use this code:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">myTimeline</span><span class="p">:</span><span class="kt">Timeline</span> <span class="o">=</span> <span class="kt">Timeline</span><span class="p">()</span>
+<span class="n">myTimeline</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="n">myTween</span><span class="p">)</span>
+<span class="n">myTimeline</span><span class="o">.</span><span class="nf">play</span><span class="p">()</span>
+</code></pre>
+
+<p>You can interact with Timeline play modes, the default value is Play once, it stops when finished, to change Tmeline play mode:</p>
+
+<p>Loop, repeat forever</p>
+<pre class="highlight swift"><code><span class="n">myTimeline</span><span class="o">.</span><span class="n">playMode</span> <span class="o">=</span> <span class="o">.</span><span class="n">loop</span>
+</code></pre>
+
+<p><img src="https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/timeline-play.gif" alt="Loop"></p>
+
+<p>Ping Pong, forward and reverse</p>
+<pre class="highlight swift"><code><span class="n">myTimeline</span><span class="o">.</span><span class="n">playMode</span> <span class="o">=</span> <span class="o">.</span><span class="n">pingPong</span>
+</code></pre>
+
+<p><img src="https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/timeline-ping-pong.gif" alt="Ping Pong"></p>
+
+<p>Perform parallax scrolling effects controlling your timeline with UIScrollView:</p>
+
+<p><img src="https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/tmeline-scroll.gif" alt="Timeline scroll"></p>
+<h3 id='timelineinspector' class='heading'>TimelineInspector</h3>
+
+<p>You can use the Timeline inspector to debug  and edit Tweens</p>
+
+<p>Visualize Tweens in real time:</p>
+
+<p><img src="https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/tmeline-inspector.gif" alt="Visualize Tweens in real time!"></p>
+
+<p>Edit Tweens:</p>
+
+<p><img src="https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/timeline-editor.gif" alt="Edit Tweens"></p>
+
+<p><img src="https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/timeline-zoom.gif" alt="Scale timeline editor"></p>
+
+<p>To create Timeline inspector:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">myInspector</span> <span class="o">=</span> <span class="kt">TimelineInspector</span><span class="p">(</span><span class="nv">timeline</span><span class="p">:</span><span class="n">myTimeline</span><span class="p">)</span>
+<span class="nf">addSubview</span><span class="p">(</span><span class="n">myInspector</span><span class="p">)</span>
+</code></pre>
+<h3 id='pdfimageview' class='heading'>PDFImageView</h3>
+
+<p>Cut with the image dependency and easily import your vector assets using PDFImageView, forget to export to SVG and other formats iOs offers native support for PDF with CoreGraphics, this class simply renders one pdf inside a UIImageView.</p>
+
+<p>To load your asset named &ldquo;bee.pdf&rdquo; from App bundle:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">myAsset</span> <span class="o">=</span> <span class="kt">PDFImageView</span><span class="p">(</span><span class="nv">bundlename</span><span class="p">:</span><span class="s">"bee"</span><span class="p">)</span>
+<span class="nf">addSubview</span><span class="p">(</span><span class="n">myAsset</span><span class="p">)</span>
+</code></pre>
+
+<p>You can increase or reduce the size of your assets with a simple property:</p>
+<pre class="highlight swift"><code><span class="n">myAsset</span><span class="o">.</span><span class="n">scale</span> <span class="o">=</span> <span class="mf">1.5</span>
+</code></pre>
+<h3 id='aims' class='heading'>Aims</h3>
+
+<p>Create more complex and impressive animations using Aims</p>
+
+<p><img src="https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/eye.gif" alt="Aims"></p>
+<h3 id='pathaim' class='heading'>PathAim</h3>
+
+<p>Control motion with paths:</p>
+
+<p><img src="https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/path.gif" alt="Path aim"></p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">myPathAim</span> <span class="o">=</span> <span class="kt">PathAim</span><span class="p">(</span><span class="nv">target</span><span class="p">:</span><span class="n">myAsset</span><span class="p">)</span>
+<span class="n">myPathAim</span><span class="o">.</span><span class="n">path</span> <span class="o">=</span> <span class="n">myBezierPath</span>
+</code></pre>
+
+<p>To change location at path change this property value:</p>
+<pre class="highlight swift"><code><span class="n">myPathAim</span><span class="o">.</span><span class="n">interpolation</span> <span class="o">=</span> <span class="mf">0.5</span>
+</code></pre>
+
+<p>And simply animate path interpolation:</p>
+<pre class="highlight swift"><code><span class="n">myPathAim</span><span class="o">.</span><span class="n">interpolation</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+<span class="kt">Tween</span><span class="p">(</span><span class="nv">target</span><span class="p">:</span> <span class="n">myPathAim</span><span class="p">,</span> 
+    <span class="nv">duration</span><span class="p">:</span> <span class="mf">2.0</span><span class="p">,</span> 
+    <span class="nv">ease</span><span class="p">:</span> <span class="kt">Ease</span><span class="o">.</span><span class="k">none</span><span class="p">,</span> 
+    <span class="nv">delay</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span> 
+    <span class="nv">keys</span><span class="p">:</span> <span class="p">[\</span><span class="kt">PathAim</span><span class="o">.</span><span class="nv">interpolation</span> <span class="p">:</span> <span class="mf">1.0</span><span class="p">])</span><span class="o">.</span><span class="nf">play</span><span class="p">()</span>
+</code></pre>
+
+<p>You can export your paths to code from illustrator with this simple Script:
+<a href="https://github.com/alexrvarela/generatePathCode">https://github.com/alexrvarela/generatePathCode</a></p>
+<h3 id='rotationaim' class='heading'>RotationAim</h3>
+
+<p>Animate rotation of any view</p>
+
+<p><img src="https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/rotation-aim.gif" alt="Rotation aim"></p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">myRotationAim</span> <span class="o">=</span> <span class="kt">RotationAim</span><span class="p">(</span><span class="nv">target</span><span class="p">:</span><span class="n">myView</span><span class="p">)</span>
+
+<span class="n">myRotationAim</span><span class="o">.</span><span class="n">angle</span> <span class="o">=</span> <span class="mf">90.0</span>
+
+<span class="kt">Tween</span><span class="p">(</span><span class="nv">target</span><span class="p">:</span> <span class="n">myRotationAim</span><span class="p">,</span>
+    <span class="nv">duration</span><span class="p">:</span> <span class="mf">1.5</span><span class="p">,</span>
+        <span class="nv">keys</span><span class="p">:</span> <span class="p">[\</span><span class="kt">RotationAim</span><span class="o">.</span><span class="nv">angle</span> <span class="p">:</span> <span class="mf">360.0</span><span class="p">])</span><span class="o">.</span><span class="nf">play</span><span class="p">()</span>
+</code></pre>
+<h3 id='arcaim' class='heading'>ArcAim</h3>
+
+<p>Create Arc animations</p>
+
+<p><img src="https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/orbits.gif" alt="Arc aims"></p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">myArcAim</span> <span class="o">=</span> <span class="kt">ArcAim</span><span class="p">(</span><span class="nv">target</span><span class="p">:</span><span class="n">myView</span><span class="p">)</span>
+
+<span class="c1">//Set desired radius</span>
+<span class="n">myArcAim</span><span class="o">.</span><span class="n">radius</span> <span class="o">=</span> <span class="mf">100.0</span>
+
+<span class="c1">//Set initial arc angle</span>
+<span class="n">myArcAim</span><span class="o">.</span><span class="n">arcAngle</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+<span class="c1">//Animate arc angle</span>
+<span class="kt">Tween</span><span class="p">(</span><span class="nv">target</span><span class="p">:</span> <span class="n">myArcAim</span><span class="p">,</span>
+    <span class="nv">duration</span><span class="p">:</span> <span class="mf">1.5</span><span class="p">,</span>
+    <span class="nv">keys</span><span class="p">:</span> <span class="p">[\</span><span class="kt">RotationAim</span><span class="o">.</span><span class="nv">arcAngle</span> <span class="p">:</span> <span class="mf">360.0</span><span class="p">])</span><span class="o">.</span><span class="nf">play</span><span class="p">()</span>
+</code></pre>
+<h3 id='stringaim' class='heading'>StringAim</h3>
+
+<p>Animate text transitions</p>
+
+<p><img src="https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/text.gif" alt="String aims"></p>
+<pre class="highlight swift"><code><span class="c1">//Create string aim</span>
+<span class="k">let</span> <span class="nv">myStringAim</span> <span class="o">=</span> <span class="kt">StringAim</span><span class="p">(</span><span class="nv">target</span><span class="p">:</span><span class="n">myUILabel</span><span class="p">,</span> <span class="nv">keyPath</span><span class="p">:\</span><span class="kt">UILabel</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+<span class="n">myStringAim</span><span class="o">.</span><span class="n">from</span> <span class="o">=</span> <span class="s">"hello"</span>
+<span class="n">myStringAim</span><span class="o">.</span><span class="n">to</span> <span class="o">=</span> <span class="s">"hola"</span>
+
+<span class="c1">//Set initial interpolation</span>
+<span class="n">myStringAim</span><span class="o">.</span><span class="n">interpolation</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+<span class="c1">//Animate interpolation</span>
+<span class="kt">Tween</span><span class="p">(</span><span class="nv">target</span><span class="p">:</span> <span class="n">myStringAim</span><span class="p">,</span> <span class="nv">duration</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="nv">keys</span><span class="p">:</span> <span class="p">[\</span><span class="kt">StringAim</span><span class="o">.</span><span class="nv">interpolation</span> <span class="p">:</span> <span class="mf">1.0</span><span class="p">])</span><span class="o">.</span><span class="nf">play</span><span class="p">()</span>
+</code></pre>
+
+<p>Play with everything, combine different types of Aim:</p>
+
+<p><img src="https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/bb8.gif" alt="Mix different aims"></p>
+<h3 id='tweenvisualizer' class='heading'>TweenVisualizer</h3>
+
+<p>Visualize all tweens and timelines  in real time</p>
+
+<p>Create a TweenVisualizer and attach it to Tweener&rsquo;s update loop :</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">visualizer</span> <span class="o">=</span> <span class="kt">TweenVisualizer</span><span class="p">()</span>
+<span class="n">visualizer</span><span class="o">.</span><span class="n">center</span> <span class="o">=</span> <span class="n">viewController</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="n">center</span>
+<span class="kt">Tweener</span><span class="o">.</span><span class="nf">addVisualizer</span><span class="p">(</span><span class="n">visualizer</span><span class="p">)</span>
+
+<span class="c1">//Add to UIView</span>
+<span class="nf">addSubview</span><span class="p">(</span><span class="n">visualizer</span><span class="p">)</span>
+</code></pre>
+
+<p>To detach visualizer from update loop just use this code:</p>
+<pre class="highlight swift"><code><span class="kt">Tweener</span><span class="o">.</span><span class="nf">removeVisualizer</span><span class="p">(</span><span class="n">visualizer</span><span class="p">)</span>
+</code></pre>
+
+<p><img src="https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/tweenvisualizer.gif" alt="Visualizer"></p>
+
+<p>Also, you can drag, pinch and resize visualizer at your convenience, to resize just drag the bottom-right corner:
+<img src="https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/tweenvisualizer-drag.gif" alt="Drag"><br>
+<img src="https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/tweenvisualizer-pinch.gif" alt="Pinch"><br>
+<img src="https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/tweenvisualizer-resize.gif" alt="Resize"></p>
+
+<p>This library was created to give dynamism to UI elements, if you are looking to make more complex animations I recommend you implement them with <a href="https://airbnb.design/lottie/">Lottie</a>.</p>
+<h2 id='contributions' class='heading'>Contributions</h2>
+
+<p>Pull requests are welcome!
+This project has being migrated to Swift 5 with code documentation, watchOs support, tvOs support, unit tests and SwiftUI in the scope.</p>
+<h2 id='authors' class='heading'>Authors</h2>
+
+<ul>
+<li><strong>Alejandro Ramírez Varela</strong> - <em>Initial work</em> - <a href="https://github.com/alexrvarela">alexrvarela</a></li>
+</ul>
+<h2 id='license' class='heading'>License</h2>
+
+<p>This project is licensed under the MIT License - see the <a href="LICENSE">LICENSE</a> file for details</p>
+<h2 id='acknowledgments' class='heading'>Acknowledgments</h2>
+
+<ul>
+<li>Based on <a href="http://robertpenner.com">Robert Penner</a>  <a href="http://robertpenner.com/easing/">Easing functions</a></li>
+<li>Based on <a href="https://github.com/zeh/tweener">Tweener</a>, AS3 Library by <a href="https://github.com/zeh">Zeh Fernando</a>, Nate Chatellier, Arthur Debert and Francis Turmel</li>
+<li>Ported by <a href="https://github.com/alexrvarela">Alejandro Ramirez Varela</a> and released as open source in 2019</li>
+</ul>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2020 <a class="link" href="https://github.com/alexrvarela/SwiftTweener" target="_blank" rel="external">alexrvarela</a>. All rights reserved. (Last updated: 2020-09-21)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

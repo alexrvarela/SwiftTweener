@@ -7,8 +7,16 @@
 //
 
 import Foundation
-public class CGPathUtils{
 
+#if os(iOS) || os(tvOS)
+import UIKit
+#elseif os(macOS)
+import AppKit
+#endif
+
+/// A set of CGPath utilities.
+public class CGPathUtils{
+    /// Gets the CGPath from a Font.
     public static func getFontPath(string:String, fontName:String, fontSize:CGFloat) -> CGPath
     {
         let letters = CGMutablePath()
@@ -41,7 +49,7 @@ public class CGPathUtils{
         
         return letters
     }
-    
+    /// Flips a CGPath vertically.
     public static func flipPathVertically(path:CGPath) -> CGPath
     {
         let boundingBox = path.boundingBox
@@ -56,6 +64,7 @@ public class CGPathUtils{
         return translatePath
     }
     
+    /// Translates x and y CGPath's points.
     public static func translatePath(path:CGPath, x:CGFloat, y:CGFloat) -> CGPath
     {
         let translatePath = CGMutablePath()
@@ -65,6 +74,7 @@ public class CGPathUtils{
         return translatePath
     }
     
+    /// Makes a rounded CGPath rectangle.
     public static func makeRoundRect(rect:CGRect, cornerRadius:CGFloat) -> CGPath
     {
         var cornerRadius = cornerRadius

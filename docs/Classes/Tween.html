@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Tween Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/Tween" class="dashAnchor"></a>
+    <a title="Tween Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">Tweener 2.0 Docs</a> (85% documented)</p>
+        <p class="header-right">
+          <form role="search" action="../search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">Tweener Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        Tween Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/AnyTween.html">AnyTween</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ArcAim.html">ArcAim</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BasicMath.html">BasicMath</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BezierUtils.html">BezierUtils</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CGPathUtils.html">CGPathUtils</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Ease.html">Ease</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PDFImageView.html">PDFImageView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PathAim.html">PathAim</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RotationAim.html">RotationAim</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/StringAim.html">StringAim</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Timeline.html">Timeline</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TimelineInspector.html">TimelineInspector</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Tween.html">Tween</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TweenBlock.html">TweenBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TweenVisualizer.html">TweenVisualizer</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Global%20Variables.html">Global Variables</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Global%20Variables.html#/s:7Tweener9timeScaleSdvp">timeScale</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/TimelinePlayMode.html">TimelinePlayMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/TransitionType.html">TransitionType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/NSBezierPath.html">NSBezierPath</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/NSColor.html">NSColor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/NSView.html">NSView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIView.html">UIView</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener3addyyAA5TweenCyxGlF">add(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener3add_5delayyAA8TimelineC_SdtF">add(_:delay:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener7addType02toC00D5Array9isNumericyxSaySdGc_AFxcSbtlF">addType(toType:toArray:isNumeric:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener13addVisualizeryyAA05TweenC0CF">addVisualizer(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener8pauseAllyyF">pauseAll()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener17pauseAllTimelinesyyF">pauseAllTimelines()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener14pauseAllTweensyyF">pauseAllTweens()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener11pauseTweens6targetyx_tlF">pauseTweens(target:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener11pauseTweens6target4keysyx_Says14PartialKeyPathCyxGGtlF">pauseTweens(target:keys:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener9removeAllyyF">removeAll()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener18removeAllTimelinesyyF">removeAllTimelines()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener15removeAllTweensyyF">removeAllTweens()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener12removeTweens6targetyx_tlF">removeTweens(target:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener12removeTweens6target4keysyx_Says14PartialKeyPathCyxGGtlF">removeTweens(target:keys:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener16removeVisualizeryyAA05TweenC0CF">removeVisualizer(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener9resumeAllyyF">resumeAll()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener18resumeAllTimelinesyyF">resumeAllTimelines()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener15resumeAllTweensyyF">resumeAllTweens()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener12resumeTweens6targetyx_tlF">resumeTweens(target:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener12resumeTweens6target4keysyx_Says14PartialKeyPathCyxGGtlF">resumeTweens(target:keys:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:7Tweener18AimRotationHandlera">AimRotationHandler</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:7Tweener8Equationa">Equation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:7Tweener12ToArrayBlocka">ToArrayBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:7Tweener11ToTypeBlocka">ToTypeBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:7Tweener12TweenHandlera">TweenHandler</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>Tween</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Tween</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span> <span class="p">:</span> <span class="kt"><a href="../Classes/AnyTween.html">AnyTween</a></span></code></pre>
+
+                </div>
+              </div>
+            <p>Tween related to a specific target instance class or struct Type:<code>T</code>.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener5TweenC6target8duration4ease5delay4from2to10completionACyxGx_S3d_S3dtcSdSDys14PartialKeyPathCyxGypGSgAPyycSgtcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(target:duration:ease:delay:from:to:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener5TweenC6target8duration4ease5delay4from2to10completionACyxGx_S3d_S3dtcSdSDys14PartialKeyPathCyxGypGSgAPyycSgtcfc">init(target:<wbr>duration:<wbr>ease:<wbr>delay:<wbr>from:<wbr>to:<wbr>completion:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates a descartable Tween.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">target</span><span class="p">:</span> <span class="kt">T</span><span class="p">,</span>
+                        <span class="nv">duration</span><span class="p">:</span> <span class="kt">Double</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span>
+                        <span class="nv">ease</span><span class="p">:</span><span class="kd">@escaping</span> <span class="kt"><a href="../Typealiases.html#/s:7Tweener8Equationa">Equation</a></span> <span class="o">=</span> <span class="kt"><a href="../Classes/Ease.html">Ease</a></span><span class="o">.</span><span class="k">none</span><span class="p">,</span>
+                        <span class="nv">delay</span><span class="p">:</span><span class="kt">Double</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>
+                        <span class="nv">from</span><span class="p">:</span> <span class="p">[</span><span class="kt">PartialKeyPath</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">]?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span><span class="c1">//Optional</span>
+                        <span class="nv">to</span><span class="p">:</span> <span class="p">[</span><span class="kt">PartialKeyPath</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">]?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                        <span class="nv">completion</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:7Tweener12TweenHandlera">TweenHandler</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>target</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Required, target instance to perform animations.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>duration</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Optional, Time duration of tween in seconds.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>ease</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Optional, Easing equation for animation curve, the default value is linear.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>delay</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Optional, Time to delay after start this animation.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>from</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Optional,  collection of pair type KeyPath  and Any, this sets the intial animation values, if isn&rsquo;t defined the engine takes the current values from target as start.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>keys</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Optional,  collection of pair type KeyPath  and Any to animate a property with the desired end values, Tweens never start if not defined.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>replace</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Optional, Boolean value that indicates if the engine removes existing tweens for same property.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Optional, A code block to execute when animation has finished.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A new <code>Tween</code> instance .</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener5TweenC8durationyACyxGSdF"></a>
+                    <a name="//apple_ref/swift/Method/duration(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener5TweenC8durationyACyxGSdF">duration(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A method to set Tween&rsquo;s duration using declarative syntax.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@discardableResult</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">duration</span><span class="p">(</span><span class="n">_</span> <span class="nv">duration</span><span class="p">:</span> <span class="kt">Double</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Tween</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Current<code>Tween</code> instance.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener5TweenC4easeyACyxGS2d_S3dtcF"></a>
+                    <a name="//apple_ref/swift/Method/ease(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener5TweenC4easeyACyxGS2d_S3dtcF">ease(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A method to set Tween&rsquo;s easing equation using declarative syntax.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@discardableResult</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">ease</span><span class="p">(</span><span class="n">_</span> <span class="nv">ease</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="../Typealiases.html#/s:7Tweener8Equationa">Equation</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Tween</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Current<code>Tween</code> instance.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener5TweenC5delayyACyxGSdF"></a>
+                    <a name="//apple_ref/swift/Method/delay(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener5TweenC5delayyACyxGSdF">delay(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A method to set Tween&rsquo;s delay using declarative syntax.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@discardableResult</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">delay</span><span class="p">(</span><span class="n">_</span> <span class="nv">delay</span><span class="p">:</span> <span class="kt">Double</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Tween</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Current<code>Tween</code> instance.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener5TweenC7onStartyACyxGyycF"></a>
+                    <a name="//apple_ref/swift/Method/onStart(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener5TweenC7onStartyACyxGyycF">onStart(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A method to set Tween&rsquo;s onStart handler using declarative syntax.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@discardableResult</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">onStart</span><span class="p">(</span><span class="n">_</span> <span class="nv">handler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="../Typealiases.html#/s:7Tweener12TweenHandlera">TweenHandler</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Tween</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Current<code>Tween</code> instance.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener5TweenC8onUpdateyACyxGyycF"></a>
+                    <a name="//apple_ref/swift/Method/onUpdate(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener5TweenC8onUpdateyACyxGyycF">onUpdate(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A method to set Tween&rsquo;s onUpdate handler using declarative syntax.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@discardableResult</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">onUpdate</span><span class="p">(</span><span class="n">_</span> <span class="nv">handler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="../Typealiases.html#/s:7Tweener12TweenHandlera">TweenHandler</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Tween</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Current<code>Tween</code> instance.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener5TweenC10onCompleteyACyxGyycF"></a>
+                    <a name="//apple_ref/swift/Method/onComplete(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener5TweenC10onCompleteyACyxGyycF">onComplete(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A method to set Tween&rsquo;s onComplete handler using declarative syntax.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@discardableResult</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">onComplete</span><span class="p">(</span><span class="n">_</span> <span class="nv">handler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="../Typealiases.html#/s:7Tweener12TweenHandlera">TweenHandler</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Tween</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Current<code>Tween</code> instance.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener5TweenC11onOverwriteyACyxGyycF"></a>
+                    <a name="//apple_ref/swift/Method/onOverwrite(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener5TweenC11onOverwriteyACyxGyycF">onOverwrite(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A method to set Tween&rsquo;s onOverwrite handler using declarative syntax.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@discardableResult</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">onOverwrite</span><span class="p">(</span><span class="n">_</span> <span class="nv">handler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="../Typealiases.html#/s:7Tweener12TweenHandlera">TweenHandler</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Tween</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Current<code>Tween</code> instance.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener5TweenC4playACyxGyF"></a>
+                    <a name="//apple_ref/swift/Method/play()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener5TweenC4playACyxGyF">play()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Adds self to animation Engine.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@discardableResult</span>
+<span class="kd">public</span> <span class="k">override</span> <span class="kd">func</span> <span class="nf">play</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Tween</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener5TweenC5after8duration4ease5delay4from2to10completionACyxGSdSg_S2d_S3dtcSgALSDys14PartialKeyPathCyxGypGSgARyycSgtF"></a>
+                    <a name="//apple_ref/swift/Method/after(duration:ease:delay:from:to:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener5TweenC5after8duration4ease5delay4from2to10completionACyxGSdSg_S2d_S3dtcSgALSDys14PartialKeyPathCyxGypGSgARyycSgtF">after(duration:<wbr>ease:<wbr>delay:<wbr>from:<wbr>to:<wbr>completion:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A function that creates a new tween after this, and chain.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@discardableResult</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">after</span><span class="p">(</span><span class="nv">duration</span><span class="p">:</span> <span class="kt">Double</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                  <span class="nv">ease</span><span class="p">:</span><span class="kt"><a href="../Typealiases.html#/s:7Tweener8Equationa">Equation</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                  <span class="nv">delay</span><span class="p">:</span><span class="kt">Double</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                  <span class="nv">from</span><span class="p">:</span> <span class="p">[</span><span class="kt">PartialKeyPath</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">]?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                  <span class="nv">to</span><span class="p">:</span> <span class="p">[</span><span class="kt">PartialKeyPath</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">]?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                  <span class="nv">completion</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:7Tweener12TweenHandlera">TweenHandler</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Tween</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A new<code>Tween</code> instance with time delay after current.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener5TweenC4keys4from2toACyxGSDys14PartialKeyPathCyxGypGSg_AKtF"></a>
+                    <a name="//apple_ref/swift/Method/keys(from:to:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener5TweenC4keys4from2toACyxGSDys14PartialKeyPathCyxGypGSg_AKtF">keys(from:<wbr>to:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A method to set Tween&rsquo;s keyPaths and values using declarative syntax.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@discardableResult</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">keys</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="p">[</span><span class="kt">PartialKeyPath</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">]?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">to</span><span class="p">:</span> <span class="p">[</span><span class="kt">PartialKeyPath</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">Tween</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Current<code>Tween</code> instance.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener5TweenC6removeACyxGyF"></a>
+                    <a name="//apple_ref/swift/Method/remove()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener5TweenC6removeACyxGyF">remove()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@discardableResult</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">remove</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Tween</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2020 <a class="link" href="https://github.com/alexrvarela/SwiftTweener" target="_blank" rel="external">alexrvarela</a>. All rights reserved. (Last updated: 2020-09-21)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

@@ -1,0 +1,1486 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Ease Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/Ease" class="dashAnchor"></a>
+    <a title="Ease Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">Tweener 2.0 Docs</a> (85% documented)</p>
+        <p class="header-right">
+          <form role="search" action="../search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">Tweener Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        Ease Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/AnyTween.html">AnyTween</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ArcAim.html">ArcAim</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BasicMath.html">BasicMath</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BezierUtils.html">BezierUtils</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CGPathUtils.html">CGPathUtils</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Ease.html">Ease</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PDFImageView.html">PDFImageView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PathAim.html">PathAim</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RotationAim.html">RotationAim</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/StringAim.html">StringAim</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Timeline.html">Timeline</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TimelineInspector.html">TimelineInspector</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Tween.html">Tween</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TweenBlock.html">TweenBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TweenVisualizer.html">TweenVisualizer</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Global%20Variables.html">Global Variables</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Global%20Variables.html#/s:7Tweener9timeScaleSdvp">timeScale</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/TimelinePlayMode.html">TimelinePlayMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/TransitionType.html">TransitionType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/NSBezierPath.html">NSBezierPath</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/NSColor.html">NSColor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/NSView.html">NSView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIView.html">UIView</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener3addyyAA5TweenCyxGlF">add(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener3add_5delayyAA8TimelineC_SdtF">add(_:delay:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener7addType02toC00D5Array9isNumericyxSaySdGc_AFxcSbtlF">addType(toType:toArray:isNumeric:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener13addVisualizeryyAA05TweenC0CF">addVisualizer(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener8pauseAllyyF">pauseAll()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener17pauseAllTimelinesyyF">pauseAllTimelines()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener14pauseAllTweensyyF">pauseAllTweens()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener11pauseTweens6targetyx_tlF">pauseTweens(target:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener11pauseTweens6target4keysyx_Says14PartialKeyPathCyxGGtlF">pauseTweens(target:keys:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener9removeAllyyF">removeAll()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener18removeAllTimelinesyyF">removeAllTimelines()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener15removeAllTweensyyF">removeAllTweens()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener12removeTweens6targetyx_tlF">removeTweens(target:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener12removeTweens6target4keysyx_Says14PartialKeyPathCyxGGtlF">removeTweens(target:keys:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener16removeVisualizeryyAA05TweenC0CF">removeVisualizer(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener9resumeAllyyF">resumeAll()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener18resumeAllTimelinesyyF">resumeAllTimelines()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener15resumeAllTweensyyF">resumeAllTweens()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener12resumeTweens6targetyx_tlF">resumeTweens(target:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7Tweener12resumeTweens6target4keysyx_Says14PartialKeyPathCyxGGtlF">resumeTweens(target:keys:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:7Tweener18AimRotationHandlera">AimRotationHandler</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:7Tweener8Equationa">Equation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:7Tweener12ToArrayBlocka">ToArrayBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:7Tweener11ToTypeBlocka">ToTypeBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:7Tweener12TweenHandlera">TweenHandler</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>Ease</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Ease</span></code></pre>
+
+                </div>
+              </div>
+            <p>Base class with Easing equations declared statically.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/None"></a>
+                <a name="//apple_ref/swift/Section/None" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/None"></a>
+                  <h3 class="section-name"><p>None</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener4EaseC4noneyS2d_S3dtcvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/none" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener4EaseC4noneyS2d_S3dtcvpZ">none</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Easing equation function for a simple linear tweening, with no easing.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">none</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:7Tweener8Equationa">Equation</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Quad"></a>
+                <a name="//apple_ref/swift/Section/Quad" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Quad"></a>
+                  <h3 class="section-name"><p>Quad</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener4EaseC6inQuadyS2d_S3dtcvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/inQuad" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener4EaseC6inQuadyS2d_S3dtcvpZ">inQuad</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Easing equation function for a quadratic (t^2) easing in: accelerating from zero velocity.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">inQuad</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:7Tweener8Equationa">Equation</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener4EaseC7outQuadyS2d_S3dtcvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/outQuad" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener4EaseC7outQuadyS2d_S3dtcvpZ">outQuad</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Easing equation function for a quadratic (t^2) easing out: decelerating to zero velocity.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">outQuad</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:7Tweener8Equationa">Equation</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener4EaseC9inOutQuadyS2d_S3dtcvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/inOutQuad" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener4EaseC9inOutQuadyS2d_S3dtcvpZ">inOutQuad</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Easing equation function for a quadratic (t^2) easing in/out: acceleration until halfway, then deceleration.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">inOutQuad</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:7Tweener8Equationa">Equation</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener4EaseC9outInQuadyS2d_S3dtcvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/outInQuad" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener4EaseC9outInQuadyS2d_S3dtcvpZ">outInQuad</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Easing equation function for a quadratic (t^2) easing out/in: deceleration until halfway, then acceleration.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">outInQuad</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:7Tweener8Equationa">Equation</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Cubic"></a>
+                <a name="//apple_ref/swift/Section/Cubic" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Cubic"></a>
+                  <h3 class="section-name"><p>Cubic</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener4EaseC7inCubicyS2d_S3dtcvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/inCubic" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener4EaseC7inCubicyS2d_S3dtcvpZ">inCubic</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Easing equation function for a cubic (t^3) easing in: accelerating from zero velocity.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">inCubic</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:7Tweener8Equationa">Equation</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener4EaseC8outCubicyS2d_S3dtcvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/outCubic" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener4EaseC8outCubicyS2d_S3dtcvpZ">outCubic</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Easing equation function for a cubic (t^3) easing out: decelerating from zero velocity.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">outCubic</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:7Tweener8Equationa">Equation</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener4EaseC10inOutCubicyS2d_S3dtcvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/inOutCubic" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener4EaseC10inOutCubicyS2d_S3dtcvpZ">inOutCubic</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Easing equation function for a cubic (t^3) easing in/out: acceleration until halfway, then deceleration.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">inOutCubic</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:7Tweener8Equationa">Equation</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener4EaseC10outInCubicyS2d_S3dtcvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/outInCubic" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener4EaseC10outInCubicyS2d_S3dtcvpZ">outInCubic</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Easing equation function for a cubic (t^3) easing out/in: deceleration until halfway, then acceleration.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">outInCubic</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:7Tweener8Equationa">Equation</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Quart"></a>
+                <a name="//apple_ref/swift/Section/Quart" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Quart"></a>
+                  <h3 class="section-name"><p>Quart</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener4EaseC7inQuartyS2d_S3dtcvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/inQuart" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener4EaseC7inQuartyS2d_S3dtcvpZ">inQuart</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Easing equation function for a quartic (t^4) easing in: accelerating from zero velocity.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">inQuart</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:7Tweener8Equationa">Equation</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener4EaseC8outQuartyS2d_S3dtcvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/outQuart" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener4EaseC8outQuartyS2d_S3dtcvpZ">outQuart</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Easing equation function for a quartic (t^4) easing out: decelerating from zero velocity.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">outQuart</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:7Tweener8Equationa">Equation</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener4EaseC10inOutQuartyS2d_S3dtcvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/inOutQuart" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener4EaseC10inOutQuartyS2d_S3dtcvpZ">inOutQuart</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Easing equation function for a quartic (t^4) easing in/out: acceleration until halfway, then deceleration.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">inOutQuart</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:7Tweener8Equationa">Equation</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener4EaseC10outInQuartyS2d_S3dtcvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/outInQuart" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener4EaseC10outInQuartyS2d_S3dtcvpZ">outInQuart</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Easing equation function for a quartic (t^4) easing out/in: deceleration until halfway, then acceleration.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">outInQuart</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:7Tweener8Equationa">Equation</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Quint"></a>
+                <a name="//apple_ref/swift/Section/Quint" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Quint"></a>
+                  <h3 class="section-name"><p>Quint</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener4EaseC7inQuintyS2d_S3dtcvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/inQuint" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener4EaseC7inQuintyS2d_S3dtcvpZ">inQuint</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Easing equation function for a quintic (t^5) easing in: accelerating from zero velocity.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">inQuint</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:7Tweener8Equationa">Equation</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener4EaseC8outQuintyS2d_S3dtcvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/outQuint" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener4EaseC8outQuintyS2d_S3dtcvpZ">outQuint</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Easing equation function for a quintic (t^5) easing out: decelerating from zero velocity.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">outQuint</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:7Tweener8Equationa">Equation</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener4EaseC10inOutQuintyS2d_S3dtcvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/inOutQuint" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener4EaseC10inOutQuintyS2d_S3dtcvpZ">inOutQuint</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Easing equation function for a quintic (t^5) easing in/out: acceleration until halfway, then deceleration.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">inOutQuint</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:7Tweener8Equationa">Equation</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener4EaseC10outInQuintyS2d_S3dtcvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/outInQuint" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener4EaseC10outInQuintyS2d_S3dtcvpZ">outInQuint</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Easing equation function for a quintic (t^5) easing out/in: deceleration until halfway, then acceleration.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">outInQuint</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:7Tweener8Equationa">Equation</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Sine"></a>
+                <a name="//apple_ref/swift/Section/Sine" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Sine"></a>
+                  <h3 class="section-name"><p>Sine</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener4EaseC6inSineyS2d_S3dtcvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/inSine" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener4EaseC6inSineyS2d_S3dtcvpZ">inSine</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Easing equation function for a sinusoidal (sin(t)) easing in: accelerating from zero velocity.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">inSine</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:7Tweener8Equationa">Equation</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener4EaseC7outSineyS2d_S3dtcvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/outSine" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener4EaseC7outSineyS2d_S3dtcvpZ">outSine</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Easing equation function for a sinusoidal (sin(t)) easing out: decelerating from zero velocity.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">outSine</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:7Tweener8Equationa">Equation</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener4EaseC9inOutSineyS2d_S3dtcvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/inOutSine" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener4EaseC9inOutSineyS2d_S3dtcvpZ">inOutSine</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Easing equation function for a sinusoidal (sin(t)) easing in/out: acceleration until halfway, then deceleration.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">inOutSine</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:7Tweener8Equationa">Equation</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener4EaseC9outInSineyS2d_S3dtcvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/outInSine" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener4EaseC9outInSineyS2d_S3dtcvpZ">outInSine</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Easing equation function for a sinusoidal (sin(t)) easing out/in: deceleration until halfway, then acceleration.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">outInSine</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:7Tweener8Equationa">Equation</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Expo"></a>
+                <a name="//apple_ref/swift/Section/Expo" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Expo"></a>
+                  <h3 class="section-name"><p>Expo</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener4EaseC6inExpoyS2d_S3dtcvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/inExpo" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener4EaseC6inExpoyS2d_S3dtcvpZ">inExpo</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Easing equation function for an exponential (2^t) easing in: accelerating from zero velocity.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">inExpo</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:7Tweener8Equationa">Equation</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener4EaseC7outExpoyS2d_S3dtcvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/outExpo" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener4EaseC7outExpoyS2d_S3dtcvpZ">outExpo</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Easing equation function for an exponential (2^t) easing out: decelerating from zero velocity.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">outExpo</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:7Tweener8Equationa">Equation</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener4EaseC9inOutExpoyS2d_S3dtcvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/inOutExpo" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener4EaseC9inOutExpoyS2d_S3dtcvpZ">inOutExpo</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Easing equation function for an exponential (2^t) easing in/out: acceleration until halfway, then deceleration.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">inOutExpo</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:7Tweener8Equationa">Equation</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener4EaseC9outInExpoyS2d_S3dtcvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/outInExpo" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener4EaseC9outInExpoyS2d_S3dtcvpZ">outInExpo</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Easing equation function for an exponential (2^t) easing out/in: deceleration until halfway, then acceleration.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">outInExpo</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:7Tweener8Equationa">Equation</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Circ"></a>
+                <a name="//apple_ref/swift/Section/Circ" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Circ"></a>
+                  <h3 class="section-name"><p>Circ</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener4EaseC6inCircyS2d_S3dtcvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/inCirc" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener4EaseC6inCircyS2d_S3dtcvpZ">inCirc</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Easing equation function for a circular (sqrt(1-t^2)) easing in: accelerating from zero velocity.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">inCirc</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:7Tweener8Equationa">Equation</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener4EaseC7outCircyS2d_S3dtcvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/outCirc" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener4EaseC7outCircyS2d_S3dtcvpZ">outCirc</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Easing equation function for a circular (sqrt(1-t^2)) easing out: decelerating from zero velocity.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">outCirc</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:7Tweener8Equationa">Equation</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener4EaseC9inOutCircyS2d_S3dtcvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/inOutCirc" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener4EaseC9inOutCircyS2d_S3dtcvpZ">inOutCirc</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Easing equation function for a circular (sqrt(1-t^2)) easing in/out: acceleration until halfway, then deceleration.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">inOutCirc</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:7Tweener8Equationa">Equation</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener4EaseC9outInCircyS2d_S3dtcvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/outInCirc" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener4EaseC9outInCircyS2d_S3dtcvpZ">outInCirc</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Easing equation function for a circular (sqrt(1-t^2)) easing out/in: deceleration until halfway, then acceleration.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">outInCirc</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:7Tweener8Equationa">Equation</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Elastic"></a>
+                <a name="//apple_ref/swift/Section/Elastic" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Elastic"></a>
+                  <h3 class="section-name"><p>Elastic</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener4EaseC9inElasticyS2d_S3dtcvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/inElastic" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener4EaseC9inElasticyS2d_S3dtcvpZ">inElastic</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Easing equation function for an elastic (exponentially decaying sine wave) easing in: accelerating from zero velocity.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">inElastic</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:7Tweener8Equationa">Equation</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener4EaseC10outElasticyS2d_S3dtcvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/outElastic" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener4EaseC10outElasticyS2d_S3dtcvpZ">outElastic</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Easing equation function for an elastic (exponentially decaying sine wave) easing out: decelerating from zero velocity.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">outElastic</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:7Tweener8Equationa">Equation</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener4EaseC12inOutElasticyS2d_S3dtcvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/inOutElastic" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener4EaseC12inOutElasticyS2d_S3dtcvpZ">inOutElastic</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Easing equation function for an elastic (exponentially decaying sine wave) easing in/out: acceleration until halfway, then deceleration.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">inOutElastic</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:7Tweener8Equationa">Equation</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener4EaseC12outInElasticyS2d_S3dtcvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/outInElastic" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener4EaseC12outInElasticyS2d_S3dtcvpZ">outInElastic</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">outInElastic</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:7Tweener8Equationa">Equation</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Back"></a>
+                <a name="//apple_ref/swift/Section/Back" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Back"></a>
+                  <h3 class="section-name"><p>Back</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener4EaseC6inBackyS2d_S3dtcvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/inBack" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener4EaseC6inBackyS2d_S3dtcvpZ">inBack</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">inBack</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:7Tweener8Equationa">Equation</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener4EaseC7outBackyS2d_S3dtcvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/outBack" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener4EaseC7outBackyS2d_S3dtcvpZ">outBack</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">outBack</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:7Tweener8Equationa">Equation</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener4EaseC9inOutBackyS2d_S3dtcvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/inOutBack" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener4EaseC9inOutBackyS2d_S3dtcvpZ">inOutBack</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">inOutBack</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:7Tweener8Equationa">Equation</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener4EaseC9outInBackyS2d_S3dtcvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/outInBack" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener4EaseC9outInBackyS2d_S3dtcvpZ">outInBack</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">outInBack</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:7Tweener8Equationa">Equation</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Bounce"></a>
+                <a name="//apple_ref/swift/Section/Bounce" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Bounce"></a>
+                  <h3 class="section-name"><p>Bounce</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener4EaseC8inBounceyS2d_S3dtcvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/inBounce" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener4EaseC8inBounceyS2d_S3dtcvpZ">inBounce</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">inBounce</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:7Tweener8Equationa">Equation</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener4EaseC9outBounceyS2d_S3dtcvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/outBounce" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener4EaseC9outBounceyS2d_S3dtcvpZ">outBounce</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">outBounce</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:7Tweener8Equationa">Equation</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener4EaseC11inOutBounceyS2d_S3dtcvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/inOutBounce" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener4EaseC11inOutBounceyS2d_S3dtcvpZ">inOutBounce</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">inOutBounce</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:7Tweener8Equationa">Equation</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Tweener4EaseC11outInBounceyS2d_S3dtcvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/outInBounce" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Tweener4EaseC11outInBounceyS2d_S3dtcvpZ">outInBounce</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">outInBounce</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:7Tweener8Equationa">Equation</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2020 <a class="link" href="https://github.com/alexrvarela/SwiftTweener" target="_blank" rel="external">alexrvarela</a>. All rights reserved. (Last updated: 2020-09-21)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

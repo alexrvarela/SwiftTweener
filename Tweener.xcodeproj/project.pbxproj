@@ -68,6 +68,7 @@
 		FA84B19524F1EDB2004A50B2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FA84B19124F1EDB2004A50B2 /* README.md */; };
 		FA84B19624F1EDB2004A50B2 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = FA84B19224F1EDB2004A50B2 /* LICENSE */; };
 		FA84B19724F1EDB2004A50B2 /* Tweener.podspec in Resources */ = {isa = PBXBuildFile; fileRef = FA84B19324F1EDB2004A50B2 /* Tweener.podspec */; };
+		FADF0194251A735100EAF4E3 /* PathSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADF018F251A735100EAF4E3 /* PathSample.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +109,7 @@
 		FA84B19C24F1EE7B004A50B2 /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
 		FA84B19D24F1EE7B004A50B2 /* Tweener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweener.swift; sourceTree = "<group>"; };
 		FA84B1A024F2DAD4004A50B2 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Package.swift; path = /Users/alex/Dropbox/SWIFT/SwiftTweener/Package.swift; sourceTree = "<absolute>"; };
+		FADF018F251A735100EAF4E3 /* PathSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PathSample.swift; path = "Examples/Examples-macOs/../../PathSample.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				FA84B19224F1EDB2004A50B2 /* LICENSE */,
+				FADF018F251A735100EAF4E3 /* PathSample.swift */,
 				FA84B1A024F2DAD4004A50B2 /* Package.swift */,
 				FA84B19124F1EDB2004A50B2 /* README.md */,
 				FA84B19324F1EDB2004A50B2 /* Tweener.podspec */,
@@ -490,6 +493,7 @@
 				FA7170CE24E4A4870001965F /* RotationAim.swift in Sources */,
 				FA7170CF24E4A4870001965F /* ArcAim.swift in Sources */,
 				FA7170D024E4A4870001965F /* PathAim.swift in Sources */,
+				FADF0194251A735100EAF4E3 /* PathSample.swift in Sources */,
 				FA7170D124E4A4870001965F /* StringAim.swift in Sources */,
 				FA7170D224E4A4870001965F /* BezierUtils.swift in Sources */,
 				FA7170D324E4A4870001965F /* CGPathUtils.swift in Sources */,

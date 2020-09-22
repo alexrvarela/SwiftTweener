@@ -8,7 +8,120 @@ This project has rewritten in pure Swift from [CocoaTweener](https://github.com/
 
 ### Prerequisites
 
-* Xcode with iOs 10.0+ and swift 4.2
+* Swift 5.0
+
+## Declarative & chainable syntax.
+
+Now, with Declarative Syntax and Tween chaining, to create Tween:
+
+```
+Tween(target:myView)
+.duration(1.0)
+.ease(Ease.inOutCubic)
+.keys(to:
+    [\UIView.alpha:1.0,
+     \UIView.frame:CGRect(x:20.0, y:20.0, width:UIScreen.main.bounds.width - 40, height:UIScreen.main.bounds.width - 40),
+     //NOTE:This property is an optional, add ! to keypath.
+     \UIView.backgroundColor!:UIColor.red])
+.onComplete { print("Tween complete") }
+.after()//Creates a new tween after with same target and properties after.
+.duration(0.75)
+.ease(Ease.outBounce)
+.keys(to: [\UIView.alpha:0.25,
+           \UIView.frame:CGRect(x:20.0, y:20.0, width:100.0, height:100.0),
+           \UIView.backgroundColor!:UIColor.blue])
+.play()
+```
+
+To create Timeline:
+
+```
+
+Timeline(
+    
+    //Place tweens here, separated by commas.
+    
+    //Tween 1
+    Tween(target: myView)
+    .ease(Ease.inOutQuad)
+    .keys(to:[\UIView.center : self.frame.origin])
+    .onStart {
+        self.myView.flipX(inverted: true)
+    }
+    .onComplete { print("Tween 1 complete") },
+    
+    //Tween 2
+    Tween(target: myView)
+    .after()
+    .keys(to:[\UIView.center : self.center])
+    .onStart {
+        self.myView.flipY()
+    }
+    .onComplete { print("Tween 2 complete") }
+    
+    //Etc....
+)
+
+```
+
+## View's extensions
+
+To make it more friendly, now includes UIView's and NSView's extensions with predefined animations ready-to-use calling a single function from your view instance:
+
+```
+.spring()                     
+.zoomIn()
+.zoomOut()
+.pop()
+.fadeIn()
+.fadeOut()
+.flyLeft()
+.flyRight()
+.flyTop()
+.flyBottom()
+.slideLeft()
+.slideRight()
+.slideTop()
+.slideBottom()
+.flipX()
+.flipY()
+.shake()
+.jiggle()
+.bounce()
+.swing()
+.spin()
+.loop()
+```
+
+![View's extensions](https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/extensions.gif)
+
+
+## Any object Type Support.
+
+To add support to other Types and  custom Types, assuming there is a struct like this:
+
+```
+public struct Vector3{
+    var x, y, z: Double
+    func buffer() -> [Double] { return [x, y, z] }
+    static func zero() -> Vector3 { return Vector3(x:0.0, y:0.0, z:0.0) }
+}
+```
+
+Tweener is based on Double arrays so you have to tell it how to convert your object to Array and back to Object.
+
+```
+Tweener.addType(
+                toType:{ values in return Vector3(x:values[0], y:values[1], z:values[2]) },
+                toArray:{ point in return point.buffer() }
+                )
+```
+
+Now, you can animate a 'Vector3' Type object.
+
+## MacOS support.
+
+This version includes Framework build for macOS.
 
 ## Installation
 
@@ -24,7 +137,7 @@ Now, add Tweener to your Podfile
 pod 'Tweener', '~> 2.0'
 ```
 
-To install dependencies run this command
+To install dependencies run this command:
 ```
 pod install
 ```
@@ -42,11 +155,25 @@ Now, add Tweener to your Cartfile
 github "alexrvarela/SwiftTweener" ~> 2.0
 ```
 
-To install dependencies run this command
+To install dependencies run this command:
 ```
 $ carthage update
 ```
 Finally, drag & drop Tweener.framework to your Xcode Project
+
+
+### Install using Swift Package Manager
+
+To install, add dependencies to your Package.swift
+
+```
+dependencies: [
+    .package(url: "https://github.com/alexrvarela/SwiftTweener.git", .upToNextMajor(from: "2.0"))
+]
+```
+Finally, drag & drop Tweener.framework to your Xcode Project
+
+
 
 ### Install manually
 
@@ -60,7 +187,7 @@ Import Tweener engine to your project:
 import Tweener
 ```
 
-Animate any of these kinds of properties:
+Animate by default any of these kinds of properties:
 Int, Float, Double, CGFloat, CGPoint, CGRect, UIColor, CGAffineTransform, CATransform3D
 
 First set initial state:
@@ -77,7 +204,7 @@ Create and add a simple Tween:
 let myTween = Tween(target:myView,
     duration:1.0,
     ease:Ease.outQuad
-    keys:[\UIView.alpha:1.0,
+    to:[\UIView.alpha:1.0,
           \UIView.frame:CGRect(x:20.0, y:20.0, width:280.0, height:280.0),
           \UIView.backgroundColor!:UIColor.blue
 ])
@@ -129,9 +256,9 @@ Tweener.removeTweens(target:myView)
 
 By specific properties of a target:
 ```swift
-Tweener.pauseTweens(target:myView, keys:[\UIView.backgroundColor, \UIView.alpha])
-Tweener.resumeTweens(target:myView, keys:[\UIView.backgroundColor, \UIView.alpha])
-Tweener.removeTweens(target:myView, keys:[\UIView.backgroundColor, \UIView.alpha])
+Tweener.pauseTweens(target:myView, to:[\UIView.backgroundColor, \UIView.alpha])
+Tweener.resumeTweens(target:myView, to:[\UIView.backgroundColor, \UIView.alpha])
+Tweener.removeTweens(target:myView, to:[\UIView.backgroundColor, \UIView.alpha])
 ```
 
 Unleash your creativity!
@@ -171,7 +298,7 @@ And use it:
 Tween(target:myView,
     duration:1.0,
     ease:Ease.custom
-    keys:[\UIView.frame:CGRect(x:20.0, y:20.0, width:280.0, height:280.0)]
+    to:[\UIView.frame:CGRect(x:20.0, y:20.0, width:280.0, height:280.0)]
     ).play()
 ```
 
@@ -218,9 +345,7 @@ Visualize Tweens in real time:
 
 Edit Tweens:
 
-![Edit Tweens](https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/timeline-editor.gif)
-
-![Scale timeline editor](https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/timeline-zoom.gif)
+![Edit Tweens](https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/timeline-editor.gif) ![Scale timeline editor](https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/timeline-zoom.gif)
 
 To create Timeline inspector:
 ```swift
@@ -276,7 +401,7 @@ Tween(target: myPathAim,
     duration: 2.0, 
     ease: Ease.none, 
     delay: 0.0, 
-    keys: [\PathAim.interpolation : 1.0]).play()
+    to: [\PathAim.interpolation : 1.0]).play()
 ```
 
 You can export your paths to code from illustrator with this simple Script:
@@ -296,7 +421,7 @@ myRotationAim.angle = 90.0
 
 Tween(target: myRotationAim,
     duration: 1.5,
-        keys: [\RotationAim.angle : 360.0]).play()
+        to: [\RotationAim.angle : 360.0]).play()
 ```
 
 ### ArcAim
@@ -316,7 +441,7 @@ myArcAim.arcAngle = 0.0
 //Animate arc angle
 Tween(target: myArcAim,
     duration: 1.5,
-    keys: [\RotationAim.arcAngle : 360.0]).play()
+    to: [\RotationAim.arcAngle : 360.0]).play()
 ```
 
 ### StringAim
@@ -334,7 +459,7 @@ myStringAim.to = "hola"
 myStringAim.interpolation = 0.0
 
 //Animate interpolation
-Tween(target: myStringAim, duration: 0.5, keys: [\StringAim.interpolation : 1.0]).play()
+Tween(target: myStringAim, duration: 0.5, to: [\StringAim.interpolation : 1.0]).play()
 ```
 
 Play with everything, combine different types of Aim:
@@ -363,9 +488,7 @@ Tweener.removeVisualizer(visualizer)
 ![Visualizer](https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/tweenvisualizer.gif)
 
 Also, you can drag, pinch and resize visualizer at your convenience, to resize just drag the bottom-right corner:
-![Drag](https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/tweenvisualizer-drag.gif)    
-![Pinch](https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/tweenvisualizer-pinch.gif)   
-![Resize](https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/tweenvisualizer-resize.gif)
+![Drag](https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/tweenvisualizer-drag.gif) ![Pinch](https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/tweenvisualizer-pinch.gif) ![Resize](https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/tweenvisualizer-resize.gif)
 
 This library was created to give dynamism to UI elements, if you are looking to make more complex animations I recommend you implement them with [Lottie](https://airbnb.design/lottie/).
 

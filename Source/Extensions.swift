@@ -513,13 +513,13 @@ extension NSView{
     }
     
     ///Get center point according view's current position.
-    func center() -> CGPoint  {
+    public func center() -> CGPoint  {
         return CGPoint(x: (self.frame.origin.x + (self.frame.size.width * 0.5)),
                        y: (self.frame.origin.y + (self.frame.size.height * 0.5)))
     }
     
     ///Center view to target point.
-    func center(_ point:CGPoint)  {
+    public func center(_ point:CGPoint)  {
         self.frame.origin = CGPoint(x: (point.x - (self.frame.size.width * 0.5)), y: (point.y - (self.frame.size.height * 0.5)))
     }
         

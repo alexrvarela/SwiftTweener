@@ -109,7 +109,6 @@
 		FA84B19C24F1EE7B004A50B2 /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
 		FA84B19D24F1EE7B004A50B2 /* Tweener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweener.swift; sourceTree = "<group>"; };
 		FA84B1A024F2DAD4004A50B2 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Package.swift; path = /Users/alex/Dropbox/SWIFT/SwiftTweener/Package.swift; sourceTree = "<absolute>"; };
-		FADF018F251A735100EAF4E3 /* PathSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PathSample.swift; path = "Examples/Examples-macOs/../../PathSample.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

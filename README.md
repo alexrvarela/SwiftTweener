@@ -10,9 +10,9 @@ This project has rewritten in pure Swift from [CocoaTweener](https://github.com/
 
 * Swift 5.0
 
-## Declarative & chainable syntax.
+## Declarative & chainable syntax
 
-Now, with Declarative Syntax and Tween chaining, to create Tween:
+Now, with Declarative Syntax and Tween chaining, to create a Tween:
 
 ```
 Tween(target:myView)
@@ -33,7 +33,7 @@ Tween(target:myView)
 .play()
 ```
 
-To create Timeline:
+To create a Timeline:
 
 ```
 
@@ -96,7 +96,7 @@ To make it more friendly, now includes UIView's and NSView's extensions with pre
 ![View's extensions](https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/extensions.gif)
 
 
-## Any object Type Support.
+## Any object Type Support
 
 To add support to other Types and  custom Types, assuming there is a struct like this:
 

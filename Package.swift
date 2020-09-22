@@ -26,8 +26,8 @@ let package = Package(
             path: "Source"),
         .testTarget(
             name: "TweenerTests",
-            path: "Tests",
-            dependencies: ["Tweener"]),
+            dependencies: ["Tweener"],
+            path: "Tests"),
     ],
     swiftLanguageVersions: [.v5]
 )

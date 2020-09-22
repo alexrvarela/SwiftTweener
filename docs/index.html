@@ -16,7 +16,7 @@
     <a title="Tweener  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">Tweener 2.0 Docs</a> (85% documented)</p>
+        <p><a href="index.html">Tweener 2.0 Docs</a> (86% documented)</p>
         <p class="header-right">
           <form role="search" action="search.json">
             <input type="text" placeholder="Search documentation" data-typeahead>
@@ -221,8 +221,106 @@
 <h3 id='prerequisites' class='heading'>Prerequisites</h3>
 
 <ul>
-<li>Xcode with iOs 10.0+ and swift 4.2</li>
+<li>Swift 5.0</li>
 </ul>
+<h2 id='declarative-amp-chainable-syntax' class='heading'>Declarative &amp; chainable syntax.</h2>
+
+<p>Now, with Declarative Syntax and Tween chaining, to create Tween:</p>
+<pre class="highlight plaintext"><code>Tween(target:myView)
+.duration(1.0)
+.ease(Ease.inOutCubic)
+.keys(to:
+    [\UIView.alpha:1.0,
+     \UIView.frame:CGRect(x:20.0, y:20.0, width:UIScreen.main.bounds.width - 40, height:UIScreen.main.bounds.width - 40),
+     //NOTE:This property is an optional, add ! to keypath.
+     \UIView.backgroundColor!:UIColor.red])
+.onComplete { print("Tween complete") }
+.after()//Creates a new tween after with same target and properties after.
+.duration(0.75)
+.ease(Ease.outBounce)
+.keys(to: [\UIView.alpha:0.25,
+           \UIView.frame:CGRect(x:20.0, y:20.0, width:100.0, height:100.0),
+           \UIView.backgroundColor!:UIColor.blue])
+.play()
+</code></pre>
+
+<p>To create Timeline:</p>
+<pre class="highlight plaintext"><code>
+Timeline(
+
+    //Place tweens here, separated by commas.
+
+    //Tween 1
+    Tween(target: myView)
+    .ease(Ease.inOutQuad)
+    .keys(to:[\UIView.center : self.frame.origin])
+    .onStart {
+        self.myView.flipX(inverted: true)
+    }
+    .onComplete { print("Tween 1 complete") },
+
+    //Tween 2
+    Tween(target: myView)
+    .after()
+    .keys(to:[\UIView.center : self.center])
+    .onStart {
+        self.myView.flipY()
+    }
+    .onComplete { print("Tween 2 complete") }
+
+    //Etc....
+)
+
+</code></pre>
+<h2 id='view-39-s-extensions' class='heading'>View&rsquo;s extensions</h2>
+
+<p>To make it more friendly, now includes UIView&rsquo;s and NSView&rsquo;s extensions with predefined animations ready-to-use calling a single function from your view instance:</p>
+<pre class="highlight plaintext"><code>.spring()                     
+.zoomIn()
+.zoomOut()
+.pop()
+.fadeIn()
+.fadeOut()
+.flyLeft()
+.flyRight()
+.flyTop()
+.flyBottom()
+.slideLeft()
+.slideRight()
+.slideTop()
+.slideBottom()
+.flipX()
+.flipY()
+.shake()
+.jiggle()
+.bounce()
+.swing()
+.spin()
+.loop()
+</code></pre>
+
+<p><img src="https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/extensions.gif" alt="View&#39;s extensions"></p>
+<h2 id='any-object-type-support' class='heading'>Any object Type Support.</h2>
+
+<p>To add support to other Types and  custom Types, assuming there is a struct like this:</p>
+<pre class="highlight plaintext"><code>public struct Vector3{
+    var x, y, z: Double
+    func buffer() -&gt; [Double] { return [x, y, z] }
+    static func zero() -&gt; Vector3 { return Vector3(x:0.0, y:0.0, z:0.0) }
+}
+</code></pre>
+
+<p>Tweener is based on Double arrays so you have to tell it how to convert your object to Array and back to Object.</p>
+<pre class="highlight plaintext"><code>Tweener.addType(
+                toType:{ values in return Vector3(x:values[0], y:values[1], z:values[2]) },
+                toArray:{ point in return point.buffer() }
+                )
+</code></pre>
+
+<p>Now, you can animate a &lsquo;Vector3&rsquo; Type object.</p>
+<h2 id='macos-support' class='heading'>MacOS support.</h2>
+
+<p>This version includes macOS support.</p>
 <h2 id='installation' class='heading'>Installation</h2>
 <h3 id='install-using-cocoapods' class='heading'>Install using Cocoapods</h3>
 
@@ -234,7 +332,7 @@
 <pre class="highlight plaintext"><code>pod 'Tweener', '~&gt; 2.0'
 </code></pre>
 
-<p>To install dependencies run this command</p>
+<p>To install dependencies run this command:</p>
 <pre class="highlight plaintext"><code>pod install
 </code></pre>
 <h3 id='install-using-carthage' class='heading'>Install using Carthage</h3>
@@ -248,11 +346,18 @@ $ brew install carthage
 <pre class="highlight plaintext"><code>github "alexrvarela/SwiftTweener" ~&gt; 2.0
 </code></pre>
 
-<p>To install dependencies run this command</p>
+<p>To install dependencies run this command:</p>
 <pre class="highlight plaintext"><code>$ carthage update
 </code></pre>
 
 <p>Finally, drag &amp; drop Tweener.framework to your Xcode Project</p>
+<h3 id='install-using-swift-package-manager' class='heading'>Install using Swift Package Manager</h3>
+
+<p>To install, add dependencies to your Package.swift</p>
+<pre class="highlight plaintext"><code>dependencies: [
+    .package(url: "https://github.com/alexrvarela/SwiftTweener.git", .upToNextMajor(from: "2.0"))
+]
+</code></pre>
 <h3 id='install-manually' class='heading'>Install manually</h3>
 
 <p>Download, build and copy Tweener.framework to your Xcode project.</p>
@@ -262,7 +367,7 @@ $ brew install carthage
 <pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">Tweener</span>
 </code></pre>
 
-<p>Animate any of these kinds of properties:
+<p>Animate by default any of these kinds of properties:
 Int, Float, Double, CGFloat, CGPoint, CGRect, UIColor, CGAffineTransform, CATransform3D</p>
 
 <p>First set initial state:</p>
@@ -276,7 +381,7 @@ Int, Float, Double, CGFloat, CGPoint, CGRect, UIColor, CGAffineTransform, CATran
 <span class="k">let</span> <span class="nv">myTween</span> <span class="o">=</span> <span class="kt">Tween</span><span class="p">(</span><span class="nv">target</span><span class="p">:</span><span class="n">myView</span><span class="p">,</span>
     <span class="nv">duration</span><span class="p">:</span><span class="mf">1.0</span><span class="p">,</span>
     <span class="nv">ease</span><span class="p">:</span><span class="kt">Ease</span><span class="o">.</span><span class="n">outQuad</span>
-    <span class="nv">keys</span><span class="p">:[\</span><span class="kt">UIView</span><span class="o">.</span><span class="nv">alpha</span><span class="p">:</span><span class="mf">1.0</span><span class="p">,</span>
+    <span class="nv">to</span><span class="p">:[\</span><span class="kt">UIView</span><span class="o">.</span><span class="nv">alpha</span><span class="p">:</span><span class="mf">1.0</span><span class="p">,</span>
           <span class="p">\</span><span class="kt">UIView</span><span class="o">.</span><span class="nv">frame</span><span class="p">:</span><span class="kt">CGRect</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span><span class="mf">20.0</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span><span class="mf">20.0</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span><span class="mf">280.0</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span><span class="mf">280.0</span><span class="p">),</span>
           <span class="p">\</span><span class="kt">UIView</span><span class="o">.</span><span class="n">backgroundColor</span><span class="o">!</span><span class="p">:</span><span class="kt">UIColor</span><span class="o">.</span><span class="n">blue</span>
 <span class="p">])</span>
@@ -321,9 +426,9 @@ Int, Float, Double, CGFloat, CGPoint, CGRect, UIColor, CGAffineTransform, CATran
 </code></pre>
 
 <p>By specific properties of a target:</p>
-<pre class="highlight swift"><code><span class="kt">Tweener</span><span class="o">.</span><span class="nf">pauseTweens</span><span class="p">(</span><span class="nv">target</span><span class="p">:</span><span class="n">myView</span><span class="p">,</span> <span class="nv">keys</span><span class="p">:[\</span><span class="kt">UIView</span><span class="o">.</span><span class="n">backgroundColor</span><span class="p">,</span> <span class="p">\</span><span class="kt">UIView</span><span class="o">.</span><span class="n">alpha</span><span class="p">])</span>
-<span class="kt">Tweener</span><span class="o">.</span><span class="nf">resumeTweens</span><span class="p">(</span><span class="nv">target</span><span class="p">:</span><span class="n">myView</span><span class="p">,</span> <span class="nv">keys</span><span class="p">:[\</span><span class="kt">UIView</span><span class="o">.</span><span class="n">backgroundColor</span><span class="p">,</span> <span class="p">\</span><span class="kt">UIView</span><span class="o">.</span><span class="n">alpha</span><span class="p">])</span>
-<span class="kt">Tweener</span><span class="o">.</span><span class="nf">removeTweens</span><span class="p">(</span><span class="nv">target</span><span class="p">:</span><span class="n">myView</span><span class="p">,</span> <span class="nv">keys</span><span class="p">:[\</span><span class="kt">UIView</span><span class="o">.</span><span class="n">backgroundColor</span><span class="p">,</span> <span class="p">\</span><span class="kt">UIView</span><span class="o">.</span><span class="n">alpha</span><span class="p">])</span>
+<pre class="highlight swift"><code><span class="kt">Tweener</span><span class="o">.</span><span class="nf">pauseTweens</span><span class="p">(</span><span class="nv">target</span><span class="p">:</span><span class="n">myView</span><span class="p">,</span> <span class="nv">to</span><span class="p">:[\</span><span class="kt">UIView</span><span class="o">.</span><span class="n">backgroundColor</span><span class="p">,</span> <span class="p">\</span><span class="kt">UIView</span><span class="o">.</span><span class="n">alpha</span><span class="p">])</span>
+<span class="kt">Tweener</span><span class="o">.</span><span class="nf">resumeTweens</span><span class="p">(</span><span class="nv">target</span><span class="p">:</span><span class="n">myView</span><span class="p">,</span> <span class="nv">to</span><span class="p">:[\</span><span class="kt">UIView</span><span class="o">.</span><span class="n">backgroundColor</span><span class="p">,</span> <span class="p">\</span><span class="kt">UIView</span><span class="o">.</span><span class="n">alpha</span><span class="p">])</span>
+<span class="kt">Tweener</span><span class="o">.</span><span class="nf">removeTweens</span><span class="p">(</span><span class="nv">target</span><span class="p">:</span><span class="n">myView</span><span class="p">,</span> <span class="nv">to</span><span class="p">:[\</span><span class="kt">UIView</span><span class="o">.</span><span class="n">backgroundColor</span><span class="p">,</span> <span class="p">\</span><span class="kt">UIView</span><span class="o">.</span><span class="n">alpha</span><span class="p">])</span>
 </code></pre>
 
 <p>Unleash your creativity!</p>
@@ -359,7 +464,7 @@ Int, Float, Double, CGFloat, CGPoint, CGRect, UIColor, CGAffineTransform, CATran
 <pre class="highlight swift"><code><span class="kt">Tween</span><span class="p">(</span><span class="nv">target</span><span class="p">:</span><span class="n">myView</span><span class="p">,</span>
     <span class="nv">duration</span><span class="p">:</span><span class="mf">1.0</span><span class="p">,</span>
     <span class="nv">ease</span><span class="p">:</span><span class="kt">Ease</span><span class="o">.</span><span class="n">custom</span>
-    <span class="nv">keys</span><span class="p">:[\</span><span class="kt">UIView</span><span class="o">.</span><span class="nv">frame</span><span class="p">:</span><span class="kt">CGRect</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span><span class="mf">20.0</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span><span class="mf">20.0</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span><span class="mf">280.0</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span><span class="mf">280.0</span><span class="p">)]</span>
+    <span class="nv">to</span><span class="p">:[\</span><span class="kt">UIView</span><span class="o">.</span><span class="nv">frame</span><span class="p">:</span><span class="kt">CGRect</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span><span class="mf">20.0</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span><span class="mf">20.0</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span><span class="mf">280.0</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span><span class="mf">280.0</span><span class="p">)]</span>
     <span class="p">)</span><span class="o">.</span><span class="nf">play</span><span class="p">()</span>
 </code></pre>
 <h3 id='timeline' class='heading'>Timeline</h3>
@@ -401,9 +506,7 @@ Int, Float, Double, CGFloat, CGPoint, CGRect, UIColor, CGAffineTransform, CATran
 
 <p>Edit Tweens:</p>
 
-<p><img src="https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/timeline-editor.gif" alt="Edit Tweens"></p>
-
-<p><img src="https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/timeline-zoom.gif" alt="Scale timeline editor"></p>
+<p><img src="https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/timeline-editor.gif" alt="Edit Tweens"> <img src="https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/timeline-zoom.gif" alt="Scale timeline editor"></p>
 
 <p>To create Timeline inspector:</p>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">myInspector</span> <span class="o">=</span> <span class="kt">TimelineInspector</span><span class="p">(</span><span class="nv">timeline</span><span class="p">:</span><span class="n">myTimeline</span><span class="p">)</span>
@@ -446,7 +549,7 @@ Int, Float, Double, CGFloat, CGPoint, CGRect, UIColor, CGAffineTransform, CATran
     <span class="nv">duration</span><span class="p">:</span> <span class="mf">2.0</span><span class="p">,</span> 
     <span class="nv">ease</span><span class="p">:</span> <span class="kt">Ease</span><span class="o">.</span><span class="k">none</span><span class="p">,</span> 
     <span class="nv">delay</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span> 
-    <span class="nv">keys</span><span class="p">:</span> <span class="p">[\</span><span class="kt">PathAim</span><span class="o">.</span><span class="nv">interpolation</span> <span class="p">:</span> <span class="mf">1.0</span><span class="p">])</span><span class="o">.</span><span class="nf">play</span><span class="p">()</span>
+    <span class="nv">to</span><span class="p">:</span> <span class="p">[\</span><span class="kt">PathAim</span><span class="o">.</span><span class="nv">interpolation</span> <span class="p">:</span> <span class="mf">1.0</span><span class="p">])</span><span class="o">.</span><span class="nf">play</span><span class="p">()</span>
 </code></pre>
 
 <p>You can export your paths to code from illustrator with this simple Script:
@@ -462,7 +565,7 @@ Int, Float, Double, CGFloat, CGPoint, CGRect, UIColor, CGAffineTransform, CATran
 
 <span class="kt">Tween</span><span class="p">(</span><span class="nv">target</span><span class="p">:</span> <span class="n">myRotationAim</span><span class="p">,</span>
     <span class="nv">duration</span><span class="p">:</span> <span class="mf">1.5</span><span class="p">,</span>
-        <span class="nv">keys</span><span class="p">:</span> <span class="p">[\</span><span class="kt">RotationAim</span><span class="o">.</span><span class="nv">angle</span> <span class="p">:</span> <span class="mf">360.0</span><span class="p">])</span><span class="o">.</span><span class="nf">play</span><span class="p">()</span>
+        <span class="nv">to</span><span class="p">:</span> <span class="p">[\</span><span class="kt">RotationAim</span><span class="o">.</span><span class="nv">angle</span> <span class="p">:</span> <span class="mf">360.0</span><span class="p">])</span><span class="o">.</span><span class="nf">play</span><span class="p">()</span>
 </code></pre>
 <h3 id='arcaim' class='heading'>ArcAim</h3>
 
@@ -480,7 +583,7 @@ Int, Float, Double, CGFloat, CGPoint, CGRect, UIColor, CGAffineTransform, CATran
 <span class="c1">//Animate arc angle</span>
 <span class="kt">Tween</span><span class="p">(</span><span class="nv">target</span><span class="p">:</span> <span class="n">myArcAim</span><span class="p">,</span>
     <span class="nv">duration</span><span class="p">:</span> <span class="mf">1.5</span><span class="p">,</span>
-    <span class="nv">keys</span><span class="p">:</span> <span class="p">[\</span><span class="kt">RotationAim</span><span class="o">.</span><span class="nv">arcAngle</span> <span class="p">:</span> <span class="mf">360.0</span><span class="p">])</span><span class="o">.</span><span class="nf">play</span><span class="p">()</span>
+    <span class="nv">to</span><span class="p">:</span> <span class="p">[\</span><span class="kt">RotationAim</span><span class="o">.</span><span class="nv">arcAngle</span> <span class="p">:</span> <span class="mf">360.0</span><span class="p">])</span><span class="o">.</span><span class="nf">play</span><span class="p">()</span>
 </code></pre>
 <h3 id='stringaim' class='heading'>StringAim</h3>
 
@@ -496,7 +599,7 @@ Int, Float, Double, CGFloat, CGPoint, CGRect, UIColor, CGAffineTransform, CATran
 <span class="n">myStringAim</span><span class="o">.</span><span class="n">interpolation</span> <span class="o">=</span> <span class="mf">0.0</span>
 
 <span class="c1">//Animate interpolation</span>
-<span class="kt">Tween</span><span class="p">(</span><span class="nv">target</span><span class="p">:</span> <span class="n">myStringAim</span><span class="p">,</span> <span class="nv">duration</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="nv">keys</span><span class="p">:</span> <span class="p">[\</span><span class="kt">StringAim</span><span class="o">.</span><span class="nv">interpolation</span> <span class="p">:</span> <span class="mf">1.0</span><span class="p">])</span><span class="o">.</span><span class="nf">play</span><span class="p">()</span>
+<span class="kt">Tween</span><span class="p">(</span><span class="nv">target</span><span class="p">:</span> <span class="n">myStringAim</span><span class="p">,</span> <span class="nv">duration</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="nv">to</span><span class="p">:</span> <span class="p">[\</span><span class="kt">StringAim</span><span class="o">.</span><span class="nv">interpolation</span> <span class="p">:</span> <span class="mf">1.0</span><span class="p">])</span><span class="o">.</span><span class="nf">play</span><span class="p">()</span>
 </code></pre>
 
 <p>Play with everything, combine different types of Aim:</p>
@@ -522,15 +625,13 @@ Int, Float, Double, CGFloat, CGPoint, CGRect, UIColor, CGAffineTransform, CATran
 <p><img src="https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/tweenvisualizer.gif" alt="Visualizer"></p>
 
 <p>Also, you can drag, pinch and resize visualizer at your convenience, to resize just drag the bottom-right corner:
-<img src="https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/tweenvisualizer-drag.gif" alt="Drag"><br>
-<img src="https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/tweenvisualizer-pinch.gif" alt="Pinch"><br>
-<img src="https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/tweenvisualizer-resize.gif" alt="Resize"></p>
+<img src="https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/tweenvisualizer-drag.gif" alt="Drag"> <img src="https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/tweenvisualizer-pinch.gif" alt="Pinch"> <img src="https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/tweenvisualizer-resize.gif" alt="Resize"></p>
 
 <p>This library was created to give dynamism to UI elements, if you are looking to make more complex animations I recommend you implement them with <a href="https://airbnb.design/lottie/">Lottie</a>.</p>
 <h2 id='contributions' class='heading'>Contributions</h2>
 
 <p>Pull requests are welcome!
-This project has being migrated to Swift 5 with code documentation, watchOs support, tvOs support, unit tests and SwiftUI in the scope.</p>
+The next release will include: SwiftUI samples, watchOs &amp; tvOs samples and unit tests.</p>
 <h2 id='authors' class='heading'>Authors</h2>
 
 <ul>
@@ -550,7 +651,7 @@ This project has being migrated to Swift 5 with code documentation, watchOs supp
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2020 <a class="link" href="https://github.com/alexrvarela/SwiftTweener" target="_blank" rel="external">alexrvarela</a>. All rights reserved. (Last updated: 2020-09-21)</p>
+          <p>&copy; 2020 <a class="link" href="https://github.com/alexrvarela/SwiftTweener" target="_blank" rel="external">alexrvarela</a>. All rights reserved. (Last updated: 2020-09-22)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

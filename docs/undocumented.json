@@ -65,63 +65,63 @@
     },
     {
       "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/Ease.swift",
-      "line": 293,
+      "line": 299,
       "symbol": "Ease.outInElastic",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/Ease.swift",
-      "line": 299,
+      "line": 305,
       "symbol": "Ease.inBack",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/Ease.swift",
-      "line": 305,
+      "line": 311,
       "symbol": "Ease.outBack",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/Ease.swift",
-      "line": 311,
+      "line": 317,
       "symbol": "Ease.inOutBack",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/Ease.swift",
-      "line": 319,
+      "line": 325,
       "symbol": "Ease.outInBack",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/Ease.swift",
-      "line": 325,
+      "line": 331,
       "symbol": "Ease.inBounce",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/Ease.swift",
-      "line": 329,
+      "line": 335,
       "symbol": "Ease.outBounce",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/Ease.swift",
-      "line": 345,
+      "line": 351,
       "symbol": "Ease.inOutBounce",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/Ease.swift",
-      "line": 350,
+      "line": 356,
       "symbol": "Ease.outInBounce",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
@@ -229,27 +229,6 @@
       "line": 14,
       "symbol": "TimelinePlayMode.pingPong",
       "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/Tweener.swift",
-      "line": 161,
-      "symbol": "TweenBlock.value",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/Tweener.swift",
-      "line": 162,
-      "symbol": "TweenBlock.block",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alex/Dropbox/SWIFT/SwiftTweener/Source/Tweener.swift",
-      "line": 164,
-      "symbol": "TweenBlock.init(value:block:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     }
   ],

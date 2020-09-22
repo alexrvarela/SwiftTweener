@@ -119,7 +119,7 @@ Tweener.addType(
 
 Now, you can animate a 'Vector3' Type object.
 
-## MacOS support.
+## MacOS support
 
 This version includes macOS support.
 

@@ -24,6 +24,7 @@ let package = Package(
         .target(
             name: "Tweener",
             path: "Source"),
+            dependencies: [],
         .testTarget(
             name: "TweenerTests",
             dependencies: ["Tweener"],

@@ -8,7 +8,7 @@
 
 import UIKit
 import Tweener
-
+    
 class AnimateText:UIView, FreezeProtocol
 {
     let label:UILabel = UILabel()

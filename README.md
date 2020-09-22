@@ -121,7 +121,7 @@ Now, you can animate a 'Vector3' Type object.
 
 ## MacOS support.
 
-This version includes Framework build for macOS.
+This version includes macOS support.
 
 ## Installation
 
@@ -495,7 +495,7 @@ This library was created to give dynamism to UI elements, if you are looking to 
 ## Contributions
 
 Pull requests are welcome!
-This project has being migrated to Swift 5 with code documentation, watchOs support, tvOs support, unit tests and SwiftUI in the scope.
+The next release will include: SwiftUI samples, watchOs & tvOs samples and unit tests.
 
 ## Authors
 

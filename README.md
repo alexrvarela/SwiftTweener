@@ -171,9 +171,6 @@ dependencies: [
     .package(url: "https://github.com/alexrvarela/SwiftTweener.git", .upToNextMajor(from: "2.0"))
 ]
 ```
-Finally, drag & drop Tweener.framework to your Xcode Project
-
-
 
 ### Install manually
 

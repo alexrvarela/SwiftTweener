@@ -162,7 +162,8 @@ public class Ease
     
     /// Easing equation function for a sinusoidal (sin(t)) easing in: accelerating from zero velocity.
     public static let inSine : Equation = { (t, b, c, d) in
-        let i = (-c)*cos(t/d*(Double.pi/2.0))+c+b
+        var i = cos(t/d*(Double.pi/2.0))
+        i = (-c)*i+c+b
         return i
     }
     
@@ -173,7 +174,8 @@ public class Ease
     
     /// Easing equation function for a sinusoidal (sin(t)) easing in/out: acceleration until halfway, then deceleration.
     public static let inOutSine : Equation = { (t, b, c, d) in
-        let i = (-c)/2*(cos(Double.pi*t/d)-1)+b
+        var i = cos(Double.pi*t/d)-1
+        i = (-c)/2*i+b
         return i
     }
     
@@ -187,13 +189,15 @@ public class Ease
     
     /// Easing equation function for an exponential (2^t) easing in: accelerating from zero velocity.
     public static let inExpo : Equation = { (t, b, c, d) in
-        let i = (t==0) ? b : c * pow(2, 10 * (t/d - 1)) + b - c * 0.001
+        var i = pow(2, 10 * (t/d - 1))
+        i = (t==0) ? b : c * i + b - c * 0.001
         return i
     }
     
     /// Easing equation function for an exponential (2^t) easing out: decelerating from zero velocity.
     public static let outExpo : Equation = { (t, b, c, d) in
-        let i = (t==d) ? b+c : c * 1.001 * (-pow(2, -10 * t/d) + 1) + b
+        var  i = -pow(2, -10 * t/d) + 1
+        i = (t==d) ? b+c : c * 1.001 * i + b
         return i
     }
     

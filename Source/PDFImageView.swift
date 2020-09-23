@@ -8,7 +8,6 @@
 
 #if os(iOS)
 import UIKit
-
 /// Creates a UIImageView which renders and displays a PDF document's CGImage.
 public class PDFImageView : UIImageView
 {

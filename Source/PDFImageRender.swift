@@ -6,11 +6,9 @@
 //  Copyright © 2016 Alejandro Ramirez Varela. All rights reserved.
 //
 
-#if os(iOS) || os(tvOS)
-import UIKit
 //TODO:Add macOS support.
-//#elseif os(macOS)
-#endif
+#if os(iOS)
+import UIKit
 
 /// Renders a PDF document in to a UIImage.
 class PDFImageRender
@@ -92,3 +90,5 @@ class PDFImageRender
         return UIImage(cgImage: image.cgImage!, scale: UIScreen.main.scale, orientation: image.imageOrientation)
     }
 }
+
+#endif

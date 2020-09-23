@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "Tweener",
     platforms: [
-        .macOS(.v10_10),
+        .macOS(.v10_12),
         .iOS(.v10),
         .tvOS(.v10),
         .watchOS(.v3),

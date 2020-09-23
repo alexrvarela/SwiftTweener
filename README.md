@@ -10,11 +10,13 @@ This project has rewritten in pure Swift from [CocoaTweener](https://github.com/
 
 * Swift 5.0
 
-## Declarative & chainable syntax
+## Features
+
+### Declarative & chainable syntax
 
 Now, with Declarative Syntax and Tween chaining, to create a Tween:
 
-```
+```swift
 Tween(target:myView)
 .duration(1.0)
 .ease(Ease.inOutCubic)
@@ -35,8 +37,7 @@ Tween(target:myView)
 
 To create a Timeline:
 
-```
-
+```swift
 Timeline(
     
     //Place tweens here, separated by commas.
@@ -60,15 +61,16 @@ Timeline(
     .onComplete { print("Tween 2 complete") }
     
     //Etc....
-)
+    )
+    .play()
 
 ```
 
-## View's extensions
+### View's extensions
 
 To make it more friendly, now includes UIView's and NSView's extensions with predefined animations ready-to-use calling a single function from your view instance:
 
-```
+```swift
 .spring()                     
 .zoomIn()
 .zoomOut()
@@ -96,11 +98,11 @@ To make it more friendly, now includes UIView's and NSView's extensions with pre
 ![View's extensions](https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/extensions.gif)
 
 
-## Any object Type Support
+### Any object Type Support
 
 To add support to other Types and  custom Types, assuming there is a struct like this:
 
-```
+```swift
 public struct Vector3{
     var x, y, z: Double
     func buffer() -> [Double] { return [x, y, z] }
@@ -110,7 +112,7 @@ public struct Vector3{
 
 Tweener is based on Double arrays so you have to tell it how to convert your object to Array and back to Object.
 
-```
+```swift
 Tweener.addType(
                 toType:{ values in return Vector3(x:values[0], y:values[1], z:values[2]) },
                 toArray:{ point in return point.buffer() }
@@ -119,9 +121,11 @@ Tweener.addType(
 
 Now, you can animate a 'Vector3' Type object.
 
-## MacOS support
+### MacOS support
 
-This version includes macOS support.
+This version includes macOS support and samples.
+
+![Mac samples](https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/random.gif)
 
 ## Installation
 
@@ -377,6 +381,7 @@ Create more complex and impressive animations using Aims
 Control motion with paths:
 
 ![Path aim](https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/path.gif)
+![Text path aim](https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/path-text.gif)
 
 ```swift
 let myPathAim = PathAim(target:myAsset)

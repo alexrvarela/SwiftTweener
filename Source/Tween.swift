@@ -27,17 +27,24 @@ public class AnyTween
     public var onComplete: TweenHandler?
     /// TweenHandler block to run when animation is replaced.
     public var onOverwrite: TweenHandler?
+    ///Read-only property to obtain calculated time-end.
+    public var timeEnd: Double { return duration + delay }
     
     /// Function to add this tween to animation Engine.
     @discardableResult public func play() -> AnyTween{
-        print("Warning: Can't add this Tween beause isn't defined any type")
+        print("Warning: Can't add this Tween beause isn't defined any Yype")
+        return self
+    }
+    
+    /// Function to remove this tween from animation Engine.
+    @discardableResult public func stop() -> AnyTween{
+        print("Warning: Can't stop this Tween beause isn't defined any Type")
         return self
     }
     
     /// Function to add this tween to an Timeline.
-    func add(to timeline:Timeline)
-    {
-        print("Warning: Can't add this Tween because isn't defined any type")
+    func add(to timeline:Timeline){
+        print("Warning: Can't add this Tween because isn't defined any Type")
     }
 }
 
@@ -155,6 +162,8 @@ public class Tween<T>: AnyTween
         //First, play all before associated tween chain.
         if self.before != nil { self.before!.play() }
         
+        //TODO: Remove from timeline if added.
+        
         //Finally add self
         Tweener.add(self)
         
@@ -182,7 +191,7 @@ public class Tween<T>: AnyTween
         let after = Tween(target: self.target!,
                           duration: duration != nil ? duration! : self.duration,
                           ease: ease != nil ? ease! : self.ease,
-                          delay:self.duration + self.delay + ( delay != nil ? delay! : 0.0 ),
+                          delay: self.timeEnd + ( delay != nil ? delay! : 0.0 ),
                           from: from != nil ? from : completeKeyValues(),
                           to: to,
                           completion:completion)
@@ -206,12 +215,15 @@ public class Tween<T>: AnyTween
             return self
         }
         //Modify keys
-        setKeys(to, from == nil && self.before != nil ? self.before!.completeKeyValues() : from)//FIXME:
+        setKeys(to, from == nil && self.before != nil ? self.before!.completeKeyValues() : from)
         return self
     }
     
-    ///
-    @discardableResult public func remove() -> Tween<T> {
+    ///Removes from Engine immediatelly.
+    @discardableResult public override func stop() -> Tween<T> {
+        //First, stop all 'before' associated tween chain.
+        if self.before != nil { self.before!.stop() }
+        
         //Remove from Animation engine immediatelly.
         TweenList.remove(self)
         return self

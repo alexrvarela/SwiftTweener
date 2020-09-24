@@ -8,9 +8,12 @@
 
 /// A Timeline's set of play options.
 public enum TimelinePlayMode:Int{
-    
+    ///Play once, then remove.
     case once
+    //TODO: Add loop-count option.
+    ///Play repeating forever.
     case loop
+    ///Play forward and reverse forever.
     case pingPong
 }
 
@@ -39,7 +42,6 @@ public class Timeline
             //Ensures that value has changed.
             if self.reverse != oldValue
             {
-                //TODO:Replicate in CocoaTweener
                 if TweenList.isAdded(self) && self.timeCurrent > self.timeStart && self.timeCurrent < self.timeComplete
                 {
                     //Calculate timestart difference
@@ -80,7 +82,7 @@ public class Timeline
     /**Initilalizer.
      - Parameter tweens:    Optional, adds as many Tweens as there are.
      */
-    public init(_ tweens:AnyTween... ){ for tween in tweens { tween.add(to: self) } }
+    public init(_ tweens:AnyTween... ){ for tween in tweens { tween.stop(); tween.add(to: self) } }
     
     //MARK:Public functions
     
@@ -89,7 +91,7 @@ public class Timeline
      - Returns:             Current`Timeline` instance.
      */
     @discardableResult public func add(_ tweens:AnyTween... ) -> Timeline {
-        for tween in tweens { tween.add(to: self) }
+        for tween in tweens { tween.stop(); tween.add(to: self) }
         return self
     }
     
@@ -107,13 +109,12 @@ public class Timeline
      */
     @discardableResult public func play() -> Timeline { return play(0.0) }
     
-    
     /**Plays with time delay.
      - Returns:             Current`Timeline` instance.
      - Parameter delay:     Time to delay after animation starts.
      */
-    @discardableResult public func play(_ delay:Double) -> Timeline
-    {
+    @discardableResult public func play(_ delay:Double) -> Timeline{
+        
         if !TweenList.isAdded(self)
         {
             Tweener.add(self, delay:delay)
@@ -122,6 +123,14 @@ public class Timeline
             if self.state == .paused { resume() }
         }
         
+        return self
+    }
+    
+    ///Removes Timeline from Engine.
+    ///- Returns:             Current`Timeline` instance.
+    @discardableResult public func stop() -> Timeline {
+        //Remove from list
+        TweenList.remove(self)
         return self
     }
     
@@ -200,12 +209,6 @@ public class Timeline
         if !TweenList.isAdded(self) {Tweener.add(self, delay:0.0)}
         //Restore last state.
         self.state = self.lastState
-    }
-    
-    func stop()
-    {
-        //Set state over to update and remove from engine.
-        self.state = .over
     }
     
     func update()

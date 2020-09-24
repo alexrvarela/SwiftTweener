@@ -104,7 +104,7 @@ class EaseCurves: UIView
             buttons.append(item)
         }
         
-        let equations:Array<Equation> = easeList[0]["equations"] as! Array<Equation>
+        let equations:Array<Ease> = easeList[0]["equations"] as! Array<Ease>
         let name:String = easeList[0]["name"] as! String
 
         self.selectorButton.setTitle("Ease:\(name)", for:.normal)
@@ -172,7 +172,7 @@ class EaseCurves: UIView
     
     func selectIndex(_ index:Int)
     {
-        let equations:Array<Equation> = easeList[index]["equations"] as! Array<Equation>
+        let equations:Array<Ease> = easeList[index]["equations"] as! Array<Ease>
         let name:String = easeList[index]["name"] as! String
         selectorButton.setTitle("Ease: \(name)", for: .normal)
 

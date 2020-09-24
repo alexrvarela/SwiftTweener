@@ -43,7 +43,7 @@ extension UIView{
     }
 
     /**
-    Spring Back, animates CATransform3D `x` and  `y` to normal transformation with an `Ease.outElastic` curve.
+    Spring Back, animates CATransform3D `x` and  `y` to normal transformation with an `.outElastic` curve.
      - Parameter duration:  Time duration in seconds.
      - Returns:             A new Tween<CALayer>.
     */
@@ -51,13 +51,13 @@ extension UIView{
         
         return Tween(target: self.layer)
             .duration(duration)
-            .ease(Ease.outElastic)
+            .ease(.outElastic)
             .keys(to: [\CALayer.transform : CATransform3DMakeScale(1.0, 1.0, 1.0)] )
             .play()
     }
     
     /**
-    Zoom, animates CATransform3D `x` and  `y` scale to normal position with an `Ease.outCirc` animation curve.
+    Zoom, animates CATransform3D `x` and  `y` scale to normal position with an `.outCirc` animation curve.
     WARNING: Using zero scale value in CALayer's transform causes program error.
      - Parameter scale:     Initial `x` and `y` scale.
      - Parameter duration:  Time duration in seconds.
@@ -69,7 +69,7 @@ extension UIView{
         
         return Tween(target: self.layer)
             .duration(duration)
-            .ease(Ease.outCirc)
+            .ease(.outCirc)
             .keys( to:[\CALayer.transform : CATransform3DMakeScale(1.0, 1.0, 1.0)])
             .play()
     }
@@ -139,7 +139,7 @@ extension UIView{
 
         return Tween(target: self.layer)
             .duration(0.25)
-            .ease(Ease.outCirc)
+            .ease(.outCirc)
             .keys(to: [\CALayer.transform : CATransform3DMakeScale(scale, scale, 1.0)])
             .onComplete { self.springBack() }
             .play()
@@ -150,10 +150,10 @@ extension UIView{
      - Parameter distanceX: Desired intial translation over x coordinate.
      - Parameter distanceY: Desired intial translation over y coordinate.
      - Parameter duration:  Time duration in seconds.
-     - Parameter ease:      An `Equation` block for animation curve, `Ease.none` by default.
+     - Parameter ease:      An `Equation` block for animation curve, `.none` by default.
      - Returns: A new Tween<CALayer>.
     */
-    @discardableResult public func basicIn(distanceX:CGFloat = 100, distanceY:CGFloat = 100, duration:Double = 1.0, ease:@escaping Equation = Ease.none)  -> Tween<CALayer>  {
+    @discardableResult public func basicIn(distanceX:CGFloat = 100, distanceY:CGFloat = 100, duration:Double = 1.0, ease:Ease = .none)  -> Tween<CALayer>  {
 
         //Go to initial position
         self.layer.transform = CATransform3DMakeTranslation(distanceX, distanceY, 0.0)
@@ -170,10 +170,10 @@ extension UIView{
      - Parameter distanceX: Desired destination translation over `x` coordinate.
      - Parameter distanceY: Desired destination translation over `y` coordinate.
      - Parameter duration:  Time duration in seconds.
-     - Parameter ease:      An `Equation` block for animation curve, `Ease.none` by default.
+     - Parameter ease:      An `Equation` block for animation curve, `.none` by default.
      - Returns: A new Tween<CALayer>.
     */
-    @discardableResult public func basicOut(distanceX:CGFloat = 100, distanceY:CGFloat = 100, duration:Double = 1.0, ease:@escaping Equation = Ease.none) -> Tween<CALayer> {
+    @discardableResult public func basicOut(distanceX:CGFloat = 100, distanceY:CGFloat = 100, duration:Double = 1.0, ease:Ease = .none) -> Tween<CALayer> {
 
         //Go to initial position
         self.layer.transform = CATransform3DIdentity
@@ -186,14 +186,14 @@ extension UIView{
     }
     
     /**
-    Fly, animates to normal translation calling `basicIn()` with `Ease.outBack` as animation curve.
+    Fly, animates to normal translation calling `basicIn()` with `.outBack` as animation curve.
     - Parameter distanceX: Desired initial translation over `x` coordinate.
     - Parameter distanceY: Desired initial translation over `y` coordinate.
     - Parameter duration:  Time duration in seconds.
     - Returns: A new Tween<CALayer>.
     */
     @discardableResult public func fly(distanceX:CGFloat = 200, distanceY:CGFloat = 200, duration:Double = 1.0) -> Tween<CALayer> {
-        return basicIn(distanceX: distanceX, distanceY: distanceY, duration: duration, ease: Ease.outBack)
+        return basicIn(distanceX: distanceX, distanceY: distanceY, duration: duration, ease: .outBack)
     }
 
     /**
@@ -237,14 +237,14 @@ extension UIView{
     }
     
     /**
-    Slide, animates to normal translation calling `basicIn()` with `Ease.outCubic` as animation curve.
+    Slide, animates to normal translation calling `basicIn()` with `.outCubic` as animation curve.
     - Parameter distanceX: Desired initial translation over `x` coordinate.
     - Parameter distanceY: Desired initial translation over `y` coordinate.
     - Parameter duration:  Time duration in seconds.
     - Returns: A new Tween<CALayer>.
     */
     @discardableResult public func slide(distanceX:CGFloat = 200, distanceY:CGFloat = 200, duration:Double = 1.0) -> Tween<CALayer> {
-        return basicIn(distanceX: distanceX, distanceY: distanceY, duration: duration, ease: Ease.outCubic)
+        return basicIn(distanceX: distanceX, distanceY: distanceY, duration: duration, ease: .outCubic)
     }
     
     /**
@@ -307,7 +307,7 @@ extension UIView{
         //Animation chain
         return  Tween(target:self.tweenBlock)
             .duration(duration * 0.35)
-            .ease(Ease.inOutQuad)
+            .ease(.inOutQuad)
             .keys(to:[\TweenBlock<CGFloat>.value : angle])
             .after(duration:duration * 0.3)
             .keys(to:[\TweenBlock<CGFloat>.value : -1.0 * angle])
@@ -343,7 +343,7 @@ extension UIView{
         
         return Tween(target:self.tweenBlock)
         .duration(duration)
-        .ease(Ease.inOutQuad)
+        .ease(.inOutQuad)
         .keys(to: [\TweenBlock<CGFloat>.value :180.0])
         .play()
 
@@ -383,7 +383,7 @@ extension UIView{
         }
         
         let rotation = 360.0 * CGFloat( leaps )
-        return Tween(target:self.tweenBlock, duration:0.75, ease: Ease.inOutQuad, to: [\TweenBlock<CGFloat>.value : clockwise ? rotation : -rotation ]).play()
+        return Tween(target:self.tweenBlock, duration:0.75, ease: .inOutQuad, to: [\TweenBlock<CGFloat>.value : clockwise ? rotation : -rotation ]).play()
     }
     
     /**
@@ -394,7 +394,7 @@ extension UIView{
     */
     @discardableResult public func shake(distance:CGFloat = 10, shakes:Int = 5)  -> Tween<CALayer> {
         
-        var tween = Tween(target:self.layer).ease(Ease.inOutQuad).duration(0.1)
+        var tween = Tween(target:self.layer).ease(.inOutQuad).duration(0.1)
         
         for i in 0 ... shakes{
             tween.keys(to:[\CALayer.transform : CATransform3DMakeTranslation(i % 2 == 0 ? -distance : distance, 0.0, 0.0)])
@@ -417,14 +417,14 @@ extension UIView{
         return Tween(target:self.layer)
             .keys(to:[\CALayer.transform : CATransform3DMakeScale(transformX, transformY, 1.0)])
             .duration(0.25)
-            .ease(Ease.outCirc)
+            .ease(.outCirc)
             .after()
             .duration(0.125)
-            .ease(Ease.outBack)
+            .ease(.outBack)
             .keys(to: [\CALayer.transform : CATransform3DMakeScale(1.0 + ((1.0 - transformX) * 0.75), 1.0 + ((1.0 - transformY) * 0.75), 1.0)] )
             .after()
             .duration(0.75)
-            .ease(Ease.outElastic)
+            .ease(.outElastic)
             .keys(to: [\CALayer.transform : CATransform3DMakeScale(1.0, 1.0, 1.0)] )
             .play()
     }
@@ -440,10 +440,10 @@ extension UIView{
         return Tween(target:self.layer)
             .keys(to:[\CALayer.transform : CATransform3DMakeTranslation(0.0, distance, 0.0)])
             .duration(duration * 0.25)
-            .ease(Ease.outQuad)
+            .ease(.outQuad)
             .after()
             .duration(duration * 0.75)
-            .ease(Ease.outBounce)
+            .ease(.outBounce)
             .keys(to: [\CALayer.transform : CATransform3DMakeTranslation(0.0, 0.0, 0.0)] )
             .play()
     }
@@ -546,7 +546,7 @@ extension NSView{
     }
 
     /**
-    Spring Back, animates CATransform3D `x` and  `y` to normal transformation with an `Ease.outElastic` curve.
+    Spring Back, animates CATransform3D `x` and  `y` to normal transformation with an `.outElastic` curve.
      - Parameter duration:  Time duration in seconds.
      - Returns:             A new Tween<CALayer>.
     */
@@ -557,13 +557,13 @@ extension NSView{
     
         return Tween(target: self.layer!)
             .duration(duration)
-            .ease(Ease.outElastic)
+            .ease(.outElastic)
             .keys(to: [\CALayer.transform : CATransform3DMakeScale(1.0, 1.0, 1.0)] )
             .play()
     }
     
     /**
-    Zoom, animates CATransform3D `x` and  `y` scale to normal position with an `Ease.outCirc` animation curve.
+    Zoom, animates CATransform3D `x` and  `y` scale to normal position with an `.outCirc` animation curve.
     WARNING: Using zero scale value in CALayer's transform causes program error.
      - Parameter scale:     Initial `x` and `y` scale.
      - Parameter duration:  Time duration in seconds.
@@ -577,7 +577,7 @@ extension NSView{
         
         return Tween(target: self.layer!)
             .duration(duration)
-            .ease(Ease.outCirc)
+            .ease(.outCirc)
             .keys( to:[\CALayer.transform : CATransform3DMakeScale(1.0, 1.0, 1.0)])
             .play()
     }
@@ -652,7 +652,7 @@ extension NSView{
 
         return Tween(target: self.layer!)
             .duration(0.25)
-            .ease(Ease.outCirc)
+            .ease(.outCirc)
             .keys(to: [\CALayer.transform : CATransform3DMakeScale(scale, scale, 1.0)])
             .onComplete { self.springBack() }
             .play()
@@ -664,10 +664,10 @@ extension NSView{
      - Parameter distanceX: Desired intial translation over x coordinate.
      - Parameter distanceY: Desired intial translation over y coordinate.
      - Parameter duration:  Time duration in seconds.
-     - Parameter ease:      An `Equation` block for animation curve, `Ease.none` by default.
+     - Parameter ease:      An `Equation` block for animation curve, `.none` by default.
      - Returns: A new Tween<CALayer>.
     */
-    @discardableResult public func basicIn(distanceX:CGFloat = 100, distanceY:CGFloat = 100, duration:Double = 1.0, ease:@escaping Equation = Ease.none)  -> Tween<CALayer>  {
+    @discardableResult public func basicIn(distanceX:CGFloat = 100, distanceY:CGFloat = 100, duration:Double = 1.0, ease:Ease = .none)  -> Tween<CALayer>  {
 
         if self.layer == nil { self.wantsLayer = true}
         self.translateLayerAnchor(CGPoint(x:0.5, y:0.5))
@@ -687,10 +687,10 @@ extension NSView{
      - Parameter distanceX: Desired destination translation over `x` coordinate.
      - Parameter distanceY: Desired destination translation over `y` coordinate.
      - Parameter duration:  Time duration in seconds.
-     - Parameter ease:      An `Equation` block for animation curve, `Ease.none` by default.
+     - Parameter ease:      An `Equation` block for animation curve, `.none` by default.
      - Returns: A new Tween<CALayer>.
     */
-    @discardableResult public func basicOut(distanceX:CGFloat = 100, distanceY:CGFloat = 100, duration:Double = 1.0, ease:@escaping Equation = Ease.none) -> Tween<CALayer> {
+    @discardableResult public func basicOut(distanceX:CGFloat = 100, distanceY:CGFloat = 100, duration:Double = 1.0, ease:Ease = .none) -> Tween<CALayer> {
 
         if self.layer == nil { self.wantsLayer = true}
         self.translateLayerAnchor(CGPoint(x:0.5, y:0.5))
@@ -706,14 +706,14 @@ extension NSView{
     }
     
     /**
-    Fly, animates to normal translation calling `basicIn()` with `Ease.outBack` as animation curve.
+    Fly, animates to normal translation calling `basicIn()` with `.outBack` as animation curve.
     - Parameter distanceX: Desired initial translation over `x` coordinate.
     - Parameter distanceY: Desired initial translation over `y` coordinate.
     - Parameter duration:  Time duration in seconds.
     - Returns: A new Tween<CALayer>.
     */
     @discardableResult public func fly(distanceX:CGFloat = 200, distanceY:CGFloat = 200, duration:Double = 0.5) -> Tween<CALayer> {
-        return self.basicIn(distanceX: distanceX, distanceY: distanceY, duration: duration, ease: Ease.outBack)
+        return self.basicIn(distanceX: distanceX, distanceY: distanceY, duration: duration, ease: .outBack)
     }
 
     /**
@@ -757,14 +757,14 @@ extension NSView{
     }
     
     /**
-    Slide, animates to normal translation calling `basicIn()` with `Ease.outCubic` as animation curve.
+    Slide, animates to normal translation calling `basicIn()` with `.outCubic` as animation curve.
     - Parameter distanceX: Desired initial translation over `x` coordinate.
     - Parameter distanceY: Desired initial translation over `y` coordinate.
     - Parameter duration:  Time duration in seconds.
     - Returns: A new Tween<CALayer>.
     */
     @discardableResult public func slide(distanceX:CGFloat = 200, distanceY:CGFloat = 200, duration:Double = 1.0) -> Tween<CALayer> {
-        return self.basicIn(distanceX: distanceX, distanceY: distanceY, duration: duration, ease: Ease.outCubic)
+        return self.basicIn(distanceX: distanceX, distanceY: distanceY, duration: duration, ease: .outCubic)
     }
     
     /**
@@ -829,7 +829,7 @@ extension NSView{
         
         //Animation chain
         return  Tween(target:self.tweenBlock)
-            .ease(Ease.inOutQuad)
+            .ease(.inOutQuad)
             .duration(duration * 0.35)
             .keys(to: [\TweenBlock<CGFloat>.value : angle])
             .after(duration:duration * 0.3)//Creates new after
@@ -868,7 +868,7 @@ extension NSView{
         
         return Tween(target:self.tweenBlock)
         .duration(duration)
-        .ease(Ease.inOutQuad)
+        .ease(.inOutQuad)
         .keys(to: [\TweenBlock<CGFloat>.value:180.0])
         .play()
 
@@ -912,7 +912,7 @@ extension NSView{
         let rotation = 360.0 * CGFloat( leaps )
         return Tween(target:self.tweenBlock)
                     .duration( 0.75 )
-                    .ease( Ease.inOutQuad )
+                    .ease( .inOutQuad )
                     .keys(to: [\TweenBlock<CGFloat>.value : clockwise ? rotation : -rotation ])
                     .play()
     }
@@ -928,7 +928,7 @@ extension NSView{
         if self.layer == nil { self.wantsLayer = true}
         self.translateLayerAnchor(CGPoint(x:0.5, y:0.5))
         
-        var tween = Tween(target:self.layer!).ease(Ease.inOutQuad).duration(0.1)
+        var tween = Tween(target:self.layer!).ease(.inOutQuad).duration(0.1)
         
         for i in 0 ... shakes{
             tween.keys(to:[\CALayer.transform : CATransform3DMakeTranslation(i % 2 == 0 ? -distance : distance, 0.0, 0.0)])
@@ -954,14 +954,14 @@ extension NSView{
         return Tween(target:self.layer!)
             .keys(to:[\CALayer.transform : CATransform3DMakeScale(transformX, transformY, 1.0)])
             .duration(0.25)
-            .ease(Ease.outCirc)
+            .ease(.outCirc)
             .after()
             .duration(0.125)
-            .ease(Ease.outBack)
+            .ease(.outBack)
             .keys(to: [\CALayer.transform : CATransform3DMakeScale(1.0 + ((1.0 - transformX) * 0.75), 1.0 + ((1.0 - transformY) * 0.75), 1.0)] )
             .after()
             .duration(0.75)
-            .ease(Ease.outElastic)
+            .ease(.outElastic)
             .keys(to: [\CALayer.transform : CATransform3DMakeScale(1.0, 1.0, 1.0)] )
             .play()
     }
@@ -980,10 +980,10 @@ extension NSView{
         return Tween(target:self.layer!)
             .keys(to:[\CALayer.transform : CATransform3DMakeTranslation(0.0, distance, 0.0)])
             .duration(duration * 0.25)
-            .ease(Ease.outQuad)
+            .ease(.outQuad)
             .after()
             .duration(duration * 0.75)
-            .ease(Ease.outBounce)
+            .ease(.outBounce)
             .keys(to: [\CALayer.transform : CATransform3DMakeTranslation(0.0, 0.0, 0.0)] )
             .play()
     }

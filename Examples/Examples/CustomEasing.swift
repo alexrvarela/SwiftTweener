@@ -11,11 +11,11 @@ import Tweener
 
 //Custom ease.
 extension Ease{
-    public static let custom : Equation = { (t, b, c, d) in
+    public static let custom = Ease(equation:{ (t, b, c, d) in
         //Play with code here!
-        if t < d/2 {return Ease.inBack(t*2, b, c/2, d)}
-        return Ease.outElastic((t*2)-d, b+c/2, c/2, d)
-    }
+        if t < d/2 {return Ease.inBack.equation(t*2, b, c/2, d)}
+        return Ease.outElastic.equation((t*2)-d, b+c/2, c/2, d)
+    })
 }
 
 class CustomEasing: UIView
@@ -29,7 +29,7 @@ class CustomEasing: UIView
                                                                    y:spacing,
                                                                    width:self.frame.size.width - spacing * 2.0,
                                                                    height:360))
-        inspector.ease = Ease.custom
+        inspector.ease = .custom
         inspector.label.text = "Custom ease"
         addSubview(inspector)
     }

@@ -81,7 +81,7 @@ class Transform3d:UIView
             //Touches ended, animate.
             Tween(target: circle.layer,
                   duration: 0.25,
-                  ease:Ease.outQuad,
+                  ease:.outQuad,
                   to: [\CALayer.transform : CATransform3DIdentity]).play()
         }
     }

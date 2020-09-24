@@ -68,10 +68,10 @@ class TimelineSample: NSView {
         //Add to timeline using declarative syntax:
         timeline.add(
             //To prevent play imediatelly call remove()
-            square.flipX(inverted: true).remove(),
-            square.flipY().remove().delay(1.0),
-            square.flipX().remove().delay(2.0),
-            square.flipY(inverted: true).remove().delay(3.0)
+            square.flipX(inverted: true).stop(),
+            square.flipY().stop().delay(1.0),
+            square.flipX().stop().delay(2.0),
+            square.flipY(inverted: true).stop().delay(3.0)
         ).mode( .loop )
     }
 

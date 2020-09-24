@@ -300,7 +300,7 @@ class Control<T>: TweenControl
                 for (index, b) in values.from.enumerated()
                 {
                     let c = values.to[ index ] - b
-                    i.append(self.tween.ease(t, b, c, d))
+                    i.append(self.tween.ease.equation(t, b, c, d))
                 }
             }
             

@@ -19,7 +19,7 @@ Now, with Declarative Syntax and Tween chaining, to create a Tween:
 ```swift
 Tween(target:myView)
 .duration(1.0)
-.ease(Ease.inOutCubic)
+.ease(.inOutCubic)
 .keys(to:
     [\UIView.alpha:1.0,
      \UIView.frame:CGRect(x:20.0, y:20.0, width:UIScreen.main.bounds.width - 40, height:UIScreen.main.bounds.width - 40),
@@ -28,7 +28,7 @@ Tween(target:myView)
 .onComplete { print("Tween complete") }
 .after()//Creates a new tween after with same target and properties.
 .duration(0.75)
-.ease(Ease.outBounce)
+.ease(.outBounce)
 .keys(to: [\UIView.alpha:0.25,
            \UIView.frame:CGRect(x:20.0, y:20.0, width:100.0, height:100.0),
            \UIView.backgroundColor!:UIColor.blue])
@@ -44,7 +44,7 @@ Timeline(
     
     //Tween 1
     Tween(target: myView)
-    .ease(Ease.inOutQuad)
+    .ease(.inOutQuad)
     .keys(to:[\UIView.center : self.frame.origin])
     .onStart {
         self.myView.flipX(inverted: true)
@@ -203,7 +203,7 @@ Create and add a simple Tween:
 ```swift
 Tween(target:square)
 .duration(1.0)//One second
-.ease(Ease.inOutCubic)
+.ease(.inOutCubic)
 .keys(to:
         [\UIView.alpha:1.0,
          \UIView.frame:CGRect(x:20, y:20, width:250, height:250),
@@ -216,7 +216,7 @@ Or use 'from' and 'to' keys:
 ```swift
 Tween(target:square)
 .duration(1.0)//One second
-.ease(Ease.inOutCubic)
+.ease(.inOutCubic)
 .keys(
     from:
         [\UIView.alpha:0.25,
@@ -309,8 +309,8 @@ To create a custom easing equation:
 extension Ease{
     public static let custom : Equation = { (t, b, c, d) in
         //Play with code here!
-        if t < d/2 {return Ease.inBack(t*2, b, c/2, d)}
-        return Ease.outElastic((t*2)-d, b+c/2, c/2, d)
+        if t < d/2 {return .inBack(t*2, b, c/2, d)}
+        return .outElastic((t*2)-d, b+c/2, c/2, d)
         }
 }
 ```
@@ -319,7 +319,7 @@ And use it:
 ```swift
 Tween(target:myView,
     duration:1.0,
-    ease:Ease.custom
+    ease:.custom
     to:[\UIView.frame:CGRect(x:20.0, y:20.0, width:280.0, height:280.0)]
     ).play()
 ```
@@ -427,7 +427,7 @@ myPathAim.interpolation = 0.0
 
 Tween(target: myPathAim, 
     duration: 2.0, 
-    ease: Ease.none, 
+    ease: .none, 
     delay: 0.0, 
     to: [\PathAim.interpolation : 1.0]).play()
 ```

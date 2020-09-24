@@ -66,7 +66,7 @@ class StringSample: NSView {
            //Create tween with StringAim target and animate interpolation.
            Tween(target: stringAim,
                  duration: 0.5,
-                 ease: Ease.none,
+                 ease: .none,
                  delay: 0.0,
                  to: [\StringAim.interpolation : 1.0],
                  completion: {

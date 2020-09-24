@@ -92,7 +92,7 @@ class ChainableTweens: UIView, FreezeProtocol {
 
             //Tween 1, start chain
             Tween(target: square)
-            .ease(Ease.inOutQuad)
+            .ease(.inOutQuad)
             .keys(to:[\UIView.center : squares[1].center])
             .onStart {
                 //Change color

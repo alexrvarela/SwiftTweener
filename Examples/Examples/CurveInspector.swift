@@ -12,7 +12,7 @@ import Tweener
 class CurveInspector: UIControl
 {
     
-    public var _ease:Equation = Ease.none
+    public var _ease:Ease = .none
     public let label:UILabel = UILabel()
     let border:UIView = UIView()
     let curve:UIView = UIView()
@@ -99,7 +99,7 @@ class CurveInspector: UIControl
     }
     
     //setter/getter var
-    var ease:Equation
+    var ease:Ease
     {
         set{
             _ease = newValue
@@ -118,7 +118,7 @@ class CurveInspector: UIControl
             {
                 let interpolation:Double  = (1.0 / Double(segments)) * Double(i)
                 let x:CGFloat = curve.frame.size.width * CGFloat(interpolation)
-                let y:CGFloat = CGFloat(_ease(interpolation, b, c, 1.0))
+                let y:CGFloat = CGFloat(_ease.equation(interpolation, b, c, 1.0))
                 path.addLine(to: CGPoint(x:x, y:y))
             }
             

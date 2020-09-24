@@ -70,7 +70,7 @@ class TimelineBasic:UIView, FreezeProtocol
         
         timeline.add(Tween(target:asset1,
                            duration:1.0,
-                           ease:Ease.outQuad,
+                           ease:.outQuad,
                            to:[\UIView.frame:newFrame,
                                  \UIView.alpha:0.25]
         ))
@@ -86,7 +86,7 @@ class TimelineBasic:UIView, FreezeProtocol
         //add tween to timeline, pass target, parameters and key paths
         timeline.add(Tween(target:asset2,
                            duration:1.0,
-                           ease:Ease.inOutBounce,
+                           ease:.inOutBounce,
                            to:[\UIView.frame:newFrame]
         ))
         
@@ -94,7 +94,7 @@ class TimelineBasic:UIView, FreezeProtocol
         //Add tween to timeline.
         timeline.add(Tween(target:self,
                            duration:1.0,
-                           ease:Ease.outQuad,
+                           ease:.outQuad,
                            to:[\TimelineBasic.rotationAngle:360]
         ))
         
@@ -108,7 +108,7 @@ class TimelineBasic:UIView, FreezeProtocol
         //Add tween to timeline.
         timeline.add(Tween(target:asset4,
                            duration:1.0,
-                           ease:Ease.outElastic,
+                           ease:.outElastic,
                            delay:1.0,
                            to:[\UIView.frame:newFrame]
         ))

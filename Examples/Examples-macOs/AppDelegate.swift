@@ -25,7 +25,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             samplesMenu?.item(at: sampleIndex)?.state = .on
             Tween(target:self.mainView)
                 .duration(0.75)
-                .ease(Ease.outQuad)
+                .ease(.outQuad)
                 .keys(to: [\NSView.frame: CGRect(x: -window.frame.size.width * CGFloat( sampleIndex ),
                                                  y: mainView.frame.origin.y,
                                                  width: mainView.frame.size.width,

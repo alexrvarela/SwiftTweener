@@ -74,7 +74,7 @@ class TweenChain: NSView {
             //Tween 1, start chain
             Tween(target: square)
             .duration(0.5)
-            .ease(Ease.inOutQuad)
+            .ease(.inOutQuad)
             .keys(to:[\NSView.frame : squares[1].frame])
             .onComplete{self.square.layer!.backgroundColor = NSColor.random().cgColor }
             //Tween 2, create a tween after.

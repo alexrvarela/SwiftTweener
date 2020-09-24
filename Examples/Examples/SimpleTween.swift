@@ -47,7 +47,7 @@ class SimpleTween:UIView, FreezeProtocol
         //Create tween
         Tween(target:square)//Target
         .duration(1.0)//One second
-        .ease(Ease.inOutCubic)
+        .ease(.inOutCubic)
         .keys(to:
             [\UIView.alpha:1.0,
              \UIView.frame:CGRect(x:20.0, y:20.0, width:UIScreen.main.bounds.width - 40, height:UIScreen.main.bounds.width - 40),

@@ -89,7 +89,7 @@ class CustomTypes:UIView, FreezeProtocol
     {
         //Animate property
         Tween(target:self)
-        .ease(Ease.inBounce)
+        .ease(.inBounce)
         .duration(1.0)
         .keys(to:[\CustomTypes.point3d:Vector3(x:Double.random(in: 0...1.0),
                                                y:Double.random(in: 0...1.0),
@@ -98,7 +98,7 @@ class CustomTypes:UIView, FreezeProtocol
         
         //Animate with block
         Tween(target: updateBlock)
-            .ease(Ease.outBack)
+            .ease(.outBack)
             .duration(1.0)
             .keys(to:[\TweenBlock<Vector3>.value:Vector3(x:Double.random(in: -360...360),
                                                          y:Double.random(in: -360...360),

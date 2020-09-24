@@ -50,7 +50,7 @@ class Random: NSView {
     @objc func animate() {
         for dot in dots {
             Tween(target:dot)
-                .ease(Ease.outBack)
+                .ease(.outBack)
                 .duration(Double.random(in: 0.25 ... 2.0))
                 .delay(Double.random(in: 0.25 ... 2.0))
                 .keys(to: [\NSView.frame : CGRect(x: CGFloat.random(in: 0.0 ... frame.size.width - dot.frame.size.width),

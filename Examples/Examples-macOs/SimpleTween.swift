@@ -50,7 +50,7 @@ class SimpleTween: NSView {
     
         Tween(target:square)//Target
         .duration(0.75)//Duration in seconds
-        .ease( Ease.inOutCubic )//Animation curve
+        .ease( .inOutCubic )//Animation curve
         .keys(from: [\NSView.alphaValue:0.25,
                      \NSView.frame:CGRect(x:20.0,
                                           y:frame.size.height - 100 - 20.0,
@@ -64,7 +64,7 @@ class SimpleTween: NSView {
         .onComplete { print("Tween 1 complete") }
         .after()//Creates a new tween after with same target and properties.
         .duration(1.0)
-        .ease(Ease.outBounce)
+        .ease(.outBounce)
         .keys(to: [\NSView.alphaValue:0.25, \NSView.frame:CGRect(x:20.0, y:frame.size.height - 100 - 20.0, width:100.0, height:100.0)])
         .onComplete { print("Tween 2 complete") }
         .play()

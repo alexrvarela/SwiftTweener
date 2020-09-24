@@ -62,7 +62,7 @@ class TouchPoint:UIView, FreezeProtocol
         {            
             Tween(target:subviews[index],
                   duration:2.0,
-                  ease:Ease.outElastic,
+                  ease:.outElastic,
                   delay:0.025 * Double(subviews.count - index),
                   to:[\UIView.center:p]).play()
         }

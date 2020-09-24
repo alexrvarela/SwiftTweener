@@ -124,7 +124,7 @@ class DragView:UIView
                 //Animate.
                 Tween(target:view,
                       duration:0.25,
-                      ease:Ease.outQuad,
+                      ease:.outQuad,
                       to:[\UIView.frame : destinationFrame]).play()
             }
             

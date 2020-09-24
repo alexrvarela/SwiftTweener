@@ -16,7 +16,7 @@ public class AnyTween
     /// Animation duration in seconds.
     public var duration: Double = 0.0
     /// Animation Curve.
-    public var ease: Equation = Ease.none
+    public var ease: Ease = .none
     /// Animation time delay in seconds.
     public var delay: Double = 0.0
     /// TweenHandler block to run when animation starts.
@@ -72,7 +72,7 @@ public class Tween<T>: AnyTween
      */
     public convenience init(target: T,
                             duration: Double = 1.0,
-                            ease:@escaping Equation = Ease.none,
+                            ease:Ease = .none,
                             delay:Double = 0.0,
                             from: [PartialKeyPath<T> : Any]? = nil,//Optional
                             to: [PartialKeyPath<T> : Any]? = nil,
@@ -101,7 +101,7 @@ public class Tween<T>: AnyTween
      - Parameter ease:  Easing equation for animation curve.
      - Returns:         Current`Tween` instance.
      */
-    @discardableResult public func ease(_ ease: @escaping Equation) -> Tween<T>
+    @discardableResult public func ease(_ ease:Ease) -> Tween<T>
     {
        self.ease = ease
        return self
@@ -181,7 +181,7 @@ public class Tween<T>: AnyTween
     ///A function that creates a new tween after this, and chain.
     ///- Returns:   A new`Tween` instance with time delay after current.
     @discardableResult public func after(duration: Double? = nil,
-                                         ease:Equation? = nil,
+                                         ease:Ease? = nil,
                                          delay:Double? = nil,
                                          from: [PartialKeyPath<T> : Any]? = nil,
                                          to: [PartialKeyPath<T> : Any]? = nil,

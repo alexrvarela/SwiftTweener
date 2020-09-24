@@ -54,7 +54,7 @@ class SimpleTween:UIView, FreezeProtocol
              //NOTE:This property is an optional, add ! to keypath.
              \UIView.backgroundColor!:UIColor.red])
         .onComplete { print("Tween complete") }
-        .after()//Creates a new tween after with same target and properties after.
+        .after()//Creates a new tween after with same target and properties.
         .duration(1.0)
         .ease(Ease.outBounce)
         .keys(to: [\UIView.alpha:0.25,

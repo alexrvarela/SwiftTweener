@@ -26,7 +26,7 @@ Tween(target:myView)
      //NOTE:This property is an optional, add ! to keypath.
      \UIView.backgroundColor!:UIColor.red])
 .onComplete { print("Tween complete") }
-.after()//Creates a new tween after with same target and properties after.
+.after()//Creates a new tween after with same target and properties.
 .duration(0.75)
 .ease(Ease.outBounce)
 .keys(to: [\UIView.alpha:0.25,
@@ -194,23 +194,44 @@ Int, Float, Double, CGFloat, CGPoint, CGRect, UIColor, CGAffineTransform, CATran
 First set initial state:
 ```swift
 myView.alpha = 0.25
-myView.frame = CGRect(x:20.0, y:20.0, width:100.0, height:100.0)
-myView.backgroundColor = .red
+myView.frame = CGRect(x:20, y:20, width:50, height:50)
+myView.backgroundColor = .blue
 ```
 
 Create and add a simple Tween:
 
 ```swift
+Tween(target:square)
+.duration(1.0)//One second
+.ease(Ease.inOutCubic)
+.keys(to:
+        [\UIView.alpha:1.0,
+         \UIView.frame:CGRect(x:20, y:20, width:250, height:250),
+         \UIView.backgroundColor!:UIColor.red])
+.play()
+```
 
-let myTween = Tween(target:myView,
-    duration:1.0,
-    ease:Ease.outQuad
-    to:[\UIView.alpha:1.0,
-          \UIView.frame:CGRect(x:20.0, y:20.0, width:280.0, height:280.0),
-          \UIView.backgroundColor!:UIColor.blue
-])
+Or use 'from' and 'to' keys:
 
-myTween.play()
+```swift
+Tween(target:square)
+.duration(1.0)//One second
+.ease(Ease.inOutCubic)
+.keys(
+    from:
+        [\UIView.alpha:0.25,
+         \UIView.frame:CGRect(x:20, y:20, width:50, height:50),
+         \UIView.backgroundColor!:UIColor.blue],
+    to:
+        [\UIView.alpha:1.0,
+         \UIView.frame:CGRect(x:20, y:20, width:250, height:250),
+         \UIView.backgroundColor!:UIColor.red])
+.play()
+```
+
+To remove a Tween from Engine simply call stop().
+```swift
+myTween.stop()
 ```
 
 ![Simple tween](https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/simple-tween.gif)
@@ -219,19 +240,19 @@ myTween.play()
 Interact with your code using block handlers:
 
 ```swift
-myTween.onStart = {
+myTween.onStart {
     self.backgroundColor = .green
 }
 
-myTween.onUpdate = {
+myTween.onUpdate {
     doAnything()
 }
 
-myTween.onComplete = {
+myTween.onComplete {
     self.backgroundColor = .red
 }
 
-myTween.onOverwrite = {
+myTween.onOverwrite {
     self.backgroundColor = .blue
 }
 ```
@@ -239,7 +260,7 @@ myTween.onOverwrite = {
 ![Handlers](https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/handlers.gif)
 
 
-You can pause, resume and remove tweens:
+You can pause, resume and remove existing tweens:
 
 For all existing tweens:
 ```swift
@@ -328,6 +349,11 @@ myTimeline.playMode = .loop
 Ping Pong, forward and reverse
 ```swift
 myTimeline.playMode = .pingPong
+```
+
+To remove a Timeline from Engine simply call stop().
+```swift
+myTimeline.stop()
 ```
 
 ![Ping Pong](https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/timeline-ping-pong.gif)

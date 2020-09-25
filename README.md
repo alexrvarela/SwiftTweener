@@ -281,9 +281,9 @@ Tweener.removeTweens(target:myView)
 
 By specific properties of a target:
 ```swift
-Tweener.pauseTweens(target:myView, to:[\UIView.backgroundColor, \UIView.alpha])
-Tweener.resumeTweens(target:myView, to:[\UIView.backgroundColor, \UIView.alpha])
-Tweener.removeTweens(target:myView, to:[\UIView.backgroundColor, \UIView.alpha])
+Tweener.pauseTweens(target:myView, keys:[\UIView.backgroundColor, \UIView.alpha])
+Tweener.resumeTweens(target:myView, keys:[\UIView.backgroundColor, \UIView.alpha])
+Tweener.removeTweens(target:myView, keys:[\UIView.backgroundColor, \UIView.alpha])
 ```
 
 Unleash your creativity!

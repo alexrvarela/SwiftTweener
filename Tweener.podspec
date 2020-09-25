@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Tweener'
-  s.version          = '2.0.0'
+  s.version          = '2.0.1'
   s.summary          = 'Swift animation engine, make more powerful and creative Apps.'
   s.homepage         = 'https://github.com/alexrvarela/SwiftTweener'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }

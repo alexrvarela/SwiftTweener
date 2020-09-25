@@ -353,14 +353,12 @@ Ping Pong, forward and reverse
 ```swift
 myTimeline.playMode(.pingPong)
 ```
+![Ping Pong](https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/timeline-ping-pong.gif)
 
 To remove a Timeline from Engine simply call stop().
 ```swift
 myTimeline.stop()
 ```
-
-![Ping Pong](https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/timeline-ping-pong.gif)
-
 Perform parallax scrolling effects controlling your timeline with UIScrollView:
 
 ![Timeline scroll](https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/tmeline-scroll.gif)
@@ -489,7 +487,7 @@ stringAim.to = "hola"
 //Set initial interpolation
 stringAim.interpolation = 0.0
 
-//Animate, usese timeline to repeat forever.
+//Animate, using timeline to repeat forever.
 Timeline(
     //Create tween with StringAim target and animate interpolation.
     Tween(target:stringAim)

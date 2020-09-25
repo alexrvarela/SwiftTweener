@@ -7,61 +7,61 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0514812422A803E100D927DD /* EaseCurves.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0514812322A803E100D927DD /* EaseCurves.swift */; };
-		0514812822A804E100D927DD /* CurveInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0514812722A804E100D927DD /* CurveInspector.swift */; };
-		0521167522D6493500806A5B /* CustomEasing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0521167422D6493500806A5B /* CustomEasing.swift */; };
 		0521167722D64A0C00806A5B /* LaunchScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 0521167622D64A0C00806A5B /* LaunchScreen.png */; };
-		0524F08522AEAA1100BC28AA /* ScrollTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0524F08422AEAA1100BC28AA /* ScrollTimeline.swift */; };
-		05295F5E22C1247300E02FFD /* TimelineBasic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05295F5D22C1247300E02FFD /* TimelineBasic.swift */; };
-		0532C7C122A875E1005265E9 /* TouchPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0532C7C022A875E1005265E9 /* TouchPoint.swift */; };
-		0548DB1822C7D66300B6F3F4 /* AnimateArcRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0548DB1722C7D66300B6F3F4 /* AnimateArcRadius.swift */; };
-		0572C21F22A2D30100F96A19 /* TweenHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0572C21E22A2D30100F96A19 /* TweenHandlers.swift */; };
-		0572C22122A2D31500F96A19 /* SimpleTween.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0572C22022A2D31500F96A19 /* SimpleTween.swift */; };
-		0589AED222AF070E0093774D /* Transform3d.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0589AED122AF070E0093774D /* Transform3d.swift */; };
-		05A620CA22A9445A005F7D3F /* DragView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A620C922A9445A005F7D3F /* DragView.swift */; };
-		05A7353622B45AC700F34F32 /* PauseTweens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A7353522B45AC700F34F32 /* PauseTweens.swift */; };
-		05A7353822B45ADD00F34F32 /* SimpleTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A7353722B45ADD00F34F32 /* SimpleTimeline.swift */; };
-		05B877F222C70AC700F2521F /* PathLoop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B877F122C70AC700F2521F /* PathLoop.swift */; };
-		05B877F422C7B6EF00F2521F /* WindBlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B877F322C7B6EF00F2521F /* WindBlow.swift */; };
-		05B877F622C7B70300F2521F /* ArcOrbits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B877F522C7B70200F2521F /* ArcOrbits.swift */; };
-		05B877F822C7B71B00F2521F /* AnimateText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B877F722C7B71B00F2521F /* AnimateText.swift */; };
-		05B877FA22C7B73200F2521F /* ScrollAims.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B877F922C7B73200F2521F /* ScrollAims.swift */; };
 		4C78F33B2142CDC2005E964B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C78F33A2142CDC2005E964B /* AppDelegate.swift */; };
 		4C78F3422142CDC2005E964B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C78F3412142CDC2005E964B /* Assets.xcassets */; };
 		4C78F3452142CDC2005E964B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C78F3432142CDC2005E964B /* LaunchScreen.storyboard */; };
-		4CF9835C214318AC00F1C23E /* bb8-head.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF9833E214318AC00F1C23E /* bb8-head.pdf */; };
-		4CF9835D214318AC00F1C23E /* card.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF9833F214318AC00F1C23E /* card.pdf */; };
-		4CF9835E214318AC00F1C23E /* fire.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF98340214318AC00F1C23E /* fire.pdf */; };
-		4CF9835F214318AC00F1C23E /* mars.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF98341214318AC00F1C23E /* mars.pdf */; };
-		4CF98360214318AC00F1C23E /* little-jupyter.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF98342214318AC00F1C23E /* little-jupyter.pdf */; };
-		4CF98361214318AC00F1C23E /* jupyter.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF98343214318AC00F1C23E /* jupyter.pdf */; };
-		4CF98362214318AC00F1C23E /* bee.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF98344214318AC00F1C23E /* bee.pdf */; };
-		4CF98363214318AC00F1C23E /* earth.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF98345214318AC00F1C23E /* earth.pdf */; };
-		4CF98364214318AC00F1C23E /* clouds1.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF98346214318AC00F1C23E /* clouds1.pdf */; };
-		4CF98365214318AC00F1C23E /* rocket.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF98347214318AC00F1C23E /* rocket.pdf */; };
-		4CF98366214318AC00F1C23E /* sunny.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF98348214318AC00F1C23E /* sunny.pdf */; };
-		4CF98367214318AC00F1C23E /* comet.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF98349214318AC00F1C23E /* comet.pdf */; };
-		4CF98368214318AC00F1C23E /* eyepupil.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF9834A214318AC00F1C23E /* eyepupil.pdf */; };
-		4CF98369214318AC00F1C23E /* clouds2.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF9834B214318AC00F1C23E /* clouds2.pdf */; };
-		4CF9836A214318AC00F1C23E /* little-saturn.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF9834C214318AC00F1C23E /* little-saturn.pdf */; };
-		4CF9836B214318AC00F1C23E /* little-sun-fire.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF9834D214318AC00F1C23E /* little-sun-fire.pdf */; };
-		4CF9836C214318AC00F1C23E /* moon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF9834E214318AC00F1C23E /* moon.pdf */; };
-		4CF9836D214318AC00F1C23E /* clouds3.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF9834F214318AC00F1C23E /* clouds3.pdf */; };
-		4CF9836E214318AC00F1C23E /* little-sun.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF98350214318AC00F1C23E /* little-sun.pdf */; };
-		4CF9836F214318AC00F1C23E /* flower.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF98351214318AC00F1C23E /* flower.pdf */; };
-		4CF98370214318AC00F1C23E /* ufo.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF98352214318AC00F1C23E /* ufo.pdf */; };
-		4CF98371214318AC00F1C23E /* spaceman.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF98353214318AC00F1C23E /* spaceman.pdf */; };
-		4CF98372214318AC00F1C23E /* stars.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF98354214318AC00F1C23E /* stars.pdf */; };
-		4CF98373214318AC00F1C23E /* sand.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF98355214318AC00F1C23E /* sand.pdf */; };
-		4CF98374214318AC00F1C23E /* sun.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF98356214318AC00F1C23E /* sun.pdf */; };
-		4CF98375214318AC00F1C23E /* little-earth.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF98357214318AC00F1C23E /* little-earth.pdf */; };
-		4CF98376214318AC00F1C23E /* orbits-background.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF98358214318AC00F1C23E /* orbits-background.pdf */; };
-		4CF98377214318AC00F1C23E /* dart.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF98359214318AC00F1C23E /* dart.pdf */; };
-		4CF98378214318AC00F1C23E /* bb8-body.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF9835A214318AC00F1C23E /* bb8-body.pdf */; };
-		4CF98379214318AC00F1C23E /* saturn.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF9835B214318AC00F1C23E /* saturn.pdf */; };
-		FA7170B224E492560001965F /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7170B124E492560001965F /* ViewExtensions.swift */; };
-		FA7170D924E4FD8A0001965F /* ChainableTweens.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7170D824E4FD8A0001965F /* ChainableTweens.swift */; };
-		FAE624A22503F9BF00E3644E /* CustomTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE624A12503F9BE00E3644E /* CustomTypes.swift */; };
+		FA5DBD8B251D6DB000D24FF2 /* WindBlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5DBD76251D6DAF00D24FF2 /* WindBlow.swift */; };
+		FA5DBD8C251D6DB000D24FF2 /* CustomEasing.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5DBD77251D6DAF00D24FF2 /* CustomEasing.swift */; };
+		FA5DBD8D251D6DB000D24FF2 /* ChainableTweens.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5DBD78251D6DAF00D24FF2 /* ChainableTweens.swift */; };
+		FA5DBD8E251D6DB000D24FF2 /* CustomTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5DBD79251D6DAF00D24FF2 /* CustomTypes.swift */; };
+		FA5DBD8F251D6DB000D24FF2 /* TouchPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5DBD7A251D6DAF00D24FF2 /* TouchPoint.swift */; };
+		FA5DBD90251D6DB000D24FF2 /* Transform3d.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5DBD7B251D6DAF00D24FF2 /* Transform3d.swift */; };
+		FA5DBD91251D6DB000D24FF2 /* DragView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5DBD7C251D6DB000D24FF2 /* DragView.swift */; };
+		FA5DBD92251D6DB000D24FF2 /* EaseCurves.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5DBD7D251D6DB000D24FF2 /* EaseCurves.swift */; };
+		FA5DBD93251D6DB000D24FF2 /* TimelineBasic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5DBD7E251D6DB000D24FF2 /* TimelineBasic.swift */; };
+		FA5DBD94251D6DB000D24FF2 /* AnimateText.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5DBD7F251D6DB000D24FF2 /* AnimateText.swift */; };
+		FA5DBD95251D6DB000D24FF2 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5DBD80251D6DB000D24FF2 /* ViewExtensions.swift */; };
+		FA5DBD96251D6DB000D24FF2 /* SimpleTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5DBD81251D6DB000D24FF2 /* SimpleTimeline.swift */; };
+		FA5DBD97251D6DB000D24FF2 /* TweenHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5DBD82251D6DB000D24FF2 /* TweenHandlers.swift */; };
+		FA5DBD98251D6DB000D24FF2 /* CurveInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5DBD83251D6DB000D24FF2 /* CurveInspector.swift */; };
+		FA5DBD99251D6DB000D24FF2 /* ArcOrbits.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5DBD84251D6DB000D24FF2 /* ArcOrbits.swift */; };
+		FA5DBD9A251D6DB000D24FF2 /* ScrollTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5DBD85251D6DB000D24FF2 /* ScrollTimeline.swift */; };
+		FA5DBD9B251D6DB000D24FF2 /* ScrollAims.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5DBD86251D6DB000D24FF2 /* ScrollAims.swift */; };
+		FA5DBD9C251D6DB000D24FF2 /* AnimateArcRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5DBD87251D6DB000D24FF2 /* AnimateArcRadius.swift */; };
+		FA5DBD9D251D6DB000D24FF2 /* PauseTweens.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5DBD88251D6DB000D24FF2 /* PauseTweens.swift */; };
+		FA5DBD9E251D6DB000D24FF2 /* PathLoop.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5DBD89251D6DB000D24FF2 /* PathLoop.swift */; };
+		FA5DBD9F251D6DB000D24FF2 /* SimpleTween.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5DBD8A251D6DB000D24FF2 /* SimpleTween.swift */; };
+		FA5DBDBE251D6F6100D24FF2 /* sun.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FA5DBDA0251D6F6000D24FF2 /* sun.pdf */; };
+		FA5DBDBF251D6F6100D24FF2 /* little-sun-fire.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FA5DBDA1251D6F6000D24FF2 /* little-sun-fire.pdf */; };
+		FA5DBDC0251D6F6100D24FF2 /* eyepupil.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FA5DBDA2251D6F6000D24FF2 /* eyepupil.pdf */; };
+		FA5DBDC1251D6F6100D24FF2 /* saturn.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FA5DBDA3251D6F6000D24FF2 /* saturn.pdf */; };
+		FA5DBDC2251D6F6100D24FF2 /* bb8-body.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FA5DBDA4251D6F6000D24FF2 /* bb8-body.pdf */; };
+		FA5DBDC3251D6F6100D24FF2 /* moon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FA5DBDA5251D6F6000D24FF2 /* moon.pdf */; };
+		FA5DBDC4251D6F6100D24FF2 /* rocket.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FA5DBDA6251D6F6000D24FF2 /* rocket.pdf */; };
+		FA5DBDC5251D6F6100D24FF2 /* fire.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FA5DBDA7251D6F6000D24FF2 /* fire.pdf */; };
+		FA5DBDC6251D6F6100D24FF2 /* flower.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FA5DBDA8251D6F6000D24FF2 /* flower.pdf */; };
+		FA5DBDC7251D6F6100D24FF2 /* card.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FA5DBDA9251D6F6000D24FF2 /* card.pdf */; };
+		FA5DBDC8251D6F6100D24FF2 /* mars.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FA5DBDAA251D6F6000D24FF2 /* mars.pdf */; };
+		FA5DBDC9251D6F6100D24FF2 /* bb8-head.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FA5DBDAB251D6F6000D24FF2 /* bb8-head.pdf */; };
+		FA5DBDCA251D6F6100D24FF2 /* little-sun.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FA5DBDAC251D6F6000D24FF2 /* little-sun.pdf */; };
+		FA5DBDCB251D6F6100D24FF2 /* stars.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FA5DBDAD251D6F6000D24FF2 /* stars.pdf */; };
+		FA5DBDCC251D6F6100D24FF2 /* comet.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FA5DBDAE251D6F6000D24FF2 /* comet.pdf */; };
+		FA5DBDCD251D6F6100D24FF2 /* sand.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FA5DBDAF251D6F6100D24FF2 /* sand.pdf */; };
+		FA5DBDCE251D6F6100D24FF2 /* jupyter.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FA5DBDB0251D6F6100D24FF2 /* jupyter.pdf */; };
+		FA5DBDCF251D6F6100D24FF2 /* clouds1.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FA5DBDB1251D6F6100D24FF2 /* clouds1.pdf */; };
+		FA5DBDD0251D6F6100D24FF2 /* orbits-background.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FA5DBDB2251D6F6100D24FF2 /* orbits-background.pdf */; };
+		FA5DBDD1251D6F6100D24FF2 /* little-earth.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FA5DBDB3251D6F6100D24FF2 /* little-earth.pdf */; };
+		FA5DBDD2251D6F6100D24FF2 /* little-saturn.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FA5DBDB4251D6F6100D24FF2 /* little-saturn.pdf */; };
+		FA5DBDD3251D6F6100D24FF2 /* spaceman.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FA5DBDB5251D6F6100D24FF2 /* spaceman.pdf */; };
+		FA5DBDD4251D6F6100D24FF2 /* sunny.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FA5DBDB6251D6F6100D24FF2 /* sunny.pdf */; };
+		FA5DBDD5251D6F6100D24FF2 /* bee.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FA5DBDB7251D6F6100D24FF2 /* bee.pdf */; };
+		FA5DBDD6251D6F6100D24FF2 /* dart.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FA5DBDB8251D6F6100D24FF2 /* dart.pdf */; };
+		FA5DBDD7251D6F6100D24FF2 /* clouds2.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FA5DBDB9251D6F6100D24FF2 /* clouds2.pdf */; };
+		FA5DBDD8251D6F6100D24FF2 /* little-jupyter.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FA5DBDBA251D6F6100D24FF2 /* little-jupyter.pdf */; };
+		FA5DBDD9251D6F6100D24FF2 /* ufo.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FA5DBDBB251D6F6100D24FF2 /* ufo.pdf */; };
+		FA5DBDDA251D6F6100D24FF2 /* earth.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FA5DBDBC251D6F6100D24FF2 /* earth.pdf */; };
+		FA5DBDDB251D6F6100D24FF2 /* clouds3.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FA5DBDBD251D6F6100D24FF2 /* clouds3.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,64 +109,64 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0514812322A803E100D927DD /* EaseCurves.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EaseCurves.swift; sourceTree = "<group>"; };
-		0514812722A804E100D927DD /* CurveInspector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurveInspector.swift; sourceTree = "<group>"; };
-		0521167422D6493500806A5B /* CustomEasing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomEasing.swift; sourceTree = "<group>"; };
 		0521167622D64A0C00806A5B /* LaunchScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchScreen.png; sourceTree = "<group>"; };
-		0524F08422AEAA1100BC28AA /* ScrollTimeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollTimeline.swift; sourceTree = "<group>"; };
-		05295F5D22C1247300E02FFD /* TimelineBasic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineBasic.swift; sourceTree = "<group>"; };
-		0532C7C022A875E1005265E9 /* TouchPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchPoint.swift; sourceTree = "<group>"; };
-		0548DB1722C7D66300B6F3F4 /* AnimateArcRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateArcRadius.swift; sourceTree = "<group>"; };
-		0572C21E22A2D30100F96A19 /* TweenHandlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweenHandlers.swift; sourceTree = "<group>"; };
-		0572C22022A2D31500F96A19 /* SimpleTween.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTween.swift; sourceTree = "<group>"; };
-		0589AED122AF070E0093774D /* Transform3d.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transform3d.swift; sourceTree = "<group>"; };
-		05A620C922A9445A005F7D3F /* DragView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragView.swift; sourceTree = "<group>"; };
-		05A7353522B45AC700F34F32 /* PauseTweens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseTweens.swift; sourceTree = "<group>"; };
-		05A7353722B45ADD00F34F32 /* SimpleTimeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTimeline.swift; sourceTree = "<group>"; };
-		05B877F122C70AC700F2521F /* PathLoop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathLoop.swift; sourceTree = "<group>"; };
-		05B877F322C7B6EF00F2521F /* WindBlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindBlow.swift; sourceTree = "<group>"; };
-		05B877F522C7B70200F2521F /* ArcOrbits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcOrbits.swift; sourceTree = "<group>"; };
-		05B877F722C7B71B00F2521F /* AnimateText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateText.swift; sourceTree = "<group>"; };
-		05B877F922C7B73200F2521F /* ScrollAims.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollAims.swift; sourceTree = "<group>"; };
 		4C78F3372142CDC2005E964B /* Examples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Examples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C78F33A2142CDC2005E964B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C78F3412142CDC2005E964B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C78F3442142CDC2005E964B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4C78F3462142CDC2005E964B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4CF9833E214318AC00F1C23E /* bb8-head.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "bb8-head.pdf"; sourceTree = "<group>"; };
-		4CF9833F214318AC00F1C23E /* card.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = card.pdf; sourceTree = "<group>"; };
-		4CF98340214318AC00F1C23E /* fire.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = fire.pdf; sourceTree = "<group>"; };
-		4CF98341214318AC00F1C23E /* mars.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = mars.pdf; sourceTree = "<group>"; };
-		4CF98342214318AC00F1C23E /* little-jupyter.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "little-jupyter.pdf"; sourceTree = "<group>"; };
-		4CF98343214318AC00F1C23E /* jupyter.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = jupyter.pdf; sourceTree = "<group>"; };
-		4CF98344214318AC00F1C23E /* bee.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = bee.pdf; sourceTree = "<group>"; };
-		4CF98345214318AC00F1C23E /* earth.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = earth.pdf; sourceTree = "<group>"; };
-		4CF98346214318AC00F1C23E /* clouds1.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = clouds1.pdf; sourceTree = "<group>"; };
-		4CF98347214318AC00F1C23E /* rocket.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = rocket.pdf; sourceTree = "<group>"; };
-		4CF98348214318AC00F1C23E /* sunny.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = sunny.pdf; sourceTree = "<group>"; };
-		4CF98349214318AC00F1C23E /* comet.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = comet.pdf; sourceTree = "<group>"; };
-		4CF9834A214318AC00F1C23E /* eyepupil.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = eyepupil.pdf; sourceTree = "<group>"; };
-		4CF9834B214318AC00F1C23E /* clouds2.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = clouds2.pdf; sourceTree = "<group>"; };
-		4CF9834C214318AC00F1C23E /* little-saturn.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "little-saturn.pdf"; sourceTree = "<group>"; };
-		4CF9834D214318AC00F1C23E /* little-sun-fire.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "little-sun-fire.pdf"; sourceTree = "<group>"; };
-		4CF9834E214318AC00F1C23E /* moon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = moon.pdf; sourceTree = "<group>"; };
-		4CF9834F214318AC00F1C23E /* clouds3.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = clouds3.pdf; sourceTree = "<group>"; };
-		4CF98350214318AC00F1C23E /* little-sun.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "little-sun.pdf"; sourceTree = "<group>"; };
-		4CF98351214318AC00F1C23E /* flower.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = flower.pdf; sourceTree = "<group>"; };
-		4CF98352214318AC00F1C23E /* ufo.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ufo.pdf; sourceTree = "<group>"; };
-		4CF98353214318AC00F1C23E /* spaceman.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = spaceman.pdf; sourceTree = "<group>"; };
-		4CF98354214318AC00F1C23E /* stars.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = stars.pdf; sourceTree = "<group>"; };
-		4CF98355214318AC00F1C23E /* sand.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = sand.pdf; sourceTree = "<group>"; };
-		4CF98356214318AC00F1C23E /* sun.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = sun.pdf; sourceTree = "<group>"; };
-		4CF98357214318AC00F1C23E /* little-earth.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "little-earth.pdf"; sourceTree = "<group>"; };
-		4CF98358214318AC00F1C23E /* orbits-background.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "orbits-background.pdf"; sourceTree = "<group>"; };
-		4CF98359214318AC00F1C23E /* dart.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = dart.pdf; sourceTree = "<group>"; };
-		4CF9835A214318AC00F1C23E /* bb8-body.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "bb8-body.pdf"; sourceTree = "<group>"; };
-		4CF9835B214318AC00F1C23E /* saturn.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = saturn.pdf; sourceTree = "<group>"; };
+		FA5DBD76251D6DAF00D24FF2 /* WindBlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindBlow.swift; sourceTree = "<group>"; };
+		FA5DBD77251D6DAF00D24FF2 /* CustomEasing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomEasing.swift; sourceTree = "<group>"; };
+		FA5DBD78251D6DAF00D24FF2 /* ChainableTweens.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainableTweens.swift; sourceTree = "<group>"; };
+		FA5DBD79251D6DAF00D24FF2 /* CustomTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTypes.swift; sourceTree = "<group>"; };
+		FA5DBD7A251D6DAF00D24FF2 /* TouchPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchPoint.swift; sourceTree = "<group>"; };
+		FA5DBD7B251D6DAF00D24FF2 /* Transform3d.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transform3d.swift; sourceTree = "<group>"; };
+		FA5DBD7C251D6DB000D24FF2 /* DragView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragView.swift; sourceTree = "<group>"; };
+		FA5DBD7D251D6DB000D24FF2 /* EaseCurves.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EaseCurves.swift; sourceTree = "<group>"; };
+		FA5DBD7E251D6DB000D24FF2 /* TimelineBasic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineBasic.swift; sourceTree = "<group>"; };
+		FA5DBD7F251D6DB000D24FF2 /* AnimateText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimateText.swift; sourceTree = "<group>"; };
+		FA5DBD80251D6DB000D24FF2 /* ViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
+		FA5DBD81251D6DB000D24FF2 /* SimpleTimeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleTimeline.swift; sourceTree = "<group>"; };
+		FA5DBD82251D6DB000D24FF2 /* TweenHandlers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweenHandlers.swift; sourceTree = "<group>"; };
+		FA5DBD83251D6DB000D24FF2 /* CurveInspector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurveInspector.swift; sourceTree = "<group>"; };
+		FA5DBD84251D6DB000D24FF2 /* ArcOrbits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArcOrbits.swift; sourceTree = "<group>"; };
+		FA5DBD85251D6DB000D24FF2 /* ScrollTimeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollTimeline.swift; sourceTree = "<group>"; };
+		FA5DBD86251D6DB000D24FF2 /* ScrollAims.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollAims.swift; sourceTree = "<group>"; };
+		FA5DBD87251D6DB000D24FF2 /* AnimateArcRadius.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimateArcRadius.swift; sourceTree = "<group>"; };
+		FA5DBD88251D6DB000D24FF2 /* PauseTweens.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PauseTweens.swift; sourceTree = "<group>"; };
+		FA5DBD89251D6DB000D24FF2 /* PathLoop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathLoop.swift; sourceTree = "<group>"; };
+		FA5DBD8A251D6DB000D24FF2 /* SimpleTween.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleTween.swift; sourceTree = "<group>"; };
+		FA5DBDA0251D6F6000D24FF2 /* sun.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = sun.pdf; sourceTree = "<group>"; };
+		FA5DBDA1251D6F6000D24FF2 /* little-sun-fire.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "little-sun-fire.pdf"; sourceTree = "<group>"; };
+		FA5DBDA2251D6F6000D24FF2 /* eyepupil.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = eyepupil.pdf; sourceTree = "<group>"; };
+		FA5DBDA3251D6F6000D24FF2 /* saturn.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = saturn.pdf; sourceTree = "<group>"; };
+		FA5DBDA4251D6F6000D24FF2 /* bb8-body.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "bb8-body.pdf"; sourceTree = "<group>"; };
+		FA5DBDA5251D6F6000D24FF2 /* moon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = moon.pdf; sourceTree = "<group>"; };
+		FA5DBDA6251D6F6000D24FF2 /* rocket.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = rocket.pdf; sourceTree = "<group>"; };
+		FA5DBDA7251D6F6000D24FF2 /* fire.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = fire.pdf; sourceTree = "<group>"; };
+		FA5DBDA8251D6F6000D24FF2 /* flower.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = flower.pdf; sourceTree = "<group>"; };
+		FA5DBDA9251D6F6000D24FF2 /* card.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = card.pdf; sourceTree = "<group>"; };
+		FA5DBDAA251D6F6000D24FF2 /* mars.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = mars.pdf; sourceTree = "<group>"; };
+		FA5DBDAB251D6F6000D24FF2 /* bb8-head.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "bb8-head.pdf"; sourceTree = "<group>"; };
+		FA5DBDAC251D6F6000D24FF2 /* little-sun.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "little-sun.pdf"; sourceTree = "<group>"; };
+		FA5DBDAD251D6F6000D24FF2 /* stars.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = stars.pdf; sourceTree = "<group>"; };
+		FA5DBDAE251D6F6000D24FF2 /* comet.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = comet.pdf; sourceTree = "<group>"; };
+		FA5DBDAF251D6F6100D24FF2 /* sand.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = sand.pdf; sourceTree = "<group>"; };
+		FA5DBDB0251D6F6100D24FF2 /* jupyter.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = jupyter.pdf; sourceTree = "<group>"; };
+		FA5DBDB1251D6F6100D24FF2 /* clouds1.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = clouds1.pdf; sourceTree = "<group>"; };
+		FA5DBDB2251D6F6100D24FF2 /* orbits-background.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "orbits-background.pdf"; sourceTree = "<group>"; };
+		FA5DBDB3251D6F6100D24FF2 /* little-earth.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "little-earth.pdf"; sourceTree = "<group>"; };
+		FA5DBDB4251D6F6100D24FF2 /* little-saturn.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "little-saturn.pdf"; sourceTree = "<group>"; };
+		FA5DBDB5251D6F6100D24FF2 /* spaceman.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = spaceman.pdf; sourceTree = "<group>"; };
+		FA5DBDB6251D6F6100D24FF2 /* sunny.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = sunny.pdf; sourceTree = "<group>"; };
+		FA5DBDB7251D6F6100D24FF2 /* bee.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = bee.pdf; sourceTree = "<group>"; };
+		FA5DBDB8251D6F6100D24FF2 /* dart.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = dart.pdf; sourceTree = "<group>"; };
+		FA5DBDB9251D6F6100D24FF2 /* clouds2.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = clouds2.pdf; sourceTree = "<group>"; };
+		FA5DBDBA251D6F6100D24FF2 /* little-jupyter.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "little-jupyter.pdf"; sourceTree = "<group>"; };
+		FA5DBDBB251D6F6100D24FF2 /* ufo.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ufo.pdf; sourceTree = "<group>"; };
+		FA5DBDBC251D6F6100D24FF2 /* earth.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = earth.pdf; sourceTree = "<group>"; };
+		FA5DBDBD251D6F6100D24FF2 /* clouds3.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = clouds3.pdf; sourceTree = "<group>"; };
 		FA5FAA6924F184A2006091ED /* Tweener.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Tweener.xcodeproj; path = ../Tweener.xcodeproj; sourceTree = "<group>"; };
-		FA7170B124E492560001965F /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
-		FA7170D824E4FD8A0001965F /* ChainableTweens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainableTweens.swift; sourceTree = "<group>"; };
-		FAE624A12503F9BE00E3644E /* CustomTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTypes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,30 +203,30 @@
 			children = (
 				0521167622D64A0C00806A5B /* LaunchScreen.png */,
 				4C78F33A2142CDC2005E964B /* AppDelegate.swift */,
+				FA5DBD87251D6DB000D24FF2 /* AnimateArcRadius.swift */,
+				FA5DBD7F251D6DB000D24FF2 /* AnimateText.swift */,
+				FA5DBD84251D6DB000D24FF2 /* ArcOrbits.swift */,
+				FA5DBD78251D6DAF00D24FF2 /* ChainableTweens.swift */,
+				FA5DBD83251D6DB000D24FF2 /* CurveInspector.swift */,
+				FA5DBD77251D6DAF00D24FF2 /* CustomEasing.swift */,
+				FA5DBD79251D6DAF00D24FF2 /* CustomTypes.swift */,
+				FA5DBD7C251D6DB000D24FF2 /* DragView.swift */,
+				FA5DBD7D251D6DB000D24FF2 /* EaseCurves.swift */,
+				FA5DBD89251D6DB000D24FF2 /* PathLoop.swift */,
+				FA5DBD88251D6DB000D24FF2 /* PauseTweens.swift */,
+				FA5DBD86251D6DB000D24FF2 /* ScrollAims.swift */,
+				FA5DBD85251D6DB000D24FF2 /* ScrollTimeline.swift */,
+				FA5DBD81251D6DB000D24FF2 /* SimpleTimeline.swift */,
+				FA5DBD8A251D6DB000D24FF2 /* SimpleTween.swift */,
+				FA5DBD7E251D6DB000D24FF2 /* TimelineBasic.swift */,
+				FA5DBD7A251D6DAF00D24FF2 /* TouchPoint.swift */,
+				FA5DBD7B251D6DAF00D24FF2 /* Transform3d.swift */,
+				FA5DBD82251D6DB000D24FF2 /* TweenHandlers.swift */,
+				FA5DBD80251D6DB000D24FF2 /* ViewExtensions.swift */,
+				FA5DBD76251D6DAF00D24FF2 /* WindBlow.swift */,
 				4C78F3432142CDC2005E964B /* LaunchScreen.storyboard */,
 				4C78F3412142CDC2005E964B /* Assets.xcassets */,
 				4C78F3462142CDC2005E964B /* Info.plist */,
-				0572C22022A2D31500F96A19 /* SimpleTween.swift */,
-				FAE624A12503F9BE00E3644E /* CustomTypes.swift */,
-				FA7170B124E492560001965F /* ViewExtensions.swift */,
-				FA7170D824E4FD8A0001965F /* ChainableTweens.swift */,
-				0572C21E22A2D30100F96A19 /* TweenHandlers.swift */,
-				0514812322A803E100D927DD /* EaseCurves.swift */,
-				0521167422D6493500806A5B /* CustomEasing.swift */,
-				0514812722A804E100D927DD /* CurveInspector.swift */,
-				0532C7C022A875E1005265E9 /* TouchPoint.swift */,
-				05A620C922A9445A005F7D3F /* DragView.swift */,
-				0589AED122AF070E0093774D /* Transform3d.swift */,
-				05A7353522B45AC700F34F32 /* PauseTweens.swift */,
-				05A7353722B45ADD00F34F32 /* SimpleTimeline.swift */,
-				0524F08422AEAA1100BC28AA /* ScrollTimeline.swift */,
-				0548DB1722C7D66300B6F3F4 /* AnimateArcRadius.swift */,
-				05295F5D22C1247300E02FFD /* TimelineBasic.swift */,
-				05B877F122C70AC700F2521F /* PathLoop.swift */,
-				05B877F322C7B6EF00F2521F /* WindBlow.swift */,
-				05B877F522C7B70200F2521F /* ArcOrbits.swift */,
-				05B877F722C7B71B00F2521F /* AnimateText.swift */,
-				05B877F922C7B73200F2521F /* ScrollAims.swift */,
 			);
 			path = Examples;
 			sourceTree = "<group>";
@@ -234,36 +234,36 @@
 		4CF9833D214318AC00F1C23E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				4CF9833E214318AC00F1C23E /* bb8-head.pdf */,
-				4CF9833F214318AC00F1C23E /* card.pdf */,
-				4CF98340214318AC00F1C23E /* fire.pdf */,
-				4CF98341214318AC00F1C23E /* mars.pdf */,
-				4CF98342214318AC00F1C23E /* little-jupyter.pdf */,
-				4CF98343214318AC00F1C23E /* jupyter.pdf */,
-				4CF98344214318AC00F1C23E /* bee.pdf */,
-				4CF98345214318AC00F1C23E /* earth.pdf */,
-				4CF98346214318AC00F1C23E /* clouds1.pdf */,
-				4CF98347214318AC00F1C23E /* rocket.pdf */,
-				4CF98348214318AC00F1C23E /* sunny.pdf */,
-				4CF98349214318AC00F1C23E /* comet.pdf */,
-				4CF9834A214318AC00F1C23E /* eyepupil.pdf */,
-				4CF9834B214318AC00F1C23E /* clouds2.pdf */,
-				4CF9834C214318AC00F1C23E /* little-saturn.pdf */,
-				4CF9834D214318AC00F1C23E /* little-sun-fire.pdf */,
-				4CF9834E214318AC00F1C23E /* moon.pdf */,
-				4CF9834F214318AC00F1C23E /* clouds3.pdf */,
-				4CF98350214318AC00F1C23E /* little-sun.pdf */,
-				4CF98351214318AC00F1C23E /* flower.pdf */,
-				4CF98352214318AC00F1C23E /* ufo.pdf */,
-				4CF98353214318AC00F1C23E /* spaceman.pdf */,
-				4CF98355214318AC00F1C23E /* sand.pdf */,
-				4CF98354214318AC00F1C23E /* stars.pdf */,
-				4CF98356214318AC00F1C23E /* sun.pdf */,
-				4CF98357214318AC00F1C23E /* little-earth.pdf */,
-				4CF98358214318AC00F1C23E /* orbits-background.pdf */,
-				4CF98359214318AC00F1C23E /* dart.pdf */,
-				4CF9835A214318AC00F1C23E /* bb8-body.pdf */,
-				4CF9835B214318AC00F1C23E /* saturn.pdf */,
+				FA5DBDA4251D6F6000D24FF2 /* bb8-body.pdf */,
+				FA5DBDAB251D6F6000D24FF2 /* bb8-head.pdf */,
+				FA5DBDB7251D6F6100D24FF2 /* bee.pdf */,
+				FA5DBDA9251D6F6000D24FF2 /* card.pdf */,
+				FA5DBDB1251D6F6100D24FF2 /* clouds1.pdf */,
+				FA5DBDB9251D6F6100D24FF2 /* clouds2.pdf */,
+				FA5DBDBD251D6F6100D24FF2 /* clouds3.pdf */,
+				FA5DBDAE251D6F6000D24FF2 /* comet.pdf */,
+				FA5DBDB8251D6F6100D24FF2 /* dart.pdf */,
+				FA5DBDBC251D6F6100D24FF2 /* earth.pdf */,
+				FA5DBDA2251D6F6000D24FF2 /* eyepupil.pdf */,
+				FA5DBDA7251D6F6000D24FF2 /* fire.pdf */,
+				FA5DBDA8251D6F6000D24FF2 /* flower.pdf */,
+				FA5DBDB0251D6F6100D24FF2 /* jupyter.pdf */,
+				FA5DBDB3251D6F6100D24FF2 /* little-earth.pdf */,
+				FA5DBDBA251D6F6100D24FF2 /* little-jupyter.pdf */,
+				FA5DBDB4251D6F6100D24FF2 /* little-saturn.pdf */,
+				FA5DBDA1251D6F6000D24FF2 /* little-sun-fire.pdf */,
+				FA5DBDAC251D6F6000D24FF2 /* little-sun.pdf */,
+				FA5DBDAA251D6F6000D24FF2 /* mars.pdf */,
+				FA5DBDA5251D6F6000D24FF2 /* moon.pdf */,
+				FA5DBDB2251D6F6100D24FF2 /* orbits-background.pdf */,
+				FA5DBDA6251D6F6000D24FF2 /* rocket.pdf */,
+				FA5DBDAF251D6F6100D24FF2 /* sand.pdf */,
+				FA5DBDA3251D6F6000D24FF2 /* saturn.pdf */,
+				FA5DBDB5251D6F6100D24FF2 /* spaceman.pdf */,
+				FA5DBDAD251D6F6000D24FF2 /* stars.pdf */,
+				FA5DBDA0251D6F6000D24FF2 /* sun.pdf */,
+				FA5DBDB6251D6F6100D24FF2 /* sunny.pdf */,
+				FA5DBDBB251D6F6100D24FF2 /* ufo.pdf */,
 			);
 			path = Resources;
 			sourceTree = SOURCE_ROOT;
@@ -376,39 +376,39 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CF9836D214318AC00F1C23E /* clouds3.pdf in Resources */,
+				FA5DBDD8251D6F6100D24FF2 /* little-jupyter.pdf in Resources */,
 				4C78F3452142CDC2005E964B /* LaunchScreen.storyboard in Resources */,
-				4CF9835C214318AC00F1C23E /* bb8-head.pdf in Resources */,
-				4CF9835D214318AC00F1C23E /* card.pdf in Resources */,
-				4CF98376214318AC00F1C23E /* orbits-background.pdf in Resources */,
-				4CF98368214318AC00F1C23E /* eyepupil.pdf in Resources */,
-				4CF98363214318AC00F1C23E /* earth.pdf in Resources */,
-				4CF98372214318AC00F1C23E /* stars.pdf in Resources */,
-				4CF98375214318AC00F1C23E /* little-earth.pdf in Resources */,
-				4CF98370214318AC00F1C23E /* ufo.pdf in Resources */,
-				4CF98362214318AC00F1C23E /* bee.pdf in Resources */,
+				FA5DBDD2251D6F6100D24FF2 /* little-saturn.pdf in Resources */,
+				FA5DBDC9251D6F6100D24FF2 /* bb8-head.pdf in Resources */,
+				FA5DBDC1251D6F6100D24FF2 /* saturn.pdf in Resources */,
+				FA5DBDDB251D6F6100D24FF2 /* clouds3.pdf in Resources */,
+				FA5DBDDA251D6F6100D24FF2 /* earth.pdf in Resources */,
+				FA5DBDBE251D6F6100D24FF2 /* sun.pdf in Resources */,
+				FA5DBDC2251D6F6100D24FF2 /* bb8-body.pdf in Resources */,
 				4C78F3422142CDC2005E964B /* Assets.xcassets in Resources */,
-				4CF9836B214318AC00F1C23E /* little-sun-fire.pdf in Resources */,
-				4CF98378214318AC00F1C23E /* bb8-body.pdf in Resources */,
-				4CF98365214318AC00F1C23E /* rocket.pdf in Resources */,
-				4CF98379214318AC00F1C23E /* saturn.pdf in Resources */,
-				4CF9836C214318AC00F1C23E /* moon.pdf in Resources */,
-				4CF98371214318AC00F1C23E /* spaceman.pdf in Resources */,
-				4CF98360214318AC00F1C23E /* little-jupyter.pdf in Resources */,
-				4CF9835E214318AC00F1C23E /* fire.pdf in Resources */,
-				4CF9836E214318AC00F1C23E /* little-sun.pdf in Resources */,
-				4CF98361214318AC00F1C23E /* jupyter.pdf in Resources */,
-				4CF9836A214318AC00F1C23E /* little-saturn.pdf in Resources */,
-				4CF98366214318AC00F1C23E /* sunny.pdf in Resources */,
+				FA5DBDD6251D6F6100D24FF2 /* dart.pdf in Resources */,
+				FA5DBDCE251D6F6100D24FF2 /* jupyter.pdf in Resources */,
+				FA5DBDC7251D6F6100D24FF2 /* card.pdf in Resources */,
+				FA5DBDCA251D6F6100D24FF2 /* little-sun.pdf in Resources */,
+				FA5DBDD4251D6F6100D24FF2 /* sunny.pdf in Resources */,
+				FA5DBDC5251D6F6100D24FF2 /* fire.pdf in Resources */,
+				FA5DBDCD251D6F6100D24FF2 /* sand.pdf in Resources */,
+				FA5DBDCC251D6F6100D24FF2 /* comet.pdf in Resources */,
+				FA5DBDCB251D6F6100D24FF2 /* stars.pdf in Resources */,
+				FA5DBDD1251D6F6100D24FF2 /* little-earth.pdf in Resources */,
+				FA5DBDC0251D6F6100D24FF2 /* eyepupil.pdf in Resources */,
+				FA5DBDC4251D6F6100D24FF2 /* rocket.pdf in Resources */,
+				FA5DBDC8251D6F6100D24FF2 /* mars.pdf in Resources */,
+				FA5DBDBF251D6F6100D24FF2 /* little-sun-fire.pdf in Resources */,
+				FA5DBDD3251D6F6100D24FF2 /* spaceman.pdf in Resources */,
+				FA5DBDD5251D6F6100D24FF2 /* bee.pdf in Resources */,
+				FA5DBDD0251D6F6100D24FF2 /* orbits-background.pdf in Resources */,
+				FA5DBDC6251D6F6100D24FF2 /* flower.pdf in Resources */,
+				FA5DBDD7251D6F6100D24FF2 /* clouds2.pdf in Resources */,
 				0521167722D64A0C00806A5B /* LaunchScreen.png in Resources */,
-				4CF98364214318AC00F1C23E /* clouds1.pdf in Resources */,
-				4CF9835F214318AC00F1C23E /* mars.pdf in Resources */,
-				4CF98367214318AC00F1C23E /* comet.pdf in Resources */,
-				4CF98369214318AC00F1C23E /* clouds2.pdf in Resources */,
-				4CF98374214318AC00F1C23E /* sun.pdf in Resources */,
-				4CF98373214318AC00F1C23E /* sand.pdf in Resources */,
-				4CF9836F214318AC00F1C23E /* flower.pdf in Resources */,
-				4CF98377214318AC00F1C23E /* dart.pdf in Resources */,
+				FA5DBDD9251D6F6100D24FF2 /* ufo.pdf in Resources */,
+				FA5DBDC3251D6F6100D24FF2 /* moon.pdf in Resources */,
+				FA5DBDCF251D6F6100D24FF2 /* clouds1.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,28 +419,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05B877F822C7B71B00F2521F /* AnimateText.swift in Sources */,
-				05B877F622C7B70300F2521F /* ArcOrbits.swift in Sources */,
-				0521167522D6493500806A5B /* CustomEasing.swift in Sources */,
-				0572C21F22A2D30100F96A19 /* TweenHandlers.swift in Sources */,
-				05A7353822B45ADD00F34F32 /* SimpleTimeline.swift in Sources */,
-				0514812822A804E100D927DD /* CurveInspector.swift in Sources */,
-				FA7170D924E4FD8A0001965F /* ChainableTweens.swift in Sources */,
-				05A7353622B45AC700F34F32 /* PauseTweens.swift in Sources */,
-				05B877F222C70AC700F2521F /* PathLoop.swift in Sources */,
-				0514812422A803E100D927DD /* EaseCurves.swift in Sources */,
-				FAE624A22503F9BF00E3644E /* CustomTypes.swift in Sources */,
-				0572C22122A2D31500F96A19 /* SimpleTween.swift in Sources */,
-				05B877F422C7B6EF00F2521F /* WindBlow.swift in Sources */,
-				0532C7C122A875E1005265E9 /* TouchPoint.swift in Sources */,
-				FA7170B224E492560001965F /* ViewExtensions.swift in Sources */,
-				05295F5E22C1247300E02FFD /* TimelineBasic.swift in Sources */,
-				0548DB1822C7D66300B6F3F4 /* AnimateArcRadius.swift in Sources */,
-				0524F08522AEAA1100BC28AA /* ScrollTimeline.swift in Sources */,
-				0589AED222AF070E0093774D /* Transform3d.swift in Sources */,
+				FA5DBD8C251D6DB000D24FF2 /* CustomEasing.swift in Sources */,
+				FA5DBD8E251D6DB000D24FF2 /* CustomTypes.swift in Sources */,
+				FA5DBD91251D6DB000D24FF2 /* DragView.swift in Sources */,
+				FA5DBD9A251D6DB000D24FF2 /* ScrollTimeline.swift in Sources */,
+				FA5DBD9B251D6DB000D24FF2 /* ScrollAims.swift in Sources */,
+				FA5DBD99251D6DB000D24FF2 /* ArcOrbits.swift in Sources */,
+				FA5DBD9C251D6DB000D24FF2 /* AnimateArcRadius.swift in Sources */,
+				FA5DBD90251D6DB000D24FF2 /* Transform3d.swift in Sources */,
+				FA5DBD97251D6DB000D24FF2 /* TweenHandlers.swift in Sources */,
+				FA5DBD8D251D6DB000D24FF2 /* ChainableTweens.swift in Sources */,
+				FA5DBD92251D6DB000D24FF2 /* EaseCurves.swift in Sources */,
 				4C78F33B2142CDC2005E964B /* AppDelegate.swift in Sources */,
-				05A620CA22A9445A005F7D3F /* DragView.swift in Sources */,
-				05B877FA22C7B73200F2521F /* ScrollAims.swift in Sources */,
+				FA5DBD9D251D6DB000D24FF2 /* PauseTweens.swift in Sources */,
+				FA5DBD9E251D6DB000D24FF2 /* PathLoop.swift in Sources */,
+				FA5DBD94251D6DB000D24FF2 /* AnimateText.swift in Sources */,
+				FA5DBD8F251D6DB000D24FF2 /* TouchPoint.swift in Sources */,
+				FA5DBD96251D6DB000D24FF2 /* SimpleTimeline.swift in Sources */,
+				FA5DBD9F251D6DB000D24FF2 /* SimpleTween.swift in Sources */,
+				FA5DBD98251D6DB000D24FF2 /* CurveInspector.swift in Sources */,
+				FA5DBD8B251D6DB000D24FF2 /* WindBlow.swift in Sources */,
+				FA5DBD95251D6DB000D24FF2 /* ViewExtensions.swift in Sources */,
+				FA5DBD93251D6DB000D24FF2 /* TimelineBasic.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

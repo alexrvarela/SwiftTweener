@@ -11,18 +11,19 @@
 import UIKit
 
 /// Renders a PDF document in to a UIImage.
-class PDFImageRender
+open class PDFImageRender
 {
-    var data: Data?
-    var document: CGPDFDocument?
-
-    var pageCount: Int
+    //public static var staticBundle:Bundle?
+    
+    public var data: Data?
+    public var document: CGPDFDocument?
+    public var pageCount: Int
     {
         if self.document == nil{return 0}
         else {return (self.document?.numberOfPages)!}
     }
     
-    func setPDFData(data:Data?)
+    public func setPDFData(data:Data?)
     {
         if (data != nil)
         {
@@ -37,25 +38,25 @@ class PDFImageRender
         }
     }
     
-    func loadFromBundle(filename: String)
+    public func loadFromBundle(filename: String)
     {
         let path:String = Bundle.main.path(forResource: filename, ofType: ".pdf")!
         loadFile(path: path)
     }
     
-    func loadFile(path:String)
+    public func loadFile(path:String)
     {
         setPDFData(data: FileManager.default.contents(atPath: path))
     }
     
     /// Get current page size
-    func getPageSize(page:Int) ->CGSize
+    public func getPageSize(page:Int) ->CGSize
     {
         if self.data == nil {return CGSize.zero}
         return self.document!.page(at: page)!.getBoxRect(.cropBox).size
     }
     /// Render page
-    func renderPage(page: Int, scale:Double) -> UIImage?
+    public func renderPage(page: Int, scale:Double) -> UIImage?
     {
         if self.document == nil {return nil}
         

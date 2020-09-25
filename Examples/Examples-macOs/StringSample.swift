@@ -53,6 +53,19 @@ class StringSample: NSView {
         
         //Start animation loop
         swapText()
+        
+        //Use timeline to repeat forever.
+        Timeline(
+            //Create tween with StringAim target and animate interpolation.
+            Tween(target:stringAim)
+            .delay(0.5)
+            .duration(0.5)
+            .ease(.none)
+            .keys(to:[\StringAim.interpolation : 1.0])
+            .onComplete { self.swapText() }
+        )
+        .mode(.loop)
+        .play()
     }
 
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
@@ -62,19 +75,7 @@ class StringSample: NSView {
            stringAim.from = stringAim.to
            stringAim.to = changeText(oldText:stringAim.to)
            stringAim.interpolation = 0.0
-
-           //Create tween with StringAim target and animate interpolation.
-           Tween(target: stringAim,
-                 duration: 0.5,
-                 ease: .none,
-                 delay: 0.0,
-                 to: [\StringAim.interpolation : 1.0],
-                 completion: {
-                   DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
-                   self.swapText()
-               })
-           }).play()
-       }
+    }
     
     func changeText(oldText:String) -> String
     {

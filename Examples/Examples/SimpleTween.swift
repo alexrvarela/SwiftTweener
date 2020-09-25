@@ -50,7 +50,10 @@ class SimpleTween:UIView, FreezeProtocol
         .ease(.inOutCubic)
         .keys(to:
             [\UIView.alpha:1.0,
-             \UIView.frame:CGRect(x:20.0, y:20.0, width:UIScreen.main.bounds.width - 40, height:UIScreen.main.bounds.width - 40),
+             \UIView.frame:CGRect(x:20.0,
+                                  y:20.0,
+                                  width:UIScreen.main.bounds.width - 40,
+                                  height:UIScreen.main.bounds.width - 40),
              //NOTE:This property is an optional, add ! to keypath.
              \UIView.backgroundColor!:UIColor.red])
         .onComplete { print("Tween complete") }

@@ -22,15 +22,14 @@ Tween(target:myView)
 .ease(.inOutCubic)
 .keys(to:
     [\UIView.alpha:1.0,
-     \UIView.frame:CGRect(x:20.0, y:20.0, width:UIScreen.main.bounds.width - 40, height:UIScreen.main.bounds.width - 40),
-     //NOTE:This property is an optional, add ! to keypath.
-     \UIView.backgroundColor!:UIColor.red])
+     \UIView.frame:CGRect(x:20.0, y:20.0, width:250, height:250),
+     \UIView.backgroundColor!:UIColor.red])//NOTE:This property is an optional, add ! to keypath.
 .onComplete { print("Tween complete") }
 .after()//Creates a new tween after with same target and properties.
 .duration(0.75)
 .ease(.outBounce)
 .keys(to: [\UIView.alpha:0.25,
-           \UIView.frame:CGRect(x:20.0, y:20.0, width:100.0, height:100.0),
+           \UIView.frame:CGRect(x:20.0, y:20.0, width:50.0, height:50.0),
            \UIView.backgroundColor!:UIColor.blue])
 .play()
 ```
@@ -45,7 +44,7 @@ Timeline(
     //Tween 1
     Tween(target: myView)
     .ease(.inOutQuad)
-    .keys(to:[\UIView.center : self.frame.origin])
+    .keys(to:[\UIView.center : frame.origin])
     .onStart {
         self.myView.flipX(inverted: true)
     }
@@ -53,8 +52,7 @@ Timeline(
     
     //Tween 2
     Tween(target: myView)
-    .after()
-    .keys(to:[\UIView.center : self.center])
+    .keys(to:[\UIView.center : .center])
     .onStart {
         self.myView.flipY()
     }
@@ -121,6 +119,11 @@ Tweener.addType(
 
 Now, you can animate a 'Vector3' Type object.
 
+```swift
+Tween(target:myInstance)
+.keys(to:[\SomeType.point3d:Vector3(x:100, y:200, z:-100)])
+```
+
 ### MacOS support
 
 This version includes macOS support and samples.
@@ -138,7 +141,7 @@ $ gem install cocoapods
 
 Now, add Tweener to your Podfile
 ```
-pod 'Tweener', '~> 2.0'
+pod 'Tweener', '~> 2.0.1'
 ```
 
 To install dependencies run this command:
@@ -156,7 +159,7 @@ $ brew install carthage
 
 Now, add Tweener to your Cartfile
 ```
-github "alexrvarela/SwiftTweener" ~> 2.0
+github "alexrvarela/SwiftTweener" ~> 2.0.1
 ```
 
 To install dependencies run this command:
@@ -172,7 +175,7 @@ To install, add dependencies to your Package.swift
 
 ```
 dependencies: [
-    .package(url: "https://github.com/alexrvarela/SwiftTweener.git", .upToNextMajor(from: "2.0"))
+    .package(url: "https://github.com/alexrvarela/SwiftTweener.git", .upToNextMajor(from: "2.0.1"))
 ]
 ```
 
@@ -307,11 +310,11 @@ This engine is based on Robert Penner's [Easing equations](http://robertpenner.c
 To create a custom easing equation:
 ```swift
 extension Ease{
-    public static let custom : Equation = { (t, b, c, d) in
+    public static let custom = Ease(equation:{ (t, b, c, d) in
         //Play with code here!
-        if t < d/2 {return .inBack(t*2, b, c/2, d)}
-        return .outElastic((t*2)-d, b+c/2, c/2, d)
-        }
+        if t < d/2 {return Ease.inBack.equation(t*2, b, c/2, d)}
+        return Ease.outElastic.equation((t*2)-d, b+c/2, c/2, d)
+    })
 }
 ```
 
@@ -333,22 +336,22 @@ It depends on what do you want, a Tween only animates “to” desired value tak
 Timeline stores “from” and “to” values of each Tween, contains a collection of reusable Tweens, to create Timeline and add Tweens use this code:
 
 ```swift
-let myTimeline:Timeline = Timeline()
-myTimeline.add(myTween)
-myTimeline.play()
+let myTimeline = Timeline()
+.add(myTween)
+.play()
 ```
 
 You can interact with Timeline play modes, the default value is Play once, it stops when finished, to change Tmeline play mode:
 
 Loop, repeat forever
 ```swift
-myTimeline.playMode = .loop
+myTimeline.playMode(.loop)
 ```
 ![Loop](https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/timeline-play.gif)
 
 Ping Pong, forward and reverse
 ```swift
-myTimeline.playMode = .pingPong
+myTimeline.playMode(.pingPong)
 ```
 
 To remove a Timeline from Engine simply call stop().
@@ -382,7 +385,7 @@ addSubview(myInspector)
 
 ### PDFImageView
 
-Cut with the image dependency and easily import your vector assets using PDFImageView, forget to export to SVG and other formats iOs offers native support for PDF with CoreGraphics, this class simply renders one pdf inside a UIImageView.
+Cut with the image dependency and easily import your vector assets using PDFImageView, forget to export to SVG and other formats iOs offers native support for PDF with CoreGraphics, this class simply renders one pdf inside a UIImageView
 
 To load your asset named "bee.pdf" from App bundle:
 
@@ -479,15 +482,25 @@ Animate text transitions
 
 ```swift
 //Create string aim
-let myStringAim = StringAim(target:myUILabel, keyPath:\UILabel.text)
-myStringAim.from = "hello"
-myStringAim.to = "hola"
+let stringAim = StringAim(target:myUILabel, keyPath:\UILabel.text)
+stringAim.from = "hello"
+stringAim.to = "hola"
 
 //Set initial interpolation
-myStringAim.interpolation = 0.0
+stringAim.interpolation = 0.0
 
-//Animate interpolation
-Tween(target: myStringAim, duration: 0.5, to: [\StringAim.interpolation : 1.0]).play()
+//Animate, usese timeline to repeat forever.
+Timeline(
+    //Create tween with StringAim target and animate interpolation.
+    Tween(target:stringAim)
+    .delay(0.5)
+    .duration(0.5)
+    .ease(.none)
+    .keys(to:[\StringAim.interpolation : 1.0])
+    .onComplete { self.swapText() }
+)
+.mode(.loop)
+.play()
 ```
 
 Play with everything, combine different types of Aim:

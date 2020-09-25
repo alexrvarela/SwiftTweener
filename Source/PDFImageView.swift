@@ -9,9 +9,9 @@
 #if os(iOS)
 import UIKit
 /// Creates a UIImageView which renders and displays a PDF document's CGImage.
-public class PDFImageView : UIImageView
+open class PDFImageView : UIImageView
 {
-    var pdf:PDFImageRender = PDFImageRender()
+    public let pdf:PDFImageRender = PDFImageRender()
     
     private var _scale: Double = 1.0
     
@@ -106,7 +106,7 @@ public class PDFImageView : UIImageView
     }
     
     /// Refresh pdf's image.
-    func updateImage()
+    public func updateImage()
     {
         if self.pdf.document != nil
         {

@@ -15,6 +15,7 @@ protocol FreezeProtocol {
     func warm()
 }
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
@@ -23,6 +24,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let view = UIView(frame:UIScreen.main.bounds)
     var timeline: Timeline = Timeline()
 
+    func kpCollect<UIView>(_ kp:[PartialKeyPath<UIView>:Any]... ){
+        
+    }
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
     {
         viewController.view.frame = UIScreen.main.bounds

@@ -17,7 +17,7 @@ This project has rewritten in pure Swift from [CocoaTweener](https://github.com/
 Now, with Declarative Syntax and Tween chaining, to create a Tween:
 
 ```swift
-Tween(square)
+Tween(myView)
 .duration(1.0)
 .ease(.inOutCubic)
 .to(
@@ -154,7 +154,7 @@ $ gem install cocoapods
 
 Now, add Tweener to your Podfile
 ```
-pod 'Tweener', '~> 2.0.1'
+pod 'Tweener', '~> 2.1.0'
 ```
 
 To install dependencies run this command:
@@ -172,7 +172,7 @@ $ brew install carthage
 
 Now, add Tweener to your Cartfile
 ```
-github "alexrvarela/SwiftTweener" ~> 2.0.1
+github "alexrvarela/SwiftTweener" ~> 2.1.0
 ```
 
 To install dependencies run this command:
@@ -188,7 +188,7 @@ To install, add dependencies to your Package.swift
 
 ```
 dependencies: [
-    .package(url: "https://github.com/alexrvarela/SwiftTweener.git", .upToNextMajor(from: "2.0.1"))
+    .package(url: "https://github.com/alexrvarela/SwiftTweener.git", .upToNextMajor(from: "2.1.0"))
 ]
 ```
 
@@ -231,7 +231,7 @@ Tween(myView)
 Or use 'from' and 'to' keys:
 
 ```swift
-Tween(target:square)
+Tween(myView)
 .duration(1.0)//One second
 .ease(.inOutCubic)
 .from(
@@ -335,7 +335,7 @@ extension Ease{
 
 And use it:
 ```swift
-Tween(target:myView)
+Tween(myView)
     .ease(.custom)
     .to(.key(\.frame, CGRect(x:20.0, y:20.0, width:280.0, height:280.0)))
     .play()

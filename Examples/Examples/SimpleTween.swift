@@ -45,10 +45,11 @@ class SimpleTween:UIView, FreezeProtocol
         square.backgroundColor = UIColor.blue
         
         //Create tween
-        Tween(target:square)//Target
-        .duration(1.0)//One second
+        Tween(square)
+        .duration(1.0)
         .ease(.inOutCubic)
-        .to(.key(\.alpha, 1.0),
+        .to(
+            .key(\.alpha, 1.0),
             .key(\.frame, CGRect(x:20.0,
                                  y:20.0,
                                  width:UIScreen.main.bounds.width - 40,
@@ -59,9 +60,11 @@ class SimpleTween:UIView, FreezeProtocol
         .after()//Creates a new tween after with same target and properties.
         .duration(1.0)
         .ease(Ease.outBounce)
-        .to(.key(\.alpha, 0.25),
+        .to(
+            .key(\.alpha, 0.25),
             .key(\.frame, CGRect(x:20.0, y:20.0, width:100.0, height:100.0)),
-            .key(\.backgroundColor!, UIColor.blue))
+            .key(\.backgroundColor!, UIColor.blue)
+        )
         .play()
     }
     

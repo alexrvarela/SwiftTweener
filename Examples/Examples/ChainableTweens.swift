@@ -89,7 +89,7 @@ class ChainableTweens: UIView, FreezeProtocol {
         
         //Add to timeline using declarative syntax:
         timeline.add(
-
+            
             //Tween 1, start chain
             Tween(square)
             .ease(.inOutQuad)

@@ -14,15 +14,11 @@ public struct Vector3{
     var x, y, z: Double
     func buffer() -> [Double] { return [x, y, z] }
     static func zero() -> Vector3 { return Vector3(x:0.0, y:0.0, z:0.0) }
-}
-
-extension Vector3{
     static var random: Vector3 {
-        return Vector3(
-            x:Double.random(in: 0...1.0),
-            y:Double.random(in: 0...1.0),
-            z:Double.random(in: 0...1.0)
-        )
+         return Vector3( x:.random(in: 0...1.0),
+                         y:.random(in: 0...1.0),
+                         z:.random(in: 0...1.0)
+         )
     }
 }
 
@@ -98,7 +94,7 @@ class CustomTypes:UIView, FreezeProtocol
     @objc func addTween()
     {
         //Animate property
-        Tween(target:self)
+        Tween(self)
         .ease(.inBounce)
         .duration(1.0)
         .to(.key(\.point3d, .random))

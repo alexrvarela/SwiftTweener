@@ -17,20 +17,26 @@ This project has rewritten in pure Swift from [CocoaTweener](https://github.com/
 Now, with Declarative Syntax and Tween chaining, to create a Tween:
 
 ```swift
-Tween(target:myView)
+Tween(square)
 .duration(1.0)
 .ease(.inOutCubic)
-.keys(to:
-    [\UIView.alpha:1.0,
-     \UIView.frame:CGRect(x:20.0, y:20.0, width:250, height:250),
-     \UIView.backgroundColor!:UIColor.red])//NOTE:This property is an optional, add ! to keypath.
+.to(
+    .key(\.alpha, 1.0),
+    .key(\.frame, CGRect(x:20.0,
+                         y:20.0,
+                         width:UIScreen.main.bounds.width - 40,
+                         height:UIScreen.main.bounds.width - 40)),
+    .key(\.backgroundColor!, .red)//NOTE:This property is an optional, add ! to keypath.
+)
 .onComplete { print("Tween complete") }
 .after()//Creates a new tween after with same target and properties.
-.duration(0.75)
-.ease(.outBounce)
-.keys(to: [\UIView.alpha:0.25,
-           \UIView.frame:CGRect(x:20.0, y:20.0, width:50.0, height:50.0),
-           \UIView.backgroundColor!:UIColor.blue])
+.duration(1.0)
+.ease(Ease.outBounce)
+.to(
+    .key(\.alpha, 0.25),
+    .key(\.frame, CGRect(x:20.0, y:20.0, width:100.0, height:100.0)),
+    .key(\.backgroundColor!, .blue)
+)
 .play()
 ```
 
@@ -42,25 +48,25 @@ Timeline(
     //Place tweens here, separated by commas.
     
     //Tween 1
-    Tween(target: myView)
+    Tween(myView)
     .ease(.inOutQuad)
-    .keys(to:[\UIView.center : frame.origin])
+    .to(.key(\.center, .zero) )
     .onStart {
-        self.myView.flipX(inverted: true)
+        self.flipX(inverted: true)
     }
     .onComplete { print("Tween 1 complete") },
     
     //Tween 2
-    Tween(target: myView)
-    .keys(to:[\UIView.center : .center])
+    Tween(myView)
+    .to(.key(\.center, self.center) )
     .onStart {
-        self.myView.flipY()
+        self.flipY()
     }
     .onComplete { print("Tween 2 complete") }
     
     //Etc....
-    )
-    .play()
+)
+.play()
 
 ```
 
@@ -105,6 +111,12 @@ public struct Vector3{
     var x, y, z: Double
     func buffer() -> [Double] { return [x, y, z] }
     static func zero() -> Vector3 { return Vector3(x:0.0, y:0.0, z:0.0) }
+    static var random: Vector3 {
+         return Vector3( x:.random(in: 0...1.0),
+                         y:.random(in: 0...1.0),
+                         z:.random(in: 0...1.0)
+         )
+    }
 }
 ```
 
@@ -120,8 +132,9 @@ Tweener.addType(
 Now, you can animate a 'Vector3' Type object.
 
 ```swift
-Tween(target:myInstance)
-.keys(to:[\SomeType.point3d:Vector3(x:100, y:200, z:-100)])
+Tween(myInstance)
+.to(.key(\.myVec3Property, .random))
+.play()
 ```
 
 ### MacOS support
@@ -204,13 +217,14 @@ myView.backgroundColor = .blue
 Create and add a simple Tween:
 
 ```swift
-Tween(target:square)
+Tween(myView)
 .duration(1.0)//One second
 .ease(.inOutCubic)
-.keys(to:
-        [\UIView.alpha:1.0,
-         \UIView.frame:CGRect(x:20, y:20, width:250, height:250),
-         \UIView.backgroundColor!:UIColor.red])
+.to(
+    .key(\.alpha, 1.0),
+    .key(\.frame,CGRect(x:20, y:20, width:250, height:250)),
+    .key(\.backgroundColor!, .red)
+)
 .play()
 ```
 
@@ -220,15 +234,16 @@ Or use 'from' and 'to' keys:
 Tween(target:square)
 .duration(1.0)//One second
 .ease(.inOutCubic)
-.keys(
-    from:
-        [\UIView.alpha:0.25,
-         \UIView.frame:CGRect(x:20, y:20, width:50, height:50),
-         \UIView.backgroundColor!:UIColor.blue],
-    to:
-        [\UIView.alpha:1.0,
-         \UIView.frame:CGRect(x:20, y:20, width:250, height:250),
-         \UIView.backgroundColor!:UIColor.red])
+.from(
+    .key(\.alpha, 0.25),
+    .key(\.frame, CGRect(x:20, y:20, width:50, height:50)),
+    .key(\.backgroundColor!, .blue)
+)
+.to(
+    .key(\.alpha, 1.0),
+    .key(\.frame,CGRect(x:20, y:20, width:250, height:250)),
+    .key(\.backgroundColor!, .red)
+)
 .play()
 ```
 
@@ -320,11 +335,10 @@ extension Ease{
 
 And use it:
 ```swift
-Tween(target:myView,
-    duration:1.0,
-    ease:.custom
-    to:[\UIView.frame:CGRect(x:20.0, y:20.0, width:280.0, height:280.0)]
-    ).play()
+Tween(target:myView)
+    .ease(.custom)
+    .to(.key(\.frame, CGRect(x:20.0, y:20.0, width:280.0, height:280.0)))
+    .play()
 ```
 
 ### Timeline
@@ -337,7 +351,11 @@ Timeline stores “from” and “to” values of each Tween, contains a collect
 
 ```swift
 let myTimeline = Timeline()
-.add(myTween)
+.add(
+    myTween1, 
+    myTween2
+    //etc...
+)
 .play()
 ```
 
@@ -424,13 +442,10 @@ myPathAim.interpolation = 0.5
 And simply animate path interpolation:
 
 ```swift
-myPathAim.interpolation = 0.0
-
-Tween(target: myPathAim, 
-    duration: 2.0, 
-    ease: .none, 
-    delay: 0.0, 
-    to: [\PathAim.interpolation : 1.0]).play()
+Tween(myPathAim) 
+.from(.key(\.interpolation, 0.0))
+.to(.key(\.interpolation, 1.0))
+.play()
 ```
 
 You can export your paths to code from illustrator with this simple Script:
@@ -446,11 +461,10 @@ Animate rotation of any view
 ```swift
 let myRotationAim = RotationAim(target:myView)
 
-myRotationAim.angle = 90.0
-
-Tween(target: myRotationAim,
-    duration: 1.5,
-        to: [\RotationAim.angle : 360.0]).play()
+Tween(myRotationAim)
+.from(.key(\.angle, 90.0))
+.to(.key(\.angle, 360.0))
+.play()
 ```
 
 ### ArcAim
@@ -464,13 +478,11 @@ let myArcAim = ArcAim(target:myView)
 //Set desired radius
 myArcAim.radius = 100.0
 
-//Set initial arc angle
-myArcAim.arcAngle = 0.0
-
 //Animate arc angle
-Tween(target: myArcAim,
-    duration: 1.5,
-    to: [\RotationAim.arcAngle : 360.0]).play()
+Tween(myArcAim)
+.from(.key(\.arcAngle, 0.0))
+.to(.key(\.arcAngle, 360.0))
+.play()
 ```
 
 ### StringAim
@@ -489,13 +501,15 @@ stringAim.interpolation = 0.0
 
 //Animate, using timeline to repeat forever.
 Timeline(
+
     //Create tween with StringAim target and animate interpolation.
-    Tween(target:stringAim)
+    Tween(stringAim)
     .delay(0.5)
     .duration(0.5)
-    .ease(.none)
-    .keys(to:[\StringAim.interpolation : 1.0])
+    .from(.key(\.interpolation, 0.0))
+    .to(.key(\.interpolation, 1.0))
     .onComplete { self.swapText() }
+    
 )
 .mode(.loop)
 .play()

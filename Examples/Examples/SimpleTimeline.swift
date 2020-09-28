@@ -44,9 +44,9 @@ class SimpleTimeline:UIView, FreezeProtocol
         
         //Add a tween to timeline
         timeline.add( Tween(target:circle,
-                                duration:1.5,
-                                ease:.outBounce,
-                                to:[.key(\.frame, newFrame)]) )
+                            duration:1.5,
+                            ease:.outBounce,    
+                            to:[.key(\.frame, newFrame)]) )
         
         //Setup timeline
         timeline.playMode = .loop

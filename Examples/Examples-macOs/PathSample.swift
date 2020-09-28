@@ -131,9 +131,9 @@ class PathSample: NSView {
         
         //Animate with timeline
         Timeline(
-            Tween(target: aim_p1)
+            Tween(aim_p1)
             .duration(5.0)
-            .keys(to: [\PathAim.interpolation : 1.0])
+            .to(.key(\.interpolation, 1.0))
         )
         .mode(.loop)
         .play()
@@ -146,7 +146,7 @@ class PathSample: NSView {
         Timeline(
             Tween(target: aim_p2)
             .duration(2.0)
-            .keys(to: [\PathAim.interpolation : 1.0])
+            .to(.key(\.interpolation, 1.0))
         )
         .mode(.loop)
         .play()
@@ -159,7 +159,7 @@ class PathSample: NSView {
         Timeline(
             Tween(target: aim_a1)
             .duration(4.0)
-            .keys(to: [\PathAim.interpolation : 1.0])
+            .to(.key(\.interpolation, 1.0))
         )
         .mode(.loop)
         .play()
@@ -172,7 +172,7 @@ class PathSample: NSView {
         Timeline(
             Tween(target: aim_a2)
             .duration(1.5)
-            .keys(to: [\PathAim.interpolation : 1.0])
+            .to(.key(\.interpolation, 1.0))
         )
         .mode(.loop)
         .play()
@@ -185,7 +185,7 @@ class PathSample: NSView {
         Timeline(
             Tween(target: aim_t)
             .duration(5.0)
-            .keys(to: [\PathAim.interpolation : 1.0])
+            .to(.key(\.interpolation, 1.0))
         )
         .mode(.loop)
         .play()
@@ -198,7 +198,7 @@ class PathSample: NSView {
         Timeline(
             Tween(target: aim_h)
             .duration(6.0)
-            .keys(to: [\PathAim.interpolation : 1.0])
+            .to(.key(\.interpolation, 1.0))
         )
         .mode(.loop)
         .play()

@@ -91,7 +91,7 @@ class ScrollTimeline:UIView, UIScrollViewDelegate
         nFrame.origin.y  = rocket.frame.origin.y + 24.0
         nFrame.origin.y  = rocket.frame.origin.y - fire.frame.size.height + 24.0///destination value
 
-        timeline.add(Tween(target: fire, duration: 0.25, ease: .none, delay: 0.8, to: [\UIView.frame : nFrame]))
+        timeline.add(Tween(target: fire, duration: 0.25, ease: .none, delay: 0.8, to: [.key(\.frame, nFrame)]))
 
         //SUN
         nFrame = sun.frame
@@ -99,7 +99,7 @@ class ScrollTimeline:UIView, UIScrollViewDelegate
         sun.frame = nFrame
         nFrame.origin.y = -sun.frame.size.height
         
-        timeline.add(Tween(target: sun, duration: 1.0, ease: .none, delay: 0.5, to: [\UIView.frame : nFrame]))
+        timeline.add(Tween(target: sun, duration: 1.0, ease: .none, delay: 0.5, to: [.key(\.frame, nFrame)]))
         
         //MOON
         nFrame = moon.frame
@@ -107,7 +107,7 @@ class ScrollTimeline:UIView, UIScrollViewDelegate
         moon.frame = nFrame//initial value
         nFrame.origin.y = -moon.frame.size.height//destination value
         
-        timeline.add(Tween(target: moon, duration: 1.0, ease: .none, delay: 1.5, to: [\UIView.frame : nFrame]))
+        timeline.add(Tween(target: moon, duration: 1.0, ease: .none, delay: 1.5, to: [.key(\.frame, nFrame)]))
         
         
         //HEARTH
@@ -116,7 +116,7 @@ class ScrollTimeline:UIView, UIScrollViewDelegate
         earth.frame = nFrame//initial value
         nFrame.origin.y = -earth.frame.size.height//destination value
         
-        timeline.add(Tween(target: earth, duration: 2.5, ease: .none, delay: 0.85, to: [\UIView.frame : nFrame]))
+        timeline.add(Tween(target: earth, duration: 2.5, ease: .none, delay: 0.85, to: [.key(\.frame, nFrame)]))
         
         
         //SPACEMAN
@@ -127,7 +127,7 @@ class ScrollTimeline:UIView, UIScrollViewDelegate
         
         nFrame.origin.x -= 100.0
         nFrame.origin.y = -moon.frame.size.height * 0.75//destination value
-        timeline.add(Tween(target: spaceman, duration: 1.0, ease: .none, delay: 1.5, to: [\UIView.frame : nFrame]))
+        timeline.add(Tween(target: spaceman, duration: 1.0, ease: .none, delay: 1.5, to: [.key(\.frame, nFrame)]))
         
         //COMET
         nFrame = comet.frame
@@ -139,7 +139,7 @@ class ScrollTimeline:UIView, UIScrollViewDelegate
         nFrame.origin.x = self.frame.size.width
         nFrame.origin.y = self.frame.size.height / 2.0 - comet.frame.size.height//destination value
         
-        timeline.add(Tween(target: comet, duration: 1.0, ease: .none, delay: 2.5, to: [\UIView.frame : nFrame]))
+        timeline.add(Tween(target: comet, duration: 1.0, ease: .none, delay: 2.5, to: [.key(\.frame, nFrame)]))
         
         //MARS
         nFrame = mars.frame
@@ -150,7 +150,7 @@ class ScrollTimeline:UIView, UIScrollViewDelegate
         
         nFrame.origin.y = -mars.frame.size.height//destination value
         
-        timeline.add(Tween(target: mars, duration: 1.0, ease: .none, delay: 3.5, to: [\UIView.frame : nFrame]))
+        timeline.add(Tween(target: mars, duration: 1.0, ease: .none, delay: 3.5, to: [.key(\.frame, nFrame)]))
         
         //UFO
         nFrame = ufo.frame
@@ -162,7 +162,7 @@ class ScrollTimeline:UIView, UIScrollViewDelegate
         nFrame.origin.x = -ufo.frame.size.width//destination value
         nFrame.origin.y = nFrame.origin.y + 100.0
         
-        timeline.add(Tween(target: ufo, duration: 0.75, ease: .none, delay: 4.5, to: [\UIView.frame : nFrame]))
+        timeline.add(Tween(target: ufo, duration: 0.75, ease: .none, delay: 4.5, to: [.key(\.frame, nFrame)]))
         
         //JUPYTER
         nFrame = jupyter.frame
@@ -172,7 +172,7 @@ class ScrollTimeline:UIView, UIScrollViewDelegate
         jupyter.frame = nFrame//initial value
         nFrame.origin.y = -400.0//destination value
         
-        timeline.add(Tween(target: jupyter, duration: 1.5, ease: .none, delay: 5.0, to: [\UIView.frame : nFrame]))
+        timeline.add(Tween(target: jupyter, duration: 1.5, ease: .none, delay: 5.0, to: [.key(\.frame, nFrame)]))
         
         //SATURN
         nFrame = saturn.frame
@@ -182,7 +182,7 @@ class ScrollTimeline:UIView, UIScrollViewDelegate
         
         nFrame.origin.y = -saturn.frame.size.height//destination value
         
-        timeline.add(Tween(target: saturn, duration: 1.5, ease: .none, delay: 7.0, to: [\UIView.frame : nFrame]))
+        timeline.add(Tween(target: saturn, duration: 1.5, ease: .none, delay: 7.0, to: [.key(\.frame, nFrame)]))
         
         bringSubviewToFront(scrollview)
     }

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+//TODO:Use blocks.
 /// A set of StringAim transition types.
 public enum TransitionType{
     case lenght

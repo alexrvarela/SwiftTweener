@@ -47,7 +47,7 @@ class TweenHandlers:UIView, FreezeProtocol
             duration:1.0,//One second
             ease:.inOutCubic,//Transition
             delay:1.0,//One second delay
-            to:[\UIView.frame : CGRect(x:250.0, y:20.0, width:50.0, height:50.0)])
+            to:[.key(\.frame, CGRect(x:250.0, y:20.0, width:50.0, height:50.0))])
         
         //set initial value
         self.backgroundColor = UIColor.white

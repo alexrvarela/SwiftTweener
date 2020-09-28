@@ -125,7 +125,7 @@ class DragView:UIView
                 Tween(target:view,
                       duration:0.25,
                       ease:.outQuad,
-                      to:[\UIView.frame : destinationFrame]).play()
+                      to:[.key(\.frame, destinationFrame)]).play()
             }
             
         }

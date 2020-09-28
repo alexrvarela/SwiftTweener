@@ -91,7 +91,7 @@ class AnimateText:UIView, FreezeProtocol
               duration: 0.5,
               ease: Ease.none,
               delay: 0.0,
-              to: [\StringAim.interpolation : 1.0],
+              to: [.key(\.interpolation, 1.0)],
               completion: {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
                 self.swapText()

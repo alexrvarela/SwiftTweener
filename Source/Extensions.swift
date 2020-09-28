@@ -49,10 +49,10 @@ extension UIView{
     */
     @discardableResult public func springBack(duration:Double = 1.0) -> Tween<CALayer> {
         
-        return Tween(target: self.layer)
+        return Tween(self.layer)
             .duration(duration)
             .ease(.outElastic)
-            .keys(to: [\CALayer.transform : CATransform3DMakeScale(1.0, 1.0, 1.0)] )
+            .to(.key(\.transform, CATransform3DMakeScale(1.0, 1.0, 1.0)))
             .play()
     }
     
@@ -67,10 +67,10 @@ extension UIView{
         
         self.layer.transform = CATransform3DMakeScale(scale, scale, 1.0)
         
-        return Tween(target: self.layer)
+        return Tween(self.layer)
             .duration(duration)
             .ease(.outCirc)
-            .keys( to:[\CALayer.transform : CATransform3DMakeScale(1.0, 1.0, 1.0)])
+            .to( .key(\.transform, CATransform3DMakeScale(1.0, 1.0, 1.0) ) )
             .play()
     }
     
@@ -100,9 +100,9 @@ extension UIView{
     */
     @discardableResult public func fade(opacity:Float = 0.0, duration:Double = 0.75) -> Tween<CALayer> {
 
-        return Tween(target: self.layer)
+        return Tween(self.layer)
             .duration(duration)
-            .keys(to: [\CALayer.opacity : opacity])
+            .to(.key(\.opacity, opacity))
             .play()
     }
     
@@ -137,10 +137,10 @@ extension UIView{
                 
         self.layer.transform = CATransform3DIdentity
 
-        return Tween(target: self.layer)
+        return Tween(self.layer)
             .duration(0.25)
             .ease(.outCirc)
-            .keys(to: [\CALayer.transform : CATransform3DMakeScale(scale, scale, 1.0)])
+            .to(.key(\.transform, CATransform3DMakeScale(scale, scale, 1.0)))
             .onComplete { self.springBack() }
             .play()
     }
@@ -158,10 +158,10 @@ extension UIView{
         //Go to initial position
         self.layer.transform = CATransform3DMakeTranslation(distanceX, distanceY, 0.0)
 
-        return Tween(target: self.layer)
+        return Tween(self.layer)
             .duration(duration)
             .ease(ease)
-            .keys(to: [\CALayer.transform : CATransform3DIdentity])
+            .to(.key(\.transform, CATransform3DIdentity))
             .play()
     }
 
@@ -178,10 +178,10 @@ extension UIView{
         //Go to initial position
         self.layer.transform = CATransform3DIdentity
 
-        return Tween(target: self.layer)
+        return Tween(self.layer)
             .duration(duration)
             .ease(ease)
-            .keys(to: [\CALayer.transform : CATransform3DMakeTranslation(distanceX, distanceY, 0.0)])
+            .to(.key(\.transform, CATransform3DMakeTranslation(distanceX, distanceY, 0.0)))
             .play()
     }
     
@@ -305,16 +305,16 @@ extension UIView{
         }
         
         //Animation chain
-        return  Tween(target:self.tweenBlock)
+        return  Tween(self.tweenBlock)
             .duration(duration * 0.35)
             .ease(.inOutQuad)
-            .keys(to:[\TweenBlock<CGFloat>.value : angle])
+            .to(.key(\.value, angle))
             .after(duration:duration * 0.3)
-            .keys(to:[\TweenBlock<CGFloat>.value : -1.0 * angle])
+            .to(.key(\.value, -1.0 * angle))
             .after(duration:duration * 0.2)
-            .keys(to:[\TweenBlock<CGFloat>.value : angle * 0.75])
+            .to(.key(\.value, angle * 0.75))
             .after(duration:duration * 0.15)
-            .keys(to: [\TweenBlock<CGFloat>.value : 0.0 ])
+            .to(.key(\.value, 0.0 ))
             .play()
     }
     
@@ -341,10 +341,10 @@ extension UIView{
                                                        0.0)
         }
         
-        return Tween(target:self.tweenBlock)
+        return Tween(self.tweenBlock)
         .duration(duration)
         .ease(.inOutQuad)
-        .keys(to: [\TweenBlock<CGFloat>.value :180.0])
+        .to(.key(\.value, 180.0))
         .play()
 
     }
@@ -383,7 +383,8 @@ extension UIView{
         }
         
         let rotation = 360.0 * CGFloat( leaps )
-        return Tween(target:self.tweenBlock, duration:0.75, ease: .inOutQuad, to: [\TweenBlock<CGFloat>.value : clockwise ? rotation : -rotation ]).play()
+        
+        return Tween(self.tweenBlock, duration:0.75, ease: .inOutQuad, to:[.key(\.value, clockwise ? rotation : -rotation)]).play()
     }
     
     /**
@@ -394,15 +395,15 @@ extension UIView{
     */
     @discardableResult public func shake(distance:CGFloat = 10, shakes:Int = 5)  -> Tween<CALayer> {
         
-        var tween = Tween(target:self.layer).ease(.inOutQuad).duration(0.1)
+        var tween = Tween(self.layer).ease(.inOutQuad).duration(0.1)
         
         for i in 0 ... shakes{
-            tween.keys(to:[\CALayer.transform : CATransform3DMakeTranslation(i % 2 == 0 ? -distance : distance, 0.0, 0.0)])
+            tween.to(.key(\.transform, CATransform3DMakeTranslation(i % 2 == 0 ? -distance : distance, 0.0, 0.0)))
             tween = tween.after()//Important!
         }
         
         //Use last to return normal position
-        return tween.keys(to:[\CALayer.transform : CATransform3DMakeTranslation(0.0, 0.0, 0.0)])
+        return tween.to(.key(\.transform, CATransform3DMakeTranslation(0.0, 0.0, 0.0)))
             .play()
     }
     
@@ -414,18 +415,18 @@ extension UIView{
     */
     @discardableResult public func jiggle(transformX:CGFloat =  1.25, transformY:CGFloat = 0.75) -> Tween<CALayer> {
         
-        return Tween(target:self.layer)
-            .keys(to:[\CALayer.transform : CATransform3DMakeScale(transformX, transformY, 1.0)])
+        return Tween(self.layer)
+            .to(.key(\.transform, CATransform3DMakeScale(transformX, transformY, 1.0)))
             .duration(0.25)
             .ease(.outCirc)
             .after()
             .duration(0.125)
             .ease(.outBack)
-            .keys(to: [\CALayer.transform : CATransform3DMakeScale(1.0 + ((1.0 - transformX) * 0.75), 1.0 + ((1.0 - transformY) * 0.75), 1.0)] )
+            .to(.key(\.transform, CATransform3DMakeScale(1.0 + ((1.0 - transformX) * 0.75), 1.0 + ((1.0 - transformY) * 0.75), 1.0) ))
             .after()
             .duration(0.75)
             .ease(.outElastic)
-            .keys(to: [\CALayer.transform : CATransform3DMakeScale(1.0, 1.0, 1.0)] )
+            .to(.key(\.transform, CATransform3DMakeScale(1.0, 1.0, 1.0) ))
             .play()
     }
     
@@ -437,14 +438,14 @@ extension UIView{
     */
     @discardableResult public func bounce(distance:CGFloat = -50, duration:Double = 0.75) -> Tween<CALayer> {
         
-        return Tween(target:self.layer)
-            .keys(to:[\CALayer.transform : CATransform3DMakeTranslation(0.0, distance, 0.0)])
+        return Tween(self.layer)
+            .to(.key(\.transform, CATransform3DMakeTranslation(0.0, distance, 0.0)))
             .duration(duration * 0.25)
             .ease(.outQuad)
             .after()
             .duration(duration * 0.75)
             .ease(.outBounce)
-            .keys(to: [\CALayer.transform : CATransform3DMakeTranslation(0.0, 0.0, 0.0)] )
+            .to(.key(\.transform, CATransform3DMakeTranslation(0.0, 0.0, 0.0)))
             .play()
     }
     
@@ -461,9 +462,10 @@ extension UIView{
            self.layer.transform = CATransform3DMakeRotation( BasicMath.toRadians(degree: value), 0.0, 0.0, 1.0 )
         }
         
-        return Tween(target:self.tweenBlock)
+        return Tween(self.tweenBlock)
             .duration(speed)
-            .keys(from: [\TweenBlock<CGFloat>.value : 0.0], to: [\TweenBlock<CGFloat>.value : clockwise ? 360.0 : -360.0])
+            .from(.key(\.value, 0.0))
+            .to(.key(\.value, clockwise ? 360.0 : -360.0))
             .onComplete { self.loop(speed: speed, clockwise: clockwise) }//Infinite loop
             .play()
     }
@@ -555,11 +557,11 @@ extension NSView{
         if self.layer == nil { self.wantsLayer = true}
         self.translateLayerAnchor(CGPoint(x:0.5, y:0.5))
     
-        return Tween(target: self.layer!)
-            .duration(duration)
-            .ease(.outElastic)
-            .keys(to: [\CALayer.transform : CATransform3DMakeScale(1.0, 1.0, 1.0)] )
-            .play()
+        return Tween(self.layer!)
+        .duration(duration)
+        .ease(.outElastic)
+        .to(.key(\.transform, CATransform3DMakeScale(1.0, 1.0, 1.0)))
+        .play()
     }
     
     /**
@@ -575,10 +577,10 @@ extension NSView{
         self.translateLayerAnchor(CGPoint(x:0.5, y:0.5))
         self.layer!.transform = CATransform3DMakeScale(scale, scale, 1.0)
         
-        return Tween(target: self.layer!)
+        return Tween(self.layer!)
             .duration(duration)
             .ease(.outCirc)
-            .keys( to:[\CALayer.transform : CATransform3DMakeScale(1.0, 1.0, 1.0)])
+            .to(.key(\.transform, CATransform3DMakeScale(1.0, 1.0, 1.0)))
             .play()
     }
     
@@ -610,9 +612,9 @@ extension NSView{
         
         if self.layer == nil { self.wantsLayer = true}
         
-        return Tween(target: self.layer!)
+        return Tween(self.layer!)
             .duration(duration)
-            .keys(to: [\CALayer.opacity : opacity])
+            .to(.key(\.opacity, opacity))
             .play()
     }
     
@@ -650,10 +652,10 @@ extension NSView{
         self.translateLayerAnchor(CGPoint(x:0.5, y:0.5))
         self.layer!.transform = CATransform3DIdentity
 
-        return Tween(target: self.layer!)
+        return Tween(self.layer!)
             .duration(0.25)
             .ease(.outCirc)
-            .keys(to: [\CALayer.transform : CATransform3DMakeScale(scale, scale, 1.0)])
+            .to(.key(\.transform, CATransform3DMakeScale(scale, scale, 1.0)))
             .onComplete { self.springBack() }
             .play()
     }
@@ -675,10 +677,10 @@ extension NSView{
         //Go to initial position
         self.layer!.transform = CATransform3DMakeTranslation(distanceX, distanceY, 0.0)
 
-        return Tween(target: self.layer!)
+        return Tween(self.layer!)
             .duration(duration)
             .ease(ease)
-            .keys(to: [\CALayer.transform : CATransform3DIdentity])
+            .to(.key(\.transform, CATransform3DIdentity))
             .play()
     }
 
@@ -698,10 +700,10 @@ extension NSView{
         //Go to initial position
         self.layer!.transform = CATransform3DIdentity
 
-        return Tween(target: self.layer!)
+        return Tween(self.layer!)
             .duration(duration)
             .ease(ease)
-            .keys(to: [\CALayer.transform : CATransform3DMakeTranslation(distanceX, distanceY, 0.0)])
+            .to(.key(\.transform, CATransform3DMakeTranslation(distanceX, distanceY, 0.0)))
             .play()
     }
     
@@ -828,16 +830,16 @@ extension NSView{
         }
         
         //Animation chain
-        return  Tween(target:self.tweenBlock)
+        return  Tween(self.tweenBlock)
             .ease(.inOutQuad)
             .duration(duration * 0.35)
-            .keys(to: [\TweenBlock<CGFloat>.value : angle])
+            .to(.key(\.value, angle))
             .after(duration:duration * 0.3)//Creates new after
-            .keys(to: [\TweenBlock<CGFloat>.value : -1.0 * angle])
+            .to(.key(\.value, -1.0 * angle))
             .after(duration:duration * 0.2)//Creates new after
-            .keys(to: [\TweenBlock<CGFloat>.value : angle * 0.75])
+            .to(.key(\.value, angle * 0.75))
             .after(duration:duration * 0.15)//Creates new after
-            .keys(to:[\TweenBlock<CGFloat>.value : 0.0 ])
+            .to(.key(\.value, 0.0))
             .play()
     }
     
@@ -866,10 +868,10 @@ extension NSView{
                                                        0.0)
         }
         
-        return Tween(target:self.tweenBlock)
+        return Tween(self.tweenBlock)
         .duration(duration)
         .ease(.inOutQuad)
-        .keys(to: [\TweenBlock<CGFloat>.value:180.0])
+        .to(.key(\.value, 180.0))
         .play()
 
     }
@@ -910,10 +912,10 @@ extension NSView{
                                                              1.0)
         }
         let rotation = 360.0 * CGFloat( leaps )
-        return Tween(target:self.tweenBlock)
+        return Tween(self.tweenBlock)
                     .duration( 0.75 )
                     .ease( .inOutQuad )
-                    .keys(to: [\TweenBlock<CGFloat>.value : clockwise ? rotation : -rotation ])
+                    .to(.key(\.value, clockwise ? rotation : -rotation ))
                     .play()
     }
     
@@ -928,16 +930,15 @@ extension NSView{
         if self.layer == nil { self.wantsLayer = true}
         self.translateLayerAnchor(CGPoint(x:0.5, y:0.5))
         
-        var tween = Tween(target:self.layer!).ease(.inOutQuad).duration(0.1)
+        var tween = Tween(self.layer!).ease(.inOutQuad).duration(0.1)
         
         for i in 0 ... shakes{
-            tween.keys(to:[\CALayer.transform : CATransform3DMakeTranslation(i % 2 == 0 ? -distance : distance, 0.0, 0.0)])
+            tween.to(.key(\.transform, CATransform3DMakeTranslation(i % 2 == 0 ? -distance : distance, 0.0, 0.0)))
             tween = tween.after()//Important!
         }
         
         //Use last to return normal position
-        return tween.keys(to:[\CALayer.transform : CATransform3DMakeTranslation(0.0, 0.0, 0.0)])
-            .play()
+        return tween.to(.key(\.transform, CATransform3DMakeTranslation(0.0, 0.0, 0.0))).play()
     }
     
     /**
@@ -951,18 +952,18 @@ extension NSView{
         if self.layer == nil { self.wantsLayer = true}
         self.translateLayerAnchor(CGPoint(x:0.5, y:0.5))
         
-        return Tween(target:self.layer!)
-            .keys(to:[\CALayer.transform : CATransform3DMakeScale(transformX, transformY, 1.0)])
+        return Tween(self.layer!)
+            .to(.key(\.transform, CATransform3DMakeScale(transformX, transformY, 1.0)))
             .duration(0.25)
             .ease(.outCirc)
             .after()
             .duration(0.125)
             .ease(.outBack)
-            .keys(to: [\CALayer.transform : CATransform3DMakeScale(1.0 + ((1.0 - transformX) * 0.75), 1.0 + ((1.0 - transformY) * 0.75), 1.0)] )
+            .to(.key(\.transform, CATransform3DMakeScale(1.0 + ((1.0 - transformX) * 0.75), 1.0 + ((1.0 - transformY) * 0.75), 1.0)) )
             .after()
             .duration(0.75)
             .ease(.outElastic)
-            .keys(to: [\CALayer.transform : CATransform3DMakeScale(1.0, 1.0, 1.0)] )
+            .to(.key(\.transform, CATransform3DMakeScale(1.0, 1.0, 1.0)))
             .play()
     }
     
@@ -977,14 +978,14 @@ extension NSView{
         if self.layer == nil { self.wantsLayer = true}
         self.translateLayerAnchor(CGPoint(x:0.5, y:0.5))
         
-        return Tween(target:self.layer!)
-            .keys(to:[\CALayer.transform : CATransform3DMakeTranslation(0.0, distance, 0.0)])
+        return Tween(self.layer!)
+            .to(.key(\.transform, CATransform3DMakeTranslation(0.0, distance, 0.0)))
             .duration(duration * 0.25)
             .ease(.outQuad)
             .after()
             .duration(duration * 0.75)
             .ease(.outBounce)
-            .keys(to: [\CALayer.transform : CATransform3DMakeTranslation(0.0, 0.0, 0.0)] )
+            .to(.key(\.transform, CATransform3DMakeTranslation(0.0, 0.0, 0.0)))
             .play()
     }
     
@@ -1004,9 +1005,10 @@ extension NSView{
            self.layer!.transform = CATransform3DMakeRotation( BasicMath.toRadians(degree: value), 0.0, 0.0, 1.0 )
         }
         
-        return Tween(target:self.tweenBlock)
+        return Tween(self.tweenBlock)
             .duration(speed)
-            .keys(from: [\TweenBlock<CGFloat>.value : 0.0], to: [\TweenBlock<CGFloat>.value : clockwise ? 360.0 : -360.0])
+            .from(.key(\.value, 0.0))
+            .to(.key(\.value, clockwise ? 360.0 : -360.0))
             .onComplete { self.loop(speed: speed, clockwise: clockwise) }//Infinite loop
             .play()
     }

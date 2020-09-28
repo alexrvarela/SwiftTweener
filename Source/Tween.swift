@@ -6,6 +6,19 @@
 //  Copyright © 2018 Alejandro Ramirez Varela. All rights reserved.
 //
 
+///A Tween key struc, contains a generic keyPath and Any value.
+public struct TweenKey<T>{
+    ///Partial keypath
+    let keyPath:PartialKeyPath<T>
+    ///Value
+    let value:Any
+    
+    ///Safe static initilaizer, validates same Value type, adds more context to PartialKeyPath and reduces syntax.
+    public static func key<Value>(_ k:KeyPath<T, Value>, _ v:Value) -> TweenKey<T>{
+        return TweenKey(keyPath: k, value: v)
+    }
+}
+
 ///Type of block that interacts with Tween states, on start, on update, on remove and on finish
 public typealias TweenHandler = () -> Void
 
@@ -51,12 +64,40 @@ public class AnyTween
 /// Tween related to a specific target instance class or struct Type:`T`.
 public class Tween<T>: AnyTween
 {
-    /// Animation target.
+    /// Animation target, target is protected, create a new Tween to use another target.
     internal var target: T!
-    /// Collection of KeyPaths and animation Values.
+    /// Tween's from keys, collection of KeyPaths and animation Values.
+    internal var _from:[TweenKey<T>] = []
+    /// Tween's to keys, collection of KeyPaths and animation Values.
+    internal var _to:[TweenKey<T>] = []
+    /// Collection of KeyPaths and Tween's Double arrays.
     internal var keys:[PartialKeyPath<T> : TweenArray] = [:]
     /// Chainable Tween instance.
     internal var before: Tween<T>? = nil
+    
+    /// 'From' keys public accesor.
+    public var from:[TweenKey<T>]{
+        set {
+            //Cleans keys after replace.
+            _from = newValue
+            //Update values.
+            updateValues()
+        }
+        /// Returns cleaned keys.
+        get {return _from}
+    }
+    
+    /// To keys public accesor.
+    public var to:[TweenKey<T>]{
+        /// Cleans keys after replace.
+        set {
+            _to = newValue
+            /// Updates Array values.
+            updateValues()
+        }
+        /// Returns cleaned keys.
+        get {return _to}
+    }
     
     /**
     Creates a descartable Tween.
@@ -74,13 +115,44 @@ public class Tween<T>: AnyTween
                             duration: Double = 1.0,
                             ease:Ease = .none,
                             delay:Double = 0.0,
-                            from: [PartialKeyPath<T> : Any]? = nil,//Optional
-                            to: [PartialKeyPath<T> : Any]? = nil,
+                            from: [TweenKey<T>]? = nil,//Optional
+                            to: [TweenKey<T>]? = nil,
                             completion: TweenHandler? = nil)
     {
         self.init()
         self.target = target
-        if to != nil { setKeys(to!, from) }
+        if from != nil { self.from = from!}
+        if to != nil { self.to = to!}
+        self.duration = duration
+        self.ease = ease
+        self.delay = delay
+        self.onComplete = completion
+    }
+    
+    /**
+   Creates a descartable Tween.
+    - Parameter target: Required, target instance to perform animations.
+    - Parameter duration: Optional, Time duration of tween in seconds.
+    - Parameter ease: Optional, Easing equation for animation curve, the default value is linear.
+    - Parameter delay: Optional, Time to delay after start this animation.
+    - Parameter from: Optional,  collection of pair type KeyPath  and Any, this sets the intial animation values, if isn't defined the engine takes the current values from target as start.
+    - Parameter keys: Optional,  collection of pair type KeyPath  and Any to animate a property with the desired end values, Tweens never start if not defined.
+    - Parameter replace: Optional, Boolean value that indicates if the engine removes existing tweens for same property.
+    - Parameter completion: Optional, A code block to execute when animation has finished.
+    - Returns: A new `Tween` instance .
+    */
+    public convenience init(_ target: T,
+                            duration: Double = 1.0,
+                            ease:Ease = .none,
+                            delay:Double = 0.0,
+                            from: [TweenKey<T>]? = nil,//Optional
+                            to: [TweenKey<T>]? = nil,
+                            completion: TweenHandler? = nil)
+    {
+        self.init()
+        self.target = target
+        if from != nil { self.from = from!}
+        if to != nil { self.to = to!}
         self.duration = duration
         self.ease = ease
         self.delay = delay
@@ -161,9 +233,7 @@ public class Tween<T>: AnyTween
         
         //First, play all before associated tween chain.
         if self.before != nil { self.before!.play() }
-        
-        //TODO: Remove from timeline if added.
-        
+
         //Finally add self
         Tweener.add(self)
         
@@ -183,16 +253,16 @@ public class Tween<T>: AnyTween
     @discardableResult public func after(duration: Double? = nil,
                                          ease:Ease? = nil,
                                          delay:Double? = nil,
-                                         from: [PartialKeyPath<T> : Any]? = nil,
-                                         to: [PartialKeyPath<T> : Any]? = nil,
+                                         from: [TweenKey<T>]? = nil,
+                                         to: [TweenKey<T>]? = nil,
                                          completion: TweenHandler? = nil) -> Tween<T>{
         
         //Create a new tween with same target, if tween parameters aren't defined it takes from this one, except keys, must be defined by user.
-        let after = Tween(target: self.target!,
+        let after = Tween(self.target!,
                           duration: duration != nil ? duration! : self.duration,
                           ease: ease != nil ? ease! : self.ease,
                           delay: self.timeEnd + ( delay != nil ? delay! : 0.0 ),
-                          from: from != nil ? from : completeKeyValues(),
+                          from: from != nil ? from :self.to,
                           to: to,
                           completion:completion)
         
@@ -203,19 +273,22 @@ public class Tween<T>: AnyTween
         return after
     }
     
-    /**A method to set Tween's keyPaths and values using declarative syntax.
-     - Parameter from:  Optional,  collection of pair type KeyPath  and Any, this sets the intial animation values, if isn't defined the engine takes the current values from target as start.
-     - Parameter to:    Required,  collection of pair type KeyPath  and Any to animate a property with the desired end values, Tweens never start if not defined.
+    /**A method to set 'to' Tween keyPaths and values using declarative syntax.
+     - Parameter keys:  Collection of pair type KeyPath  and Any, this sets the intial animation values, if isn't defined the engine takes the current values from target as start.
      - Returns:         Current`Tween` instance.
      */
-    @discardableResult public func keys(from:[PartialKeyPath<T> : Any]? = nil, to:[PartialKeyPath<T> : Any]) -> Tween<T> {
-        //Verify if isn't animating.
-        if TweenList.isAdded( self ) {
-            print("Warning: Keys Can't be modifed while animation is runnig, call .remove() to remove it.")
-            return self
-        }
-        //Modify keys
-        setKeys(to, from == nil && self.before != nil ? self.before!.completeKeyValues() : from)
+    @discardableResult public func from(_ keys:TweenKey<T>... ) -> Tween<T> {
+        self.from = keys
+        return self
+    }
+    
+    
+    /**A method to set 'to' Tween keyPaths and values using declarative syntax.
+     - Parameter keys:  Collection of pair type KeyPath  and Any to animate a property with the desired end values, Tweens never start if not defined.
+     - Returns:         Current`Tween` instance.
+     */
+    @discardableResult public func to(_ keys:TweenKey<T>... ) -> Tween<T> {
+        self.to = keys
         return self
     }
     
@@ -230,17 +303,17 @@ public class Tween<T>: AnyTween
     }
     
     ///Internal function for KeyPath and value validation for Supported Types only, discards other Types.
-    func setKeys(_ toKeys:[PartialKeyPath<T> : Any], _ fromKeys:[PartialKeyPath<T> : Any]? = nil)
+    func updateValues()
     {
         var validKeys : [PartialKeyPath<T> : TweenArray] = [:]
         
-        //Set valid keypaths
-        for (key, toValue) in toKeys
+        //Validate keypaths
+        for key in _to
         {
             // Iterate over supported types.
             for (j, t) in SupportedTypes.list.enumerated() {
                 
-                let keyType  = type(of: key).valueType
+                let keyType  = type(of: key.keyPath).valueType
                 
                 if type( of:keyType ) == type(of: t) {
 
@@ -248,39 +321,39 @@ public class Tween<T>: AnyTween
                     var from:[Double]?
                     
                     // Verify if "from" key exists.
-                    if let fromValue = fromKeys?[key] {
+                    if let fromKey = _from.first(where: {$0.keyPath == key.keyPath} ) {
                         
                         //Try get "from" value array
-                        from = intepreter.toArray( fromValue )
+                        from = intepreter.toArray( fromKey.value )
                 
                        // Sometimes numeric values are other type.
                         if from == nil {
-                            if isNumber(type(of: key).valueType) && isNumber( type(of: fromValue) ){
-                                from = SupportedTypes.cast( fromValue )
+                            if isNumber(type(of: fromKey.keyPath).valueType ) && isNumber( type(of: fromKey.value) ){
+                                from = SupportedTypes.cast( fromKey.value )
                             }
                         }
                         
                     }else {
                         //Read value directly from target
-                        from = intepreter.read(target:target, key: key)
+                        from = intepreter.read(target:target, key:key.keyPath)
                     }
                     
                     if from == nil { print("Warning: Couldn't read 'from' values") }
                                             
                     // Try get "to" value array
-                    var to:[Double]? = intepreter.toArray( toValue )
+                    var to:[Double]? = intepreter.toArray( key.value )
                    
                     if to == nil {
                         // Sometimes numeric values are other type.
-                        if isNumber( type(of: key).valueType ) && isNumber( type(of: toValue) ){
-                            to = SupportedTypes.cast( toValue )
+                        if isNumber( type(of: key.keyPath).valueType ) && isNumber( type(of: key.value) ){
+                            to = SupportedTypes.cast( key.value )
                         }
                     }
                     
                     if to == nil { print("Warning: Couldn't read 'to' values") }
                     
-                    //Add valid keys only
-                    if from?.count == to?.count { validKeys[key] = TweenArray(from:from!, to:to!) }
+                    //Add valid keys only.
+                    if from?.count == to?.count { validKeys[key.keyPath] = TweenArray(from:from!, to:to!) }
                     
                     //Typa found, break iteration.
                     break
@@ -291,37 +364,7 @@ public class Tween<T>: AnyTween
         //Replace keys
         self.keys = validKeys
     }
-    
-    ///Converts current 'from' key values to KeyPath:Value collection with original Types.
-    func fromKeyValues() -> [PartialKeyPath<T> : Any]{
 
-        var _keys : [PartialKeyPath<T> : Any] = [:]
-        for (key, values) in self.keys {
-            for (j, t) in SupportedTypes.list.enumerated() {
-                if type( of:type(of: key).valueType ) == type(of: t) {
-                    _keys[ key ] = SupportedTypes.interpreters[j].toType( values.from )
-                    break
-                }
-            }
-        }
-        return _keys
-    }
-    
-    ///Converts current 'to' key values to KeyPath:Value collection with original Types.
-    func completeKeyValues() -> [PartialKeyPath<T> : Any]{
-
-        var _keys : [PartialKeyPath<T> : Any] = [:]
-        for (key, values) in self.keys {
-            for (j, t) in SupportedTypes.list.enumerated() {
-                if type( of:type(of: key).valueType ) == type(of: t) {
-                    _keys[ key ] = SupportedTypes.interpreters[j].toType( values.to )
-                    break
-                }
-            }
-        }
-        return _keys
-    }
-    
     ///Function to check if value is numeric Type.
     func isNumber<T>(_ t:T)-> Bool {
         return SupportedTypes.numerics.contains { type(of: $0 ) == type(of: t) }

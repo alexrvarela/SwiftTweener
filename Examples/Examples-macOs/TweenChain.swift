@@ -75,19 +75,19 @@ class TweenChain: NSView {
             Tween(target: square)
             .duration(0.5)
             .ease(.inOutQuad)
-            .keys(to:[\NSView.frame : squares[1].frame])
+            .to(.key(\.frame, squares[1].frame))
             .onComplete{self.square.layer!.backgroundColor = NSColor.random().cgColor }
             //Tween 2, create a tween after.
             .after()
-            .keys(to:[\NSView.frame : squares[2].frame])
+            .to(.key(\.frame, squares[2].frame))
             .onComplete{self.square.layer!.backgroundColor = NSColor.random().cgColor }
             //Tween 3, create a tween after.
             .after()
-            .keys(to:[\NSView.frame : squares[3].frame])
+            .to(.key(\.frame, squares[3].frame))
             .onComplete{self.square.layer!.backgroundColor = NSColor.random().cgColor }
             //Tween 4, create a tween after.
             .after()
-            .keys(to:[\NSView.frame : squares[0].frame])
+            .to(.key(\.frame, squares[0].frame))
             .onComplete{self.square.layer!.backgroundColor = NSColor.random().cgColor }
    
         ).mode( .loop )

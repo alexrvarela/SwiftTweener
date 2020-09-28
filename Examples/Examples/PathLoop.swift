@@ -100,7 +100,7 @@ class PathLoop:UIView, FreezeProtocol
     {
         tweenPath.interpolation = 0.0
     
-        Tween(target: tweenPath, duration: 2.0, ease: .none, delay: 0.0, to: [\PathAim.interpolation : 1.0], completion: {
+        Tween(target: tweenPath, duration: 2.0, ease: .none, delay: 0.0, to: [.key(\.interpolation, 1.0)], completion: {
             self.play()//loop
         }).play()
     }

@@ -111,7 +111,7 @@ class ViewExtensionSample: NSView {
             .after()
             .delay(1.0)
             .duration(0.15)
-            .keys(to: [\CALayer.opacity : 1.0])
+                .to(.key(\.opacity, 1.0))
             .play()
         case 6:
             sender.flyLeft()

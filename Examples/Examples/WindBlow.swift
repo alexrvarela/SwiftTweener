@@ -69,13 +69,13 @@ class WindBlow:UIView, FreezeProtocol
     
     func animate()
     {
-        let random = Double.random(in: 1.0...5.0)
+        let random = CGFloat.random(in: 1.0...5.0)
         
         Tween(target: rotation,
-              duration: random * 2.0,
+              duration: Double(random) * 2.0,
               ease: Ease.inOutQuad,
               delay: 0.0,
-              to: [\RotationAim.distance : random],
+              to:[.key(\.distance, random)],
               completion: { self.animate() }).play()
     }
     

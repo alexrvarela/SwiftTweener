@@ -97,7 +97,7 @@ class ViewExtensions: UIScrollView {
             //Show again!
             .after()
             .duration(0.15)
-            .keys(to: [\CALayer.opacity : 1.0])//from:[\CALayer.opacity : 0.0], 
+            .to(.key(\.opacity, 1.0))//from:[\CALayer.opacity : 0.0],
             .play()
         case 6:
             sender.flyLeft()

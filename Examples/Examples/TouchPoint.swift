@@ -64,7 +64,7 @@ class TouchPoint:UIView, FreezeProtocol
                   duration:2.0,
                   ease:.outElastic,
                   delay:0.025 * Double(subviews.count - index),
-                  to:[\UIView.center:p]).play()
+                  to:[.key(\UIView.center, p)]).play()
         }
     }
     

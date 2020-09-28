@@ -16,6 +16,16 @@ public struct Vector3{
     static func zero() -> Vector3 { return Vector3(x:0.0, y:0.0, z:0.0) }
 }
 
+extension Vector3{
+    static var random: Vector3 {
+        return Vector3(
+            x:Double.random(in: 0...1.0),
+            y:Double.random(in: 0...1.0),
+            z:Double.random(in: 0...1.0)
+        )
+    }
+}
+
 class CustomTypes:UIView, FreezeProtocol
 {
     //Declare Assets
@@ -91,24 +101,23 @@ class CustomTypes:UIView, FreezeProtocol
         Tween(target:self)
         .ease(.inBounce)
         .duration(1.0)
-        .keys(to:[\CustomTypes.point3d:Vector3(x:Double.random(in: 0...1.0),
-                                               y:Double.random(in: 0...1.0),
-                                               z:Double.random(in: 0...1.0))])
+        .to(.key(\.point3d, .random))
         .play()
         
         //Animate with block
         Tween(target: updateBlock)
-            .ease(.outBack)
-            .duration(1.0)
-            .keys(to:[\TweenBlock<Vector3>.value:Vector3(x:Double.random(in: -360...360),
-                                                         y:Double.random(in: -360...360),
-                                                         z:Double.random(in: -360...360))])
-            .play()
+        .ease(.outBack)
+        .duration(1.0)
+        .to(.key(\TweenBlock<Vector3>.value,
+                 Vector3(x:Double.random(in: -360...360),
+                         y:Double.random(in: -360...360),
+                         z:Double.random(in: -360...360))))
+        .play()
         
         Tween(target: square)
-            .duration(1.0)
-            .keys(to: [\UIView.backgroundColor! : UIColor.random()])
-            .play()
+        .duration(1.0)
+        .to(.key(\.backgroundColor!, .random()))
+        .play()
     }
     
     func freeze()

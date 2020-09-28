@@ -48,21 +48,20 @@ class SimpleTween:UIView, FreezeProtocol
         Tween(target:square)//Target
         .duration(1.0)//One second
         .ease(.inOutCubic)
-        .keys(to:
-            [\UIView.alpha:1.0,
-             \UIView.frame:CGRect(x:20.0,
-                                  y:20.0,
-                                  width:UIScreen.main.bounds.width - 40,
-                                  height:UIScreen.main.bounds.width - 40),
-             //NOTE:This property is an optional, add ! to keypath.
-             \UIView.backgroundColor!:UIColor.red])
+        .to(.key(\.alpha, 1.0),
+            .key(\.frame, CGRect(x:20.0,
+                                 y:20.0,
+                                 width:UIScreen.main.bounds.width - 40,
+                                 height:UIScreen.main.bounds.width - 40)),
+            .key(\.backgroundColor!, .red)//NOTE:This property is an optional, add ! to keypath.
+        )
         .onComplete { print("Tween complete") }
         .after()//Creates a new tween after with same target and properties.
         .duration(1.0)
         .ease(Ease.outBounce)
-        .keys(to: [\UIView.alpha:0.25,
-                   \UIView.frame:CGRect(x:20.0, y:20.0, width:100.0, height:100.0),
-                   \UIView.backgroundColor!:UIColor.blue])
+        .to(.key(\.alpha, 0.25),
+            .key(\.frame, CGRect(x:20.0, y:20.0, width:100.0, height:100.0)),
+            .key(\.backgroundColor!, UIColor.blue))
         .play()
     }
     

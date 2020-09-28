@@ -12,7 +12,6 @@ import Tweener
 class SimpleTween: NSView {
     
     var square:NSView!
-    
     var button:NSButton = {
         //Create a button
         let btn = NSButton()
@@ -50,22 +49,26 @@ class SimpleTween: NSView {
     
         Tween(target:square)//Target
         .duration(0.75)//Duration in seconds
-        .ease( .inOutCubic )//Animation curve
-        .keys(from: [\NSView.alphaValue:0.25,
-                     \NSView.frame:CGRect(x:20.0,
-                                          y:frame.size.height - 100 - 20.0,
-                                          width:100.0,
-                                          height:100.0)],
-              to: [\NSView.alphaValue:1.0,
-                   \NSView.frame:CGRect(x: frame.size.width - 280.0 - 20.0,
-                                        y:frame.size.height - 280.0 - 20.0,
-                                        width:280.0,
-                                        height:280.0)])
+        .ease(.inOutCubic)//Animation curve
+        .from(
+            .key(\.alphaValue, 0.25),
+            .key(\.frame, CGRect(x:20.0,
+                                   y:frame.size.height - 100 - 20.0,
+                                   width:100.0,
+                                   height:100.0))
+        )
+        .to(
+            .key(\.alphaValue, 1.0),
+            .key(\.frame,CGRect(x: frame.size.width - 280.0 - 20.0,
+                                y:frame.size.height - 280.0 - 20.0,
+                                width:280.0,
+                                height:280.0))
+        )
         .onComplete { print("Tween 1 complete") }
         .after()//Creates a new tween after with same target and properties.
         .duration(1.0)
         .ease(.outBounce)
-        .keys(to: [\NSView.alphaValue:0.25, \NSView.frame:CGRect(x:20.0, y:frame.size.height - 100 - 20.0, width:100.0, height:100.0)])
+        .to(.key(\.alphaValue, 0.25), .key(\.frame,CGRect(x:20.0, y:frame.size.height - 100 - 20.0, width:100.0, height:100.0)))
         .onComplete { print("Tween 2 complete") }
         .play()
     }

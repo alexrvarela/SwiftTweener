@@ -15,7 +15,6 @@ protocol FreezeProtocol {
     func warm()
 }
 
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
@@ -23,10 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let viewController = UIViewController()
     let view = UIView(frame:UIScreen.main.bounds)
     var timeline: Timeline = Timeline()
-
-    func kpCollect<UIView>(_ kp:[PartialKeyPath<UIView>:Any]... ){
-        
-    }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
     {
@@ -117,10 +112,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             nFrame.origin.x = -(CGFloat(pageIndex) * UIScreen.main.bounds.size.width)
             
             //Animate
-            Tween(target:view)
+            Tween(view)
                 .duration(0.5)
-                .ease(Ease.outCubic)
-                .keys(to:[\UIView.frame:nFrame])
+                .ease(.outCubic)
+                .to(.key(\.frame, nFrame))
                 .play()
             
             //Warm page

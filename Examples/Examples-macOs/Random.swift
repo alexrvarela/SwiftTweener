@@ -49,14 +49,14 @@ class Random: NSView {
     
     @objc func animate() {
         for dot in dots {
-            Tween(target:dot)
+            Tween(dot)
                 .ease(.outBack)
                 .duration(Double.random(in: 0.25 ... 2.0))
                 .delay(Double.random(in: 0.25 ... 2.0))
-                .keys(to: [\NSView.frame : CGRect(x: CGFloat.random(in: 0.0 ... frame.size.width - dot.frame.size.width),
-                                                  y:CGFloat.random(in: 0.0 ... frame.size.height - dot.frame.size.height),
-                                                  width:dot.frame.size.width,
-                                                  height:dot.frame.size.height)])
+                .to(.key(\.frame, CGRect(x: CGFloat.random(in: 0.0 ... frame.size.width - dot.frame.size.width),
+                                         y:CGFloat.random(in: 0.0 ... frame.size.height - dot.frame.size.height),
+                                         width:dot.frame.size.width,
+                                         height:dot.frame.size.height)))
                 .play()
         }
     }

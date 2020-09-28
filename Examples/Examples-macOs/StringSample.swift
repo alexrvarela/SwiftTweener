@@ -61,7 +61,7 @@ class StringSample: NSView {
             .delay(0.5)
             .duration(0.5)
             .ease(.none)
-            .keys(to:[\StringAim.interpolation : 1.0])
+            .to(.key(\.interpolation, 1.0))
             .onComplete { self.swapText() }
         )
         .mode(.loop)

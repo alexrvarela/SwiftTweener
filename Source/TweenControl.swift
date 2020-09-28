@@ -245,7 +245,7 @@ class Control<T>: TweenControl
     /// - Returns:          A new TweenControl instance for created Tween.S
     func clone(_ keys:[PartialKeyPath<T>:TweenArray]) -> TweenControl
     {
-        let newTween:Tween<T> = Tween(target:tween.target)
+        let newTween:Tween<T> = Tween(tween.target)
         
         //Set keys directly
         newTween.keys = keys

@@ -91,42 +91,50 @@ class ChainableTweens: UIView, FreezeProtocol {
         timeline.add(
 
             //Tween 1, start chain
-            Tween(target: square)
+            Tween(square)
             .ease(.inOutQuad)
-            .keys(to:[\UIView.center : squares[1].center])
+            .to(.key(\.center, squares[1].center) )
             .onStart {
                 //Change color
-                Tween(target: self.square).keys(to: [\UIButton.backgroundColor! : UIColor.random()] ).play()
+                Tween(self.square)
+                .to(.key(\.backgroundColor!, .random()))
+                .play()
                 self.square.flipX(inverted: true)
             }
-            .onComplete { print("Tween 1 complete") }
+            ///.onComplete { print("Tween 1 complete") }
             
             //Tween 2
             .after()
-            .keys(to:[\UIView.center : squares[2].center])
+            .to(.key(\.center, squares[2].center) )
             .onStart {
                 //Change color
-                Tween(target: self.square).keys(to: [\UIButton.backgroundColor! : UIColor.random()] ).play()
+                Tween(self.square)
+                .to(.key(\.backgroundColor!, .random()))
+                .play()
                 self.square.flipY()
             }
             .onComplete { print("Tween 2 complete") }
             
             //Tween 3
             .after()
-            .keys(to:[\UIView.center : squares[3].center])
+            .to(.key(\.center, squares[3].center) )
             .onStart {
                 //Change color
-                Tween(target: self.square).keys(to: [\UIButton.backgroundColor! : UIColor.random()] ).play()
+                Tween(self.square)
+                .to(.key(\.backgroundColor!, .random()))
+                .play()
                 self.square.flipX()
             }
             .onComplete { print("Tween 3 complete") }
             
             //Tween 4
             .after()
-            .keys(to:[\UIView.center : squares[0].center])
+            .to(.key(\.center, squares[0].center) )
             .onStart {
                 //Change color
-                Tween(target: self.square).keys(to: [\UIButton.backgroundColor! : UIColor.random()] ).play()
+                Tween(self.square)
+                    .to(.key(\.backgroundColor!, .random()))
+                    .play()
                 self.square.flipY(inverted: true)
             }
             .onComplete { print("Tween 4 complete") }

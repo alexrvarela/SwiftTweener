@@ -46,7 +46,9 @@ class ArcOrbits:UIView, FreezeProtocol
         //fire timeline
         let timeline = Timeline()
         timeline.playMode = .loop
-        timeline.add(Tween(target: fireAim, duration: 5.0, to: [\RotationAim.angle : 360.0]))
+        timeline.add(Tween(target: fireAim,
+                           duration: 5.0,
+                           to: [.key(\.angle, 360.0)]))
         timeline.play()
         timelines.append(timeline)
         
@@ -118,7 +120,7 @@ class ArcOrbits:UIView, FreezeProtocol
         let timeline = Timeline()
         timeline.playMode = .loop
         timeline.play()
-        timeline.add(Tween(target: target, duration: duration, to: [\ArcAim.arcAngle : 360.0]))
+        timeline.add(Tween(target: target, duration: duration, to: [.key(\.arcAngle, 360.0)]))
         timelines.append(timeline)
     }
     

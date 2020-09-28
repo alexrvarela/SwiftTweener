@@ -26,10 +26,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             Tween(target:self.mainView)
                 .duration(0.75)
                 .ease(.outQuad)
-                .keys(to: [\NSView.frame: CGRect(x: -window.frame.size.width * CGFloat( sampleIndex ),
-                                                 y: mainView.frame.origin.y,
-                                                 width: mainView.frame.size.width,
-                                                 height: mainView.frame.size.height)])
+                .to(.key(\.frame, CGRect(x: -window.frame.size.width * CGFloat( sampleIndex ),
+                                         y: mainView.frame.origin.y,
+                                         width: mainView.frame.size.width,
+                                         height: mainView.frame.size.height)))
                 .play()
         }
     }

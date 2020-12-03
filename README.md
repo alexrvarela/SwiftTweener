@@ -258,7 +258,7 @@ myTween.stop()
 
 To create and chain a Tween with same target and properties just call .after()
 ```swift
-    let firstTween(myViewInstance)
+    let firstTween = Tween(myViewInstance)
     // This creates and chains a new tween whith time delay after 'firstTween'.
     let secondTween = firstTween.after()
     //This plays firstTween and secondTween.
@@ -267,10 +267,10 @@ To create and chain a Tween with same target and properties just call .after()
 
 To create and chain a Tween with different target and Type pass the second Tween as parameter.
 ```swift
-    let firstTween(myViewInstance)
-    let secondTween( otherViewInstance )
+    let firstTween = Tween(myViewInstance)
+    let secondTween = Tween(otherViewInstance)
     // This chains booth and sets the second one after first one.
-    firstTween.after( secondTween )
+    firstTween.after(secondTween)
     //This plays firstTween and secondTween.
     secondTween.play()
 ```

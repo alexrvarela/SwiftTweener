@@ -42,6 +42,8 @@ public class AnyTween
     public var onOverwrite: TweenHandler?
     ///Read-only property to obtain calculated time-end.
     public var timeEnd: Double { return duration + delay }
+    /// Chainable Tween instance.
+    internal var before: AnyTween? = nil //TODO:Make public
     
     /// Function to add this tween to animation Engine.
     @discardableResult public func play() -> AnyTween{
@@ -65,20 +67,23 @@ public class AnyTween
 public class Tween<T>: AnyTween
 {
     /// Animation target, target is protected, create a new Tween to use another target.
-    internal var target: T!
+    internal var target: T!//TODO:Make public
     /// Tween's from keys, collection of KeyPaths and animation Values.
     internal var _from:[TweenKey<T>] = []
     /// Tween's to keys, collection of KeyPaths and animation Values.
     internal var _to:[TweenKey<T>] = []
     /// Collection of KeyPaths and Tween's Double arrays.
     internal var keys:[PartialKeyPath<T> : TweenArray] = [:]
-    /// Chainable Tween instance.
-    internal var before: Tween<T>? = nil
+    
+    //TODO:
+    // instantiate using .tween()
+    /*public static func tween(target:<T>) -> Tween<T>{
+        return
+    }*/
     
     /// 'From' keys public accesor.
     public var from:[TweenKey<T>]{
         set {
-            //Cleans keys after replace.
             _from = newValue
             //Update values.
             updateValues()
@@ -89,10 +94,9 @@ public class Tween<T>: AnyTween
     
     /// To keys public accesor.
     public var to:[TweenKey<T>]{
-        /// Cleans keys after replace.
         set {
             _to = newValue
-            /// Updates Array values.
+            //Update values.
             updateValues()
         }
         /// Returns cleaned keys.
@@ -248,9 +252,9 @@ public class Tween<T>: AnyTween
         timeline.addTween( self )
     }
     
-    ///A function that creates a new tween after this, and chain.
-    ///- Returns:   A new`Tween` instance with time delay after current.
-    @discardableResult public func after(duration: Double? = nil,
+    ///A function which creates a new tween after this, and chain for same target and Type.
+    ///- Returns:   A new`Tween` instance with time delay after current, for other target use after(tween:).
+    @discardableResult public func after(duration: Double? = nil,//TODO:Pass target.
                                          ease:Ease? = nil,
                                          delay:Double? = nil,
                                          from: [TweenKey<T>]? = nil,
@@ -273,6 +277,28 @@ public class Tween<T>: AnyTween
         return after
     }
     
+    
+    /**A function to chain another tween instance Type after this.
+    - Parameter tween:  A`Tween` instance to  put in front of  current.
+    - Parameter delay:  Time to delay animation after current.
+    - Returns:   The same`Tween` instance chained with time delay after current.
+    */
+    @discardableResult public func after<U>(_ tween:Tween<U>, delay:Double = 0.0) -> Tween<U>{
+        // Put entire chain, set current instance first.
+        var root:AnyTween? = tween
+        let time = self.timeEnd + delay
+        root!.delay = root!.delay + time
+        // While there's a tween before set as root and APPEND time.
+        while root!.before != nil {
+            root = root!.before
+            root!.delay = root!.delay + time
+        }
+        // Put root in front of current instance.
+        root?.before = self
+        // Returns original instance as chain's front.
+        return tween
+    }
+    
     /**A method to set 'to' Tween keyPaths and values using declarative syntax.
      - Parameter keys:  Collection of pair type KeyPath  and Any, this sets the intial animation values, if isn't defined the engine takes the current values from target as start.
      - Returns:         Current`Tween` instance.
@@ -281,7 +307,6 @@ public class Tween<T>: AnyTween
         self.from = keys
         return self
     }
-    
     
     /**A method to set 'to' Tween keyPaths and values using declarative syntax.
      - Parameter keys:  Collection of pair type KeyPath  and Any to animate a property with the desired end values, Tweens never start if not defined.

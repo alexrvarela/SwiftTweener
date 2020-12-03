@@ -68,6 +68,7 @@ class ChainableTweens: UIView, FreezeProtocol {
             sqr.layer.transform = CATransform3DMakeTranslation(0.0, 0.0, -100)
             addSubview(sqr)
        }
+        
        //Align background squares
        squares[0].center = CGPoint(x: center.x - 60.0, y: center.y - 60.0)
        squares[1].center = CGPoint(x: center.x + 60.0, y: center.y - 60.0)
@@ -138,6 +139,10 @@ class ChainableTweens: UIView, FreezeProtocol {
                 self.square.flipY(inverted: true)
             }
             .onComplete { print("Tween 4 complete") }
+            
+            // Put in the front another Tween Type.
+            .after( button.shake() )
+            .onComplete { print("Button shake complete") }
             
         ).mode( .loop )
     }

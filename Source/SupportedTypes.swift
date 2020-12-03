@@ -253,9 +253,15 @@ struct PrebuiltTypes{
                                     
                                 }))
         #endif
-        //TODO:Linux?
         
+        #if canImport(SwiftUI)
+        //Color
+        //
+        #endif
+        
+        //TODO:Linux?
         // Setup code
+        
         return list
     }()
     

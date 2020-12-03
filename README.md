@@ -254,6 +254,30 @@ myTween.stop()
 
 ![Simple tween](https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/simple-tween.gif)
 
+### Tween chaining
+
+To create and chain a Tween with same target and properties just call .after()
+```swift
+    let firstTween(myViewInstance)
+    // This creates and chains a new tween whith time delay after 'firstTween'.
+    let secondTween = firstTween.after()
+    //This plays firstTween and secondTween.
+    secondTween.play()
+```
+
+To create and chain a Tween with different target and Type pass the second Tween as parameter.
+```swift
+    let firstTween(myViewInstance)
+    let secondTween( otherViewInstance )
+    // This chains booth and sets the second one after first one.
+    firstTween.after( secondTween )
+    //This plays firstTween and secondTween.
+    secondTween.play()
+```
+
+You can chain as many Tweens as you want.
+
+### Tween handlers
 
 Interact with your code using block handlers:
 
@@ -277,6 +301,8 @@ myTween.onOverwrite {
 
 ![Handlers](https://raw.githubusercontent.com/alexrvarela/SwiftTweener/master/Gifs/handlers.gif)
 
+
+### Remove and pause existing Tweens in the Engine
 
 You can pause, resume and remove existing tweens:
 

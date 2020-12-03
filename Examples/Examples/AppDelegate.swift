@@ -113,11 +113,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             //Animate
             Tween(view)
-                .duration(0.5)
-                .ease(.outCubic)
-                .to(.key(\.frame, nFrame))
-                .play()
-            
+            .duration(0.5)
+            .ease(.outCubic)
+            .to(.key(\.frame, nFrame))
+            .play()
+        
             //Warm page
             if let pageNext = view.subviews[pageIndex] as? FreezeProtocol{ pageNext.warm() }
         }

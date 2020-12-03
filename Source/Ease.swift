@@ -169,7 +169,7 @@ extension Ease {
     
     /// Easing equation function for a sinusoidal (sin(t)) easing in: accelerating from zero velocity.
     public static let inSine = Ease(equation:{ (t, b, c, d) in
-        var i = t/d*(Double.pi/2.0)
+        var i = t/d*(Double.pi/2)
         i = cos(i)
         i = (-c)*i+c+b
         return i
@@ -177,7 +177,8 @@ extension Ease {
     
     /// Easing equation function for a sinusoidal (sin(t)) easing out: decelerating from zero velocity.
     public static let outSine = Ease(equation:{ (t, b, c, d) in
-        return c*sin(t/d * (Double.pi/2))+b
+        let i = t/d*(Double.pi/2)
+        return c*sin(i)+b
     })
     
     /// Easing equation function for a sinusoidal (sin(t)) easing in/out: acceleration until halfway, then deceleration.

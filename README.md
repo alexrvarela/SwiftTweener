@@ -154,7 +154,7 @@ $ gem install cocoapods
 
 Now, add Tweener to your Podfile
 ```
-pod 'Tweener', '~> 2.1.0'
+pod 'Tweener', '~> 2.1.1'
 ```
 
 To install dependencies run this command:
@@ -172,7 +172,7 @@ $ brew install carthage
 
 Now, add Tweener to your Cartfile
 ```
-github "alexrvarela/SwiftTweener" ~> 2.1.0
+github "alexrvarela/SwiftTweener" ~> 2.1.1
 ```
 
 To install dependencies run this command:
@@ -188,7 +188,7 @@ To install, add dependencies to your Package.swift
 
 ```
 dependencies: [
-    .package(url: "https://github.com/alexrvarela/SwiftTweener.git", .upToNextMajor(from: "2.1.0"))
+    .package(url: "https://github.com/alexrvarela/SwiftTweener.git", .upToNextMajor(from: "2.1.1"))
 ]
 ```
 
